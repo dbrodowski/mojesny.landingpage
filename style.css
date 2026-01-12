@@ -228,6 +228,10 @@ main {
 .download {
     text-align: center;
     margin: 60px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .app-store-button {
