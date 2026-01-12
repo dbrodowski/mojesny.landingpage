@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for M0odly social media platform.">
+    <title>Privacy Policy of M0odly</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="ikona.png" alt="DTB Logo" width="50" height="50">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="privacy.html" class="active">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Conditions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="theme-toggle-wrapper">
+        <div class="container">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </button>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <section class="page-content">
+                <h1>Privacy Policy</h1>
+                
+                <p><strong>Last updated: October 2025</strong></p>
+
+                <h2>1. Introduction</h2>
+                <p>M0odly ("we," "our," or "the App") provides a social platform for users to share their mood through posts containing a single photo categorized by predefined emotional categories. This Privacy Policy explains how we collect, use, and protect user information, as well as your responsibilities when using the App.</p>
+
+                <h2>2. User-Generated Content (UGC)</h2>
+                <p>Users are fully responsible for the content they post in the App. Each post is limited to a single photo and must comply with the following guidelines:</p>
+                <ul>
+                    <li>Users may only post content they have the rights to.</li>
+                    <li>Illegal, offensive, or copyrighted content is strictly prohibited.</li>
+                    <li>Inappropriate posts may be reported by other users via the "Report" button.</li>
+                    <li>Reported posts are reviewed by our administrators and may be removed if they violate our guidelines.</li>
+                </ul>
+                <p>We reserve the right to remove any post and block or delete accounts that violate these rules without prior notice.</p>
+
+                <h2>3. Data Collection</h2>
+                <p>We collect minimal data necessary for the operation of the App, including:</p>
+                <ul>
+                    <li>User ID and account information</li>
+                    <li>Email address (if provided)</li>
+                    <li>Posts and reports submitted by users</li>
+                </ul>
+                <p>This information is used for moderation, account management, and to serve advertisements through AdMob. We do not sell personal data to third parties.</p>
+
+                <h2>4. Advertisements</h2>
+                <p>M0odly is a free application that displays ads via AdMob. Advertisements may collect anonymous data such as device identifiers for targeting purposes. Please refer to AdMob's privacy policies for more details.</p>
+
+                <h2>5. User Responsibilities</h2>
+                <ul>
+                    <li>Ensure all content posted complies with applicable laws and intellectual property rights.</li>
+                    <li>Do not post offensive, illegal, or otherwise prohibited content.</li>
+                    <li>Use the reporting system responsibly to flag content that violates the App rules.</li>
+                </ul>
+                <p>By using the App, you acknowledge and accept full responsibility for your posts and interactions within the platform.</p>
+
+                <h2>6. Content Moderation</h2>
+                <p>Administrators review reported content and may take the following actions:</p>
+                <ul>
+                    <li>Remove posts that violate App guidelines</li>
+                    <li>Temporarily or permanently block accounts</li>
+                    <li>Delete accounts in cases of repeated or severe violations</li>
+                </ul>
+                <p>All moderation decisions are at the sole discretion of the administrators.</p>
+
+                <h2>7. Security</h2>
+                <p>We implement reasonable security measures to protect user data, but we cannot guarantee absolute security. Users are responsible for maintaining the confidentiality of their account credentials.</p>
+
+                <h2>8. Third-Party Services</h2>
+                <p>The App uses AdMob to display advertisements. These services may collect information automatically. We are not responsible for the practices of third-party services. Please review their privacy policies for details.</p>
+
+                <h2>9. Changes to This Policy</h2>
+                <p>We may update this Privacy Policy from time to time. Users will be notified of significant changes, and continued use of the App constitutes acceptance of the updated policy.</p>
+
+                <h2>10. Contact Us</h2>
+                <p>If you have questions or concerns regarding this Privacy Policy or the App, please contact us at:<br>
+                david.brodowski@gmail.com</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Conditions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        body.setAttribute('data-theme', currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const theme = body.getAttribute('data-theme');
+            const newTheme = theme === 'light' ? 'dark' : 'light';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
+</body>
+</html>

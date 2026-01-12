@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="M0odly. A free but powerful habit tracker app available on the App Store.">
+    <meta name="keywords" content="habit tracker, productivity, habits, app, iOS, App Store">
+    <title>M0odly | Your Mood, Your Moment</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="ikona.png" alt="DTB Logo" width="50" height="50">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Conditions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="theme-toggle-wrapper">
+        <div class="container">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </button>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h1>M0odly</h1>
+                <h2>Your Mood, Your Moment</h2>
+                <h3>Track Your Mood. Express Yourself. Understand Your Emotions.</h3>
+            </section>
+
+            <section class="content">
+                <h1>Mood Tracker App for Emotions, Mindfulness, and Self-Expression</h1>
+                
+                <p>Our mood tracker app is a modern lifestyle app created for Gen Z and anyone who wants to better understand their emotions and feelings. It helps you slow down, reflect, and build emotional awareness through simple daily actions.</p>
+
+                <h2>Track Your Mood and Feelings Daily</h2>
+                
+                <p>Use the app as a personal mood journal to log your mood every day. With just a few taps, you can track how you feel and create a clear emotional record over time. Daily tracking helps you notice emotional patterns and understand what truly affects your mental state.</p>
+
+                <h2>Express Yourself with Journaling and Photos</h2>
+                
+                <p>Self-expression is at the core of this mood tracker. Write short journal entries, capture moments with a photo, and turn your emotions into something tangible. This combination of text and visuals makes emotional reflection natural and engaging.</p>
+
+                <h2>Build Mindfulness and Emotional Awareness</h2>
+                
+                <p>By encouraging regular check-ins, the app supports mindfulness without pressure. Over time, your journal becomes a mirror of your inner world, helping you recognize habits, triggers, and emotional shifts that influence your daily life.</p>
+
+                <h2>A Wellness App Designed for Modern Life</h2>
+                
+                <p>Unlike complex mental health tools, this wellness and mood tracker app focuses on simplicity. Designed for today's fast-paced lifestyle, it fits seamlessly into your routine and supports emotional balance without overwhelming you.</p>
+
+                <h2>A Lifestyle App Made for Gen Z</h2>
+                
+                <p>This life style app is built for creativity, authenticity, and emotional clarity. Whether you're starting your self-care journey or looking for a clean, intuitive mood tracker, this app helps you understand yourself — one day at a time.</p>
+            </section>
+
+            <section class="download">
+                <a href="https://apps.apple.com/app/m0odly/id6754047981" class="app-store-button" target="_blank" rel="noopener noreferrer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
+                    </svg>
+                    <div class="button-text">
+                        <span class="small">Download on the</span>
+                        <span class="large">App Store</span>
+                    </div>
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Conditions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        body.setAttribute('data-theme', currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const theme = body.getAttribute('data-theme');
+            const newTheme = theme === 'light' ? 'dark' : 'light';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
+</body>
+</html>
