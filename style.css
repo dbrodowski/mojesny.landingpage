@@ -233,12 +233,12 @@ main {
 .app-store-button.cta-button {
     font-size: 20px;
     padding: 14px 30px;
-    background-color: rgb(38, 48, 91);
+    background-color: rgb(38, 48, 91) !important;
     color: #ffffff;
 }
 
 .app-store-button.cta-button:hover {
-    background-color: rgb(60, 69, 107);
+    background-color: rgb(60, 69, 107) !important;
 }
 
 /* Download Section */
