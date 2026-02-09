@@ -135,14 +135,14 @@ header .container {
 
 /* Main Content */
 main {
-    padding: 60px 0;
+    padding: 40px 0 60px;
     min-height: calc(100vh - 200px);
 }
 
 /* Hero Section */
 .hero {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .hero h1 {
@@ -222,6 +222,30 @@ main {
 .page-content li {
     margin-bottom: 10px;
     font-size: 1.1rem;
+}
+
+.cta-center {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 24px;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(38, 48, 91);
+    color: #ffffff;
+    font-size: 20px;
+    padding: 12px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: rgb(60, 69, 107);
+    transform: translateY(-1px);
 }
 
 /* Download Section */
