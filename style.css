@@ -230,14 +230,14 @@ main {
     margin: 10px 0 24px;
 }
 
-.cta-button {
+.app-store-button.cta-button {
     font-size: 20px;
     padding: 14px 30px;
     background-color: rgb(38, 48, 91);
     color: #ffffff;
 }
 
-.cta-button:hover {
+.app-store-button.cta-button:hover {
     background-color: rgb(60, 69, 107);
 }
 
