@@ -269,6 +269,17 @@ main {
     opacity: 0.9;
 }
 
+.app-store-button.cta-button {
+    font-size: 20px;
+    padding: 14px 30px;
+    background-color: rgb(38, 48, 91);
+    color: #ffffff;
+}
+
+.app-store-button.cta-button:hover {
+    background-color: rgb(60, 69, 107);
+}
+
 .button-text {
     display: flex;
     flex-direction: column;
