@@ -26,15 +26,6 @@
         </div>
     </header>
 
-    <div class="theme-toggle-wrapper">
-        <div class="container">
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                <span class="sun-icon">☀️</span>
-                <span class="moon-icon">🌙</span>
-            </button>
-        </div>
-    </div>
-
     <main>
         <div class="container">
             <section class="page-content">
@@ -134,20 +125,5 @@
         </div>
     </footer>
 
-    <script>
-        const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
-
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        body.setAttribute('data-theme', currentTheme);
-
-        themeToggle.addEventListener('click', () => {
-            const theme = body.getAttribute('data-theme');
-            const newTheme = theme === 'light' ? 'dark' : 'light';
-            
-            body.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
-    </script>
 </body>
 </html>
