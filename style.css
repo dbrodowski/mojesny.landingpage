@@ -238,7 +238,7 @@ main {
 }
 
 .app-store-button.cta-button:hover {
-    background-color: rgb(60, 69, 107) !important;
+    background-color: #000000 !important;
 }
 
 /* Download Section */
