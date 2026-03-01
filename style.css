@@ -37,8 +37,8 @@ body {
 header {
     padding: 20px 0;
     border-bottom: 1px solid var(--border-color);
-    background-color: rgb(38, 48, 91);
-    color: #ffffff;
+    background-color: rgb(38, 48, 91) !important;
+    color: #ffffff !important;
 }
 
 header .container {
@@ -293,8 +293,8 @@ footer {
     padding: 30px 0;
     border-top: 1px solid var(--border-color);
     margin-top: auto;
-    background-color: rgb(38, 48, 91);
-    color: #ffffff;
+    background-color: rgb(38, 48, 91) !important;
+    color: #ffffff !important;
 }
 
 .footer-nav {
