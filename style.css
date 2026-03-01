@@ -5,40 +5,32 @@
     box-sizing: border-box;
 }
 
+/* Kolor brandowy */
 :root {
-    --bg-color: #ffffff;
-    --text-color: #000000;
-    --link-hover: #333333;
-    --border-color: #e0e0e0;
+    --brand-blue: rgb(38, 48, 91);
 }
 
-[data-theme="dark"] {
-    --bg-color: #1a1a1a;
-    --text-color: #ffffff;
-    --link-hover: #cccccc;
-    --border-color: #333333;
-}
-
+/* BODY – białe tło */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: rgb(38, 48, 91) !important;
-    color: var(--text-color);
+    background-color: #ffffff;
+    color: #000000;
     line-height: 1.6;
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Header Styles */
+/* ================= HEADER ================= */
+
 header {
     padding: 20px 0;
-    border-bottom: 1px solid var(--border-color);
-    background-color: rgb(38, 48, 91) !important;
-    color: #ffffff !important;
+    background-color: var(--brand-blue);
+    color: #ffffff;
 }
 
 header .container {
@@ -47,32 +39,13 @@ header .container {
     gap: 15px;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-}
-
 .logo a {
     display: flex;
     align-items: center;
     text-decoration: none;
     color: #ffffff;
-    transition: opacity 0.3s ease;
 }
 
-.logo a:hover {
-    opacity: 0.7;
-}
-
-.logo img {
-    display: block;
-}
-
-.logo svg {
-    color: var(--text-color);
-}
-
-/* Navigation Styles */
 .main-nav {
     display: flex;
     justify-content: flex-end;
@@ -84,65 +57,27 @@ header .container {
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
-    align-items: center;
 }
 
 .main-nav a {
     text-decoration: none;
     color: #ffffff;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .main-nav a:hover,
 .main-nav a.active {
-    color: var(--link-hover);
-    text-decoration: underline;
+    opacity: 0.7;
 }
 
-/* Theme Toggle Button */
-.theme-toggle-wrapper {
-    padding: 15px 0;
-}
+/* ================= MAIN ================= */
 
-.theme-toggle-wrapper .container {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.theme-toggle {
-    background: none;
-    border: 2px solid var(--text-color);
-    border-radius: 50px;
-    padding: 8px 16px;
-    cursor: pointer;
-    font-size: 20px;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.theme-toggle:hover {
-    transform: scale(1.05);
-}
-
-[data-theme="light"] .moon-icon {
-    display: none;
-}
-
-[data-theme="dark"] .sun-icon {
-    display: none;
-}
-
-/* Main Content */
 main {
     padding: 40px 0 60px;
-    min-height: calc(100vh - 200px);
-    background-color: #ffffff;
 }
 
-/* Hero Section */
+/* Hero */
 .hero {
     text-align: center;
     margin-bottom: 40px;
@@ -152,28 +87,24 @@ main {
     font-size: 4rem;
     font-weight: 700;
     margin-bottom: 20px;
-    letter-spacing: -2px;
 }
 
 .hero h2 {
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 15px;
-    letter-spacing: -1px;
 }
 
 .hero h3 {
     font-size: 1.8rem;
     font-weight: 400;
     margin-bottom: 40px;
-    opacity: 0.9;
 }
 
-/* Content Section */
+/* Content */
 .content {
     max-width: 800px;
     margin: 0 auto 60px;
-    text-align: left;
 }
 
 .content p {
@@ -193,40 +124,7 @@ main {
     line-height: 1.8;
 }
 
-/* Page Content (for Privacy Policy and Terms) */
-.page-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.page-content h1 {
-    font-size: 3rem;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.page-content h2 {
-    font-size: 1.8rem;
-    margin-top: 40px;
-    margin-bottom: 15px;
-}
-
-.page-content p {
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-
-.page-content ul {
-    margin-left: 30px;
-    margin-bottom: 20px;
-}
-
-.page-content li {
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-}
-
+/* CTA */
 .cta-center {
     display: flex;
     justify-content: center;
@@ -236,15 +134,17 @@ main {
 .app-store-button.cta-button {
     font-size: 26px;
     padding: 14px 30px;
-    background-color: rgb(38, 48, 91) !important;
+    background-color: var(--brand-blue);
     color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
 }
 
 .app-store-button.cta-button:hover {
-    background-color: #000000 !important;
+    opacity: 0.9;
 }
 
-/* Download Section */
+/* Download buttons */
 .download {
     text-align: center;
     margin: 60px 0;
@@ -258,13 +158,12 @@ main {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    background-color: var(--text-color);
-    color: var(--bg-color);
+    background-color: #000000;
+    color: #ffffff;
     padding: 12px 24px;
     border-radius: 8px;
     text-decoration: none;
     transition: transform 0.3s ease, opacity 0.3s ease;
-    font-weight: 500;
 }
 
 .app-store-button:hover {
@@ -276,12 +175,10 @@ main {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    line-height: 1.2;
 }
 
 .button-text .small {
     font-size: 0.75rem;
-    opacity: 0.9;
 }
 
 .button-text .large {
@@ -289,13 +186,12 @@ main {
     font-weight: 600;
 }
 
-/* Footer Styles */
+/* ================= FOOTER ================= */
+
 footer {
     padding: 30px 0;
-    border-top: 1px solid var(--border-color);
-    margin-top: auto;
-    background-color: rgb(38, 48, 91) !important;
-    color: #ffffff !important;
+    background-color: var(--brand-blue);
+    color: #ffffff;
 }
 
 .footer-nav {
@@ -314,87 +210,41 @@ footer {
     text-decoration: none;
     color: #ffffff;
     font-size: 0.9rem;
-    transition: color 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .footer-nav a:hover {
-    color: var(--link-hover);
-    text-decoration: underline;
+    opacity: 0.7;
 }
 
-/* Responsive Design */
+/* ================= RESPONSIVE ================= */
+
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 3rem;
+    .hero h1 { font-size: 3rem; }
+    .hero h2 { font-size: 2rem; }
+    .hero h3 { font-size: 1.5rem; }
+
+    .main-nav,
+    .footer-nav {
+        justify-content: center;
     }
-    
-    .hero h2 {
-        font-size: 2rem;
-    }
-    
-    .hero h3 {
-        font-size: 1.5rem;
-    }
-    
+
     .main-nav ul,
     .footer-nav ul {
         gap: 20px;
         justify-content: center;
     }
-    
-    .main-nav,
-    .footer-nav {
-        justify-content: center;
-    }
-    
-    header .container {
-        align-items: center;
-    }
-    
-    .theme-toggle {
-        align-self: center;
-    }
-    
-    .content p,
-    .page-content p,
-    .page-content li {
-        font-size: 1rem;
-    }
-    
-    .page-content h1 {
-        font-size: 2.5rem;
-    }
-    
-    .page-content h2 {
-        font-size: 1.5rem;
-    }
 }
 
 @media (max-width: 480px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero h2 {
-        font-size: 1.5rem;
-    }
-    
-    .hero h3 {
-        font-size: 1.2rem;
-    }
-    
+    .hero h1 { font-size: 2.5rem; }
+    .hero h2 { font-size: 1.5rem; }
+    .hero h3 { font-size: 1.2rem; }
+
     .main-nav ul,
     .footer-nav ul {
         flex-direction: column;
         align-items: center;
         gap: 15px;
-    }
-    
-    .app-store-button {
-        padding: 10px 20px;
-    }
-    
-    .button-text .large {
-        font-size: 1.1rem;
     }
 }
