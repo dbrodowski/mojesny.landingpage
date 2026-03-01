@@ -198,7 +198,7 @@ footer {
 .copyright {
     color: #ffffff;
     font-size: 0.8rem;
-    margin: 15px auto 0;
+    margin: 25px auto 0; /* increased margin-top to lower text */
     text-align: center;
 }
 
