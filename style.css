@@ -192,14 +192,16 @@ footer {
     padding: 30px 0;
     background-color: var(--brand-blue);
     color: #ffffff;
+    position: relative;
 }
 
 /* Copyright line below footer */
 .copyright {
-    text-align: right;
     color: #ffffff;
-    padding: 5px 20px;
     font-size: 0.9rem;
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
 }
 
 .footer-nav {
