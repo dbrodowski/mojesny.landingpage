@@ -198,20 +198,20 @@ footer {
 .copyright {
     color: #ffffff;
     font-size: 0.9rem;
-    margin: 10px 0 0;
+    margin: 10px auto 0;
     text-align: center;
 }
 
 
 .footer-nav {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 footer .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
 }
 
 .footer-nav ul {
