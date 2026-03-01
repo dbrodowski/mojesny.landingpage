@@ -192,21 +192,24 @@ footer {
     padding: 30px 0;
     background-color: var(--brand-blue);
     color: #ffffff;
-    position: relative;
 }
 
 /* Copyright line below footer */
 .copyright {
     color: #ffffff;
     font-size: 0.9rem;
-    position: absolute;
-    right: 20px;
-    bottom: 10px;
+    margin-left: auto;
 }
+
 
 .footer-nav {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
+}
+
+footer .container {
+    display: flex;
+    align-items: center;
 }
 
 .footer-nav ul {
