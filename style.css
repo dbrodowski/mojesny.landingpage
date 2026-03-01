@@ -194,6 +194,14 @@ footer {
     color: #ffffff;
 }
 
+/* Copyright line below footer */
+.copyright {
+    text-align: right;
+    color: #ffffff;
+    padding: 5px 20px;
+    font-size: 0.9rem;
+}
+
 .footer-nav {
     display: flex;
     justify-content: flex-end;
