@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-        <!-- zamiast od razu ładować Analytics -->
-<script>
-  window.addEventListener('load', function() {
-    const script = document.createElement('script');
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-XSSD2BM25E";
+        <script>
+  function loadAnalytics() {
+    if (window.gaLoaded) return; // zapobiega wielokrotnemu ładowaniu
+    window.gaLoaded = true;
+
+    var script = document.createElement('script');
     script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XSSD2BM25E';
     document.head.appendChild(script);
 
     script.onload = function() {
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
       gtag('js', new Date());
       gtag('config', 'G-XSSD2BM25E');
     };
-  });
+  }
+
+  // Timeout po 1 sekundzie
+  setTimeout(loadAnalytics, 1000);
+
+  // requestIdleCallback jeśli przeglądarka będzie bezczynna wcześniej
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(loadAnalytics, { timeout: 1500 });
+  }
 </script>
         <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
