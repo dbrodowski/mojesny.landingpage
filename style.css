@@ -37,6 +37,8 @@ body {
 header {
     padding: 20px 0;
     border-bottom: 1px solid var(--border-color);
+    background-color: rgb(38, 48, 91);
+    color: #ffffff;
 }
 
 header .container {
@@ -54,7 +56,7 @@ header .container {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: var(--text-color);
+    color: #ffffff;
     transition: opacity 0.3s ease;
 }
 
@@ -87,7 +89,7 @@ header .container {
 
 .main-nav a {
     text-decoration: none;
-    color: var(--text-color);
+    color: #ffffff;
     font-weight: 500;
     transition: color 0.3s ease;
 }
@@ -291,6 +293,8 @@ footer {
     padding: 30px 0;
     border-top: 1px solid var(--border-color);
     margin-top: auto;
+    background-color: rgb(38, 48, 91);
+    color: #ffffff;
 }
 
 .footer-nav {
@@ -307,7 +311,7 @@ footer {
 
 .footer-nav a {
     text-decoration: none;
-    color: var(--text-color);
+    color: #ffffff;
     font-size: 0.9rem;
     transition: color 0.3s ease;
 }
