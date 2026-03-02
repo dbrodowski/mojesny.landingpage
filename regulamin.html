@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XSSD2BM25E"></script>
         <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);} 
-            gtag('js', new Date());
+  // Poczekaj 1 sekundę od załadowania strony
+  setTimeout(() => {
+    // Asynchronicznie dodaj skrypt GA
+    const script = document.createElement('script');
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-XSSD2BM25E";
+    script.async = true;
+    document.head.appendChild(script);
 
-            gtag('config', 'G-XSSD2BM25E');
-        </script>
+    // Inicjalizacja GA po wczytaniu skryptu
+    script.onload = () => {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XSSD2BM25E');
+    };
+  }, 1000); // 1000ms = 1 sekunda
+</script>
         <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Terms of Conditions for MojeSny platform.">
