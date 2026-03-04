@@ -152,7 +152,7 @@ main {
 .cta-bottom .cta-btn {
     display: inline-block;
     padding: 0.8rem 1.5rem;
-    background-color: var(--brand-blue); /* Twój kolor CTA */
+    background-color: #26305b; /* Twój kolor CTA */
     color: #fff;
     border-radius: 8px;
     text-decoration: none;
