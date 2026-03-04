@@ -144,6 +144,26 @@ main {
     opacity: 0.9;
 }
 
+.cta-bottom {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.cta-bottom .cta-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #f05a28; /* Twój kolor CTA */
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.cta-bottom .cta-btn:hover {
+    background-color: #d0481f; /* ciemniejszy odcień przy hoverze */
+}
+
 /* Download buttons */
 .download {
     text-align: center;
