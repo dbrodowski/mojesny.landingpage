@@ -152,16 +152,16 @@ main {
 .cta-bottom .cta-btn {
     display: inline-block;
     padding: 0.8rem 1.5rem;
-    background-color: #26305b; /* Twój kolor CTA */
+    background-color: var(--brand-blue);
     color: #fff;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
-    transition: background-color 0.3s;
+    transition: opacity 0.3s;
 }
 
 .cta-bottom .cta-btn:hover {
-    background-color: #141a36; /* ciemniejszy odcień przy hoverze */
+    opacity: 0.9;
 }
 
 /* Download buttons */
