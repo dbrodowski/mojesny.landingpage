@@ -134,7 +134,7 @@ main {
 .app-store-button.cta-button {
     font-size: 26px;
     padding: 14px 30px;
-    background-color: var(--brand-blue);
+    background-color: #f05a28;
     color: #ffffff;
     text-decoration: none;
     border-radius: 8px;
@@ -152,7 +152,7 @@ main {
 .cta-bottom .cta-btn {
     display: inline-block;
     padding: 0.8rem 1.5rem;
-    background-color: var(--brand-blue);
+    background-color: #f05a28;
     color: #fff;
     border-radius: 8px;
     text-decoration: none;
