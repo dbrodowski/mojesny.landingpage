@@ -163,6 +163,41 @@ main {
     opacity: 0.9;
 }
 
+/* Przyciski spisu treści – w stylu CTA */
+.toc-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.toc-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, rgb(38,48,91) 0%, rgb(28,38,81) 100%);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+    flex: 1 1 calc(33% - 12px);
+    min-width: 120px;
+}
+
+.toc-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .toc-btn {
+        flex: 1 1 100%;
+    }
+}
+
 /* Download buttons */
 .download {
     text-align: center;
