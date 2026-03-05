@@ -174,8 +174,8 @@ main {
 .toc-btn {
     display: inline-block;
     padding: 12px 20px;
-    background: linear-gradient(135deg, rgb(38,48,91) 0%, rgb(28,38,81) 100%);
-    color: #fff;
+    background: rgb(38, 48, 91); /* Twój niebieski kolor */
+    color: #fff; /* tekst zawsze biały */
     text-decoration: none;
     border-radius: 12px;
     text-align: center;
@@ -187,8 +187,9 @@ main {
 }
 
 .toc-btn:hover {
-    background: #000; /* zmiana tła na czarne przy najechaniu */
-    transform: translateY(-2px);
+    background: #000; /* tło zmienia się na czarne po hover */
+    color: #fff; /* tekst nadal biały */
+    transform: translateY(-2px); /* lekki efekt uniesienia */
     box-shadow: 0 6px 10px rgba(0,0,0,0.2);
 }
 
