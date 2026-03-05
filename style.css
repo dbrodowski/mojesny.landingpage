@@ -186,14 +186,20 @@ main {
     min-width: 120px;
 }
 
+/* Hover – zmiana tła na czarne, tekst biały, lekki uniesienie */
 .toc-btn:hover {
-    background: #000; /* tło zmienia się na czarne po hover */
-    color: #fff; /* tekst nadal biały */
-    transform: translateY(-2px); /* lekki efekt uniesienia */
+    background: #000;
+    color: #fff;
+    transform: translateY(-2px);
     box-shadow: 0 6px 10px rgba(0,0,0,0.2);
 }
 
-/* Mobile */
+/* Efekt dotykowego wciśnięcia na mobile */
+.toc-btn:active {
+    transform: translateY(2px);
+}
+
+/* Mobile – przyciski w jednej kolumnie */
 @media (max-width: 768px) {
     .toc-btn {
         flex: 1 1 100%;
