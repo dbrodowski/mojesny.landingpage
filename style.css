@@ -1,4 +1,5 @@
 /* Reset and Base Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,11 +7,19 @@
 }
 
 /* Kolor brandowy */
+
 :root {
     --brand-blue: rgb(34, 48, 91);
 }
 
-/* BODY – białe tło */
+/* Scroll offset dla anchor linków (#ciaza itd.) */
+
+html {
+    scroll-padding-top: 140px;
+}
+
+/* BODY */
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background-color: #ffffff;
@@ -19,6 +28,7 @@ body {
 }
 
 /* Container */
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -79,11 +89,12 @@ header .container {
 /* ================= MAIN ================= */
 
 main {
-    margin-top: 300px; /* header height + desired gap */
+    margin-top: 300px;
     padding: 40px 0 60px;
 }
 
 /* Hero */
+
 .hero {
     text-align: center;
     margin-bottom: 40px;
@@ -108,6 +119,7 @@ main {
 }
 
 /* Content */
+
 .content {
     max-width: 800px;
     margin: 0 auto 60px;
@@ -130,7 +142,8 @@ main {
     line-height: 1.8;
 }
 
-/* CTA */
+/* ================= CTA ================= */
+
 .cta-center {
     display: flex;
     justify-content: center;
@@ -169,44 +182,39 @@ main {
     opacity: 0.9;
 }
 
-/* Przyciski spisu treści – w stylu CTA */
+/* ================= TOC BUTTONS ================= */
+
 .toc-buttons {
-display: flex;
-flex-wrap: wrap;
-gap: 12px;
-margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
 }
 
 .toc-btn {
-display: inline-block;
-padding: 12px 20px;
-background: rgb(38, 48, 91); /* Twój niebieski kolor */
-color: #fff; /* tekst zawsze biały */
-text-decoration: none;
-border-radius: 12px;
-text-align: center;
-font-weight: 600;
-box-shadow: 0 4px 6px rgba(0,0,0,0.15);
-transition: all 0.2s ease;
-flex: 1 1 calc(33% - 12px);
-min-width: 120px;
+    display: inline-block;
+    padding: 12px 20px;
+    background: rgb(38, 48, 91);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    transition: all 0.2s ease;
+    flex: 1 1 calc(33% - 12px);
+    min-width: 120px;
 }
 
 .toc-btn:hover {
-background: #000; /* tło zmienia się na czarne po hover */
-color: #fff; /* tekst nadal biały */
-transform: translateY(-2px); /* lekki efekt uniesienia */
-box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+    background: #000;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.2);
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-.toc-btn {
-flex: 1 1 100%;
-}
-}
+/* ================= DOWNLOAD BUTTONS ================= */
 
-/* Download buttons */
 .download {
     text-align: center;
     margin: 60px 0;
@@ -256,24 +264,15 @@ footer {
     color: #ffffff;
 }
 
-/* Copyright line below footer */
-.copyright {
-    color: #ffffff;
-    font-size: 0.8rem;
-    margin: 25px auto 0; /* increased margin-top to lower text */
-    text-align: center;
-}
-
-
-.footer-nav {
-    display: flex;
-    justify-content: flex-end;
-}
-
 footer .container {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .footer-nav ul {
@@ -294,9 +293,17 @@ footer .container {
     opacity: 0.7;
 }
 
+.copyright {
+    color: #ffffff;
+    font-size: 0.8rem;
+    margin: 25px auto 0;
+    text-align: center;
+}
+
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 768px) {
+
     .hero h1 { font-size: 3rem; }
     .hero h2 { font-size: 2rem; }
     .hero h3 { font-size: 1.5rem; }
@@ -311,9 +318,18 @@ footer .container {
         gap: 20px;
         justify-content: center;
     }
+
+    main {
+        margin-top: 260px;
+    }
+
+    .toc-btn {
+        flex: 1 1 100%;
+    }
 }
 
 @media (max-width: 480px) {
+
     .hero h1 { font-size: 2.5rem; }
     .hero h2 { font-size: 1.5rem; }
     .hero h3 { font-size: 1.2rem; }
@@ -325,9 +341,7 @@ footer .container {
         gap: 15px;
     }
 
-    @media (max-width: 768px) {
     main {
-        margin-top: 260px;
+        margin-top: 280px;
     }
-}
 }
