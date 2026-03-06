@@ -42,7 +42,7 @@ header {
 /* use margin on main instead of body padding
    makes the gap more obvious when adjusting */
 main {
-    margin-top: 60px; /* header height + desired gap */
+    margin-top: 100px; /* header height + desired gap */
 }
 
 header .container {
