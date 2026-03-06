@@ -328,4 +328,22 @@ footer .container {
         align-items: center;
         gap: 15px;
     }
+
+/* Domyślnie dla komputerów */
+article {
+    scroll-margin-top: 140px; 
+}
+
+/* Dopasowanie dla telefonów (bo tam header jest wyższy) */
+@media (max-width: 768px) {
+    article {
+        scroll-margin-top: 210px; 
+    }
+}
+
+@media (max-width: 480px) {
+    article {
+        scroll-margin-top: 310px; 
+    }
+}
 }
