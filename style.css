@@ -39,8 +39,10 @@ header {
 }
 
 /* ensure main content isn't covered by fixed header */
-body {
-    padding-top: 200px; /* adjust if header height changes */
+/* use margin on main instead of body padding
+   makes the gap more obvious when adjusting */
+main {
+    margin-top: 200px; /* header height + desired gap */
 }
 
 header .container {
