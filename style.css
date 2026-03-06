@@ -28,9 +28,19 @@ body {
 /* ================= HEADER ================= */
 
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     padding: 20px 0;
     background-color: var(--brand-blue);
     color: #ffffff;
+    z-index: 1000;
+}
+
+/* ensure main content isn't covered by fixed header */
+body {
+    padding-top: 80px; /* adjust if header height changes */
 }
 
 header .container {
