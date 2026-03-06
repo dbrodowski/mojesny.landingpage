@@ -324,4 +324,10 @@ footer .container {
         align-items: center;
         gap: 15px;
     }
+
+    @media (max-width: 768px) {
+    main {
+        margin-top: 260px;
+    }
+}
 }
