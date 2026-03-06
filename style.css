@@ -1,34 +1,23 @@
-/* Reset and Base Styles */
-
+/* ================= RESET I PODSTAWOWE ================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Kolor brandowy */
-
 :root {
     --brand-blue: rgb(34, 48, 91);
 }
-
-/* Scroll offset dla anchor linków (#ciaza itd.) */
-
-html {
-    scroll-padding-top: 140px;
-}
-
-/* BODY */
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background-color: #ffffff;
     color: #000000;
     line-height: 1.6;
+    padding-top: 200px; /* domyślny padding dla desktop (wysokość headera) */
 }
 
-/* Container */
-
+/* ================= CONTAINER ================= */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -36,7 +25,6 @@ body {
 }
 
 /* ================= HEADER ================= */
-
 header {
     position: fixed;
     top: 0;
@@ -87,14 +75,12 @@ header .container {
 }
 
 /* ================= MAIN ================= */
-
 main {
-    margin-top: 200px;
+    margin-top: 0; /* margin nie jest już potrzebny */
     padding: 40px 0 60px;
 }
 
 /* Hero */
-
 .hero {
     text-align: center;
     margin-bottom: 40px;
@@ -119,7 +105,6 @@ main {
 }
 
 /* Content */
-
 .content {
     max-width: 800px;
     margin: 0 auto 60px;
@@ -143,7 +128,6 @@ main {
 }
 
 /* ================= CTA ================= */
-
 .cta-center {
     display: flex;
     justify-content: center;
@@ -182,8 +166,7 @@ main {
     opacity: 0.9;
 }
 
-/* ================= TOC BUTTONS ================= */
-
+/* ================= SPIS TREŚCI ================= */
 .toc-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -214,7 +197,6 @@ main {
 }
 
 /* ================= DOWNLOAD BUTTONS ================= */
-
 .download {
     text-align: center;
     margin: 60px 0;
@@ -257,22 +239,28 @@ main {
 }
 
 /* ================= FOOTER ================= */
-
 footer {
     padding: 30px 0;
     background-color: var(--brand-blue);
     color: #ffffff;
 }
 
-footer .container {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
+.copyright {
+    color: #ffffff;
+    font-size: 0.8rem;
+    margin: 25px auto 0;
+    text-align: center;
 }
 
 .footer-nav {
     display: flex;
     justify-content: flex-end;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .footer-nav ul {
@@ -293,17 +281,9 @@ footer .container {
     opacity: 0.7;
 }
 
-.copyright {
-    color: #ffffff;
-    font-size: 0.8rem;
-    margin: 25px auto 0;
-    text-align: center;
-}
-
 /* ================= RESPONSIVE ================= */
-
 @media (max-width: 768px) {
-
+    body { padding-top: 260px; } /* wyższy header na mobile */
     .hero h1 { font-size: 3rem; }
     .hero h2 { font-size: 2rem; }
     .hero h3 { font-size: 1.5rem; }
@@ -318,18 +298,10 @@ footer .container {
         gap: 20px;
         justify-content: center;
     }
-
-    main {
-        margin-top: 260px;
-    }
-
-    .toc-btn {
-        flex: 1 1 100%;
-    }
 }
 
 @media (max-width: 480px) {
-
+    body { padding-top: 300px; } /* jeszcze wyższy header na very small screens */
     .hero h1 { font-size: 2.5rem; }
     .hero h2 { font-size: 1.5rem; }
     .hero h3 { font-size: 1.2rem; }
@@ -339,9 +311,5 @@ footer .container {
         flex-direction: column;
         align-items: center;
         gap: 15px;
-    }
-
-    main {
-        margin-top: 280px;
     }
 }
