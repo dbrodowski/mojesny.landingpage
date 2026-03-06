@@ -165,45 +165,39 @@ main {
 
 /* Przyciski spisu treści – w stylu CTA */
 .toc-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 16px;
+display: flex;
+flex-wrap: wrap;
+gap: 12px;
+margin-top: 16px;
 }
 
 .toc-btn {
-    display: inline-block;
-    padding: 12px 20px;
-    background: rgb(38, 48, 91); /* Twój niebieski kolor */
-    color: #fff; /* tekst zawsze biały */
-    text-decoration: none;
-    border-radius: 12px;
-    text-align: center;
-    font-weight: 600;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
-    transition: all 0.2s ease;
-    flex: 1 1 calc(33% - 12px);
-    min-width: 120px;
+display: inline-block;
+padding: 12px 20px;
+background: rgb(38, 48, 91); /* Twój niebieski kolor */
+color: #fff; /* tekst zawsze biały */
+text-decoration: none;
+border-radius: 12px;
+text-align: center;
+font-weight: 600;
+box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+transition: all 0.2s ease;
+flex: 1 1 calc(33% - 12px);
+min-width: 120px;
 }
 
-/* Hover – zmiana tła na czarne, tekst biały, lekki uniesienie */
 .toc-btn:hover {
-    background: #000;
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+background: #000; /* tło zmienia się na czarne po hover */
+color: #fff; /* tekst nadal biały */
+transform: translateY(-2px); /* lekki efekt uniesienia */
+box-shadow: 0 6px 10px rgba(0,0,0,0.2);
 }
 
-/* Efekt dotykowego wciśnięcia na mobile */
-.toc-btn:active {
-    transform: translateY(2px);
-}
-
-/* Mobile – przyciski w jednej kolumnie */
+/* Mobile */
 @media (max-width: 768px) {
-    .toc-btn {
-        flex: 1 1 100%;
-    }
+.toc-btn {
+flex: 1 1 100%;
+}
 }
 
 /* Download buttons */
