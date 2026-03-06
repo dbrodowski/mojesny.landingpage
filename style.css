@@ -166,34 +166,50 @@ main {
     opacity: 0.9;
 }
 
-/* ================= SPIS TREŚCI ================= */
+/* ================= SPIS TREŚCI - ZOPTYMALIZOWANY ================= */
 .toc-buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
     margin-top: 16px;
+    /* Dodajemy izolację, żeby zmiany w środku nie przeliczały reszty strony */
+    contain: layout; 
 }
 
 .toc-btn {
-    display: inline-block;
-    padding: 12px 20px;
+    display: block; /* Zmieniamy z inline-block na block dla stabilności */
+    padding: 12px 10px; /* Mniejszy padding poziomy, żeby tekst nie wypadał */
     background: rgb(38, 48, 91);
     color: #fff;
     text-decoration: none;
     border-radius: 12px;
     text-align: center;
     font-weight: 600;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
-    transition: all 0.2s ease;
-    flex: 1 1 calc(33% - 12px);
-    min-width: 120px;
+    
+    /* Zamiast cienia, który wymaga ciężkich obliczeń, użyj prostszego efektu lub usuń go */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    
+    /* Optymalizacja szerokości - usuwamy flex-grow (1) na rzecz stałej bazy */
+    flex: 0 1 calc(33.33% - 12px); 
+    min-width: 100px;
+    
+    /* Zamiast 'all', animuj tylko to, co konieczne */
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    
+    /* To mówi przeglądarce, że będziemy animować transformację */
+    will-change: transform; 
 }
 
 .toc-btn:hover {
     background: #000;
-    color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+}
+
+/* Na małych ekranach zmień na 2 kolumny lub 1, żeby uniknąć kalkulacji 33% */
+@media (max-width: 600px) {
+    .toc-btn {
+        flex: 0 1 calc(50% - 12px);
+    }
 }
 
 /* ================= DOWNLOAD BUTTONS ================= */
