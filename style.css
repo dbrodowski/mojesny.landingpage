@@ -38,13 +38,6 @@ header {
     z-index: 1000;
 }
 
-/* ensure main content isn't covered by fixed header */
-/* use margin on main instead of body padding
-   makes the gap more obvious when adjusting */
-main {
-    margin-top: 100px; /* header height + desired gap */
-}
-
 header .container {
     display: flex;
     flex-direction: column;
@@ -86,6 +79,7 @@ header .container {
 /* ================= MAIN ================= */
 
 main {
+    margin-top: 100px; /* header height + desired gap */
     padding: 40px 0 60px;
 }
 
