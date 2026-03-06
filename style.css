@@ -79,7 +79,7 @@ header .container {
 /* ================= MAIN ================= */
 
 main {
-    margin-top: 200px; /* header height + desired gap */
+    margin-top: 300px; /* header height + desired gap */
     padding: 40px 0 60px;
 }
 
