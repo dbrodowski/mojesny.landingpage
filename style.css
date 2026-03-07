@@ -141,6 +141,9 @@ main {
     color: #ffffff;
     text-decoration: none;
     border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase; /* Wielkie litery */
+    letter-spacing: 1px;      /* Oddech między literami */
 }
 
 .app-store-button.cta-button:hover {
@@ -159,7 +162,9 @@ main {
     color: #fff;
     border-radius: 8px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
+    text-transform: uppercase; /* Wielkie litery */
+    letter-spacing: 0.5px;    /* Nieco mniejszy odstęp dla mniejszego przycisku */
 }
 
 .cta-bottom .cta-btn:hover {
