@@ -433,44 +433,31 @@ html {
     scroll-behavior: smooth;
 }
 
-/* ================= MOBILE NAV - LOGO LEFT, MENU RIGHT ================= */
+/* ================= MOBILE NAV - MENU WYJUSTOWANE DO PRAWEJ ================= */
 @media (max-width: 768px) {
     header .container {
         display: flex;
         justify-content: space-between; /* logo po lewej, menu po prawej */
-        align-items: center;            /* wyrównanie w pionie */
-        gap: 20px;
+        align-items: center;
     }
 
     .main-nav {
-        flex: 1;                        /* menu zajmuje resztę przestrzeni */
-        text-align: right;              /* linki wyrównane do prawej */
+        flex: 1;
+        text-align: right; /* dla bezpieczeństwa */
     }
 
     .main-nav ul {
         display: flex;
-        flex-wrap: wrap;                /* pozwala na kilka wierszy */
-        justify-content: flex-end;      /* wyjustowanie do prawej */
+        flex-wrap: wrap;         /* pozwala na kilka rzędów */
+        justify-content: flex-end; /* wszystkie wiersze do prawej */
         gap: 15px;
-    }
-
-    body {
-        padding-top: 150px;             /* dopasowanie headera */
     }
 }
 
 @media (max-width: 480px) {
-    header .container {
-        gap: 12px;
-    }
-
     .main-nav ul {
         gap: 10px;
         font-size: 0.85rem;
-        justify-content: flex-end;      /* nadal wyjustowane do prawej */
-    }
-
-    body {
-        padding-top: 120px;
+        justify-content: flex-end; /* nadal do prawej */
     }
 }
