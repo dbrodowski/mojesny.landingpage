@@ -433,7 +433,7 @@ html {
     scroll-behavior: smooth;
 }
 
-//* ================= MOBILE NAV - MENU DO PRAWEJ, WIELORZĘDOWE ================= */
+/* ================= MOBILE NAV - MENU DO PRAWEJ, WIELORZĘDOWE ================= */
 @media (max-width: 768px) {
     header .container {
         display: flex;
