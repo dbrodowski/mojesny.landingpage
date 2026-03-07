@@ -361,14 +361,18 @@ article {
     }
 }
 
-/* Wikipedia-style link w Twoim kolorze z płynnym podkreśleniem */
+/* ================= WIKI‑STYLE LINKS (Twój kolor) ================= */
 .content a {
-    color: rgb(38,48,91);       /* Twój brandowy kolor */
-    text-decoration: none;       /* brak podkreślenia w normalnym stanie */
-    border-bottom: 1px solid transparent; /* miejsce dla animacji */
-    transition: border-bottom 0.2s ease-in-out;
+    color: rgb(38,48,91);            /* Twój brandowy kolor */
+    text-decoration: none;            /* brak domyślnego podkreślenia */
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease-in-out;
 }
 
-.content a:hover {
-    border-bottom: 1px solid rgb(38,48,91); /* podkreślenie pojawia się płynnie */
+.content a:hover,
+.content a:focus {
+    background-size: 100% 1px;        /* podkreślenie pojawia się jak w Wikipedii */
 }
