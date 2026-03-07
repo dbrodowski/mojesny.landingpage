@@ -351,7 +351,7 @@ footer .container {
 
 /* Scroll offset dla fixed header */
 article {
-    scroll-margin-top: 10px;
+    scroll-margin-top: 130px;
 }
 
 @media (max-width: 768px) {
