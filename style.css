@@ -445,19 +445,22 @@ html {
     .main-nav ul {
         display: flex;
         flex-direction: column;  /* każdy element w osobnym rzędzie */
-        align-items: flex-end;  /* menu wyjustowane do prawej */
-        gap: 10px;              /* odstęp między linkami */
+        align-items: flex-end;   /* menu wyjustowane do prawej */
+        gap: 10px;               /* odstęp między linkami */
         padding: 0;
         margin: 0;
         list-style: none;
         font-size: 1rem;
-        margin-left: 30px;
+
+        /* przesunięcie całego menu w lewo o 10px */
+        transform: translateX(-10px);
     }
 }
 
 @media (max-width: 480px) {
     .main-nav ul {
         gap: 8px;               /* trochę mniejszy odstęp dla małych ekranów */
-        font-size: 1rem;     /* zmniejszenie fontu */
+        font-size: 1rem;        /* zmniejszenie fontu */
+        transform: translateX(-10px); /* zachowujemy przesunięcie na małym ekranie */
     }
 }
