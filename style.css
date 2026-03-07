@@ -337,7 +337,7 @@ article {
 /* Dopasowanie dla telefonów (bo tam header jest wyższy) */
 @media (max-width: 768px) {
     article {
-        scroll-margin-top: 210px; 
+        scroll-margin-top: 180px; 
     }
 }
 
