@@ -432,3 +432,41 @@ article {
 html {
     scroll-behavior: smooth;
 }
+
+/* ================= MOBILE NAV LAYOUT ================= */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: row;            /* logo i menu w jednej linii */
+        justify-content: space-between; /* logo do lewej, menu do prawej */
+        align-items: center;            /* wyśrodkowanie w pionie */
+        gap: 20px;                      /* opcjonalnie odstęp między logo a menu */
+    }
+
+    .main-nav ul {
+        flex-direction: row;            /* linki w wierszu */
+        gap: 15px;                      /* odstępy między linkami */
+    }
+
+    body {
+        padding-top: 150px;             /* dopasowanie wysokości headera */
+    }
+}
+
+@media (max-width: 480px) {
+    header .container {
+        flex-direction: row;            /* zachowujemy linię */
+        justify-content: space-between; /* logo po lewej, menu po prawej */
+        align-items: center;            /* wyrównanie w pionie */
+        gap: 12px;                      /* trochę mniejszy odstęp między logo a menu */
+    }
+
+    .main-nav ul {
+        flex-direction: row;            /* linki w wierszu */
+        gap: 10px;                      /* mniejsze odstępy żeby się zmieściło */
+        font-size: 0.85rem;             /* zmniejszenie fontu dla bardzo małych ekranów */
+    }
+
+    body {
+        padding-top: 120px;             /* mniejszy padding dla very small screens */
+    }
+}
