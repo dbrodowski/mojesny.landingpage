@@ -451,12 +451,13 @@ html {
         margin: 0;
         list-style: none;
         font-size: 1rem;
+        margin-left: -10px;
     }
 }
 
 @media (max-width: 480px) {
     .main-nav ul {
         gap: 8px;               /* trochę mniejszy odstęp dla małych ekranów */
-        font-size: 0.95rem;     /* zmniejszenie fontu */
+        font-size: 1rem;     /* zmniejszenie fontu */
     }
 }
