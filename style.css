@@ -365,8 +365,9 @@ article {
 .content a {
     color: rgb(38,48,91);            /* Twój brandowy kolor */
     text-decoration: none;            /* brak domyślnego podkreślenia */
+    font-weight: bold;                 /* pogrubienie słów kluczowych */
     background-image: linear-gradient(currentColor, currentColor);
-    background-size: 0% 1px;
+    background-size: 0% 2px;           /* grubsze podkreślenie */
     background-position: 0 100%;
     background-repeat: no-repeat;
     transition: background-size 0.2s ease-in-out;
@@ -374,5 +375,5 @@ article {
 
 .content a:hover,
 .content a:focus {
-    background-size: 100% 1px;        /* podkreślenie pojawia się jak w Wikipedii */
+    background-size: 100% 2px;         /* podkreślenie pojawia się na hover */
 }
