@@ -14,7 +14,7 @@ body {
     background-color: #ffffff;
     color: #000000;
     line-height: 1.6;
-    padding-top: 130px; /* domyślny padding dla desktop (wysokość headera) */
+    padding-top: 130px;
 }
 
 /* ================= CONTAINER ================= */
@@ -76,7 +76,7 @@ header .container {
 
 /* ================= MAIN ================= */
 main {
-    margin-top: 0; /* margin nie jest już potrzebny */
+    margin-top: 0;
     padding: 40px 0 60px;
 }
 
@@ -166,13 +166,12 @@ main {
     opacity: 0.9;
 }
 
-/* ================= SPIS TREŚCI - ZOPTYMALIZOWANY ================= */
+/* ================= SPIS TREŚCI ================= */
 .toc-buttons {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: 12px;
     margin-top: 16px;
-    contain: layout; 
 }
 
 .toc-btn {
@@ -185,15 +184,10 @@ main {
     text-align: center;
     font-weight: 600;
     font-size: 0.9rem;
-    
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
-    
-    flex: 0 1 calc(20% - 12px); 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     min-width: 90px;
-    
     transition: background-color 0.2s ease, transform 0.2s ease;
-    
-    will-change: transform; 
+    will-change: transform;
 }
 
 .toc-btn:hover {
@@ -201,10 +195,10 @@ main {
     transform: translateY(-2px);
 }
 
-/* Na małych ekranach zmień na 2 kolumny */
+/* Mobile – 2 kolumny */
 @media (max-width: 600px) {
-    .toc-btn {
-        flex: 0 1 calc(50% - 12px);
+    .toc-buttons {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -295,7 +289,8 @@ footer .container {
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-    body { padding-top: 80px; } /* wyższy header na mobile */
+    body { padding-top: 80px; }
+
     .hero h1 { font-size: 3rem; }
     .hero h2 { font-size: 2rem; }
     .hero h3 { font-size: 1.5rem; }
@@ -313,7 +308,8 @@ footer .container {
 }
 
 @media (max-width: 480px) {
-    body { padding-top: 300px; } /* jeszcze wyższy header na very small screens */
+    body { padding-top: 300px; }
+
     .hero h1 { font-size: 2.5rem; }
     .hero h2 { font-size: 1.5rem; }
     .hero h3 { font-size: 1.2rem; }
@@ -324,22 +320,21 @@ footer .container {
         align-items: center;
         gap: 15px;
     }
-
-/* Domyślnie dla komputerów */
-article {
-    scroll-margin-top: 10px; 
 }
 
-/* Dopasowanie dla telefonów (bo tam header jest wyższy) */
+/* Scroll offset dla fixed header */
+article {
+    scroll-margin-top: 10px;
+}
+
 @media (max-width: 768px) {
     article {
-        scroll-margin-top: 150px; 
+        scroll-margin-top: 150px;
     }
 }
 
 @media (max-width: 480px) {
     article {
-        scroll-margin-top: 310px; 
+        scroll-margin-top: 310px;
     }
-}
 }
