@@ -335,7 +335,7 @@ footer .container {
 }
 
 @media (max-width: 480px) {
-    body { padding-top: 300px; }
+    body { padding-top: 250px; }
 
     .hero h1 { font-size: 2.5rem; }
     .hero h2 { font-size: 1.5rem; }
