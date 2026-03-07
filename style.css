@@ -169,24 +169,25 @@ main {
 /* ================= SPIS TREŚCI ================= */
 .toc-buttons {
     display: grid;
-    /* Domyślnie 5 kolumn (na komputerze) */
-    grid-template-columns: repeat(5, 1fr); 
+    /* Wymuszamy 5 kolumn na komputerze */
+    grid-template-columns: repeat(5, 1fr);
     gap: 12px;
     margin-top: 16px;
 }
 
 .toc-btn {
     display: block;
-    padding: 10px 5px; /* Nieco więcej miejsca w pionie, mniej w poziomie */
+    padding: 10px 4px;
     background: rgb(38, 48, 91);
     color: #fff;
     text-decoration: none;
     border-radius: 8px;
     text-align: center;
     font-weight: 600;
-    font-size: 0.85rem; /* Odrobinę mniejszy font, by napisy się mieściły w 5 kolumnach */
+    font-size: 0.8rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    /* Usuwamy min-width: 90px, bo przy 5 kolumnach może wypychać układ */
+    /* Usuwamy minimalną szerokość, która wymuszała 3 kolumny */
+    min-width: 0; 
     transition: background-color 0.2s ease, transform 0.2s ease;
     will-change: transform;
 }
@@ -196,15 +197,8 @@ main {
     transform: translateY(-2px);
 }
 
-/* Tablety i laptopy z mniejszym ekranem - zmiana na 3 kolumny (opcjonalnie) */
-@media (max-width: 992px) {
-    .toc-buttons {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Mobile – 2 kolumny (zostawiamy tak jak chciałeś) */
-@media (max-width: 600px) {
+/* Mobile – 2 kolumny */
+@media (max-width: 768px) {
     .toc-buttons {
         grid-template-columns: repeat(2, 1fr);
     }
