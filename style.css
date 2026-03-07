@@ -384,6 +384,23 @@ article {
     background-size: 100% 2px;         
 }
 
+/* Wiki-style links dla list w .content */
+.content li a {
+    color: rgb(38, 48, 91);
+    text-decoration: none;
+    font-weight: bold;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 2px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease-in-out;
+}
+
+.content li a:hover,
+.content li a:focus {
+    background-size: 100% 2px;
+}
+
 /* ================= BACK TO TOP BUTTON ================= */
 #backToTop {
     display: none; /* Ukryty na starcie */
