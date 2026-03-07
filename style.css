@@ -361,19 +361,20 @@ article {
     }
 }
 
-/* ================= WIKI‑STYLE LINKS (Twój kolor) ================= */
-.content a {
-    color: rgb(38,48,91);            /* Twój brandowy kolor */
-    text-decoration: none;            /* brak domyślnego podkreślenia */
-    font-weight: bold;                 /* pogrubienie słów kluczowych */
+/* ================= WIKI‑STYLE LINKS (Tylko w tekście!) ================= */
+/* Dodanie 'p' sprawia, że przyciski .toc-btn i .cta-btn są bezpieczne */
+.content p a {
+    color: rgb(38, 48, 91);            
+    text-decoration: none;            
+    font-weight: bold;                 
     background-image: linear-gradient(currentColor, currentColor);
-    background-size: 0% 2px;           /* grubsze podkreślenie */
+    background-size: 0% 2px;           
     background-position: 0 100%;
     background-repeat: no-repeat;
     transition: background-size 0.2s ease-in-out;
 }
 
-.content a:hover,
-.content a:focus {
-    background-size: 100% 2px;         /* podkreślenie pojawia się na hover */
+.content p a:hover,
+.content p a:focus {
+    background-size: 100% 2px;         
 }
