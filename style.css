@@ -450,12 +450,13 @@ html {
         padding: 0;
         margin: 0;
         list-style: none;
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 480px) {
     .main-nav ul {
         gap: 8px;               /* trochę mniejszy odstęp dla małych ekranów */
-        font-size: 0.85rem;     /* zmniejszenie fontu */
+        font-size: 0.95rem;     /* zmniejszenie fontu */
     }
 }
