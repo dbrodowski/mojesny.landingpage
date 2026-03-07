@@ -360,3 +360,15 @@ article {
         scroll-margin-top: 310px;
     }
 }
+
+/* Wikipedia-style link w Twoim kolorze z płynnym podkreśleniem */
+.content a {
+    color: rgb(38,48,91);       /* Twój brandowy kolor */
+    text-decoration: none;       /* brak podkreślenia w normalnym stanie */
+    border-bottom: 1px solid transparent; /* miejsce dla animacji */
+    transition: border-bottom 0.2s ease-in-out;
+}
+
+.content a:hover {
+    border-bottom: 1px solid rgb(38,48,91); /* podkreślenie pojawia się płynnie */
+}
