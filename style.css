@@ -172,31 +172,27 @@ main {
     flex-wrap: wrap;
     gap: 12px;
     margin-top: 16px;
-    /* Dodajemy izolację, żeby zmiany w środku nie przeliczały reszty strony */
     contain: layout; 
 }
 
 .toc-btn {
-    display: block; /* Zmieniamy z inline-block na block dla stabilności */
-    padding: 12px 10px; /* Mniejszy padding poziomy, żeby tekst nie wypadał */
+    display: block;
+    padding: 7px 8px;
     background: rgb(38, 48, 91);
     color: #fff;
     text-decoration: none;
-    border-radius: 12px;
+    border-radius: 8px;
     text-align: center;
     font-weight: 600;
+    font-size: 0.9rem;
     
-    /* Zamiast cienia, który wymaga ciężkich obliczeń, użyj prostszego efektu lub usuń go */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
     
-    /* Optymalizacja szerokości - usuwamy flex-grow (1) na rzecz stałej bazy */
-    flex: 0 1 calc(33.33% - 12px); 
-    min-width: 100px;
+    flex: 0 1 calc(20% - 12px); 
+    min-width: 90px;
     
-    /* Zamiast 'all', animuj tylko to, co konieczne */
     transition: background-color 0.2s ease, transform 0.2s ease;
     
-    /* To mówi przeglądarce, że będziemy animować transformację */
     will-change: transform; 
 }
 
@@ -205,7 +201,7 @@ main {
     transform: translateY(-2px);
 }
 
-/* Na małych ekranach zmień na 2 kolumny lub 1, żeby uniknąć kalkulacji 33% */
+/* Na małych ekranach zmień na 2 kolumny */
 @media (max-width: 600px) {
     .toc-btn {
         flex: 0 1 calc(50% - 12px);
