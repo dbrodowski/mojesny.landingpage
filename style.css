@@ -299,7 +299,7 @@ footer .container {
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-    body { padding-top: 120px; } /* wyższy header na mobile */
+    body { padding-top: 80px; } /* wyższy header na mobile */
     .hero h1 { font-size: 3rem; }
     .hero h2 { font-size: 2rem; }
     .hero h3 { font-size: 1.5rem; }
