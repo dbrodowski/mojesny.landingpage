@@ -389,7 +389,7 @@ article {
     display: none; /* Ukryty na starcie */
     position: fixed;
     bottom: 20px;
-    left: 20px;
+    right: 20px;
     z-index: 999;
     width: 45px;
     height: 45px;
