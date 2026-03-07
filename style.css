@@ -383,3 +383,33 @@ article {
 .content p a:focus {
     background-size: 100% 2px;         
 }
+
+/* ================= BACK TO TOP BUTTON ================= */
+#backToTop {
+    display: none; /* Ukryty na starcie */
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 999;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(34, 48, 91, 0.4); /* Twój brand-blue, półprzezroczysty */
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    backdrop-filter: blur(5px); /* Efekt szkła */
+    transition: all 0.3s ease;
+}
+
+#backToTop:hover {
+    background-color: rgba(34, 48, 91, 0.8);
+    transform: scale(1.1);
+}
+
+/* Płynne przewijanie dla całej strony */
+html {
+    scroll-behavior: smooth;
+}
