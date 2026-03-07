@@ -167,29 +167,39 @@ main {
 }
 
 /* ================= SPIS TREŚCI ================= */
+.sennik-toc {
+    margin-bottom: 40px;
+}
+
+.sennik-toc h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
 .toc-buttons {
     display: grid;
-    /* Wymuszamy 5 kolumn na komputerze */
-    grid-template-columns: repeat(5, 1fr);
-    gap: 12px;
-    margin-top: 16px;
+    /* To wymusza 5 równej szerokości kolumn */
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 10px;
+    width: 100%;
 }
 
 .toc-btn {
-    display: block;
-    padding: 10px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 2px; /* Zmniejszony padding boczny, by tekst miał miejsce */
     background: rgb(38, 48, 91);
     color: #fff;
     text-decoration: none;
     border-radius: 8px;
     text-align: center;
     font-weight: 600;
-    font-size: 0.8rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    /* Usuwamy minimalną szerokość, która wymuszała 3 kolumny */
-    min-width: 0; 
+    font-size: 0.8rem; /* Nieco mniejszy font jest kluczowy przy 5 kolumnach na 800px */
     transition: background-color 0.2s ease, transform 0.2s ease;
-    will-change: transform;
+    /* Te dwie linie poniżej zapobiegają rozpychaniu kolumn przez długie słowa */
+    min-width: 0;
+    overflow: hidden;
 }
 
 .toc-btn:hover {
@@ -197,10 +207,20 @@ main {
     transform: translateY(-2px);
 }
 
+/* Tablety - 3 kolumny */
+@media (max-width: 850px) {
+    .toc-buttons {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 /* Mobile – 2 kolumny */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .toc-buttons {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .toc-btn {
+        font-size: 0.9rem; /* Na mobile jest więcej miejsca na tekst w 2 kolumnach */
     }
 }
 
