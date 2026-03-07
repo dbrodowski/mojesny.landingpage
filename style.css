@@ -331,7 +331,7 @@ footer .container {
 
 /* Domyślnie dla komputerów */
 article {
-    scroll-margin-top: 100px; 
+    scroll-margin-top: 80px; 
 }
 
 /* Dopasowanie dla telefonów (bo tam header jest wyższy) */
