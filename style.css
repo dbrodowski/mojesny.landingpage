@@ -433,24 +433,24 @@ html {
     scroll-behavior: smooth;
 }
 
-/* ================= MOBILE NAV - MENU WYJUSTOWANE DO PRAWEJ ================= */
+//* ================= MOBILE NAV - MENU DO PRAWEJ, WIELORZĘDOWE ================= */
 @media (max-width: 768px) {
     header .container {
         display: flex;
         justify-content: space-between; /* logo po lewej, menu po prawej */
         align-items: center;
-    }
-
-    .main-nav {
-        flex: 1;
-        text-align: right; /* dla bezpieczeństwa */
+        gap: 20px;
     }
 
     .main-nav ul {
-        display: flex;
-        flex-wrap: wrap;         /* pozwala na kilka rzędów */
-        justify-content: flex-end; /* wszystkie wiersze do prawej */
+        display: inline-flex;       /* inline-flex pozwala zachować wielorzędowość */
+        flex-wrap: wrap;            /* wiele rzędów */
+        flex-direction: row-reverse; /* odwraca kolejność, czyli do prawej */
         gap: 15px;
+    }
+
+    .main-nav li {
+        list-style: none;
     }
 }
 
@@ -458,6 +458,6 @@ html {
     .main-nav ul {
         gap: 10px;
         font-size: 0.85rem;
-        justify-content: flex-end; /* nadal do prawej */
+        flex-direction: row-reverse; /* nadal do prawej */
     }
 }
