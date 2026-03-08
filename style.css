@@ -127,33 +127,35 @@ header .container {
     transform: scale(1.02);
 }
 
-/* Poprawki dla urządzeń mobilnych */
+/* ================= DOWNLOAD ================= */
+/* ================= RESPONSIVE ADJUSTMENTS ================= */
+
 @media (max-width: 480px) {
+    /* Zmniejszamy odstępy w całej sekcji */
     .download {
-        margin: 40px 0;    /* Mniejszy margines sekcji na mobile */
-        gap: 12px;         /* Mniejszy odstęp między przyciskami */
-        padding: 0 15px;   /* Bezpieczny odstęp od krawędzi ekranu */
+        margin: 30px 0;
+        gap: 10px; /* Przyciski będą bliżej siebie */
     }
 
+    /* Skalujemy przyciski - zachowujemy tło i zaokrąglenia, zmieniamy tylko wielkość */
     .app-store-button {
-        padding: 8px 16px; /* Zmniejszony padding (było 12px 24px) */
-        gap: 8px;          /* Mniejszy odstęp między ikoną a tekstem */
-        flex: 1 1 auto;    /* Pozwala przyciskom elastycznie się dopasować */
-        min-width: 160px;  /* Zapobiega zbytniemu ściskaniu */
-        justify-content: center; /* Wyśrodkowanie zawartości wewnątrz */
+        padding: 8px 16px; /* Mniejszy padding (było 12px 24px) */
+        gap: 8px;          /* Mniejsza przerwa między ikoną a tekstem */
     }
 
+    /* Zmniejszamy ikony SVG wewnątrz przycisków */
     .app-store-button svg {
-        width: 20px;       /* Nieco mniejsza ikona (było 24px) */
+        width: 20px;
         height: 20px;
     }
 
+    /* Subtelne zmniejszenie tekstów */
     .button-text .small {
-        font-size: 0.65rem; /* Zmniejszenie napisu "Pobierz z" */
+        font-size: 0.6rem; /* Jeszcze mniejszy dopisek */
     }
 
     .button-text .large {
-        font-size: 1rem;    /* Zmniejszenie głównego napisu (było 1.25rem) */
+        font-size: 1rem;   /* Główny napis (było 1.25rem) */
     }
 }
 
