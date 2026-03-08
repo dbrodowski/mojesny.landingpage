@@ -108,7 +108,7 @@ header .container {
 }
 
 .app-store-button.cta-button, .cta-bottom .cta-btn {
-    background-color: var(--brand-orange);
+    background-color: #d6451a;
     color: #ffffff;
     text-decoration: none;
     border-radius: 8px;
