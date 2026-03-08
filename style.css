@@ -127,37 +127,37 @@ header .container {
     transform: scale(1.02);
 }
 
-/* ================= DOWNLOAD ================= */
-/* ================= RESPONSIVE ADJUSTMENTS ================= */
-
-@media (max-width: 480px) {
-    /* Zmniejszamy odstępy w całej sekcji */
-    .download {
-        margin: 30px 0;
-        gap: 10px; /* Przyciski będą bliżej siebie */
-    }
-
-    /* Skalujemy przyciski - zachowujemy tło i zaokrąglenia, zmieniamy tylko wielkość */
-    .app-store-button {
-        padding: 8px 16px; /* Mniejszy padding (było 12px 24px) */
-        gap: 8px;          /* Mniejsza przerwa między ikoną a tekstem */
-    }
-
-    /* Zmniejszamy ikony SVG wewnątrz przycisków */
-    .app-store-button svg {
-        width: 20px;
-        height: 20px;
-    }
-
-    /* Subtelne zmniejszenie tekstów */
-    .button-text .small {
-        font-size: 0.6rem; /* Jeszcze mniejszy dopisek */
-    }
-
-    .button-text .large {
-        font-size: 1rem;   /* Główny napis (było 1.25rem) */
-    }
+/* ================= DOWNLOAD BUTTONS (CZARNE) ================= */
+.download {
+text-align: center;
+margin: 60px 0;
+display: flex;
+justify-content: center;
+gap: 20px;
+flex-wrap: wrap;
 }
+
+.app-store-button {
+display: inline-flex;
+align-items: center;
+gap: 12px;
+background-color: #000000;
+color: #ffffff;
+padding: 12px 24px;
+border-radius: 8px;
+text-decoration: none;
+transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.button-text {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+line-height: 1.2;
+}
+
+.button-text .small { font-size: 0.75rem; }
+.button-text .large { font-size: 1.25rem; font-weight: 600; }
 
 /* ================= CONTENT & TOC ================= */
 .content {
