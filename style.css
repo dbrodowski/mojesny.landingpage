@@ -182,11 +182,11 @@ header .container {
     }
 
     .button-text .small { 
-        font-size: 0.7rem; 
+        font-size: 0.65rem; 
     }
     
     .button-text .large { 
-        font-size: 1rem;  /* Zmniejszone o 0.1rem, by zmieścić tekst w jednej linii */
+        font-size: 0.95rem;  /* Zmniejszone o 0.1rem, by zmieścić tekst w jednej linii */
     }
 }
 
