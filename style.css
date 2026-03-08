@@ -14,7 +14,8 @@ body {
     background-color: #ffffff;
     color: #000000;
     line-height: 1.6;
-    padding-top: 130px;
+    /* Elastyczny padding góry, aby menu nie zasłaniało Hero na różnych ekranach */
+    padding-top: clamp(100px, 15vh, 140px);
 }
 
 /* ================= CONTAINER ================= */
@@ -38,9 +39,9 @@ header {
 
 header .container {
     display: flex;
-    flex-direction: row; /* zamiast column */
-    align-items: center; /* wyrównuje logo i menu pionowo */
-    justify-content: space-between; /* logo z lewej, menu z prawej */
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     gap: 15px;
 }
 
@@ -79,39 +80,36 @@ header .container {
 /* ================= MAIN ================= */
 main {
     margin-top: 0;
-    padding: 40px 0 60px;
+    padding: 20px 0 60px;
 }
 
 /* Hero */
 .hero {
     text-align: center;
-    padding: 0 20px; /* Dodajemy lekki margines boczny, żeby tekst nie dotykał krawędzi na mobile */
-    margin-bottom: 40px;
+    padding: 0 20px;
+    margin-bottom: clamp(25px, 5vh, 45px);
 }
 
 .hero h1 {
-    /* min: 2.2rem na mobile, max: 3.5rem na desktop */
-    font-size: clamp(2.2rem, 8vw, 3.5rem); 
+    font-size: clamp(1.8rem, 8vw, 3.5rem); 
     font-weight: 700;
     margin-bottom: 10px;
-    line-height: 1.1; /* Przy tak dużym font-size mniejszy odstęp między liniami wygląda lepiej */
+    line-height: 1.1;
 }
 
 .hero h2 {
-    /* min: 1.6rem na mobile, max: 2.5rem na desktop */
-    font-size: clamp(1.6rem, 6vw, 2.5rem);
-    font-weight: 600;
+    font-size: clamp(1.4rem, 6vw, 2.5rem);
+    font-weight: 700; /* Pogrubione dla spójności */
     margin-bottom: 15px;
     line-height: 1.2;
 }
 
 .hero h3 {
-    /* min: 1.2rem na mobile, max: 1.8rem na desktop */
-    font-size: clamp(1.2rem, 4vw, 1.8rem);
-    font-weight: 400;
-    margin-bottom: 40px;
+    font-size: clamp(1.1rem, 4vw, 1.8rem);
+    font-weight: 600; /* Pogrubione zgodnie z prośbą */
+    margin-bottom: clamp(25px, 6vw, 40px);
     line-height: 1.4;
-    color: rgba(34, 48, 91, 0.8); /* Lekko przygaszony kolor dla H3 ładnie buduje hierarchię */
+    color: rgba(34, 48, 91, 0.85);
 }
 
 /* Content */
@@ -122,18 +120,7 @@ main {
 
 .content p {
     margin-bottom: 20px;
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-
-.content ul {
-    margin-left: 40px;
-    margin-bottom: 20px;
-}
-
-.content li {
-    margin-bottom: 10px;
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 3.5vw, 1.1rem);
     line-height: 1.8;
 }
 
@@ -145,24 +132,23 @@ main {
 }
 
 .app-store-button.cta-button {
-    font-size: 26px;
-    padding: 14px 30px;
+    /* Responsywna wielkość przycisku */
+    font-size: clamp(1.1rem, 4vw, 1.625rem); /* 1.625rem = 26px */
+    padding: clamp(10px, 3vw, 14px) clamp(20px, 5vw, 30px);
     background-color: #f05a28;
     color: #ffffff;
     text-decoration: none;
     border-radius: 8px;
     font-weight: 700;
-    text-transform: uppercase; /* Wielkie litery */
-    letter-spacing: 1px;      /* Oddech między literami */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .app-store-button.cta-button:hover {
     opacity: 0.9;
-}
-
-.cta-bottom {
-    text-align: center;
-    margin-top: 2rem;
+    transform: scale(1.02);
 }
 
 .cta-bottom .cta-btn {
@@ -173,12 +159,9 @@ main {
     border-radius: 8px;
     text-decoration: none;
     font-weight: 700;
-    text-transform: uppercase; /* Wielkie litery */
-    letter-spacing: 0.5px;    /* Nieco mniejszy odstęp dla mniejszego przycisku */
-}
-
-.cta-bottom .cta-btn:hover {
-    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
 }
 
 /* ================= SPIS TREŚCI ================= */
@@ -193,7 +176,6 @@ main {
 
 .toc-buttons {
     display: grid;
-    /* To wymusza 5 równej szerokości kolumn */
     grid-template-columns: repeat(5, 1fr); 
     gap: 10px;
     width: 100%;
@@ -203,23 +185,17 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 2px; /* Zmniejszony padding boczny, by tekst miał miejsce */
+    padding: 10px 2px;
     background: rgb(38, 48, 91);
     color: #fff;
     text-decoration: none;
     border-radius: 8px;
     text-align: center;
     font-weight: 600;
-    font-size: 0.8rem; /* Nieco mniejszy font jest kluczowy przy 5 kolumnach na 800px */
+    font-size: 0.8rem;
     transition: background-color 0.2s ease, transform 0.2s ease;
-    /* Te dwie linie poniżej zapobiegają rozpychaniu kolumn przez długie słowa */
     min-width: 0;
     overflow: hidden;
-}
-
-.toc-btn:hover {
-    background: #000;
-    transform: translateY(-2px);
 }
 
 /* Tablety - 3 kolumny */
@@ -233,9 +209,6 @@ main {
 @media (max-width: 600px) {
     .toc-buttons {
         grid-template-columns: repeat(2, 1fr);
-    }
-    .toc-btn {
-        font-size: 0.9rem; /* Na mobile jest więcej miejsca na tekst w 2 kolumnach */
     }
 }
 
@@ -261,49 +234,11 @@ main {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.app-store-button:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
-}
-
-.button-text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.button-text .small {
-    font-size: 0.75rem;
-}
-
-.button-text .large {
-    font-size: 1.25rem;
-    font-weight: 600;
-}
-
 /* ================= FOOTER ================= */
 footer {
-    padding: 30px 0;
+    padding: 40px 0;
     background-color: var(--brand-blue);
     color: #ffffff;
-}
-
-.copyright {
-    color: #ffffff;
-    font-size: 0.8rem;
-    margin: 25px auto 0;
-    text-align: center;
-}
-
-.footer-nav {
-    display: flex;
-    justify-content: flex-end;
-}
-
-footer .container {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
 }
 
 .footer-nav ul {
@@ -311,74 +246,65 @@ footer .container {
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
-.footer-nav a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 0.9rem;
-    transition: opacity 0.3s ease;
+.copyright {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 0.8rem;
+    opacity: 0.8;
 }
 
-.footer-nav a:hover {
-    opacity: 0.7;
+/* ================= BACK TO TOP BUTTON ================= */
+#backToTop {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(34, 48, 91, 0.4);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= MOBILE NAV ================= */
 @media (max-width: 768px) {
-    body { padding-top: 80px; }
-
-    .hero h1 { font-size: 3rem; }
-    .hero h2 { font-size: 2rem; }
-    .hero h3 { font-size: 1.5rem; }
-
-    .main-nav,
-    .footer-nav {
-        justify-content: center;
+    header .container {
+        justify-content: space-between;
     }
 
-    .main-nav ul,
-    .footer-nav ul {
-        gap: 20px;
-        justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
-    body { padding-top: 230px; }
-
-    .hero h1 { font-size: 2.5rem; }
-    .hero h2 { font-size: 1.5rem; }
-    .hero h3 { font-size: 1.2rem; }
-
-    .main-nav ul,
-    .footer-nav ul {
+    .main-nav ul {
         flex-direction: column;
-        align-items: center;
-        gap: 15px;
+        align-items: flex-end;
+        gap: 8px;
+        transform: translateX(-5px);
     }
 }
 
-/* Scroll offset dla fixed header */
+/* Wyczyszczenie nadmiarowych reguł mobilnych, które psuły clamp() */
+@media (max-width: 480px) {
+    /* Usunięte sztywne fonty - clamp() załatwia sprawę */
+    .main-nav ul {
+        font-size: 0.9rem;
+    }
+}
+
+/* Offset dla kotwic */
 article {
     scroll-margin-top: 150px;
 }
 
-@media (max-width: 768px) {
-    article {
-        scroll-margin-top: 150px;
-    }
-}
-
-@media (max-width: 480px) {
-    article {
-        scroll-margin-top: 280px;
-    }
-}
-
-/* ================= WIKI‑STYLE LINKS (Tylko w tekście!) ================= */
-/* Dodanie 'p' sprawia, że przyciski .toc-btn i .cta-btn są bezpieczne */
-.content p a {
+/* Wiki-style links */
+.content p a, .content li a {
     color: rgb(38, 48, 91);            
     text-decoration: none;            
     font-weight: bold;                 
@@ -389,86 +315,6 @@ article {
     transition: background-size 0.2s ease-in-out;
 }
 
-.content p a:hover,
-.content p a:focus {
+.content p a:hover, .content li a:hover {
     background-size: 100% 2px;         
-}
-
-/* Wiki-style links dla list w .content */
-.content li a {
-    color: rgb(38, 48, 91);
-    text-decoration: none;
-    font-weight: bold;
-    background-image: linear-gradient(currentColor, currentColor);
-    background-size: 0% 2px;
-    background-position: 0 100%;
-    background-repeat: no-repeat;
-    transition: background-size 0.2s ease-in-out;
-}
-
-.content li a:hover,
-.content li a:focus {
-    background-size: 100% 2px;
-}
-
-/* ================= BACK TO TOP BUTTON ================= */
-#backToTop {
-    display: none; /* Ukryty na starcie */
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 999;
-    width: 45px;
-    height: 45px;
-    background-color: rgba(34, 48, 91, 0.4); /* Twój brand-blue, półprzezroczysty */
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
-    backdrop-filter: blur(5px); /* Efekt szkła */
-    transition: all 0.3s ease;
-}
-
-#backToTop:hover {
-    background-color: rgba(34, 48, 91, 0.8);
-    transform: scale(1.1);
-}
-
-/* Płynne przewijanie dla całej strony */
-html {
-    scroll-behavior: smooth;
-}
-
-/* ================= MOBILE NAV - MENU W KOLUMNIE DO PRAWEJ ================= */
-@media (max-width: 768px) {
-    header .container {
-        display: flex;
-        justify-content: space-between; /* logo po lewej, menu po prawej */
-        align-items: center;
-        gap: 20px;
-    }
-
-    .main-nav ul {
-        display: flex;
-        flex-direction: column;  /* każdy element w osobnym rzędzie */
-        align-items: flex-end;   /* menu wyjustowane do prawej */
-        gap: 10px;               /* odstęp między linkami */
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        font-size: 1rem;
-
-        /* przesunięcie całego menu w lewo o 10px */
-        transform: translateX(-10px);
-    }
-}
-
-@media (max-width: 480px) {
-    .main-nav ul {
-        gap: 8px;               /* trochę mniejszy odstęp dla małych ekranów */
-        font-size: 1rem;        /* zmniejszenie fontu */
-        transform: translateX(-10px); /* zachowujemy przesunięcie na małym ekranie */
-    }
 }
