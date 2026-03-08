@@ -15,8 +15,8 @@ body {
     background-color: #ffffff;
     color: #000000;
     line-height: 1.6;
-    /* 120px to bezpieczny start na mobile, 180px to max na desktopie */
-    padding-top: clamp(120px, 10vh, 180px); /* Zwiększony padding góry dla oddechu */
+    /* Niezależne ustawienie dla Desktop */
+    padding-top: 180px; 
 }
 
 /* ================= CONTAINER ================= */
@@ -101,7 +101,7 @@ header .container {
     color: rgba(34, 48, 91, 0.85);
 }
 
-/* ================= POMARAŃCZOWE CTA (CENTRALNE) ================= */
+/* ================= POMARAŃCZOWE CTA ================= */
 .cta-center {
     display: flex;
     justify-content: center;
@@ -122,12 +122,7 @@ header .container {
     transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.app-store-button.cta-button:hover {
-    opacity: 0.9;
-    transform: scale(1.02);
-}
-
-/* ================= DOWNLOAD BUTTONS (CZARNE APP STORE / PWA) ================= */
+/* ================= DOWNLOAD BUTTONS (CZARNE) ================= */
 .download {
     text-align: center;
     margin: 60px 0;
@@ -149,11 +144,6 @@ header .container {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.app-store-button:not(.cta-button):hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
-}
-
 .button-text {
     display: flex;
     flex-direction: column;
@@ -161,14 +151,8 @@ header .container {
     line-height: 1.2;
 }
 
-.button-text .small {
-    font-size: 0.75rem;
-}
-
-.button-text .large {
-    font-size: 1.25rem;
-    font-weight: 600;
-}
+.button-text .small { font-size: 0.75rem; }
+.button-text .large { font-size: 1.25rem; font-weight: 600; }
 
 /* ================= CONTENT & TOC ================= */
 .content {
@@ -201,10 +185,9 @@ header .container {
     text-align: center;
     font-weight: 600;
     font-size: 0.8rem;
-    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-/* ================= FOOTER - POPRAWIONY ================= */
+/* ================= FOOTER ================= */
 footer {
     padding: 30px 0;
     background-color: var(--brand-blue);
@@ -224,7 +207,6 @@ footer .container {
     gap: 15px 25px;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 0;
 }
 
 .footer-nav a {
@@ -233,13 +215,11 @@ footer .container {
     font-size: 0.9rem;
     font-weight: 500;
     transition: opacity 0.3s ease;
-    white-space: nowrap;
 }
 
 .copyright {
     width: 100%;
     margin-top: 15px;
-    text-align: center;
     font-size: 0.75rem;
     opacity: 0.5;
 }
@@ -259,7 +239,6 @@ footer .container {
     border-radius: 50%;
     cursor: pointer;
     backdrop-filter: blur(5px);
-    transition: all 0.3s ease;
 }
 
 /* ================= RESPONSIVE ================= */
@@ -268,20 +247,25 @@ footer .container {
 }
 
 @media (max-width: 768px) {
+    /* Niezależne ustawienie dla Mobile */
+    body { padding-top: 145px; }
+
     .main-nav ul {
         flex-direction: column;
         align-items: flex-end;
         gap: 8px;
         transform: translateX(-5px);
     }
-    article { scroll-margin-top: 150px; }
+    
+    /* Niezależny offset dla artykulu na mobile */
+    article { scroll-margin-top: 145px; }
 }
 
 @media (max-width: 600px) {
     .toc-buttons { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Kotwica */
+/* Niezależny offset dla artykulu na desktop */
 article {
     scroll-margin-top: 180px;
 }
