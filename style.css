@@ -15,8 +15,7 @@ body {
     background-color: #ffffff;
     color: #000000;
     line-height: 1.6;
-    /* Zwiększony padding góry: 140px min (mobile), 180px max (desktop) */
-    padding-top: clamp(140px, 15vh, 180px);
+    padding-top: clamp(140px, 15vh, 180px); /* Zwiększony padding góry dla oddechu */
 }
 
 /* ================= CONTAINER ================= */
@@ -53,12 +52,6 @@ header .container {
     color: #ffffff;
 }
 
-.main-nav {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
 .main-nav ul {
     list-style: none;
     display: flex;
@@ -78,13 +71,7 @@ header .container {
     opacity: 0.7;
 }
 
-/* ================= MAIN ================= */
-main {
-    margin-top: 0;
-    padding: 20px 0 60px;
-}
-
-/* Hero */
+/* ================= HERO ================= */
 .hero {
     text-align: center;
     padding: 0 20px;
@@ -107,25 +94,13 @@ main {
 
 .hero h3 {
     font-size: clamp(1.1rem, 4vw, 1.8rem);
-    font-weight: 600; /* Pogrubione dla spójności */
+    font-weight: 600;
     margin-bottom: clamp(25px, 6vw, 40px);
     line-height: 1.4;
     color: rgba(34, 48, 91, 0.85);
 }
 
-/* Content */
-.content {
-    max-width: 800px;
-    margin: 0 auto 60px;
-}
-
-.content p {
-    margin-bottom: 20px;
-    font-size: clamp(1rem, 3.5vw, 1.1rem);
-    line-height: 1.8;
-}
-
-/* ================= CTA ================= */
+/* ================= POMARAŃCZOWE CTA (CENTRALNE) ================= */
 .cta-center {
     display: flex;
     justify-content: center;
@@ -151,27 +126,59 @@ main {
     transform: scale(1.02);
 }
 
-.cta-bottom .cta-btn {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background-color: var(--brand-orange);
-    color: #fff;
+/* ================= DOWNLOAD BUTTONS (CZARNE APP STORE / PWA) ================= */
+.download {
+    text-align: center;
+    margin: 60px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.app-store-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 12px 24px;
     border-radius: 8px;
     text-decoration: none;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* ================= SPIS TREŚCI ================= */
-.sennik-toc {
-    margin-bottom: 40px;
+.app-store-button:not(.cta-button):hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
 }
 
-.sennik-toc h2 {
-    margin-bottom: 15px;
-    font-size: 1.5rem;
+.button-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.2;
+}
+
+.button-text .small {
+    font-size: 0.75rem;
+}
+
+.button-text .large {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* ================= CONTENT & TOC ================= */
+.content {
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.content p {
+    margin-bottom: 20px;
+    font-size: clamp(1rem, 3.5vw, 1.1rem);
+    line-height: 1.8;
 }
 
 .toc-buttons {
@@ -194,11 +201,9 @@ main {
     font-weight: 600;
     font-size: 0.8rem;
     transition: background-color 0.2s ease, transform 0.2s ease;
-    min-width: 0;
-    overflow: hidden;
 }
 
-/* ================= FOOTER ================= */
+/* ================= FOOTER - POPRAWIONY ================= */
 footer {
     padding: 30px 0;
     background-color: var(--brand-blue);
@@ -212,15 +217,10 @@ footer .container {
     text-align: center;
 }
 
-.footer-nav {
-    width: 100%;
-    margin-bottom: 15px;
-}
-
 .footer-nav ul {
     list-style: none;
     display: flex;
-    gap: 15px 25px; /* Odstęp pionowy 15px, poziomy 25px */
+    gap: 15px 25px;
     flex-wrap: wrap;
     justify-content: center;
     padding: 0;
@@ -235,20 +235,15 @@ footer .container {
     white-space: nowrap;
 }
 
-.footer-nav a:hover {
-    opacity: 0.7;
-}
-
 .copyright {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 15px;
     text-align: center;
     font-size: 0.75rem;
     opacity: 0.5;
-    line-height: 1.4;
 }
 
-/* ================= BACK TO TOP BUTTON ================= */
+/* ================= BACK TO TOP ================= */
 #backToTop {
     display: none;
     position: fixed;
@@ -262,8 +257,6 @@ footer .container {
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
     cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
     backdrop-filter: blur(5px);
     transition: all 0.3s ease;
 }
@@ -274,33 +267,22 @@ footer .container {
 }
 
 @media (max-width: 768px) {
-    header .container { justify-content: space-between; }
     .main-nav ul {
         flex-direction: column;
         align-items: flex-end;
         gap: 8px;
         transform: translateX(-5px);
     }
+    article { scroll-margin-top: 150px; }
 }
 
 @media (max-width: 600px) {
     .toc-buttons { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 480px) {
-    .footer-nav ul { gap: 10px 20px; }
-    footer { padding: 20px 0; }
-}
-
-/* Offset dla kotwic dopasowany do nowego paddingu body */
+/* Kotwica */
 article {
     scroll-margin-top: 180px;
-}
-
-@media (max-width: 768px) {
-    article {
-        scroll-margin-top: 150px;
-    }
 }
 
 /* Wiki-style links */
@@ -315,6 +297,6 @@ article {
     transition: background-size 0.2s ease-in-out;
 }
 
-.content p a:hover, .content li a:hover {
+.content p a:hover {
     background-size: 100% 2px;         
 }
