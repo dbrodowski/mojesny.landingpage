@@ -159,29 +159,34 @@ header .container {
 .button-text .small { font-size: 0.75rem; }
 .button-text .large { font-size: 1.25rem; font-weight: 600; }
 
-/* SKALOWANIE NA MOBILE */
+/* SKALOWANIE NA MOBILE - JEDEN RZĄD */
 @media (max-width: 768px) {
     .download {
-        margin: 40px 0; /* Mniejszy margines sekcji na mobile */
-        gap: 12px;      /* Mniejszy odstęp między przyciskami */
+        margin: 40px 0;
+        gap: 8px;           /* Jeszcze mniejszy odstęp, żeby zmieścić oba */
+        flex-wrap: nowrap;  /* WYMUSZA jeden rząd */
+        padding: 0 10px;    /* Delikatny margines boczny, żeby nie dotykały krawędzi ekranu */
     }
 
     .app-store-button {
-        padding: 8px 16px; /* Mniejsze wypełnienie przycisku */
-        gap: 8px;          /* Mniejszy odstęp między ikoną a tekstem */
+        padding: 8px 12px;  /* Węższy padding boczny (z 16px na 12px) */
+        gap: 6px;           /* Mniejszy odstęp między ikoną a tekstem */
+        flex: 1;            /* Sprawia, że oba przyciski mają tę samą szerokość */
+        max-width: 180px;   /* Blokada, żeby nie urosły za bardzo na tabletach */
+        justify-content: center; /* Wyśrodkowanie zawartości wewnątrz przycisku */
     }
 
     .app-store-button svg {
-        width: 20px;       /* Nieco mniejsza ikona */
-        height: 20px;
+        width: 18px;        /* Minimalnie mniejsza ikona, by zyskać miejsce */
+        height: 18px;
     }
 
     .button-text .small { 
-        font-size: 0.65rem; /* Mniejszy napis górny */
+        font-size: 0.6rem; 
     }
     
     .button-text .large { 
-        font-size: 1rem;    /* Mniejszy napis dolny (z 1.25rem na 1.0rem) */
+        font-size: 0.9rem;  /* Zmniejszone o 0.1rem, by zmieścić tekst w jednej linii */
     }
 }
 
