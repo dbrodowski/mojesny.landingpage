@@ -97,7 +97,7 @@ header .container {
     font-weight: 800;
     margin-bottom: clamp(25px, 6vw, 40px);
     line-height: 1.4;
-    color: rgba(34, 48, 91, 0.85);
+    
 }
 
 /* ================= POMARAŃCZOWE CTA ================= */
