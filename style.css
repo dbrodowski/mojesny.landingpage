@@ -85,25 +85,33 @@ main {
 /* Hero */
 .hero {
     text-align: center;
+    padding: 0 20px; /* Dodajemy lekki margines boczny, żeby tekst nie dotykał krawędzi na mobile */
     margin-bottom: 40px;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    /* min: 2.2rem na mobile, max: 3.5rem na desktop */
+    font-size: clamp(2.2rem, 8vw, 3.5rem); 
     font-weight: 700;
     margin-bottom: 10px;
+    line-height: 1.1; /* Przy tak dużym font-size mniejszy odstęp między liniami wygląda lepiej */
 }
 
 .hero h2 {
-    font-size: 2.5rem;
+    /* min: 1.6rem na mobile, max: 2.5rem na desktop */
+    font-size: clamp(1.6rem, 6vw, 2.5rem);
     font-weight: 600;
     margin-bottom: 15px;
+    line-height: 1.2;
 }
 
 .hero h3 {
-    font-size: 1.8rem;
+    /* min: 1.2rem na mobile, max: 1.8rem na desktop */
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
     font-weight: 400;
     margin-bottom: 40px;
+    line-height: 1.4;
+    color: rgba(34, 48, 91, 0.8); /* Lekko przygaszony kolor dla H3 ładnie buduje hierarchię */
 }
 
 /* Content */
