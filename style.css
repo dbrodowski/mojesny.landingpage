@@ -15,7 +15,8 @@ body {
     background-color: #ffffff;
     color: #000000;
     line-height: 1.6;
-    padding-top: clamp(180px, 15vh, 180px); /* Zwiększony padding góry dla oddechu */
+    /* 120px to bezpieczny start na mobile, 180px to max na desktopie */
+    padding-top: clamp(120px, 10vh, 180px); /* Zwiększony padding góry dla oddechu */
 }
 
 /* ================= CONTAINER ================= */
