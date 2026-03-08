@@ -234,44 +234,48 @@ main {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* ================= FOOTER ================= */
+/* ================= FOOTER - POPRAWKA KOMPAKTOWOŚCI ================= */
 footer {
-    padding: 40px 0;
+    padding: clamp(20px, 5vw, 40px) 0; /* Mniejszy padding na mobile */
     background-color: var(--brand-blue);
     color: #ffffff;
-}
-
-footer .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centrujemy wszystko w stopce */
 }
 
 .footer-nav ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 20px; /* Zmniejszony z 30px na 20px dla lepszego dopasowania */
     flex-wrap: wrap;
     justify-content: center;
+    padding: 0;
 }
 
 .footer-nav a {
-    text-decoration: none; /* Usuwamy standardowe podkreślenie */
+    text-decoration: none;
     color: #ffffff;
     font-size: 0.9rem;
     font-weight: 500;
-    transition: opacity 0.3s ease; /* Ten sam efekt co w górnym menu */
+    transition: opacity 0.3s ease;
+    white-space: nowrap; /* Zapobiega łamaniu pojedynczego linku na dwie linie */
 }
 
-.footer-nav a:hover {
-    opacity: 0.7; /* Efekt po najechaniu */
-}
+/* Specjalna poprawka dla bardzo małych ekranów (mobile) */
+@media (max-width: 480px) {
+    .footer-nav ul {
+        gap: clamp(10px, 3vw, 15px); /* Jeszcze mniejszy odstęp na małych telefonach */
+    }
+    
+    .footer-nav a {
+        font-size: 0.85rem; /* Minimalnie mniejszy font, by wszystko weszło w rząd */
+    }
 
-.copyright {
-    margin-top: 25px;
-    text-align: center;
-    font-size: 0.8rem;
-    opacity: 0.6; /* Lekko przygaszony tekst praw autorskich wygląda profesjonalniej */
+    footer {
+        padding: 25px 0; /* Jeszcze niższa stopka */
+    }
+
+    .copyright {
+        margin-top: 15px; /* Mniejszy odstęp nad prawami autorskimi */
+    }
 }
 
 /* ================= BACK TO TOP BUTTON ================= */
