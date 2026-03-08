@@ -166,8 +166,9 @@ header .container {
 }
 
 .content p {
-    margin-bottom: 20px;
-    font-size: clamp(1rem, 3.5vw, 1.1rem);
+    margin-bottom: 22px;
+    /* Zwiększone: min 1.1rem, płynnie, max 1.3rem */
+    font-size: clamp(1.1rem, 3.8vw, 1.3rem); 
     line-height: 1.8;
 }
 
@@ -214,9 +215,9 @@ header .container {
 }
 
 .content li {
-    margin-bottom: 8px;     /* Odstęp między punktami */
-    padding-left: 5px;      /* Mały odstęp od samej kropki */
-    font-size: clamp(1rem, 3.5vw, 1.1rem); /* Spójna wielkość z tekstem p */
+    margin-bottom: 12px;
+    /* Zwiększone: min 1.1rem, płynnie, max 1.3rem */
+    font-size: clamp(1.1rem, 3.8vw, 1.3rem); 
     line-height: 1.8;
 }
 
