@@ -279,7 +279,7 @@ footer .container {
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-    body { padding-top: 150px; }
+    body { padding-top: 185px; }
     
     .main-nav ul {
         flex-direction: column;
