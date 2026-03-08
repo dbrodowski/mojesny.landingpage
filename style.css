@@ -7,6 +7,7 @@
 
 :root {
     --brand-blue: rgb(34, 48, 91);
+    --brand-orange: #f05a28;
 }
 
 body {
@@ -14,8 +15,8 @@ body {
     background-color: #ffffff;
     color: #000000;
     line-height: 1.6;
-    /* Elastyczny padding góry, aby menu nie zasłaniało Hero na różnych ekranach */
-    padding-top: clamp(100px, 15vh, 140px);
+    /* Zwiększony padding góry: 140px min (mobile), 180px max (desktop) */
+    padding-top: clamp(140px, 15vh, 180px);
 }
 
 /* ================= CONTAINER ================= */
@@ -99,14 +100,14 @@ main {
 
 .hero h2 {
     font-size: clamp(1.4rem, 6vw, 2.5rem);
-    font-weight: 700; /* Pogrubione dla spójności */
+    font-weight: 700;
     margin-bottom: 15px;
     line-height: 1.2;
 }
 
 .hero h3 {
     font-size: clamp(1.1rem, 4vw, 1.8rem);
-    font-weight: 600; /* Pogrubione zgodnie z prośbą */
+    font-weight: 600; /* Pogrubione dla spójności */
     margin-bottom: clamp(25px, 6vw, 40px);
     line-height: 1.4;
     color: rgba(34, 48, 91, 0.85);
@@ -132,10 +133,9 @@ main {
 }
 
 .app-store-button.cta-button {
-    /* Responsywna wielkość przycisku */
-    font-size: clamp(1.1rem, 4vw, 1.625rem); /* 1.625rem = 26px */
+    font-size: clamp(1.1rem, 4vw, 1.625rem); 
     padding: clamp(10px, 3vw, 14px) clamp(20px, 5vw, 30px);
-    background-color: #f05a28;
+    background-color: var(--brand-orange);
     color: #ffffff;
     text-decoration: none;
     border-radius: 8px;
@@ -154,7 +154,7 @@ main {
 .cta-bottom .cta-btn {
     display: inline-block;
     padding: 0.8rem 1.5rem;
-    background-color: #f05a28;
+    background-color: var(--brand-orange);
     color: #fff;
     border-radius: 8px;
     text-decoration: none;
@@ -186,7 +186,7 @@ main {
     align-items: center;
     justify-content: center;
     padding: 10px 2px;
-    background: rgb(38, 48, 91);
+    background: var(--brand-blue);
     color: #fff;
     text-decoration: none;
     border-radius: 8px;
@@ -198,43 +198,7 @@ main {
     overflow: hidden;
 }
 
-/* Tablety - 3 kolumny */
-@media (max-width: 850px) {
-    .toc-buttons {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Mobile – 2 kolumny */
-@media (max-width: 600px) {
-    .toc-buttons {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* ================= DOWNLOAD BUTTONS ================= */
-.download {
-    text-align: center;
-    margin: 60px 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.app-store-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background-color: #000000;
-    color: #ffffff;
-    padding: 12px 24px;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* ================= FOOTER - FINALNA WERSJA ================= */
+/* ================= FOOTER ================= */
 footer {
     padding: 30px 0;
     background-color: var(--brand-blue);
@@ -244,19 +208,19 @@ footer {
 footer .container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centruje wszystko w poziomie */
+    align-items: center; 
     text-align: center;
 }
 
 .footer-nav {
     width: 100%;
-    margin-bottom: 15px; /* Odstęp między menu a copyright */
+    margin-bottom: 15px;
 }
 
 .footer-nav ul {
     list-style: none;
     display: flex;
-    gap: 15px 25px; /* Pierwsza wartość to odstęp między rzędami, druga między linkami */
+    gap: 15px 25px; /* Odstęp pionowy 15px, poziomy 25px */
     flex-wrap: wrap;
     justify-content: center;
     padding: 0;
@@ -278,21 +242,10 @@ footer .container {
 .copyright {
     width: 100%;
     margin-top: 10px;
-    text-align: center; /* Wymuszenie środkowania tekstu */
-    font-size: 0.75rem; /* Mniejsza czcionka niż menu */
-    opacity: 0.5; /* Delikatne przygaszenie, by nie odciągać uwagi od menu */
+    text-align: center;
+    font-size: 0.75rem;
+    opacity: 0.5;
     line-height: 1.4;
-}
-
-/* Poprawka mobilna dla ciasnej stopki */
-@media (max-width: 480px) {
-    .footer-nav ul {
-        gap: 10px 20px; /* Jeszcze mniejsze odstępy na bardzo małych ekranach */
-    }
-    
-    footer {
-        padding: 20px 0;
-    }
 }
 
 /* ================= BACK TO TOP BUTTON ================= */
@@ -315,12 +268,13 @@ footer .container {
     transition: all 0.3s ease;
 }
 
-/* ================= MOBILE NAV ================= */
-@media (max-width: 768px) {
-    header .container {
-        justify-content: space-between;
-    }
+/* ================= RESPONSIVE ================= */
+@media (max-width: 850px) {
+    .toc-buttons { grid-template-columns: repeat(3, 1fr); }
+}
 
+@media (max-width: 768px) {
+    header .container { justify-content: space-between; }
     .main-nav ul {
         flex-direction: column;
         align-items: flex-end;
@@ -329,22 +283,29 @@ footer .container {
     }
 }
 
-/* Wyczyszczenie nadmiarowych reguł mobilnych, które psuły clamp() */
-@media (max-width: 480px) {
-    /* Usunięte sztywne fonty - clamp() załatwia sprawę */
-    .main-nav ul {
-        font-size: 0.9rem;
-    }
+@media (max-width: 600px) {
+    .toc-buttons { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Offset dla kotwic */
+@media (max-width: 480px) {
+    .footer-nav ul { gap: 10px 20px; }
+    footer { padding: 20px 0; }
+}
+
+/* Offset dla kotwic dopasowany do nowego paddingu body */
 article {
-    scroll-margin-top: 150px;
+    scroll-margin-top: 180px;
+}
+
+@media (max-width: 768px) {
+    article {
+        scroll-margin-top: 150px;
+    }
 }
 
 /* Wiki-style links */
 .content p a, .content li a {
-    color: rgb(38, 48, 91);            
+    color: var(--brand-blue);            
     text-decoration: none;            
     font-weight: bold;                 
     background-image: linear-gradient(currentColor, currentColor);
