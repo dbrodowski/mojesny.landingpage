@@ -207,6 +207,19 @@ header .container {
     font-size: 0.8rem;
 }
 
+/* Poprawka dla list wypunktowanych */
+.content ul {
+    margin-left: 25px;      /* Wcięcie całej listy */
+    margin-bottom: 20px;    /* Odstęp od następnego akapitu */
+}
+
+.content li {
+    margin-bottom: 8px;     /* Odstęp między punktami */
+    padding-left: 5px;      /* Mały odstęp od samej kropki */
+    font-size: clamp(1rem, 3.5vw, 1.1rem); /* Spójna wielkość z tekstem p */
+    line-height: 1.8;
+}
+
 /* ================= FOOTER ================= */
 footer {
     padding: 30px 0;
