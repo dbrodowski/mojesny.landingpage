@@ -15,7 +15,6 @@ body {
     background-color: #ffffff;
     color: #000000;
     line-height: 1.6;
-    /* Niezależne ustawienie dla Desktop */
     padding-top: 180px; 
 }
 
@@ -101,17 +100,14 @@ header .container {
     color: rgba(34, 48, 91, 0.85);
 }
 
-/* ================= POMARAŃCZOWE CTA (GŁÓWNE I W ARTYKUŁACH) ================= */
+/* ================= POMARAŃCZOWE CTA ================= */
 .cta-center, .cta-bottom {
     display: flex;
     justify-content: center;
     margin: 10px 0 24px;
 }
 
-/* Wspólne formatowanie dla obu typów przycisków CTA */
 .app-store-button.cta-button, .cta-bottom .cta-btn {
-    font-size: clamp(1.1rem, 4vw, 1.625rem); 
-    padding: clamp(10px, 3vw, 14px) clamp(20px, 5vw, 30px);
     background-color: var(--brand-orange);
     color: #ffffff;
     text-decoration: none;
@@ -122,6 +118,9 @@ header .container {
     text-align: center;
     transition: transform 0.2s ease, opacity 0.2s ease;
     display: inline-block;
+    /* Rozmiar dla CTA */
+    font-size: 1.1rem;
+    padding: 12px 24px;
 }
 
 .app-store-button.cta-button:hover, .cta-bottom .cta-btn:hover {
@@ -171,6 +170,22 @@ header .container {
     margin-bottom: 20px;
     font-size: clamp(1rem, 3.5vw, 1.1rem);
     line-height: 1.8;
+}
+
+/* Wiki-style links (PRZYWRÓCONE) */
+.content p a, .content li a {
+    color: var(--brand-blue);            
+    text-decoration: none;            
+    font-weight: bold;                 
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 2px;           
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease-in-out;
+}
+
+.content p a:hover, .content li a:hover {
+    background-size: 100% 2px;         
 }
 
 .toc-buttons {
@@ -231,64 +246,18 @@ footer .container {
     opacity: 0.5;
 }
 
-/* ================= BACK TO TOP ================= */
-#backToTop {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 999;
-    width: 45px;
-    height: 45px;
-    background-color: rgba(34, 48, 91, 0.4);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    cursor: pointer;
-    backdrop-filter: blur(5px);
-}
-
 /* ================= RESPONSIVE ================= */
-@media (max-width: 850px) {
-    .toc-buttons { grid-template-columns: repeat(3, 1fr); }
-}
-
 @media (max-width: 768px) {
-    /* Niezależne ustawienie dla Mobile */
     body { padding-top: 185px; }
-
     .main-nav ul {
         flex-direction: column;
         align-items: flex-end;
         gap: 8px;
         transform: translateX(-5px);
     }
-    
-    /* Niezależny offset dla artykulu na mobile */
     article { scroll-margin-top: 145px; }
 }
 
-@media (max-width: 600px) {
-    .toc-buttons { grid-template-columns: repeat(2, 1fr); }
-}
-
-/* Niezależny offset dla artykulu na desktop */
 article {
     scroll-margin-top: 180px;
-}
-
-/* Wiki-style links */
-.content p a, .content li a {
-    color: var(--brand-blue);            
-    text-decoration: none;            
-    font-weight: bold;                 
-    background-image: linear-gradient(currentColor, currentColor);
-    background-size: 0% 2px;           
-    background-position: 0 100%;
-    background-repeat: no-repeat;
-    transition: background-size 0.2s ease-in-out;
-}
-
-.content p a:hover {
-    background-size: 100% 2px;         
 }
