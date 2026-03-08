@@ -234,17 +234,29 @@ main {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* ================= FOOTER - POPRAWKA KOMPAKTOWOŚCI ================= */
+/* ================= FOOTER - FINALNA WERSJA ================= */
 footer {
-    padding: clamp(20px, 5vw, 40px) 0; /* Mniejszy padding na mobile */
+    padding: 30px 0;
     background-color: var(--brand-blue);
     color: #ffffff;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centruje wszystko w poziomie */
+    text-align: center;
+}
+
+.footer-nav {
+    width: 100%;
+    margin-bottom: 15px; /* Odstęp między menu a copyright */
 }
 
 .footer-nav ul {
     list-style: none;
     display: flex;
-    gap: 20px; /* Zmniejszony z 30px na 20px dla lepszego dopasowania */
+    gap: 15px 25px; /* Pierwsza wartość to odstęp między rzędami, druga między linkami */
     flex-wrap: wrap;
     justify-content: center;
     padding: 0;
@@ -256,25 +268,30 @@ footer {
     font-size: 0.9rem;
     font-weight: 500;
     transition: opacity 0.3s ease;
-    white-space: nowrap; /* Zapobiega łamaniu pojedynczego linku na dwie linie */
+    white-space: nowrap;
 }
 
-/* Specjalna poprawka dla bardzo małych ekranów (mobile) */
+.footer-nav a:hover {
+    opacity: 0.7;
+}
+
+.copyright {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center; /* Wymuszenie środkowania tekstu */
+    font-size: 0.75rem; /* Mniejsza czcionka niż menu */
+    opacity: 0.5; /* Delikatne przygaszenie, by nie odciągać uwagi od menu */
+    line-height: 1.4;
+}
+
+/* Poprawka mobilna dla ciasnej stopki */
 @media (max-width: 480px) {
     .footer-nav ul {
-        gap: clamp(10px, 3vw, 15px); /* Jeszcze mniejszy odstęp na małych telefonach */
+        gap: 10px 20px; /* Jeszcze mniejsze odstępy na bardzo małych ekranach */
     }
     
-    .footer-nav a {
-        font-size: 0.85rem; /* Minimalnie mniejszy font, by wszystko weszło w rząd */
-    }
-
     footer {
-        padding: 25px 0; /* Jeszcze niższa stopka */
-    }
-
-    .copyright {
-        margin-top: 15px; /* Mniejszy odstęp nad prawami autorskimi */
+        padding: 20px 0;
     }
 }
 
