@@ -118,7 +118,6 @@ header .container {
     text-align: center;
     transition: transform 0.2s ease, opacity 0.2s ease;
     display: inline-block;
-    /* Rozmiar dla CTA */
     font-size: 1.1rem;
     padding: 12px 24px;
 }
@@ -172,7 +171,6 @@ header .container {
     line-height: 1.8;
 }
 
-/* Wiki-style links (PRZYWRÓCONE) */
 .content p a, .content li a {
     color: var(--brand-blue);            
     text-decoration: none;            
@@ -249,12 +247,19 @@ footer .container {
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
     body { padding-top: 185px; }
+    
     .main-nav ul {
         flex-direction: column;
         align-items: flex-end;
         gap: 8px;
         transform: translateX(-5px);
     }
+    
+    /* TU BYŁ BŁĄD - Wymuszam 2 kolumny, żeby litery były czytelne i w 2 rzędach */
+    .toc-buttons {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
     article { scroll-margin-top: 145px; }
 }
 
