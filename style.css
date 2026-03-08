@@ -129,35 +129,61 @@ header .container {
 
 /* ================= DOWNLOAD BUTTONS (CZARNE) ================= */
 .download {
-text-align: center;
-margin: 60px 0;
-display: flex;
-justify-content: center;
-gap: 20px;
-flex-wrap: wrap;
+    text-align: center;
+    margin: 60px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .app-store-button {
-display: inline-flex;
-align-items: center;
-gap: 12px;
-background-color: #000000;
-color: #ffffff;
-padding: 12px 24px;
-border-radius: 8px;
-text-decoration: none;
-transition: transform 0.3s ease, opacity 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .button-text {
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-line-height: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.2;
 }
 
 .button-text .small { font-size: 0.75rem; }
 .button-text .large { font-size: 1.25rem; font-weight: 600; }
+
+/* SKALOWANIE NA MOBILE */
+@media (max-width: 768px) {
+    .download {
+        margin: 40px 0; /* Mniejszy margines sekcji na mobile */
+        gap: 12px;      /* Mniejszy odstęp między przyciskami */
+    }
+
+    .app-store-button {
+        padding: 8px 16px; /* Mniejsze wypełnienie przycisku */
+        gap: 8px;          /* Mniejszy odstęp między ikoną a tekstem */
+    }
+
+    .app-store-button svg {
+        width: 20px;       /* Nieco mniejsza ikona */
+        height: 20px;
+    }
+
+    .button-text .small { 
+        font-size: 0.65rem; /* Mniejszy napis górny */
+    }
+    
+    .button-text .large { 
+        font-size: 1rem;    /* Mniejszy napis dolny (z 1.25rem na 1.0rem) */
+    }
+}
 
 /* ================= CONTENT & TOC ================= */
 .content {
