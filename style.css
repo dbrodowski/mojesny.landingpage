@@ -101,14 +101,15 @@ header .container {
     color: rgba(34, 48, 91, 0.85);
 }
 
-/* ================= POMARAŃCZOWE CTA ================= */
-.cta-center {
+/* ================= POMARAŃCZOWE CTA (GŁÓWNE I W ARTYKUŁACH) ================= */
+.cta-center, .cta-bottom {
     display: flex;
     justify-content: center;
     margin: 10px 0 24px;
 }
 
-.app-store-button.cta-button {
+/* Wspólne formatowanie dla obu typów przycisków CTA */
+.app-store-button.cta-button, .cta-bottom .cta-btn {
     font-size: clamp(1.1rem, 4vw, 1.625rem); 
     padding: clamp(10px, 3vw, 14px) clamp(20px, 5vw, 30px);
     background-color: var(--brand-orange);
@@ -120,6 +121,12 @@ header .container {
     letter-spacing: 1px;
     text-align: center;
     transition: transform 0.2s ease, opacity 0.2s ease;
+    display: inline-block;
+}
+
+.app-store-button.cta-button:hover, .cta-bottom .cta-btn:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
 }
 
 /* ================= DOWNLOAD BUTTONS (CZARNE) ================= */
