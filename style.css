@@ -166,10 +166,10 @@ header .container {
 }
 
 .content p {
-    margin-bottom: 20px;
-    /* Zwiększone: min 1.1rem, płynnie, max 1.3rem */
-    font-size: clamp(1.1rem, 3.8vw, 1.3rem); 
-    line-height: 1.8;
+    margin-bottom: 18px; /* Nieco mniejszy margines pod akapitem */
+    /* Mobile: startuje od 1.25rem (ok. 20px), Desktop: max 1.35rem (ok. 22px) */
+    font-size: clamp(1.25rem, 4vw, 1.35rem); 
+    line-height: 1.5; /* Zmniejszone z 1.8 na 1.5 - tekst jest bardziej zwarty */
 }
 
 .content p a, .content li a {
@@ -215,10 +215,9 @@ header .container {
 }
 
 .content li {
-    margin-bottom: 12px;
-    /* Zwiększone: min 1.1rem, płynnie, max 1.3rem */
-    font-size: clamp(1.1rem, 3.8vw, 1.3rem); 
-    line-height: 1.8;
+    margin-bottom: 8px; /* Mniejszy odstęp między punktami listy */
+    font-size: clamp(1.25rem, 4vw, 1.35rem); 
+    line-height: 1.4; /* Jeszcze mniejszy dla list, żeby punkty trzymały się "razem" */
 }
 
 /* ================= FOOTER ================= */
