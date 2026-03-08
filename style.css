@@ -94,7 +94,7 @@ header .container {
 
 .hero h3 {
     font-size: clamp(1.1rem, 4vw, 1.8rem);
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: clamp(25px, 6vw, 40px);
     line-height: 1.4;
     color: rgba(34, 48, 91, 0.85);
