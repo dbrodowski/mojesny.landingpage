@@ -293,7 +293,7 @@ footer .container {
         grid-template-columns: repeat(2, 1fr) !important;
     }
 
-    article { scroll-margin-top: 220px !important; }
+    article { scroll-margin-top: 200px !important; }
 }
 
 article {
