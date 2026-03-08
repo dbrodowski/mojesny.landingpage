@@ -166,7 +166,7 @@ header .container {
 }
 
 .content p {
-    margin-bottom: 22px;
+    margin-bottom: 20px;
     /* Zwiększone: min 1.1rem, płynnie, max 1.3rem */
     font-size: clamp(1.1rem, 3.8vw, 1.3rem); 
     line-height: 1.8;
