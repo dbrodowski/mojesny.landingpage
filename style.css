@@ -248,7 +248,7 @@ footer .container {
 
 @media (max-width: 768px) {
     /* Niezależne ustawienie dla Mobile */
-    body { padding-top: 145px; }
+    body { padding-top: 160px; }
 
     .main-nav ul {
         flex-direction: column;
