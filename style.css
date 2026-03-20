@@ -330,3 +330,22 @@ footer .container {
 article {
     scroll-margin-top: 120px;
 }
+
+/* Styl dla Twojego logo SVG */
+.site-logo {
+    display: block;
+    width: 100px;
+    /* Rozmiar na komputerze */
+    height: auto;
+    /* Zachowuje proporcje logo */
+    transition: width 0.3s ease;
+    /* Płynne przejście przy zmianie okna */
+}
+
+/* Styl dla telefonów i małych tabletów (poniżej 768px szerokości) */
+@media (max-width: 768px) {
+    .site-logo {
+        width: 60px;
+        /* Rozmiar na telefonie (możesz zmienić na 50px) */
+    }
+}
