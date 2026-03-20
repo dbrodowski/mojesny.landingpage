@@ -199,20 +199,49 @@
 </script>
 
     <script>
-        setTimeout(() => {
-            const script = document.createElement('script');
-            script.src = "https://www.googletagmanager.com/gtag/js?id=G-XSSD2BM25E";
+(function() {
+    var analyticsLoaded = false;
+    var trackingId = 'G-XSSD2BM25E';
+
+    function loadAnalytics() {
+        if (!analyticsLoaded) {
+            analyticsLoaded = true;
+
+            // 1. Dodanie skryptu GA do nagłówka
+            var script = document.createElement('script');
+            script.src = "https://www.googletagmanager.com/gtag/js?id=" + trackingId;
             script.async = true;
             document.head.appendChild(script);
 
-            script.onload = () => {
+            // 2. Inicjalizacja GA
+            script.onload = function() {
                 window.dataLayer = window.dataLayer || [];
-                function gtag() { dataLayer.push(arguments); }
+                function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', 'G-XSSD2BM25E');
+                gtag('config', trackingId);
             };
-        }, 4000);
-    </script>
+
+            // Usunięcie nasłuchiwania zdarzeń
+            removeListeners();
+        }
+    }
+
+    function removeListeners() {
+        ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(function(ev) {
+            window.removeEventListener(ev, loadAnalytics);
+        });
+    }
+
+    // Odpalenie przy jakiejkolwiek akcji użytkownika
+    ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(function(ev) {
+        window.addEventListener(ev, loadAnalytics, {passive: true});
+    });
+
+    // Failsafe: Jeśli user nie wykona akcji, ładujemy po 2s (bezpieczny kompromis dla PSI)
+    setTimeout(loadAnalytics, 2000);
+})();
+</script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sennik polski - znaczenie snów. Sprawdź swoje sny w MojeSny.">

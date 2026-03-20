@@ -1,24 +1,51 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-        <script>
-  // Poczekaj 1 sekundę od załadowania strony
-  setTimeout(() => {
-    // Asynchronicznie dodaj skrypt GA
-    const script = document.createElement('script');
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-XSSD2BM25E";
-    script.async = true;
-    document.head.appendChild(script);
 
-    // Inicjalizacja GA po wczytaniu skryptu
-    script.onload = () => {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XSSD2BM25E');
-    };
-  }, 4000); // 4000ms = 4 sekundy
+        <script>
+(function() {
+    var analyticsLoaded = false;
+    var trackingId = 'G-XSSD2BM25E';
+
+    function loadAnalytics() {
+        if (!analyticsLoaded) {
+            analyticsLoaded = true;
+
+            // 1. Dodanie skryptu GA do nagłówka
+            var script = document.createElement('script');
+            script.src = "https://www.googletagmanager.com/gtag/js?id=" + trackingId;
+            script.async = true;
+            document.head.appendChild(script);
+
+            // 2. Inicjalizacja GA
+            script.onload = function() {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', trackingId);
+            };
+
+            // Usunięcie nasłuchiwania zdarzeń
+            removeListeners();
+        }
+    }
+
+    function removeListeners() {
+        ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(function(ev) {
+            window.removeEventListener(ev, loadAnalytics);
+        });
+    }
+
+    // Odpalenie przy jakiejkolwiek akcji użytkownika
+    ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(function(ev) {
+        window.addEventListener(ev, loadAnalytics, {passive: true});
+    });
+
+    // Failsafe: Jeśli user nie wykona akcji, ładujemy po 2s (bezpieczny kompromis dla PSI)
+    setTimeout(loadAnalytics, 2000);
+})();
 </script>
+
         <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, follow">
