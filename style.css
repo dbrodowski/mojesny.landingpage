@@ -20,14 +20,6 @@ body {
     color: #000000;
     line-height: 1.6;
     padding-top: 160px;
-    min-height: 100vh;
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex: 1;
 }
 
 /* ================= CONTAINER ================= */
@@ -269,7 +261,6 @@ footer {
     padding-bottom: calc(30px + env(safe-area-inset-bottom));
     background-color: var(--brand-blue);
     color: #ffffff;
-    flex-shrink: 0;
 }
 
 footer .container {
