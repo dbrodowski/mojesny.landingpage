@@ -35,10 +35,13 @@
         banner.className = 'cookie-banner';
         banner.setAttribute('role', 'dialog');
         banner.setAttribute('aria-live', 'polite');
+        // Łączymy dialog z ID tekstu poniżej:
+        banner.setAttribute('aria-labelledby', 'cookie-banner-title'); 
 
         banner.innerHTML = [
             '<div class="cookie-banner__inner">',
-            '  <p class="cookie-banner__text">Używamy plików cookie, aby poprawić działanie strony. Możesz zaakceptować lub odrzucić cookies.</p>',
+            // Dodajemy ID do tekstu, który ma być "nazwą" okna:
+            '  <p id="cookie-banner-title" class="cookie-banner__text">Używamy plików cookie, aby poprawić działanie strony. Możesz zaakceptować lub odrzucić cookies.</p>',
             '  <div class="cookie-banner__actions">',
             '    <button type="button" class="cookie-banner__btn" data-consent="accepted">Akceptuję</button>',
             '    <button type="button" class="cookie-banner__btn" data-consent="rejected">Odrzucam</button>',
