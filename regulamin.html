@@ -312,39 +312,5 @@ gtag('consent', 'default', {
         })();
     </script>
 
-    <script defer>
-document.addEventListener('DOMContentLoaded', function() {
-    if (window.innerWidth > 768) return;
-
-    const footer = document.querySelector('footer');
-    if (!footer) return;
-
-    footer.style.position = 'fixed';
-    footer.style.left = '0';
-    footer.style.bottom = '0';
-    footer.style.width = '100%';
-    footer.style.transform = 'translateY(100%)';
-    footer.style.transition = 'transform 0.3s ease';
-    footer.style.zIndex = '100';
-
-    function revealFooter() {
-        // dynamiczne pobieranie wysokości viewportu
-        const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
-        const scrollPos = window.scrollY + vh;
-        const pageHeight = document.documentElement.scrollHeight;
-
-        if (scrollPos >= pageHeight - 10) {
-            footer.style.transform = 'translateY(0)';
-        } else {
-            footer.style.transform = 'translateY(100%)';
-        }
-    }
-
-    window.addEventListener('scroll', revealFooter, { passive: true });
-    window.addEventListener('resize', revealFooter);
-    revealFooter();
-});
-</script>
-
 </body>
 </html>
