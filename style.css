@@ -213,6 +213,10 @@ header .container {
     margin-top: 12px;
 }
 
+.qr-mobile-only {
+    display: none;
+}
+
 .content p a, .content li a {
     color: var(--brand-blue);            
     text-decoration: none;            
@@ -413,8 +417,12 @@ footer .container {
 @media (max-width: 768px) {
     body { padding-top: 90px; }
 
-    .qr-note {
+    .qr-desktop-only {
         display: none;
+    }
+
+    .qr-mobile-only {
+        display: inline;
     }
 
     .hamburger {
