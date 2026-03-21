@@ -302,6 +302,18 @@ gtag('consent', 'default', {
             margin-top: 4rem;
             /* 2x h1 */
         }
+
+        @media (min-width: 769px) {
+            .cta-bottom .cta-btn { display: none; }
+            .cta-bottom::before {
+                content: '';
+                display: block;
+                width: 50px;
+                height: 50px;
+                background: url('qr-code.svg') no-repeat center / contain;
+                margin: 0 auto;
+            }
+        }
     </style>
 
 </head>
