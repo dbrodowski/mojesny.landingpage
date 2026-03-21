@@ -474,16 +474,8 @@ article {
 
 /* Styl dla telefonów i małych tabletów (poniżej 768px szerokości) */
 @media (max-width: 768px) {
-    footer {
-        position: sticky;
-        bottom: 0;
-        width: 100%;
-        z-index: 100;
-        padding-bottom: calc(30px + env(safe-area-inset-bottom));
-        background-color: var(--brand-blue);
-    }
-
-    main {
-        padding-bottom: 80px; /* zostaw miejsce na footer */
+    .site-logo {
+        width: 60px;
+        /* Rozmiar na telefonie (możesz zmienić na 50px) */
     }
 }
