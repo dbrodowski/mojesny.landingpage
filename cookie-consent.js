@@ -1,7 +1,9 @@
 (function () {
-    var storageKey = 'mojesny_cookie_consent';
+    // KLUCZOWE: Zmieniamy na ten sam klucz, którego używa GA4
+    var storageKey = 'cookie-consent'; 
     var existingDecision = localStorage.getItem(storageKey);
 
+    // Jeśli user już wybrał (accepted/rejected), nie pokazuj banera
     if (existingDecision === 'accepted' || existingDecision === 'rejected') {
         return;
     }
@@ -13,7 +15,18 @@
     }
 
     function saveDecision(value, banner) {
-        localStorage.setItem(storageKey, value);
+        // Zapisujemy decyzję pod wspólnym kluczem
+        localStorage.setItem(storageKey, value); 
+        
+        // Komunikacja ze skryptem GA4
+        if (value === 'accepted' && typeof window.acceptAllCookies === 'function') {
+            window.acceptAllCookies();
+        }
+        
+        if (value === 'rejected' && typeof window.rejectAllCookies === 'function') {
+            window.rejectAllCookies();
+        }
+
         closeBanner(banner);
     }
 
@@ -22,7 +35,6 @@
         banner.className = 'cookie-banner';
         banner.setAttribute('role', 'dialog');
         banner.setAttribute('aria-live', 'polite');
-        banner.setAttribute('aria-label', 'Baner zgody na pliki cookie');
 
         banner.innerHTML = [
             '<div class="cookie-banner__inner">',
@@ -36,14 +48,10 @@
 
         banner.addEventListener('click', function (event) {
             var target = event.target;
-            if (!(target instanceof HTMLElement)) {
-                return;
-            }
+            if (!(target instanceof HTMLElement)) return;
 
             var decision = target.getAttribute('data-consent');
-            if (!decision) {
-                return;
-            }
+            if (!decision) return;
 
             saveDecision(decision, banner);
         });

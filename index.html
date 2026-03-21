@@ -25,34 +25,30 @@
 </script>
 
         <script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
+
+// Consent default (MUSI być pierwsze)
+gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    wait_for_update: 500
+});
+
 (function() {
     var trackingId = 'G-XSSD2BM25E';
-    var loaded = false;
+    var scriptLoaded = false;
 
-    // --- Consent Mode (default: denied) ---
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    window.gtag = gtag;
-
-    gtag('consent', 'default', {
-        ad_storage: 'denied',
-        analytics_storage: 'denied',
-        ad_user_data: 'denied',
-        ad_personalization: 'denied'
-    });
-
-    function loadGA() {
-        if (loaded) return;
+    function loadGAScript() {
+        if (scriptLoaded) return;
 
         var consent = localStorage.getItem('cookie-consent');
+        if (consent !== 'accepted') return;
 
-        // ❗ jeśli user odrzucił → NIE ładuj
-        if (consent === 'rejected') return;
-
-        // ❗ jeśli jeszcze nie wybrał → też NIE ładuj
-        if (!consent) return;
-
-        loaded = true;
+        scriptLoaded = true;
 
         var script = document.createElement('script');
         script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
@@ -60,35 +56,54 @@
         document.head.appendChild(script);
 
         gtag('js', new Date());
-        gtag('config', trackingId, {
-            anonymize_ip: true
-        });
+        gtag('config', trackingId, { anonymize_ip: true });
 
-        removeListeners();
+        console.log('GA4 Loaded');
     }
 
-    function removeListeners() {
-        ['scroll','click','keydown','touchstart'].forEach(function(e) {
-            window.removeEventListener(e, loadGA);
-        });
-    }
+    var consent = localStorage.getItem('cookie-consent');
 
-    // --- Jeśli user już zaakceptował wcześniej → ładuj od razu (ale dalej lazy)
-    if (localStorage.getItem('cookie-consent') === 'accepted') {
+    if (consent === 'accepted') {
 
-        // interaction
-        ['scroll','click','keydown','touchstart'].forEach(function(e) {
-            window.addEventListener(e, loadGA, { passive: true });
+        // Najpierw update consent
+        gtag('consent', 'update', {
+            ad_storage: 'granted',
+            ad_user_data: 'granted',
+            ad_personalization: 'granted',
+            analytics_storage: 'granted'
         });
 
-        // idle
+        // Interaction
+        ['scroll', 'mousedown', 'touchstart', 'keydown'].forEach(function(e) {
+            window.addEventListener(e, loadGAScript, { once: true, passive: true });
+        });
+
+        // Idle
         if ('requestIdleCallback' in window) {
-            requestIdleCallback(loadGA, { timeout: 3000 });
+            requestIdleCallback(loadGAScript, { timeout: 3000 });
         }
 
-        // fallback
-        setTimeout(loadGA, 3500);
+        // Fallback
+        setTimeout(loadGAScript, 4000);
     }
+
+    // API dla bannera
+    window.acceptAllCookies = function() {
+        localStorage.setItem('cookie-consent', 'accepted');
+
+        gtag('consent', 'update', {
+            ad_storage: 'granted',
+            ad_user_data: 'granted',
+            ad_personalization: 'granted',
+            analytics_storage: 'granted'
+        });
+
+        loadGAScript(); // natychmiast
+    };
+
+    window.rejectAllCookies = function() {
+        localStorage.setItem('cookie-consent', 'rejected');
+    };
 
 })();
 </script>
