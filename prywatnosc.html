@@ -4,45 +4,70 @@
 
         <script>
 (function() {
-    var analyticsLoaded = false;
     var trackingId = 'G-XSSD2BM25E';
+    var loaded = false;
 
-    function loadAnalytics() {
-        if (!analyticsLoaded) {
-            analyticsLoaded = true;
+    // --- Consent Mode (default: denied) ---
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
 
-            // 1. Dodanie skryptu GA do nagłówka
-            var script = document.createElement('script');
-            script.src = "https://www.googletagmanager.com/gtag/js?id=" + trackingId;
-            script.async = true;
-            document.head.appendChild(script);
+    gtag('consent', 'default', {
+        ad_storage: 'denied',
+        analytics_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
+    });
 
-            // 2. Inicjalizacja GA
-            script.onload = function() {
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', trackingId);
-            };
+    function loadGA() {
+        if (loaded) return;
 
-            // Usunięcie nasłuchiwania zdarzeń
-            removeListeners();
-        }
+        var consent = localStorage.getItem('cookie-consent');
+
+        // ❗ jeśli user odrzucił → NIE ładuj
+        if (consent === 'rejected') return;
+
+        // ❗ jeśli jeszcze nie wybrał → też NIE ładuj
+        if (!consent) return;
+
+        loaded = true;
+
+        var script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
+        script.async = true;
+        document.head.appendChild(script);
+
+        gtag('js', new Date());
+        gtag('config', trackingId, {
+            anonymize_ip: true
+        });
+
+        removeListeners();
     }
 
     function removeListeners() {
-        ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(function(ev) {
-            window.removeEventListener(ev, loadAnalytics);
+        ['scroll','click','keydown','touchstart'].forEach(function(e) {
+            window.removeEventListener(e, loadGA);
         });
     }
 
-    // Odpalenie przy jakiejkolwiek akcji użytkownika
-    ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(function(ev) {
-        window.addEventListener(ev, loadAnalytics, {passive: true});
-    });
+    // --- Jeśli user już zaakceptował wcześniej → ładuj od razu (ale dalej lazy)
+    if (localStorage.getItem('cookie-consent') === 'accepted') {
 
-    // Failsafe: Jeśli user nie wykona akcji, ładujemy po 2s (bezpieczny kompromis dla PSI)
-    setTimeout(loadAnalytics, 2000);
+        // interaction
+        ['scroll','click','keydown','touchstart'].forEach(function(e) {
+            window.addEventListener(e, loadGA, { passive: true });
+        });
+
+        // idle
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadGA, { timeout: 3000 });
+        }
+
+        // fallback
+        setTimeout(loadGA, 3500);
+    }
+
 })();
 </script>
 
