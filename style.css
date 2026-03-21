@@ -481,14 +481,26 @@ article {
 }
 
 /* ================= FOOTER FIXED NA MOBILE ================= */
+/* Mobile only */
 @media (max-width: 768px) {
     footer {
-        position: sticky;      /* przyklejony do dołu viewportu jeśli content jest krótszy */
-        bottom: 0;             /* do dolnej krawędzi */
-        width: 100%;
+        position: sticky;       /* przyklejony do dolnej krawędzi scrolla */
+        bottom: 0;
+        transform: translateY(100%); /* start poza ekranem */
+        transition: transform 0.3s ease;
+        max-height: 100vh;      /* nigdy nie wychodzi poza ekran */
+        overflow: hidden;
         z-index: 10;
-        padding-bottom: env(safe-area-inset-bottom); /* notch */
-        transform: translateZ(0); /* wymusza poprawne renderowanie w Chrome mobile */
+        padding-bottom: env(safe-area-inset-bottom);
         background-color: var(--brand-blue);
     }
+
+    main:after {
+        content: '';
+        display: block;
+        height: 60px; /* wysokość footer, żeby miał miejsce na wyświetlenie */
+    }
+
+    /* Przy przewijaniu do końca footer naturalnie wysuwa się */
+    /* Nie potrzebujemy JS, bo sticky + flow + padding daje efekt “reveal” */
 }
