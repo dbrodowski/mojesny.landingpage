@@ -473,20 +473,21 @@ article {
 }
 
 /* Styl dla telefonów i małych tabletów (poniżej 768px szerokości) */
+/* Mobile only */
 @media (max-width: 768px) {
     footer {
-        position: fixed;
-        bottom: 0;
+        position: fixed;               /* przyklejony do dolnej krawędzi */
         left: 0;
+        bottom: 0;
         width: 100%;
-        transform: translateY(100%); /* start ukryty */
+        transform: translateY(100%);   /* start ukryty */
         transition: transform 0.3s ease;
-        padding-bottom: env(safe-area-inset-bottom);
-        background-color: var(--brand-blue);
         z-index: 100;
+        padding-bottom: calc(30px + env(safe-area-inset-bottom));
+        background-color: var(--brand-blue);
     }
 
     main {
-        padding-bottom: 80px; /* zostaw miejsce na footer */
+        padding-bottom: 80px; /* zostaw miejsce na footer, żeby nie przykrywał contentu */
     }
 }
