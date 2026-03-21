@@ -479,3 +479,13 @@ article {
         /* Rozmiar na telefonie (możesz zmienić na 50px) */
     }
 }
+
+@media (max-width: 768px) {
+    footer {
+        opacity: 0;
+        transform: translateY(100%);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        /* zachowujemy obecny padding dolny */
+        padding-bottom: calc(30px + env(safe-area-inset-bottom));
+    }
+}

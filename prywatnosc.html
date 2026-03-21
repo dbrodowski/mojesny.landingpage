@@ -280,5 +280,35 @@ gtag('consent', 'default', {
         })();
     </script>
 
+    <script defer>
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.innerWidth > 768) return; // tylko mobile
+
+    const footer = document.querySelector('footer');
+    if (!footer) return;
+
+    footer.style.opacity = '0';
+    footer.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+    footer.style.transform = 'translateY(100%)';
+
+    function revealFooter() {
+        const scrollPos = window.scrollY + window.innerHeight;
+        const pageHeight = document.documentElement.scrollHeight;
+
+        if (scrollPos >= pageHeight - 10) { // dotarłeś do końca
+            footer.style.opacity = '1';
+            footer.style.transform = 'translateY(0)';
+        } else {
+            footer.style.opacity = '0';
+            footer.style.transform = 'translateY(100%)';
+        }
+    }
+
+    window.addEventListener('scroll', revealFooter, { passive: true });
+    window.addEventListener('resize', revealFooter);
+    revealFooter();
+});
+</script>
+
 </body>
 </html>
