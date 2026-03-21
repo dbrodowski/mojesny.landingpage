@@ -479,3 +479,30 @@ article {
         /* Rozmiar na telefonie (możesz zmienić na 50px) */
     }
 }
+
+/* ================= FOOTER FIXED NA MOBILE ================= */
+@media (max-width: 768px) {
+    /* Footer przyklejony do dołu */
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000; /* poniżej cookie banner, powyżej back-to-top */
+        padding: 20px 0; /* Twoje wewnętrzne paddingi */
+        padding-bottom: calc(20px + env(safe-area-inset-bottom)); /* uwzględnia notch */
+        background-color: var(--brand-blue);
+    }
+
+    /* Padding dla treści, żeby footer nie przykrywał contentu */
+    .content, .hero, .download, .cta-center, .cta-bottom {
+        padding-bottom: 120px; /* dopasuj do wysokości footera + safe-area */
+    }
+
+    /* Jeśli masz back-to-top */
+    #backToTop {
+        z-index: 900; /* poniżej footer */
+    }
+
+    /* Cookie banner już masz z z-index: 2000 */
+}
