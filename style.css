@@ -288,6 +288,73 @@ footer .container {
     
 }
 
+/* ================= GDPR / COOKIES BANNER ================= */
+.cookie-banner {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    background-color: #ffffff;
+    border: 1px solid rgba(34, 48, 91, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    padding: 16px;
+    z-index: 2000;
+}
+
+.cookie-banner__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.cookie-banner__text {
+    font-size: 0.95rem;
+    color: #000000;
+}
+
+.cookie-banner__actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.cookie-banner__btn {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    background-color: rgb(38, 38, 91);
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .cookie-banner {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        padding: 14px;
+    }
+
+    .cookie-banner__inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cookie-banner__actions {
+        width: 100%;
+    }
+
+    .cookie-banner__btn {
+        flex: 1;
+        text-align: center;
+    }
+}
+
 /* ================= BACK TO TOP (PRZYWRÓCONY) ================= */
 #backToTop {
     display: none;
