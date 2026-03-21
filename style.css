@@ -482,18 +482,13 @@ article {
 
 /* ================= FOOTER FIXED NA MOBILE ================= */
 @media (max-width: 768px) {
-    body {
-        min-height: 100vh; /* cała wysokość ekranu */
-        display: flex;
-        flex-direction: column;
-    }
-
-    .content {
-        flex: 1 0 auto; /* rośnie, zajmuje dostępne miejsce */
-    }
-
     footer {
-        flex-shrink: 0; /* nie kurczy się, zawsze na dole */
-        padding-bottom: env(safe-area-inset-bottom);
+        position: sticky;      /* przyklejony do dołu viewportu jeśli content jest krótszy */
+        bottom: 0;             /* do dolnej krawędzi */
+        width: 100%;
+        z-index: 10;
+        padding-bottom: env(safe-area-inset-bottom); /* notch */
+        transform: translateZ(0); /* wymusza poprawne renderowanie w Chrome mobile */
+        background-color: var(--brand-blue);
     }
 }
