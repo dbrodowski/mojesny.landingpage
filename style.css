@@ -479,28 +479,3 @@ article {
         /* Rozmiar na telefonie (możesz zmienić na 50px) */
     }
 }
-
-/* ================= FOOTER FIXED NA MOBILE ================= */
-/* Mobile only */
-@media (max-width: 768px) {
-    footer {
-        position: sticky;       /* przyklejony do dolnej krawędzi scrolla */
-        bottom: 0;
-        transform: translateY(100%); /* start poza ekranem */
-        transition: transform 0.3s ease;
-        max-height: 100vh;      /* nigdy nie wychodzi poza ekran */
-        overflow: hidden;
-        z-index: 10;
-        padding-bottom: env(safe-area-inset-bottom);
-        background-color: var(--brand-blue);
-    }
-
-    main:after {
-        content: '';
-        display: block;
-        height: 60px; /* wysokość footer, żeby miał miejsce na wyświetlenie */
-    }
-
-    /* Przy przewijaniu do końca footer naturalnie wysuwa się */
-    /* Nie potrzebujemy JS, bo sticky + flow + padding daje efekt “reveal” */
-}
