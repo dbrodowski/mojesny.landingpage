@@ -207,6 +207,12 @@ header .container {
     line-height: 1.5; /* Zmniejszone z 1.8 na 1.5 - tekst jest bardziej zwarty */
 }
 
+.qr-note {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
 .content p a, .content li a {
     color: var(--brand-blue);            
     text-decoration: none;            
@@ -406,6 +412,10 @@ footer .container {
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
     body { padding-top: 90px; }
+
+    .qr-note {
+        display: none;
+    }
 
     .hamburger {
         display: flex;
