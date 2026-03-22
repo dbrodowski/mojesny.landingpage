@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+
+        // Consent default (MUSI być pierwsze)
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
+        });
+
+        (function () {
+            var trackingId = 'G-XSSD2BM25E';
+            var scriptLoaded = false;
+
+            function loadGAScript() {
+                if (scriptLoaded) return;
+
+                var consent = localStorage.getItem('cookie-consent');
+                if (consent !== 'accepted') return;
+
+                scriptLoaded = true;
+
+                var script = document.createElement('script');
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
+                script.async = true;
+                document.head.appendChild(script);
+
+                gtag('js', new Date());
+                gtag('config', trackingId, { anonymize_ip: true });
+
+                console.log('GA4 Loaded');
+            }
+
+            var consent = localStorage.getItem('cookie-consent');
+
+            if (consent === 'accepted') {
+
+                // Najpierw update consent
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                // Interaction
+                ['scroll', 'mousedown', 'touchstart', 'keydown'].forEach(function (e) {
+                    window.addEventListener(e, loadGAScript, { once: true, passive: true });
+                });
+
+                // Idle
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(loadGAScript, { timeout: 3000 });
+                }
+
+                // Fallback
+                setTimeout(loadGAScript, 4000);
+            }
+
+            // API dla bannera
+            window.acceptAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'accepted');
+
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                loadGAScript(); // natychmiast
+            };
+
+            window.rejectAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'rejected');
+            };
+
+        })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Najlepszy polski sennik AI. Znaczenie snu o ślubie. Dowiedz się, co oznacza sen o ślubie według psychologii i symboliki.">
+    <title>Sen o ślubie – co oznacza? Znaczenie snu | MojeSny</title>
+    <link rel="canonical" href="https://mojesny.app/sen-o-slubie.html">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css?v=1.1">
+
+    <style>
+        @media (min-width: 769px) {
+            .cta-bottom .cta-btn {
+                display: none;
+            }
+
+            .cta-bottom::before {
+                content: '';
+                display: block;
+                width: 100px;
+                height: 100px;
+                background: url('qr-code.svg') no-repeat center / contain;
+                margin: 0 auto;
+            }
+
+            .download {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cta-bottom {
+                display: none;
+            }
+        }
+    </style>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Sen o ślubie – co oznacza? Znaczenie snu",
+  "description": "Najlepszy polski sennik AI. Znaczenie snu o ślubie. Dowiedz się, co oznacza sen o ślubie według psychologii i symboliki.",
+  "url": "https://mojesny.app/sen-o-slubie.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "MojeSny"
+  }
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="icon.svg" alt="MojeSny Logo" class="site-logo">
+                </a>
+            </div>
+            <button class="hamburger" aria-label="Otwórz menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Strona Główna</a></li>
+                    <li><a href="ksiega-snow.html" class="active">Księga Snów</a></li>
+                    <li><a href="prywatnosc.html">Polityka Prywatności</a></li>
+                    <li><a href="regulamin.html">Regulamin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="content">
+                <h1>Sennik alfabetyczny – znaczenie snów od A do Z</h1>
+                <h2>Księga snów: sprawdź, co oznacza Twój sen.</h2>
+
+                <!-- SPIS TREŚCI -->
+                <nav class="sennik-toc">
+                    <h3>
+                        Wybierz interesujący Cię sen z listy poniżej i sprawdź jego interpretację.
+                    </h3>
+                    <div class="toc-buttons">
+                        <a href="/sen-o-ciazy.html#ciaza" class="toc-btn">Ciąża</a>
+                        <a href="/sen-o-dziecku.html#dziecko" class="toc-btn">Dziecko</a>
+                        <a href="/sen-o-kocie.html#kot" class="toc-btn">Kot</a>
+                        <a href="/sen-o-krwi.html#krew" class="toc-btn">Krew</a>
+                        <a href="/sen-o-lataniu.html#latanie" class="toc-btn">Latanie</a>
+                        <a href="/sen-o-pajaku.html#pajak" class="toc-btn">Pająk</a>
+                        <a href="/sen-o-pieniadzach.html#pieniadze" class="toc-btn">Pieniądze</a>
+                        <a href="/sen-o-psie.html#pies" class="toc-btn">Pies</a>
+                        <a href="/sen-o-pogrzebie.html#pogrzeb" class="toc-btn">Pogrzeb</a>
+                        <a href="/sen-o-pozarze.html#pozar" class="toc-btn">Pożar</a>
+                        <a href="/sen-o-slubie.html#slub" class="toc-btn">Ślub</a>
+                        <a href="/sen-o-smierci.html#smierc" class="toc-btn">Śmierć</a>
+                        <a href="/sen-o-spadaniu.html#spadanie" class="toc-btn">Spadanie</a>
+                        <a href="/sen-o-spoznieniu.html#spoznienie" class="toc-btn">Spóźnienie</a>
+                        <a href="/sen-o-szczurze.html#szczur" class="toc-btn">Szczur</a>
+                        <a href="/sen-o-ucieczce.html#ucieczka" class="toc-btn">Ucieczka</a>
+                        <a href="/sen-o-wezu.html#wez" class="toc-btn">Wąż</a>
+                        <a href="/sen-o-wodzie.html#woda" class="toc-btn">Woda</a>
+                        <a href="/sen-o-wojnie.html#wojna" class="toc-btn">Wojna</a>
+                        <a href="/sen-o-zebach.html#zeby" class="toc-btn">Zęby</a>
+                    </div>
+                </nav>
+
+                <!-- SEN ŚLUB -->
+                <article id="slub">
+                    <h1>Ślub – znaczenie snu</h1>
+                    <p>Ślub w snach to metafora zjednoczenia. Oznacza moment, w którym dwie oddzielne sfery Twojego
+                        życia lub osobowości zaczynają działać jako jedność. To „podpisanie kontraktu” z samym sobą lub
+                        nową sytuacją, wymagającą lojalności i odpowiedzialności.</p>
+
+                    <h2>1. Wewnętrzne zjednoczenie: Małżeństwo Duszy</h2>
+                    <p>Sen o ślubie symbolizuje proces indywidualizacji. Pierwiastki męskie (logika, działanie) i
+                        żeńskie (intuicja, emocje) przestają walczyć, a zaczynają współpracować. Może to oznaczać
+                        pogodzenie ambicji zawodowych z potrzebami emocjonalnymi lub akceptację cech wcześniej
+                        tłumionych. To sen o osiąganiu wewnętrznej pełni.</p>
+
+                    <h2>2. Nowe zobowiązania i etapy życiowe</h2>
+                    <p>Ślub to rytuał przejścia. Zawieranie małżeństwa we śnie przygotowuje Cię do poważnej zmiany
+                        statusu – niekoniecznie związku, może to być nowa praca, projekt czy inwestycja wymagająca
+                        długoterminowego zaangażowania. Radość we śnie oznacza akceptację zmian, lęk lub ucieczka –
+                        przytłoczenie oczekiwaniami życia lub innych ludzi.</p>
+
+                    <h2>3. Ślub z nieznajomym: Odkrywanie cienia</h2>
+                    <p>Ślub z osobą nieznaną symbolizuje cechy, których potrzebujesz lub zaczynasz w sobie rozwijać.
+                        Silny i zdecydowany partner może oznaczać nowe pokłady asertywności, artystyczny – otwarcie na
+                        kreatywność. Nieznajomy to Twoje lustro, pokazujące, z jaką energią musisz się teraz związać, by
+                        iść naprzód.</p>
+
+                    <h2>4. Przeszkody na ślubie: Lęk przed niedoskonałością</h2>
+                    <p>Sen o katastrofie ślubnej (spóźniony ksiądz, brudna suknia) odzwierciedla lęk przed oceną
+                        społeczną i nierealistyczne oczekiwania. To wezwanie, by skupić się na istocie działań i
+                        relacji, a nie na „oprawie” ceremonii.</p>
+
+                    <h2>5. Kulturowe znaczenie: Czy to zły znak?</h2>
+                    <p>W sennikach ludowych ślub bywał interpretowany negatywnie, lecz współczesna analiza odchodzi od
+                        tego pesymizmu. Ślub symbolizuje koniec starego i początek nowego – każda zmiana może budzić
+                        niepokój, ale jest zaproszeniem do celebracji własnego wzrostu.</p>
+
+                    <h2>Podsumowanie</h2>
+                    <p>Sen o ślubie pyta: Z czym lub z kim próbuję się połączyć w życiu? Czy działam zgodnie z sercem,
+                        czy z obowiązku? Ślub uczy wartości przymierza – przede wszystkim przymierza z samym sobą.
+                        Niezależnie od charakteru snu, jest przypomnieniem, że Twoje decyzje wchodzą w fazę trwałych i
+                        ważnych skutków.</p>
+
+                        <p>
+                        Zobacz także:
+                        <a href="/sen-o-wezu.html#waz">sen o wężu</a>,
+                        <a href="/sen-o-wodzie.html#woda">sen o wodzie</a>
+                    </p>
+
+                    <p class="qr-note">
+                        Sprawdź sen i zapisuj swoje sny w jednym miejscu.<span class="qr-desktop-only"><br>Zeskanuj kod
+                            QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
+                    </p>
+
+                    <div class="cta-bottom">
+                        <a href="#download" class="cta-btn">Pobierz aplikację</a>
+                    </div>
+                </article>
+
+
+                <section class="download" id="download">
+                    <a href="https://apps.apple.com/app/mojesny/id6755436556" class="app-store-button" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
+                        </svg>
+                        <div class="button-text">
+                            <span class="small">Pobierz z</span>
+                            <span class="large">App Store</span>
+                        </div>
+                    </a>
+                    <a href="https://app.mojesny.app/" class="app-store-button web-button" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 19.93C7.05 19.44 4 16.08 4 12C4 11.38 4.08 10.79 4.21 10.21L9 15V16C9 17.1 9.9 18 11 18V19.93ZM17.9 17.39C17.64 16.58 16.9 16 16 16H15V13C15 12.45 14.55 12 14 12H8V10H10C10.55 10 11 9.55 11 9V7H13C14.1 7 15 6.1 15 5V4.59C17.93 5.78 20 8.65 20 12C20 14.08 19.2 15.97 17.9 17.39Z" />
+                        </svg>
+                        <div class="button-text">
+                            <span class="small">Wypróbuj</span>
+                            <span class="large">MojeSny</span>
+                        </div>
+                    </a>
+                </section>
+
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Strona Główna</a></li>
+                    <li><a href="ksiega-snow.html">Księga Snów</a></li>
+                    <li><a href="prywatnosc.html">Polityka Prywatności</a></li>
+                    <li><a href="regulamin.html">Regulamin</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">© 2025 - 2026 MojeSny</div>
+        </div>
+    </footer>
+
+    <button id="backToTop" title="Wróć na górę">↑</button>
+
+    <script>
+        const backToTopBtn = document.getElementById("backToTop");
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+
+        backToTopBtn.onclick = function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        };
+    </script>
+
+    <script src="cookie-consent.js"></script>
+    <script>
+        (function () {
+            var btn = document.querySelector('.hamburger');
+            var nav = document.querySelector('.main-nav');
+
+            if (!btn || !nav) return;
+
+            btn.addEventListener('click', function () {
+                var isOpen = nav.classList.toggle('is-open');
+                btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            nav.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!nav.contains(e.target) && !btn.contains(e.target)) {
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
+
+</body>
+
+</html>
