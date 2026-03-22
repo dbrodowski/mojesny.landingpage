@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+
+        // Consent default (MUSI być pierwsze)
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
+        });
+
+        (function () {
+            var trackingId = 'G-XSSD2BM25E';
+            var scriptLoaded = false;
+
+            function loadGAScript() {
+                if (scriptLoaded) return;
+
+                var consent = localStorage.getItem('cookie-consent');
+                if (consent !== 'accepted') return;
+
+                scriptLoaded = true;
+
+                var script = document.createElement('script');
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
+                script.async = true;
+                document.head.appendChild(script);
+
+                gtag('js', new Date());
+                gtag('config', trackingId, { anonymize_ip: true });
+
+                console.log('GA4 Loaded');
+            }
+
+            var consent = localStorage.getItem('cookie-consent');
+
+            if (consent === 'accepted') {
+
+                // Najpierw update consent
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                // Interaction
+                ['scroll', 'mousedown', 'touchstart', 'keydown'].forEach(function (e) {
+                    window.addEventListener(e, loadGAScript, { once: true, passive: true });
+                });
+
+                // Idle
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(loadGAScript, { timeout: 3000 });
+                }
+
+                // Fallback
+                setTimeout(loadGAScript, 4000);
+            }
+
+            // API dla bannera
+            window.acceptAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'accepted');
+
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                loadGAScript(); // natychmiast
+            };
+
+            window.rejectAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'rejected');
+            };
+
+        })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Najlepszy polski sennik AI. Znaczenie snu o ucieczce. Dowiedz się, co oznacza sen o ucieczce według psychologii i symboliki.">
+    <title>Sen o ucieczce – co oznacza? Znaczenie snu | MojeSny</title>
+    <link rel="canonical" href="https://mojesny.app/sen-o-ucieczce.html">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css?v=1.1">
+
+    <style>
+        @media (min-width: 769px) {
+            .cta-bottom .cta-btn {
+                display: none;
+            }
+
+            .cta-bottom::before {
+                content: '';
+                display: block;
+                width: 100px;
+                height: 100px;
+                background: url('qr-code.svg') no-repeat center / contain;
+                margin: 0 auto;
+            }
+
+            .download {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cta-bottom {
+                display: none;
+            }
+        }
+    </style>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Sen o ucieczce – co oznacza? Znaczenie snu",
+  "description": "Najlepszy polski sennik AI. Znaczenie snu o ucieczce. Dowiedz się, co oznacza sen o ucieczce według psychologii i symboliki.",
+  "url": "https://mojesny.app/sen-o-ucieczce.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "MojeSny"
+  }
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="icon.svg" alt="MojeSny Logo" class="site-logo">
+                </a>
+            </div>
+            <button class="hamburger" aria-label="Otwórz menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Strona Główna</a></li>
+                    <li><a href="ksiega-snow.html" class="active">Księga Snów</a></li>
+                    <li><a href="prywatnosc.html">Polityka Prywatności</a></li>
+                    <li><a href="regulamin.html">Regulamin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="content">
+                <h1>Sennik alfabetyczny – znaczenie snów od A do Z</h1>
+                <h2>Księga snów: sprawdź, co oznacza Twój sen.</h2>
+
+                <!-- SPIS TREŚCI -->
+                <nav class="sennik-toc">
+                    <h3>
+                        Wybierz interesujący Cię sen z listy poniżej i sprawdź jego interpretację.
+                    </h3>
+                    <div class="toc-buttons">
+                        <a href="/sen-o-ciazy.html#ciaza" class="toc-btn">Ciąża</a>
+                        <a href="/sen-o-dziecku.html#dziecko" class="toc-btn">Dziecko</a>
+                        <a href="/sen-o-kocie.html#kot" class="toc-btn">Kot</a>
+                        <a href="/sen-o-krwi.html#krew" class="toc-btn">Krew</a>
+                        <a href="/sen-o-lataniu.html#latanie" class="toc-btn">Latanie</a>
+                        <a href="/sen-o-pajaku.html#pajak" class="toc-btn">Pająk</a>
+                        <a href="/sen-o-pieniadzach.html#pieniadze" class="toc-btn">Pieniądze</a>
+                        <a href="/sen-o-psie.html#pies" class="toc-btn">Pies</a>
+                        <a href="/sen-o-pogrzebie.html#pogrzeb" class="toc-btn">Pogrzeb</a>
+                        <a href="/sen-o-pozarze.html#pozar" class="toc-btn">Pożar</a>
+                        <a href="/sen-o-slubie.html#slub" class="toc-btn">Ślub</a>
+                        <a href="/sen-o-smierci.html#smierc" class="toc-btn">Śmierć</a>
+                        <a href="/sen-o-spadaniu.html#spadanie" class="toc-btn">Spadanie</a>
+                        <a href="/sen-o-spoznieniu.html#spoznienie" class="toc-btn">Spóźnienie</a>
+                        <a href="/sen-o-szczurze.html#szczur" class="toc-btn">Szczur</a>
+                        <a href="/sen-o-ucieczce.html#ucieczka" class="toc-btn">Ucieczka</a>
+                        <a href="/sen-o-wezu.html#wez" class="toc-btn">Wąż</a>
+                        <a href="/sen-o-wodzie.html#woda" class="toc-btn">Woda</a>
+                        <a href="/sen-o-wojnie.html#wojna" class="toc-btn">Wojna</a>
+                        <a href="/sen-o-zebach.html#zeby" class="toc-btn">Zęby</a>
+                    </div>
+                </nav>
+
+                <!-- SEN – UCIECZKA -->
+                <article id="ucieczka">
+                    <h1>Ucieczka – znaczenie snu</h1>
+                    <p>Ucieczka w snach to dynamiczny obraz relacji z tym, co w Twoim życiu jawi się jako zbyt trudne,
+                        bolesne lub przerażające. Sen o ucieczce sygnalizuje narastającą presję i poczucie osaczenia,
+                        pokazując, że zamiast szukać rozwiązania, instynktownie wybierasz odwrót.</p>
+
+                    <h2>1. Wewnętrzny Pościg: Ucieczka przed Cieniem</h2>
+                    <p>To, co nas goni, często reprezentuje nasze wyparte aspekty. Ucieczka przed groźną postacią czy
+                        potworem symbolizuje unikanie emocji, których nie chcesz dopuścić – wstyd, poczucie winy, gniew.
+                        Prześladowca jest Twoim „Cieniem”. Im szybciej uciekasz, tym bardziej rośnie w siłę. To
+                        wezwanie: zatrzymaj się i sprawdź, czyją twarz ma Twój lęk.</p>
+
+                    <h2>2. Uwięzienie w Strukturach: Lęk przed Odpowiedzialnością</h2>
+                    <p>Ucieczka często pojawia się w chwilach zakrętów życiowych. Sen o ucieczce z więzienia, biura lub
+                        dusznego pokoju pokazuje pragnienie wolności i odczuwanie obecnych ram życia jako klatki. To
+                        symboliczny wentyl bezpieczeństwa pozwalający poczuć autonomię, której brakuje w realnym życiu.
+                    </p>
+
+                    <h2>3. Mechanizm Obronny: Paraliż i Ciężkie Nogi</h2>
+                    <p>Ucieczka, podczas której nie możesz się ruszyć lub biegniesz w miejscu, obrazowo pokazuje
+                        bezsilność. Twoje metody radzenia sobie z problemami są nieskuteczne. Sen sugeruje, że
+                        konfrontacja jest nieunikniona – nie możesz uciec przed kimś, kogo nosisz w sobie.</p>
+
+                    <h2>4. Kryjówka i Azyl: Potrzeba Regeneracji</h2>
+                    <p>Jeżeli sen kończy się znalezieniem bezpiecznego miejsca, oznacza to, że psychika potrzebuje
+                        odpoczynku od bodźców zewnętrznych. To wezwanie do asertywności i wyznaczenia granic. Ucieczka
+                        nie zawsze jest tchórzostwem – czasem jest strategicznym odwrótem dla przegrupowania sił.</p>
+
+                    <h2>5. Kulturowe Znaczenie: Czy to brak odwagi?</h2>
+                    <p>W dawnych sennikach ucieczka była przestrogą przed kłopotami lub wrogami. Współcześnie oznacza
+                        mechanizm radzenia sobie ze stresem i wskazuje Twoje „wąskie gardła” emocjonalne. Sen nie ocenia
+                        odwagi – pokazuje miejsca, w których czujesz się najbardziej bezbronny.</p>
+
+                    <h2>Podsumowanie</h2>
+                    <p>Sen o ucieczce pyta: Przed czym tak naprawdę biegnę? Czy to realna osoba, czy moje własne
+                        oczekiwania? Dopóki nie odwrócimy się twarzą do prześladowcy, tracimy energię na bezowocny
+                        wyścig. Niezależnie od strachu, sen wskazuje czas, by przestać biec i zacząć negocjować warunki
+                        własnego spokoju.</p>
+
+                        <p>
+                        Zobacz także:
+                        <a href="/sen-o-spadaniu.html#spadanie">sen o spadaniu</a>
+                        <a href="/sen-o-smierci.html#smierc">sen o śmierci</a>
+                    </p>
+
+                    <p class="qr-note">
+                        Wypróbuj aplikację i zapisz swój sen.<span class="qr-desktop-only"><br>Zeskanuj kod
+                            QR.</span><span class="qr-mobile-only"><br>Pobierz aplikację</span>
+                    </p>
+
+                    <div class="cta-bottom">
+                        <a href="#download" class="cta-btn">Pobierz aplikację</a>
+                    </div>
+                </article>
+
+                <section class="download" id="download">
+                    <a href="https://apps.apple.com/app/mojesny/id6755436556" class="app-store-button" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
+                        </svg>
+                        <div class="button-text">
+                            <span class="small">Pobierz z</span>
+                            <span class="large">App Store</span>
+                        </div>
+                    </a>
+                    <a href="https://app.mojesny.app/" class="app-store-button web-button" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 19.93C7.05 19.44 4 16.08 4 12C4 11.38 4.08 10.79 4.21 10.21L9 15V16C9 17.1 9.9 18 11 18V19.93ZM17.9 17.39C17.64 16.58 16.9 16 16 16H15V13C15 12.45 14.55 12 14 12H8V10H10C10.55 10 11 9.55 11 9V7H13C14.1 7 15 6.1 15 5V4.59C17.93 5.78 20 8.65 20 12C20 14.08 19.2 15.97 17.9 17.39Z" />
+                        </svg>
+                        <div class="button-text">
+                            <span class="small">Wypróbuj</span>
+                            <span class="large">MojeSny</span>
+                        </div>
+                    </a>
+                </section>
+
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Strona Główna</a></li>
+                    <li><a href="ksiega-snow.html">Księga Snów</a></li>
+                    <li><a href="prywatnosc.html">Polityka Prywatności</a></li>
+                    <li><a href="regulamin.html">Regulamin</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">© 2025 - 2026 MojeSny</div>
+        </div>
+    </footer>
+
+    <button id="backToTop" title="Wróć na górę">↑</button>
+
+    <script>
+        const backToTopBtn = document.getElementById("backToTop");
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+
+        backToTopBtn.onclick = function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        };
+    </script>
+
+    <script src="cookie-consent.js"></script>
+    <script>
+        (function () {
+            var btn = document.querySelector('.hamburger');
+            var nav = document.querySelector('.main-nav');
+
+            if (!btn || !nav) return;
+
+            btn.addEventListener('click', function () {
+                var isOpen = nav.classList.toggle('is-open');
+                btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            nav.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!nav.contains(e.target) && !btn.contains(e.target)) {
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
+
+</body>
+
+</html>
