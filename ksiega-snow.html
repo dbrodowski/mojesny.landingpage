@@ -199,88 +199,88 @@
 </script>
 
     <script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-window.gtag = gtag;
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
 
-// Consent default (MUSI być pierwsze)
-gtag('consent', 'default', {
-    ad_storage: 'denied',
-    ad_user_data: 'denied',
-    ad_personalization: 'denied',
-    analytics_storage: 'denied',
-    wait_for_update: 500
-});
-
-(function() {
-    var trackingId = 'G-XSSD2BM25E';
-    var scriptLoaded = false;
-
-    function loadGAScript() {
-        if (scriptLoaded) return;
-
-        var consent = localStorage.getItem('cookie-consent');
-        if (consent !== 'accepted') return;
-
-        scriptLoaded = true;
-
-        var script = document.createElement('script');
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
-        script.async = true;
-        document.head.appendChild(script);
-
-        gtag('js', new Date());
-        gtag('config', trackingId, { anonymize_ip: true });
-
-        console.log('GA4 Loaded');
-    }
-
-    var consent = localStorage.getItem('cookie-consent');
-
-    if (consent === 'accepted') {
-
-        // Najpierw update consent
-        gtag('consent', 'update', {
-            ad_storage: 'granted',
-            ad_user_data: 'granted',
-            ad_personalization: 'granted',
-            analytics_storage: 'granted'
+        // Consent default (MUSI być pierwsze)
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
         });
 
-        // Interaction
-        ['scroll', 'mousedown', 'touchstart', 'keydown'].forEach(function(e) {
-            window.addEventListener(e, loadGAScript, { once: true, passive: true });
-        });
+        (function () {
+            var trackingId = 'G-XSSD2BM25E';
+            var scriptLoaded = false;
 
-        // Idle
-        if ('requestIdleCallback' in window) {
-            requestIdleCallback(loadGAScript, { timeout: 3000 });
-        }
+            function loadGAScript() {
+                if (scriptLoaded) return;
 
-        // Fallback
-        setTimeout(loadGAScript, 4000);
-    }
+                var consent = localStorage.getItem('cookie-consent');
+                if (consent !== 'accepted') return;
 
-    // API dla bannera
-    window.acceptAllCookies = function() {
-        localStorage.setItem('cookie-consent', 'accepted');
+                scriptLoaded = true;
 
-        gtag('consent', 'update', {
-            ad_storage: 'granted',
-            ad_user_data: 'granted',
-            ad_personalization: 'granted',
-            analytics_storage: 'granted'
-        });
+                var script = document.createElement('script');
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
+                script.async = true;
+                document.head.appendChild(script);
 
-        loadGAScript(); // natychmiast
-    };
+                gtag('js', new Date());
+                gtag('config', trackingId, { anonymize_ip: true });
 
-    window.rejectAllCookies = function() {
-        localStorage.setItem('cookie-consent', 'rejected');
-    };
+                console.log('GA4 Loaded');
+            }
 
-})();
-</script>
+            var consent = localStorage.getItem('cookie-consent');
+
+            if (consent === 'accepted') {
+
+                // Najpierw update consent
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                // Interaction
+                ['scroll', 'mousedown', 'touchstart', 'keydown'].forEach(function (e) {
+                    window.addEventListener(e, loadGAScript, { once: true, passive: true });
+                });
+
+                // Idle
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(loadGAScript, { timeout: 3000 });
+                }
+
+                // Fallback
+                setTimeout(loadGAScript, 4000);
+            }
+
+            // API dla bannera
+            window.acceptAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'accepted');
+
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                loadGAScript(); // natychmiast
+            };
+
+            window.rejectAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'rejected');
+            };
+
+        })();
+    </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -292,7 +292,10 @@ gtag('consent', 'default', {
 
     <style>
         @media (min-width: 769px) {
-            .cta-bottom .cta-btn { display: none; }
+            .cta-bottom .cta-btn {
+                display: none;
+            }
+
             .cta-bottom::before {
                 content: '';
                 display: block;
@@ -301,11 +304,16 @@ gtag('consent', 'default', {
                 background: url('qr-code.svg') no-repeat center / contain;
                 margin: 0 auto;
             }
-            .download { display: none; }
+
+            .download {
+                display: none;
+            }
         }
 
         @media (max-width: 768px) {
-            #zeby .cta-bottom { display: none; }
+            #zeby .cta-bottom {
+                display: none;
+            }
         }
     </style>
 
@@ -343,7 +351,10 @@ gtag('consent', 'default', {
 
                 <!-- SPIS TREŚCI -->
                 <nav class="sennik-toc">
-                    <h3>Księga snów</h3>
+                    <h3>
+                        Sennik pomaga zrozumieć znaczenie snów i ich symbolikę.
+                        Wybierz interesujący Cię sen z listy poniżej i sprawdź jego interpretację.
+                    </h3>
                     <div class="toc-buttons">
                         <a href="#ciaza" class="toc-btn">Ciąża</a>
                         <a href="#dziecko" class="toc-btn">Dziecko</a>
@@ -406,8 +417,10 @@ gtag('consent', 'default', {
                         przygotowania gruntu pod nadchodzące zmiany. Zastanów się, jakie „owoce” chcesz zebrać w
                         najbliższym czasie.</p>
 
-                        <p class="qr-note">
-                        Śniłes o czymś innym? Sprawdź sen i zapisz go w aplikacji.<span class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
+                    <p class="qr-note">
+                        Śniłes o czymś innym? Sprawdź sen i zapisz go w aplikacji.<span
+                            class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz
+                            aplikacje</span>
                     </p>
 
                     <!-- przycisk na końcu artykułu -->
@@ -452,7 +465,8 @@ gtag('consent', 'default', {
                         budowania przyszłości.</p>
 
                     <p class="qr-note">
-                        Masz podobny sen? Sprawdź sen w aplikacji.<span class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
+                        Masz podobny sen? Sprawdź sen w aplikacji.<span class="qr-desktop-only"><br>Zeskanuj kod
+                            QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
                     </p>
 
                     <div class="cta-bottom">
@@ -496,10 +510,13 @@ gtag('consent', 'default', {
                     <h3>Podsumowanie</h3>
                     <p>Sen o kocie pyta: Czy czuję się wolny w swoich wyborach? Czy dbam o siebie jak kot? Symbol uczy
                         wartości autentyczności – miękkości dla bliskich, ale gotowości do obrony własnych granic.
-                        Niezależnie od charakteru snu, przypomina, że intuicja jest Twoim najpotężniejszym narzędziem.</p>
+                        Niezależnie od charakteru snu, przypomina, że intuicja jest Twoim najpotężniejszym narzędziem.
+                    </p>
 
                     <p class="qr-note">
-                        Masz podobny sen? Sprawdź sen i zachowaj jego znaczenie na później.<span class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
+                        Masz podobny sen? Sprawdź sen i zachowaj jego znaczenie na później.<span
+                            class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz
+                            aplikacje</span>
                     </p>
 
                     <div class="cta-bottom">
@@ -553,9 +570,10 @@ gtag('consent', 'default', {
                         „wyciekały” przez palce? Zrozumienie symboliki krwi pozwala odzyskać równowagę i skierować swoją
                         życiową moc tam, gdzie jest ona najbardziej potrzebna.</p>
 
-                        <p class="qr-note">
+                    <p class="qr-note">
                         Sprawdź sen i zapisuj swoje sny w jednym
-                        miejscu.<span class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
+                        miejscu.<span class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span
+                            class="qr-mobile-only"><br>Pobierz aplikacje</span>
                     </p>
 
                     <!-- przycisk na końcu artykułu -->
@@ -607,8 +625,10 @@ gtag('consent', 'default', {
                         że każdy lot kończy się lądowaniem – ważne, by zrobić to ze spokojem, który towarzyszył Ci
                         wysoko nad ziemią.</p>
 
-                        <p class="qr-note">
-                        Chcesz sprawdzić sen, który Ci się przyśnił? Sprawdź go w aplikacji.<span class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
+                    <p class="qr-note">
+                        Chcesz sprawdzić sen, który Ci się przyśnił? Sprawdź go w aplikacji.<span
+                            class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz
+                            aplikacje</span>
                     </p>
 
                     <!-- przycisk na końcu artykułu -->
@@ -654,10 +674,11 @@ gtag('consent', 'default', {
                     <p>Analizując sen o pająku, zapytaj siebie: Czy to ja tkam swoją sieć, czy jestem w nią złapany?
                         Pająk uczy, że jesteśmy architektami własnego losu, a sieć musi być elastyczna, by nie pękła pod
                         naporem wiatru. Sen jest zaproszeniem do odzyskania sprawstwa nad własną „tkanką życia”.
-                        </p>
+                    </p>
 
-                        <p class="qr-note">
-                        Wypróbuj aplikację i zapisz swój sen.<span class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
+                    <p class="qr-note">
+                        Wypróbuj aplikację i zapisz swój sen.<span class="qr-desktop-only"><br>Zeskanuj kod
+                            QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
                     </p>
 
                     <div class="cta-bottom">
@@ -707,8 +728,9 @@ gtag('consent', 'default', {
                         relacje i spokój ducha. Zarządzając swoją energią tak, jak finansami, zyskasz stabilność, której
                         nie zachwieje żaden kryzys.</p>
 
-                        <p class="qr-note">
-                        Skorzystaj z aplikacji, aby zapisywać swoje sny.<span class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
+                    <p class="qr-note">
+                        Skorzystaj z aplikacji, aby zapisywać swoje sny.<span class="qr-desktop-only"><br>Zeskanuj kod
+                            QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
                     </p>
 
                     <!-- przycisk na końcu artykułu -->
@@ -760,8 +782,10 @@ gtag('consent', 'default', {
                         był radosny, czy przerażający, jest wezwaniem do refleksji nad sercem, którym kierujesz swoje
                         życie i bliskie relacje.</p>
 
-                         <p class="qr-note">
-                        Wejdź w świat snów i odkryj, co Twoje sny mówią o Tobie.<span class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
+                    <p class="qr-note">
+                        Wejdź w świat snów i odkryj, co Twoje sny mówią o Tobie.<span
+                            class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz
+                            aplikacje</span>
                     </p>
 
                     <!-- przycisk na końcu artykułu -->
@@ -806,10 +830,11 @@ gtag('consent', 'default', {
                     <p>Sen o pogrzebie pyta: Co w moim życiu stało się martwe? Pogrzeb uczy wartości odpuszczania –
                         przede wszystkim kontroli nad tym, co i tak musi odejść. Niezależnie od mrocznego charakteru
                         snu, jest dowodem, że psychika przygotowuje grunt pod nową, lepszą strukturę Twojego życia.
-                        </p>
+                    </p>
 
-                        <p class="qr-note">
-                        Wypróbuj aplikację i zapisz swój sen.<span class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
+                    <p class="qr-note">
+                        Wypróbuj aplikację i zapisz swój sen.<span class="qr-desktop-only"><br>Zeskanuj kod
+                            QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
                     </p>
 
                     <div class="cta-bottom">
@@ -860,8 +885,9 @@ gtag('consent', 'default', {
                         gwałtowna zmiana jest konieczna do życia – jak Feniks, który rodzi się w popiołach, nie w
                         bezpiecznym gnieździe.</p>
 
-                        <p class="qr-note">
-                        Wypróbuj aplikację i zapisz swój sen.<span class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
+                    <p class="qr-note">
+                        Wypróbuj aplikację i zapisz swój sen.<span class="qr-desktop-only"><br>Zeskanuj kod
+                            QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
                     </p>
 
                     <div class="cta-bottom">
@@ -910,8 +936,9 @@ gtag('consent', 'default', {
                         Niezależnie od charakteru snu, jest przypomnieniem, że Twoje decyzje wchodzą w fazę trwałych i
                         ważnych skutków.</p>
 
-                        <p class="qr-note">
-                        Sprawdź sen i zapisuj swoje sny w jednym miejscu.<span class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
+                    <p class="qr-note">
+                        Sprawdź sen i zapisuj swoje sny w jednym miejscu.<span class="qr-desktop-only"><br>Zeskanuj kod
+                            QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
                     </p>
 
                     <div class="cta-bottom">
@@ -973,8 +1000,10 @@ gtag('consent', 'default', {
                         zastanów się, co w Twoim życiu stało się martwe, jałowe lub niepotrzebne. Śmierć we śnie to
                         zrzucanie starej skóry. To bolesny proces, ale bez niego nie ma mowy o wzroście.</p>
 
-                        <p class="qr-note">
-                        Wypróbuj aplikację i zapisz swój sen, by lepiej zrozumieć jego przesłanie.<span class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
+                    <p class="qr-note">
+                        Wypróbuj aplikację i zapisz swój sen, by lepiej zrozumieć jego przesłanie.<span
+                            class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz
+                            aplikacje</span>
                     </p>
 
                     <!-- przycisk na końcu artykułu -->
@@ -1025,8 +1054,9 @@ gtag('consent', 'default', {
                         że spadanie to etap przed lądowaniem, pozwala oswoić lęk i odzyskać równowagę. To sen o
                         zaufaniu, uważności i odwadze, by podnieść się silniejszym niż przedtem.</p>
 
-                        <p class="qr-note">
-                        Wypróbuj aplikację i zapisz swój sen.<span class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
+                    <p class="qr-note">
+                        Wypróbuj aplikację i zapisz swój sen.<span class="qr-desktop-only"><br>Zeskanuj kod
+                            QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
                     </p>
 
                     <!-- przycisk na końcu artykułu -->
@@ -1074,8 +1104,9 @@ gtag('consent', 'default', {
                         własnych terminów z losem. Być może odjeżdżający pociąg prowadzi Cię na nową, bardziej świadomą
                         ścieżkę.</p>
 
-                        <p class="qr-note">
-                        Wypróbuj aplikację i zapisz swój sen.<span class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
+                    <p class="qr-note">
+                        Wypróbuj aplikację i zapisz swój sen.<span class="qr-desktop-only"><br>Zeskanuj kod
+                            QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
                     </p>
 
                     <div class="cta-bottom">
@@ -1124,8 +1155,9 @@ gtag('consent', 'default', {
                         nieprzyjemności spotkania, jest to dowód na Twoją zdolność wyjścia obronną ręką z każdej
                         opresji.</p>
 
-                        <p class="qr-note">
-                        Wypróbuj aplikację i zapisz swój sen.<span class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
+                    <p class="qr-note">
+                        Wypróbuj aplikację i zapisz swój sen.<span class="qr-desktop-only"><br>Zeskanuj kod
+                            QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
                     </p>
 
                     <div class="cta-bottom">
@@ -1173,8 +1205,9 @@ gtag('consent', 'default', {
                         wyścig. Niezależnie od strachu, sen wskazuje czas, by przestać biec i zacząć negocjować warunki
                         własnego spokoju.</p>
 
-                        <p class="qr-note">
-                        Wypróbuj aplikację i zapisz swój sen.<span class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
+                    <p class="qr-note">
+                        Wypróbuj aplikację i zapisz swój sen.<span class="qr-desktop-only"><br>Zeskanuj kod
+                            QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
                     </p>
 
                     <div class="cta-bottom">
@@ -1220,8 +1253,9 @@ gtag('consent', 'default', {
                         przed wężem, czy go obserwuję? Konfrontacja wskazuje na gotowość do stawienia czoła lękom i
                         odzyskania kontroli nad swoim życiem.</p>
 
-                        <p class="qr-note">
-                        Wypróbuj aplikację i zapisz swój sen.<span class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
+                    <p class="qr-note">
+                        Wypróbuj aplikację i zapisz swój sen.<span class="qr-desktop-only"><br>Zeskanuj kod
+                            QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
                     </p>
 
                     <!-- przycisk na końcu artykułu -->
@@ -1285,8 +1319,9 @@ gtag('consent', 'default', {
                         pozwala odzyskać równowagę i spojrzeć na swoje doświadczenia z nowej, spokojniejszej
                         perspektywy.</p>
 
-                        <p class="qr-note">
-                        Wypróbuj aplikację i zapisz swój sen.<span class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
+                    <p class="qr-note">
+                        Wypróbuj aplikację i zapisz swój sen.<span class="qr-desktop-only"><br>Zeskanuj kod
+                            QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
                     </p>
 
                     <!-- przycisk na końcu artykułu -->
@@ -1332,8 +1367,9 @@ gtag('consent', 'default', {
                         zwycięstwem bywa odłożenie broni i budowanie pokoju. Brutalność snu ukazuje Twoją siłę, którą
                         możesz spożytkować zarówno na walkę, jak i na tworzenie wewnętrznej harmonii.</p>
 
-                        <p class="qr-note">
-                        Wypróbuj aplikację i zapisz swój sen.<span class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
+                    <p class="qr-note">
+                        Wypróbuj aplikację i zapisz swój sen.<span class="qr-desktop-only"><br>Zeskanuj kod
+                            QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
                     </p>
 
                     <div class="cta-bottom">
@@ -1387,15 +1423,16 @@ gtag('consent', 'default', {
                         początek procesu, w którym zyskujesz świadomość własnej siły, odporności i zdolności do odbudowy
                         siebie w bardziej autentyczny sposób.</p>
 
-                        <p class="qr-note">
-                        Wypróbuj aplikację i zapisz swój sen.<span class="qr-desktop-only"><br>Zeskanuj kod QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
+                    <p class="qr-note">
+                        Wypróbuj aplikację i zapisz swój sen.<span class="qr-desktop-only"><br>Zeskanuj kod
+                            QR.</span><span class="qr-mobile-only"><br>Pobierz aplikacje</span>
                     </p>
 
                     <!-- przycisk na końcu artykułu -->
                     <div class="cta-bottom">
                         <a href="#download" class="cta-btn">Pobierz aplikację</a>
                     </div>
-                    
+
                 </article>
 
                 <section class="download" id="download">
@@ -1492,7 +1529,7 @@ gtag('consent', 'default', {
             });
         })();
     </script>
-    
+
 </body>
 
 </html>
