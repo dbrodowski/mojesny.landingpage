@@ -479,6 +479,26 @@ article {
     scroll-margin-top: 160px;
 }
 
+/* Odstępy między sekcjami sennika - mobile */
+.sennik-toc + article {
+    margin-top: 2rem;
+}
+
+article + article {
+    margin-top: 2.5rem;
+}
+
+/* Odstępy między sekcjami sennika - duże ekrany */
+@media (min-width: 769px) {
+    .sennik-toc + article {
+        margin-top: 2.5rem;
+    }
+
+    article + article {
+        margin-top: 3rem;
+    }
+}
+
 /* Styl dla Twojego logo SVG */
 .site-logo {
     display: block;
