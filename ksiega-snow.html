@@ -3,6 +3,98 @@
 
 <head>
 
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+
+        // Consent default (MUSI być pierwsze)
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
+        });
+
+        (function () {
+            var trackingId = 'G-XSSD2BM25E';
+            var scriptLoaded = false;
+
+            function loadGAScript() {
+                if (scriptLoaded) return;
+
+                var consent = localStorage.getItem('cookie-consent');
+                if (consent !== 'accepted') return;
+
+                scriptLoaded = true;
+
+                var script = document.createElement('script');
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
+                script.async = true;
+                document.head.appendChild(script);
+
+                gtag('js', new Date());
+                gtag('config', trackingId, { anonymize_ip: true });
+
+                console.log('GA4 Loaded');
+            }
+
+            var consent = localStorage.getItem('cookie-consent');
+
+            if (consent === 'accepted') {
+
+                // Najpierw update consent
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                // Interaction
+                ['scroll', 'mousedown', 'touchstart', 'keydown'].forEach(function (e) {
+                    window.addEventListener(e, loadGAScript, { once: true, passive: true });
+                });
+
+                // Idle
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(loadGAScript, { timeout: 3000 });
+                }
+
+                // Fallback
+                setTimeout(loadGAScript, 4000);
+            }
+
+            // API dla bannera
+            window.acceptAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'accepted');
+
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                loadGAScript(); // natychmiast
+            };
+
+            window.rejectAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'rejected');
+            };
+
+        })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Najlepszy polski sennik AI. Sprawdź swoje sny w MojeSny.">
+    <title>Księga Snów – sprawdź znaczenie snów | Sennik alfabetyczny | MojeSny</title>
+    <link rel="canonical" href="https://mojesny.app/ksiega-snow.html">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css?v=1.1">
+
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -171,98 +263,6 @@
   ]
 }
 </script>
-
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        window.gtag = gtag;
-
-        // Consent default (MUSI być pierwsze)
-        gtag('consent', 'default', {
-            ad_storage: 'denied',
-            ad_user_data: 'denied',
-            ad_personalization: 'denied',
-            analytics_storage: 'denied',
-            wait_for_update: 500
-        });
-
-        (function () {
-            var trackingId = 'G-XSSD2BM25E';
-            var scriptLoaded = false;
-
-            function loadGAScript() {
-                if (scriptLoaded) return;
-
-                var consent = localStorage.getItem('cookie-consent');
-                if (consent !== 'accepted') return;
-
-                scriptLoaded = true;
-
-                var script = document.createElement('script');
-                script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
-                script.async = true;
-                document.head.appendChild(script);
-
-                gtag('js', new Date());
-                gtag('config', trackingId, { anonymize_ip: true });
-
-                console.log('GA4 Loaded');
-            }
-
-            var consent = localStorage.getItem('cookie-consent');
-
-            if (consent === 'accepted') {
-
-                // Najpierw update consent
-                gtag('consent', 'update', {
-                    ad_storage: 'granted',
-                    ad_user_data: 'granted',
-                    ad_personalization: 'granted',
-                    analytics_storage: 'granted'
-                });
-
-                // Interaction
-                ['scroll', 'mousedown', 'touchstart', 'keydown'].forEach(function (e) {
-                    window.addEventListener(e, loadGAScript, { once: true, passive: true });
-                });
-
-                // Idle
-                if ('requestIdleCallback' in window) {
-                    requestIdleCallback(loadGAScript, { timeout: 3000 });
-                }
-
-                // Fallback
-                setTimeout(loadGAScript, 4000);
-            }
-
-            // API dla bannera
-            window.acceptAllCookies = function () {
-                localStorage.setItem('cookie-consent', 'accepted');
-
-                gtag('consent', 'update', {
-                    ad_storage: 'granted',
-                    ad_user_data: 'granted',
-                    ad_personalization: 'granted',
-                    analytics_storage: 'granted'
-                });
-
-                loadGAScript(); // natychmiast
-            };
-
-            window.rejectAllCookies = function () {
-                localStorage.setItem('cookie-consent', 'rejected');
-            };
-
-        })();
-    </script>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Najlepszy polski sennik AI. Sprawdź swoje sny w MojeSny.">
-    <title>Księga Snów – sprawdź znaczenie snów | Sennik alfabetyczny | MojeSny</title>
-    <link rel="canonical" href="https://mojesny.app/ksiega-snow.html">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="style.css?v=1.1">
 
     <style>
         @media (min-width: 769px) {
