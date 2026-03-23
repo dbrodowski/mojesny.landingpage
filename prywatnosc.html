@@ -1,99 +1,101 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
 
-        <script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-window.gtag = gtag;
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
 
-// Consent default (MUSI być pierwsze)
-gtag('consent', 'default', {
-    ad_storage: 'denied',
-    ad_user_data: 'denied',
-    ad_personalization: 'denied',
-    analytics_storage: 'denied',
-    wait_for_update: 500
-});
-
-(function() {
-    var trackingId = 'G-XSSD2BM25E';
-    var scriptLoaded = false;
-
-    function loadGAScript() {
-        if (scriptLoaded) return;
-
-        var consent = localStorage.getItem('cookie-consent');
-        if (consent !== 'accepted') return;
-
-        scriptLoaded = true;
-
-        var script = document.createElement('script');
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
-        script.async = true;
-        document.head.appendChild(script);
-
-        gtag('js', new Date());
-        gtag('config', trackingId, { anonymize_ip: true });
-
-        console.log('GA4 Loaded');
-    }
-
-    var consent = localStorage.getItem('cookie-consent');
-
-    if (consent === 'accepted') {
-
-        // Najpierw update consent
-        gtag('consent', 'update', {
-            ad_storage: 'granted',
-            ad_user_data: 'granted',
-            ad_personalization: 'granted',
-            analytics_storage: 'granted'
+        // Consent default (MUSI być pierwsze)
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
         });
 
-        // Interaction
-        ['scroll', 'mousedown', 'touchstart', 'keydown'].forEach(function(e) {
-            window.addEventListener(e, loadGAScript, { once: true, passive: true });
-        });
+        (function () {
+            var trackingId = 'G-XSSD2BM25E';
+            var scriptLoaded = false;
 
-        // Idle
-        if ('requestIdleCallback' in window) {
-            requestIdleCallback(loadGAScript, { timeout: 3000 });
-        }
+            function loadGAScript() {
+                if (scriptLoaded) return;
 
-        // Fallback
-        setTimeout(loadGAScript, 4000);
-    }
+                var consent = localStorage.getItem('cookie-consent');
+                if (consent !== 'accepted') return;
 
-    // API dla bannera
-    window.acceptAllCookies = function() {
-        localStorage.setItem('cookie-consent', 'accepted');
+                scriptLoaded = true;
 
-        gtag('consent', 'update', {
-            ad_storage: 'granted',
-            ad_user_data: 'granted',
-            ad_personalization: 'granted',
-            analytics_storage: 'granted'
-        });
+                var script = document.createElement('script');
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
+                script.async = true;
+                document.head.appendChild(script);
 
-        loadGAScript(); // natychmiast
-    };
+                gtag('js', new Date());
+                gtag('config', trackingId, { anonymize_ip: true });
 
-    window.rejectAllCookies = function() {
-        localStorage.setItem('cookie-consent', 'rejected');
-    };
+                console.log('GA4 Loaded');
+            }
 
-})();
-</script>
+            var consent = localStorage.getItem('cookie-consent');
 
-        <meta charset="UTF-8">
+            if (consent === 'accepted') {
+
+                // Najpierw update consent
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                // Interaction
+                ['scroll', 'mousedown', 'touchstart', 'keydown'].forEach(function (e) {
+                    window.addEventListener(e, loadGAScript, { once: true, passive: true });
+                });
+
+                // Idle
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(loadGAScript, { timeout: 3000 });
+                }
+
+                // Fallback
+                setTimeout(loadGAScript, 4000);
+            }
+
+            // API dla bannera
+            window.acceptAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'accepted');
+
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                loadGAScript(); // natychmiast
+            };
+
+            window.rejectAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'rejected');
+            };
+
+        })();
+    </script>
+
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, follow">
-    <meta name="description" content="Privacy Policy for MojeSny platform.">
+    <meta name="description" content="Polityka prywatności platformy i aplikacji MojeSny.">
     <title>Polityka Prywatności | MojeSny</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -122,15 +124,17 @@ gtag('consent', 'default', {
         <div class="container">
             <section class="content">
                 <h1>Polityka Prywatności aplikacji MojeSny</h1>
-                
+
                 <p><strong>Ostatnia aktualizacja: Listopad 2025</strong></p>
 
                 <h2>1. Administrator danych</h2>
-                
-                <p>Administratorem danych osobowych jest twórca aplikacji MojeSny (dalej: „Administrator"). W sprawach związanych z ochroną danych osobowych można skontaktować się pod adresem e-mail: contact@mojesny.app</p>
+
+                <p>Administratorem danych osobowych jest twórca aplikacji MojeSny (dalej: „Administrator"). W sprawach
+                    związanych z ochroną danych osobowych można skontaktować się pod adresem e-mail: contact@mojesny.app
+                </p>
 
                 <h2>2. Zakres zbieranych danych</h2>
-                
+
                 <p>Aplikacja MojeSny może zbierać i przetwarzać następujące dane:</p>
                 <ul>
                     <li>adres e-mail podany podczas rejestracji lub logowania</li>
@@ -147,7 +151,7 @@ gtag('consent', 'default', {
                 </ul>
 
                 <h2>3. Wykorzystanie danych</h2>
-                
+
                 <p>Zebrane dane są wykorzystywane wyłącznie do:</p>
                 <ul>
                     <li>zapewnienia prawidłowego działania aplikacji</li>
@@ -159,34 +163,42 @@ gtag('consent', 'default', {
                 <p>Dane Użytkownika nie są sprzedawane ani udostępniane podmiotom trzecim w celach marketingowych.</p>
 
                 <h2>4. Sztuczna inteligencja i zewnętrzni dostawcy (third-party)</h2>
-                
-                <p>Aplikacja MojeSny korzysta z zewnętrznego dostawcy usług sztucznej inteligencji (AI) w celu analizy treści snów i generowania interpretacji.</p>
+
+                <p>Aplikacja MojeSny korzysta z zewnętrznego dostawcy usług sztucznej inteligencji (AI) w celu analizy
+                    treści snów i generowania interpretacji.</p>
                 <p>Ważne informacje:</p>
                 <ul>
                     <li>konwersacje przesyłane do AI nie są zapisywane ani przechowywane przez dostawcę AI</li>
-                    <li>Administrator nie ma kontroli nad sposobem przetwarzania danych przez zewnętrznego dostawcę AI</li>
+                    <li>Administrator nie ma kontroli nad sposobem przetwarzania danych przez zewnętrznego dostawcę AI
+                    </li>
                     <li>dostawca AI nie używa tych danych do trenowania modeli</li>
-                    <li>przesyłane treści są wykorzystywane wyłącznie w celu wygenerowania jednorazowej odpowiedzi dla Użytkownika</li>
+                    <li>przesyłane treści są wykorzystywane wyłącznie w celu wygenerowania jednorazowej odpowiedzi dla
+                        Użytkownika</li>
                 </ul>
 
                 <h2>5. Archiwum konwersacji</h2>
-                
-                <p>Archiwum konwersacji to funkcja która umożliwia Użytkownikom na przechowywanie i przeglądanie swoich wcześniejszych interakcji z AI.</p>
-                <p>Użytkownicy mają możliwość zarządzania swoimi archiwami, w tym usuwania poszczególnych konwersacji lub całego archiwum.</p>
+
+                <p>Archiwum konwersacji to funkcja, która umożliwia Użytkownikom przechowywanie i przeglądanie swoich
+                    wcześniejszych interakcji z AI.</p>
+                <p>Użytkownicy mają możliwość zarządzania swoimi archiwami, w tym usuwania poszczególnych konwersacji
+                    lub całego archiwum.</p>
                 <p>Oznacza to, że:</p>
                 <ul>
-                    <li>rozmowy z AI będą sa zapisywane na koncie Użytkownika w aplikacji</li>
+                    <li>rozmowy z AI będą zapisywane na koncie Użytkownika w aplikacji</li>
                     <li>są dostępne wyłącznie dla Użytkownika po zalogowaniu</li>
                     <li>Użytkownik ma możliwość usuwania lub edytowania swojego archiwum</li>
                 </ul>
-                <p>Dane te nie są udostępniane stronie trzeciej i są przechowywane wyłącznie w infrastrukturze aplikacji MojeSny.</p>
+                <p>Dane te nie są udostępniane stronie trzeciej i są przechowywane wyłącznie w infrastrukturze aplikacji
+                    MojeSny.</p>
 
                 <h2>6. Bezpieczeństwo danych</h2>
-                
-                <p>Mimo podejmowanych środków należy pamiętać, że żadna metoda przesyłania danych przez Internet nie jest w 100% bezpieczna.</p>
+
+                <p>Administrator dokłada wszelkich starań, aby chronić dane Użytkowników. Mimo podejmowanych środków
+                    bezpieczeństwa należy pamiętać, że żadna metoda przesyłania danych przez Internet nie jest w 100%
+                    bezpieczna.</p>
 
                 <h2>7. Prawa użytkownika</h2>
-                
+
                 <p>Każdy Użytkownik ma prawo do:</p>
                 <ul>
                     <li>dostępu do swoich danych osobowych</li>
@@ -195,23 +207,28 @@ gtag('consent', 'default', {
                     <li>przenoszenia swoich danych</li>
                     <li>wniesienia skargi do organu nadzorczego ds. ochrony danych osobowych</li>
                 </ul>
-                <p>W celu realizacji swoich praw należy skontaktować się z Administratorem pod adresem: contact@mojesny.app</p>
+                <p>W celu realizacji swoich praw należy skontaktować się z Administratorem pod adresem:
+                    contact@mojesny.app</p>
 
                 <h2>8. Dane osób niepełnoletnich</h2>
-                
-                <p>Aplikacja MojeSny nie jest przeznaczona dla osób poniżej 13 roku życia. Administrator świadomie nie zbiera danych osób niepełnoletnich.</p>
+
+                <p>Aplikacja MojeSny nie jest przeznaczona dla osób poniżej 13 roku życia. Administrator świadomie nie
+                    zbiera danych osób niepełnoletnich.</p>
 
                 <h2>9. Zmiany w Polityce Prywatności</h2>
-                
-                <p>Administrator zastrzega sobie prawo do aktualizacji niniejszej Polityki Prywatności. O wszelkich zmianach Użytkownicy zostaną poinformowani w aplikacji lub na stronie internetowej.</p>
+
+                <p>Administrator zastrzega sobie prawo do aktualizacji niniejszej Polityki Prywatności. O wszelkich
+                    zmianach Użytkownicy zostaną poinformowani w aplikacji lub na stronie internetowej.</p>
 
                 <h2>10. Kontakt</h2>
-                
-                <p>W przypadku pytań lub wątpliwości dotyczących niniejszej Polityki Prywatności lub Aplikacji, prosimy o kontakt pod adresem: contact@mojesny.app</p>
+
+                <p>W przypadku pytań lub wątpliwości dotyczących niniejszej Polityki Prywatności lub Aplikacji, prosimy
+                    o kontakt pod adresem: contact@mojesny.app</p>
 
                 <h2>11. Akceptacja polityki prywatności</h2>
-                
-                <p>Korzystając z aplikacji MojeSny, Użytkownik wyraża zgodę na warunki niniejszej Polityki Prywatności.</p>
+
+                <p>Korzystając z aplikacji MojeSny, Użytkownik wyraża zgodę na warunki niniejszej Polityki Prywatności.
+                </p>
             </section>
         </div>
     </main>
@@ -235,7 +252,7 @@ gtag('consent', 'default', {
     <script>
         const backToTopBtn = document.getElementById("backToTop");
 
-        window.onscroll = function() {
+        window.onscroll = function () {
             if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
                 backToTopBtn.style.display = "block";
             } else {
@@ -243,7 +260,7 @@ gtag('consent', 'default', {
             }
         };
 
-        backToTopBtn.onclick = function() {
+        backToTopBtn.onclick = function () {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
@@ -281,4 +298,5 @@ gtag('consent', 'default', {
     </script>
 
 </body>
+
 </html>
