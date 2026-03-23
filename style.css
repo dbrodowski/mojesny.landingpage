@@ -89,19 +89,24 @@ header .container {
     line-height: 1.1;
 }
 
-.hero h2 {
+/* Połączyłem styl h2 i nowej klasy hero-subtitle */
+.hero h2, 
+.hero .hero-subtitle {
     font-size: clamp(1.4rem, 6vw, 2.5rem);
     font-weight: 700;
     margin-bottom: 15px;
     line-height: 1.2;
+    display: block; /* Upewniamy się, że zachowuje się jak nagłówek */
 }
 
-.hero h3 {
+/* Połączyłem styl h3 i nowej klasy hero-tagline */
+.hero h3, 
+.hero .hero-tagline {
     font-size: clamp(1.1rem, 4vw, 1.8rem);
     font-weight: 800;
     margin-bottom: clamp(25px, 6vw, 40px);
     line-height: 1.4;
-    
+    display: block;
 }
 
 /* ================= POMARAŃCZOWE CTA ================= */
