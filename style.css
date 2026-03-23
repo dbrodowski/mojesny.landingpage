@@ -480,6 +480,7 @@ footer .container {
         padding: 12px 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         font-size: 1rem;
+        font-weight: 700;
     }
 
     .main-nav li:last-child a {
