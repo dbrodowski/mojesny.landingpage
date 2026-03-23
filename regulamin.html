@@ -1,99 +1,101 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
 
-        <script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-window.gtag = gtag;
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
 
-// Consent default (MUSI być pierwsze)
-gtag('consent', 'default', {
-    ad_storage: 'denied',
-    ad_user_data: 'denied',
-    ad_personalization: 'denied',
-    analytics_storage: 'denied',
-    wait_for_update: 500
-});
-
-(function() {
-    var trackingId = 'G-XSSD2BM25E';
-    var scriptLoaded = false;
-
-    function loadGAScript() {
-        if (scriptLoaded) return;
-
-        var consent = localStorage.getItem('cookie-consent');
-        if (consent !== 'accepted') return;
-
-        scriptLoaded = true;
-
-        var script = document.createElement('script');
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
-        script.async = true;
-        document.head.appendChild(script);
-
-        gtag('js', new Date());
-        gtag('config', trackingId, { anonymize_ip: true });
-
-        console.log('GA4 Loaded');
-    }
-
-    var consent = localStorage.getItem('cookie-consent');
-
-    if (consent === 'accepted') {
-
-        // Najpierw update consent
-        gtag('consent', 'update', {
-            ad_storage: 'granted',
-            ad_user_data: 'granted',
-            ad_personalization: 'granted',
-            analytics_storage: 'granted'
+        // Consent default (MUSI być pierwsze)
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
         });
 
-        // Interaction
-        ['scroll', 'mousedown', 'touchstart', 'keydown'].forEach(function(e) {
-            window.addEventListener(e, loadGAScript, { once: true, passive: true });
-        });
+        (function () {
+            var trackingId = 'G-XSSD2BM25E';
+            var scriptLoaded = false;
 
-        // Idle
-        if ('requestIdleCallback' in window) {
-            requestIdleCallback(loadGAScript, { timeout: 3000 });
-        }
+            function loadGAScript() {
+                if (scriptLoaded) return;
 
-        // Fallback
-        setTimeout(loadGAScript, 4000);
-    }
+                var consent = localStorage.getItem('cookie-consent');
+                if (consent !== 'accepted') return;
 
-    // API dla bannera
-    window.acceptAllCookies = function() {
-        localStorage.setItem('cookie-consent', 'accepted');
+                scriptLoaded = true;
 
-        gtag('consent', 'update', {
-            ad_storage: 'granted',
-            ad_user_data: 'granted',
-            ad_personalization: 'granted',
-            analytics_storage: 'granted'
-        });
+                var script = document.createElement('script');
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
+                script.async = true;
+                document.head.appendChild(script);
 
-        loadGAScript(); // natychmiast
-    };
+                gtag('js', new Date());
+                gtag('config', trackingId, { anonymize_ip: true });
 
-    window.rejectAllCookies = function() {
-        localStorage.setItem('cookie-consent', 'rejected');
-    };
+                console.log('GA4 Loaded');
+            }
 
-})();
-</script>
+            var consent = localStorage.getItem('cookie-consent');
 
-        <meta charset="UTF-8">
+            if (consent === 'accepted') {
+
+                // Najpierw update consent
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                // Interaction
+                ['scroll', 'mousedown', 'touchstart', 'keydown'].forEach(function (e) {
+                    window.addEventListener(e, loadGAScript, { once: true, passive: true });
+                });
+
+                // Idle
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(loadGAScript, { timeout: 3000 });
+                }
+
+                // Fallback
+                setTimeout(loadGAScript, 4000);
+            }
+
+            // API dla bannera
+            window.acceptAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'accepted');
+
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                loadGAScript(); // natychmiast
+            };
+
+            window.rejectAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'rejected');
+            };
+
+        })();
+    </script>
+
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, follow">
-    <meta name="description" content="Terms of Conditions for MojeSny platform.">
+    <meta name="description" content="Regulamin platformy i aplikacji MojeSny.">
     <title>Regulamin | MojeSny</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -122,22 +124,23 @@ gtag('consent', 'default', {
         <div class="container">
             <section class="content">
                 <h1>Regulamin Aplikacji MojeSny</h1>
-                
+
                 <p><strong>Ostatnia aktualizacja: Listopad 2025</strong></p>
 
-                <p>Niniejszy Regulamin określa zasady korzystania z aplikacji mobilnej i platformy MojeSny (dalej: „Aplikacja"). Korzystając z Aplikacji, Użytkownik akceptuje niniejszy Regulamin w całości.</p>
+                <p>Niniejszy Regulamin określa zasady korzystania z aplikacji mobilnej i platformy MojeSny (dalej:
+                    „Aplikacja"). Korzystając z Aplikacji, Użytkownik akceptuje niniejszy Regulamin w całości.</p>
 
                 <h2>1. Definicje</h2>
-                
+
                 <ul>
-                    <li>Aplikacja mobilna "MojeSny" dostępna na urządzenia mobilne (Android / iOS)</li>
+                    <li>Aplikacja – aplikacja mobilna "MojeSny" dostępna na urządzenia mobilne (Android / iOS)</li>
                     <li>Administrator – twórca i właściciel aplikacji MojeSny</li>
                     <li>AI – zewnętrzny dostawca sztucznej inteligencji wykorzystywany do analizy treści snów</li>
                     <li>Konto – indywidualny dostęp Użytkownika do Aplikacji</li>
                 </ul>
 
                 <h2>2. Przeznaczenie aplikacji</h2>
-                
+
                 <p>Aplikacja MojeSny służy do:</p>
                 <ul>
                     <li>zapisywania i analizowania snów</li>
@@ -145,21 +148,23 @@ gtag('consent', 'default', {
                     <li>prowadzenia osobistego dziennika snów</li>
                     <li>archiwizacji snów (funkcja planowana w kolejnych aktualizacjach)</li>
                 </ul>
-                <p>Interpretacje generowane przez aplikację mają charakter informacyjny, rozrywkowy i rozwojowy i nie stanowią porady psychologicznej, terapeutycznej, medycznej ani prawnej.</p>
+                <p>Interpretacje generowane przez aplikację mają charakter informacyjny, rozrywkowy i rozwojowy i nie
+                    stanowią porady psychologicznej, terapeutycznej, medycznej ani prawnej.</p>
 
                 <h2>3. Warunki korzystania</h2>
-                
+
                 <p>Użytkownik zobowiązuje się do:</p>
                 <ul>
                     <li>korzystania z aplikacji zgodnie z prawem</li>
                     <li>nieudostępniania swojego konta osobom trzecim</li>
                     <li>nieużywania aplikacji w celach niezgodnych z prawem, obraźliwych lub szkodliwych</li>
-                    <li>nieprzesyłania treści naruszających prawa innych osób (prywatność, prawa autorskie, dobra osobiste)</li>
+                    <li>nieprzesyłania treści naruszających prawa innych osób (prywatność, prawa autorskie, dobra
+                        osobiste)</li>
                 </ul>
                 <p>Administrator ma prawo zablokować konto Użytkownika w przypadku rażącego naruszenia Regulaminu.</p>
 
                 <h2>4. Konto użytkownika</h2>
-                
+
                 <p>Podczas tworzenia konta:</p>
                 <ul>
                     <li>zapisywany jest adres e-mail w bazie danych</li>
@@ -174,13 +179,14 @@ gtag('consent', 'default', {
                 </ul>
 
                 <h2>5. Sztuczna inteligencja (AI) i bezpieczeństwo danych</h2>
-                
+
                 <p>Aplikacja korzysta z usług zewnętrznego dostawcy AI w celu analizy i interpretacji snów.</p>
                 <p>Zasady dotyczące AI:</p>
                 <ul>
                     <li>przesyłane treści nie są zapisywane ani przechowywane przez dostawcę AI</li>
                     <li>nie są wykorzystywane do trenowania modeli AI</li>
-                    <li>dostawca AI nie otrzymuje danych umożliwiających identyfikację Użytkownika (np. imię, e-mail)</li>
+                    <li>dostawca AI nie otrzymuje danych umożliwiających identyfikację Użytkownika (np. imię, e-mail)
+                    </li>
                 </ul>
                 <p>W przyszłych aktualizacjach aplikacji zostanie dodana funkcja archiwum konwersacji, która:</p>
                 <ul>
@@ -189,17 +195,19 @@ gtag('consent', 'default', {
                     <li>umożliwi Użytkownikowi usuwanie zapisanych treści</li>
                 </ul>
 
-                <h2>6. Odpowiedzialność Administratorów</h2>
-                
+                <h2>6. Odpowiedzialność Administratora</h2>
+
                 <p>Administrator nie ponosi odpowiedzialności za:</p>
                 <ul>
                     <li>decyzje podjęte przez Użytkownika na podstawie interpretacji snów</li>
-                    <li>skutki wynikające z wykorzystania interpretacji w celach medycznych, terapeutycznych lub prawnych</li>
+                    <li>skutki wynikające z wykorzystania interpretacji w celach medycznych, terapeutycznych lub
+                        prawnych</li>
                 </ul>
 
                 <h2>7. Własność intelektualna</h2>
-                
-                <p>Cała zawartość aplikacji (nazwa, logo, interfejs, teksty, grafiki, kod) jest własnością Administratora i podlega ochronie prawnej.</p>
+
+                <p>Cała zawartość aplikacji (nazwa, logo, interfejs, teksty, grafiki, kod) jest własnością
+                    Administratora i podlega ochronie prawnej.</p>
                 <p>Zabronione jest:</p>
                 <ul>
                     <li>kopiowanie</li>
@@ -211,11 +219,12 @@ gtag('consent', 'default', {
                 </ul>
 
                 <h2>8. Usunięcie konta</h2>
-                
-                <p>Użytkownik może w dowolnym momencie usunąć konto korzystając z opcji "usuń konto" dostępnej w ustawieniach swojego profilu.</p>
+
+                <p>Użytkownik może w dowolnym momencie usunąć konto korzystając z opcji "usuń konto" dostępnej w
+                    ustawieniach swojego profilu.</p>
 
                 <h2>9. Prawo właściwe i jurysdykcja</h2>
-                
+
                 <p>Niniejszy Regulamin podlega prawu:</p>
                 <ul>
                     <li>Wielkiej Brytanii (UK GDPR)</li>
@@ -223,7 +232,7 @@ gtag('consent', 'default', {
                 </ul>
 
                 <h2>10. Zgodność z RODO / GDPR (UE i UK)</h2>
-                
+
                 <p>Administrator działa zgodnie z:</p>
                 <ul>
                     <li>Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 (GDPR / RODO)</li>
@@ -238,12 +247,13 @@ gtag('consent', 'default', {
                     <li>przenoszenia swoich danych</li>
                     <li>wniesienia sprzeciwu wobec przetwarzania swoich danych</li>
                 </ul>
-                <p>Wszelkie wnioski związane z ochroną danych należy kierować na adres: contact@mojesny.com</p>
+                <p>Wszelkie wnioski związane z ochroną danych należy kierować na adres: contact@mojesny.app</p>
 
                 <h2>11. Zmiany regulaminu</h2>
-                
-                <p>Administrator zastrzega sobie prawo do zmiany niniejszego Regulaminu w dowolnym momencie. Użytkownicy zostaną poinformowani o zmianach w aplikacji.<br>
-                Dalsze korzystanie z aplikacji oznacza akceptację nowej wersji Regulaminu.</p>
+
+                <p>Administrator zastrzega sobie prawo do zmiany niniejszego Regulaminu w dowolnym momencie. Użytkownicy
+                    zostaną poinformowani o zmianach w aplikacji.<br>
+                    Dalsze korzystanie z aplikacji oznacza akceptację nowej wersji Regulaminu.</p>
             </section>
         </div>
     </main>
@@ -267,7 +277,7 @@ gtag('consent', 'default', {
     <script>
         const backToTopBtn = document.getElementById("backToTop");
 
-        window.onscroll = function() {
+        window.onscroll = function () {
             if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
                 backToTopBtn.style.display = "block";
             } else {
@@ -275,7 +285,7 @@ gtag('consent', 'default', {
             }
         };
 
-        backToTopBtn.onclick = function() {
+        backToTopBtn.onclick = function () {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
@@ -313,4 +323,5 @@ gtag('consent', 'default', {
     </script>
 
 </body>
+
 </html>
