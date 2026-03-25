@@ -52,18 +52,17 @@
                     analytics_storage: 'granted'
                 });
 
-                // Interaction
-                ['scroll', 'mousedown', 'touchstart', 'keydown'].forEach(function (e) {
-                    window.addEventListener(e, loadGAScript, { once: true, passive: true });
-                });
-
-                // Idle
-                if ('requestIdleCallback' in window) {
-                    requestIdleCallback(loadGAScript, { timeout: 3000 });
+                // Ładujemy OD RAZU po załadowaniu okna (brak przekłamań w statystykach i brak lagów na scrollu)
+                if (document.readyState === 'complete') {
+                    loadGAScript();
+                } else {
+                    window.addEventListener('load', loadGAScript);
                 }
 
-                // Fallback
-                setTimeout(loadGAScript, 4000);
+                // Rezerwowe upewnienie się w wolnym czasie (Idle)
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(loadGAScript, { timeout: 2000 });
+                }
             }
 
             // API dla bannera
@@ -77,7 +76,7 @@
                     analytics_storage: 'granted'
                 });
 
-                loadGAScript(); // natychmiast
+                loadGAScript(); // natychmiast po kliknięciu "Akceptuję"
             };
 
             window.rejectAllCookies = function () {
