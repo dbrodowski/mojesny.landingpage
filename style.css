@@ -109,22 +109,19 @@ header .container {
     display: block;
 }
 
-/* h2, h3, h4 w content mają taki sam styl */
-.content h2,
-.content h3,
-.content h4 {
-    font-size: clamp(1.4rem, 6vw, 2.5rem);
-    font-weight: 700;
-    margin-bottom: 15px;
-    line-height: 1.2;
-    display: block;
-}
-
 /* ================= POMARAŃCZOWE CTA ================= */
 .cta-center, .cta-bottom {
     display: flex;
     justify-content: center;
     margin: 10px 0 24px;
+}
+
+/* h2 i h3 w content mają taki sam styl */
+.content h2,
+.content h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 1.2;
 }
 
 .app-store-button.cta-button, .cta-bottom .cta-btn {
