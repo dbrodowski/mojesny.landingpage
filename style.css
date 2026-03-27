@@ -90,7 +90,7 @@ header .container {
 }
 
 .content h1 {
-    font-size: clamp(1.8rem, 8vw, 3.5rem); 
+    font-size: 24px;
     font-weight: 700;
     margin-bottom: 10px;
     line-height: 1.1;
