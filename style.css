@@ -116,9 +116,10 @@ header .container {
     margin: 10px 0 24px;
 }
 
-/* h2 i h3 w content mają taki sam styl */
+/* h2, h3 i h4 w content mają taki sam styl */
 .content h2,
-.content h3 {
+.content h3,
+.content h4 {
     font-size: 1.5em;
     font-weight: bold;
     line-height: 1.2;
