@@ -89,6 +89,13 @@ header .container {
     line-height: 1.1;
 }
 
+.content h1 {
+    font-size: clamp(1.8rem, 8vw, 3.5rem); 
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+
 /* Połączyłem styl h2 i nowej klasy hero-subtitle */
 .hero h2, 
 .hero .hero-subtitle {
