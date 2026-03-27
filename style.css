@@ -228,6 +228,11 @@ header .container {
     line-height: 1.5; /* Zmniejszone z 1.8 na 1.5 - tekst jest bardziej zwarty */
 }
 
+.sennik-toc .toc-intro {
+    font-size: clamp(1.125rem, 3.6vw, 1.225rem);
+    font-weight: 400;
+}
+
 .qr-note {
     text-align: center;
     font-weight: 600;
