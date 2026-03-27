@@ -92,7 +92,7 @@ header .container {
 .content h1 {
     font-size: 31px;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin: 0 0 12px;
     line-height: 1.1;
 }
 
@@ -127,9 +127,20 @@ header .container {
 .content h2,
 .content h3,
 .content h4 {
-    font-size: 1.5em;
-    font-weight: bold;
+    font-size: 1.5rem;
+    font-weight: 700;
     line-height: 1.2;
+    margin: 26px 0 12px;
+}
+
+.content h1 + h2 {
+    margin-top: 12px;
+}
+
+.content article > h2:first-child,
+.content article > h3:first-child,
+.content article > h4:first-child {
+    margin-top: 0;
 }
 
 .app-store-button.cta-button, .cta-bottom .cta-btn {
