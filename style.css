@@ -100,8 +100,10 @@ header .container {
 }
 
 /* Połączyłem styl h3 i nowej klasy hero-tagline */
-.hero h3, 
-.hero .hero-tagline {
+.hero h3,
+.hero .hero-tagline,
+.content h3,
+.content h4 {
     font-size: clamp(1.1rem, 4vw, 1.8rem);
     font-weight: 800;
     margin-bottom: clamp(25px, 6vw, 40px);
