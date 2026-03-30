@@ -269,37 +269,31 @@ header .container {
     background-size: 100% 2px;         
 }
 
-.toc-buttons { /* literki TOC */
-    display: grid;
-    /* 10 kolumn przy 30 elementach da nam idealne 3 rzędy */
-    grid-template-columns: repeat(15, 1fr); 
-    gap: 8px;
-    width: 100%;
-    /* To jest klucz: ograniczamy szerokość, żeby przyciski nie puchły */
-    max-width: 100%; 
-    margin: 20px auto; /* Centrowanie na stronie */
+/* Klasa tylko dla LITER (dodajesz ją tam, gdzie ma być kwadrat) */
+.is-letter {
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    font-size: 1rem;
 }
 
-/* 3. KLASA DLA NAZW SNÓW (Prostokąty) */
-.toc-dreams {
-    padding: 12px 15px; /* Swobodny padding dla tekstu */
-    font-size: 0.95rem;
-    min-height: 45px; /* Żeby wszystkie sny miały równą wysokość */
+/* Klasa tylko dla NAZW SNÓW (dodajesz ją tam, gdzie są długie wyrazy) */
+.is-dream {
+    padding: 10px 15px; /* Dajemy miejsce tekstowi po bokach */
+    font-size: 0.9rem;
+    min-height: 45px; /* Żeby wszystkie w rzędzie były równe */
 }
 
 .toc-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    aspect-ratio: 1 / 1;
-    padding: 0;
     background: var(--brand-blue);
     color: #fff;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 8px; /* Twój oryginalny promień */
     text-align: center;
     font-weight: 600;
-    font-size: 0.9rem;
+    transition: all 0.3s ease;
 }
 
 /* Poprawka dla list wypunktowanych */
