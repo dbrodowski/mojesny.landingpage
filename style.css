@@ -293,10 +293,6 @@ header .container {
     transition: transform 0.2s, background 0.2s;
 }
 
-.toc-btn:hover {
-    background: var(--accent-red); /* Opcjonalnie: zmiana koloru na Twój akcent */
-    transform: scale(1.05);        /* Delikatne powiększenie po najechaniu */
-}
 
 /* Poprawka dla list wypunktowanych */
 .content ul {
