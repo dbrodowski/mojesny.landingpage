@@ -271,27 +271,27 @@ header .container {
 
 .toc-buttons {
     display: grid;
-    /* Zmieniamy na 7 lub 8 kolumn, żeby litery nie były wielkimi klocami */
-    grid-template-columns: repeat(8, 1fr); 
-    gap: 8px; /* Nieco mniejszy odstęp między nimi */
-    width: 100%;
-    margin-top: 20px;
+    grid-template-columns: repeat(15, 1fr); /* 15 kolumn */
+    gap: 8px;
+    max-width: 1000px;
+    margin: 20px auto;
 }
 
 .toc-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Zmniejszamy padding, zwłaszcza pionowy, żeby przycisk był niższy */
-    padding: 6px 2px; 
+    aspect-ratio: 1 / 1; /* ROBI Z PRZYCISKU IDEALNY KWADRAT */
+    padding: 0; /* Przy aspect-ratio padding nie jest już potrzebny do wysokości */
     background: var(--brand-blue);
     color: #fff;
-    text-decoration: none;
-    border-radius: 6px; /* Nieco mniejszy promień dla mniejszych przycisków */
-    text-align: center;
+    border-radius: 6px;
+    font-size: 1.2rem;
     font-weight: 700;
-    font-size: 0.9rem; /* Nieco mniejsza litera */
+    transition: transform 0.2s, background 0.2s;
 }
+
+
 
 /* Poprawka dla list wypunktowanych */
 .content ul {
