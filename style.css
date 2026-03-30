@@ -281,7 +281,7 @@ header .container {
 }
 
 /* 3. KLASA DLA NAZW SNÓW (Prostokąty) */
-.toc-dream {
+.toc-dreams {
     padding: 12px 15px; /* Swobodny padding dla tekstu */
     font-size: 0.95rem;
     min-height: 45px; /* Żeby wszystkie sny miały równą wysokość */
