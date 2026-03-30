@@ -271,8 +271,9 @@ header .container {
 
 .toc-buttons {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 10px;
+    /* Zmieniamy na 7 lub 8 kolumn, żeby litery nie były wielkimi klocami */
+    grid-template-columns: repeat(8, 1fr); 
+    gap: 8px; /* Nieco mniejszy odstęp między nimi */
     width: 100%;
     margin-top: 20px;
 }
@@ -281,14 +282,15 @@ header .container {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 2px;
+    /* Zmniejszamy padding, zwłaszcza pionowy, żeby przycisk był niższy */
+    padding: 6px 2px; 
     background: var(--brand-blue);
     color: #fff;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 6px; /* Nieco mniejszy promień dla mniejszych przycisków */
     text-align: center;
-    font-weight: 600;
-    font-size: 1rem;
+    font-weight: 700;
+    font-size: 0.9rem; /* Nieco mniejsza litera */
 }
 
 /* Poprawka dla list wypunktowanych */
