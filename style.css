@@ -528,10 +528,15 @@ footer .container {
         border-bottom: none;
     }
 
-    /* Litery w 2 kolumnach na mobile */
-    .toc-buttons {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
+    /* Litery w 6 kolumnach na mobile (5 rzędów po 6 liter) */
+.toc-buttons {
+    grid-template-columns: repeat(6, 1fr) !important;
+    gap: 8px !important; /* Mniejszy odstęp, żeby zmieścić więcej w rzędzie */
+}
+
+.toc-btn {
+    font-size: 1.1rem !important; /* Możesz lekko powiększyć samą literę dla czytelności */
+}
 
     article { scroll-margin-top: 85px !important; }
 }
