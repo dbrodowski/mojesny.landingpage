@@ -271,28 +271,28 @@ header .container {
 
 .toc-buttons {
     display: grid;
-    /* Zmienione z 5 na 10, aby zmieścić 30 liter w 3 rzędach */
+    /* 10 kolumn przy 30 elementach da nam idealne 3 rzędy */
     grid-template-columns: repeat(10, 1fr); 
-    gap: 10px;
+    gap: 8px;
     width: 100%;
-    margin-top: 20px;
+    /* To jest klucz: ograniczamy szerokość, żeby przyciski nie puchły */
+    max-width: 500px; 
+    margin: 20px auto; /* Centrowanie na stronie */
 }
 
 .toc-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Dodane proporcje 1:1 */
     aspect-ratio: 1 / 1;
-    /* Padding zmieniony na 0, bo wysokość wynika teraz z proporcji */
     padding: 0;
     background: var(--brand-blue);
     color: #fff;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 6px;
     text-align: center;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 /* Poprawka dla list wypunktowanych */
