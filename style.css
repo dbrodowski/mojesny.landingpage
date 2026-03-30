@@ -269,7 +269,7 @@ header .container {
     background-size: 100% 2px;         
 }
 
-/* 1. KONTENER (Dla alfabetu zostaje repeat(15, 1fr), dla snów zaraz to poprawimy) */
+/* 1. ALFABET (15 KOLUMN) - Twoje nienaruszone ustawienie */
 .toc-buttons {
     display: grid;
     grid-template-columns: repeat(15, 1fr); 
@@ -279,13 +279,12 @@ header .container {
     margin: 20px auto;
 }
 
-/* 2. BAZA (To są Twoje litery - zostają 100% tak jak chciałeś) */
+/* 2. STYL BAZOWY (Litery - Kwadraty) */
 .toc-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    aspect-ratio: 1 / 1; /* ROBI KWADRAT */
-    padding: 0;
+    aspect-ratio: 1 / 1;
     background: var(--brand-blue);
     color: #fff;
     text-decoration: none;
@@ -295,10 +294,8 @@ header .container {
     font-size: 0.9rem;
 }
 
-/* 3. MODYFIKACJA DLA SNÓW (Używasz jej tam, gdzie masz słowa) */
-/* Jeśli nadasz przyciskowi klasę .toc-dreams, to on "oleje" kwadrat i zrobi się prostokątem */
+/* 3. STYL DLA SNÓW (Prostokąty z tekstem) */
 .toc-dreams {
-    /* Kopiujemy wygląd z .toc-btn żeby był identyczny */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -309,17 +306,34 @@ header .container {
     text-align: center;
     font-weight: 600;
     font-size: 0.9rem;
-
-    /* A tutaj go zmieniamy w prostokąt: */
-    aspect-ratio: auto !important; /* WYŁĄCZA KWADRAT */
-    padding: 10px 15px !important; /* DODAJE MIEJSCE NA TEKST */
+    /* Nadpisujemy kwadrat na prostokąt */
+    aspect-ratio: auto !important;
+    padding: 10px 15px !important;
     min-height: 45px;
 }
 
-/* 4. POPRAWKA DLA SIATKI ZE SNAMI */
-/* Ponieważ sny są dłuższe niż litery, nie mogą mieć 15 kolumn, bo się nie zmieszczą */
+/* 4. FIX DLA MOBILE I RÓWNYCH PRZYCISKÓW */
+/* Ta sekcja pilnuje, żeby sny miały miejsce i były tej samej wielkości */
 .sennik-toc .toc-buttons:has(.toc-dreams) {
+    /* Na komputerze: sny mają min. 140px i układają się obok siebie */
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+}
+
+/* Naprawa Twoich 2 problemów na telefonie */
+@media (max-width: 600px) {
+    .sennik-toc .toc-buttons:has(.toc-dreams) {
+        /* PROBLEM 1: Równa wielkość - wymuszamy 2 równe kolumny */
+        /* PROBLEM 2: Mieszczenie się - grid sam przerzuci resztę do nowych rzędów */
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 380px) {
+    .sennik-toc .toc-buttons:has(.toc-dreams) {
+        /* Na bardzo małych ekranach: jeden pod drugim dla czytelności */
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Poprawka dla list wypunktowanych */
