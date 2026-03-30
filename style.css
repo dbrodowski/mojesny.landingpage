@@ -271,7 +271,8 @@ header .container {
 
 .toc-buttons {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); 
+    /* Zmienione z 5 na 10, aby zmieścić 30 liter w 3 rzędach */
+    grid-template-columns: repeat(10, 1fr); 
     gap: 10px;
     width: 100%;
     margin-top: 20px;
@@ -281,7 +282,10 @@ header .container {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 2px;
+    /* Dodane proporcje 1:1 */
+    aspect-ratio: 1 / 1;
+    /* Padding zmieniony na 0, bo wysokość wynika teraz z proporcji */
+    padding: 0;
     background: var(--brand-blue);
     color: #fff;
     text-decoration: none;
