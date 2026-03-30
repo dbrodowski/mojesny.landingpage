@@ -281,16 +281,15 @@ header .container {
     display: flex;
     align-items: center;
     justify-content: center;
-    aspect-ratio: 1 / 1;    /* Wymusza kształt kwadratu */
-    padding: 0;             /* Reset paddingu, wysokość ustala proporcja 1/1 */
+    aspect-ratio: 1 / 1;    /* Wymusza kwadratowy kształt */
+    padding: 0;             /* Reset paddingu, wysokość wyrównuje aspect-ratio */
     background: var(--brand-blue);
     color: #fff;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 6px;     /* Twój promień zaokrąglenia */
     text-align: center;
     font-weight: 700;
-    font-size: 1.2rem;      /* Większa czcionka, bo przy literach mamy miejsce */
-    transition: transform 0.2s, background 0.2s;
+    font-size: 0.9rem;      /* Twoja wielkość litery */
 }
 
 
