@@ -269,22 +269,22 @@ header .container {
     background-size: 100% 2px;         
 }
 
+/* 1. KONTENER (Dla alfabetu zostaje repeat(15, 1fr), dla snów zaraz to poprawimy) */
 .toc-buttons {
     display: grid;
-    /* 10 kolumn przy 30 elementach da nam idealne 3 rzędy */
     grid-template-columns: repeat(15, 1fr); 
     gap: 8px;
     width: 100%;
-    /* To jest klucz: ograniczamy szerokość, żeby przyciski nie puchły */
     max-width: 100%; 
-    margin: 20px auto; /* Centrowanie na stronie */
+    margin: 20px auto;
 }
 
+/* 2. BAZA (To są Twoje litery - zostają 100% tak jak chciałeś) */
 .toc-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 1; /* ROBI KWADRAT */
     padding: 0;
     background: var(--brand-blue);
     color: #fff;
@@ -295,12 +295,31 @@ header .container {
     font-size: 0.9rem;
 }
 
-/* --- NAZWY SNÓW (MODYFIKACJA ISTNIEJĄCEJ NAZWY) --- */
-/* Ta klasa nadpisuje tylko to, co musi być inne dla długiego tekstu */
-.toc-btn-dream {
-    aspect-ratio: auto; /* Wyłącza kwadrat, żeby tekst się zmieścił */
-    padding: 10px 15px; /* Daje miejsce na nazwę snu */
-    min-height: 45px;    /* Pilnuje równej wysokości w rzędzie */
+/* 3. MODYFIKACJA DLA SNÓW (Używasz jej tam, gdzie masz słowa) */
+/* Jeśli nadasz przyciskowi klasę .toc-dreams, to on "oleje" kwadrat i zrobi się prostokątem */
+.toc-dreams {
+    /* Kopiujemy wygląd z .toc-btn żeby był identyczny */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--brand-blue);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+
+    /* A tutaj go zmieniamy w prostokąt: */
+    aspect-ratio: auto !important; /* WYŁĄCZA KWADRAT */
+    padding: 10px 15px !important; /* DODAJE MIEJSCE NA TEKST */
+    min-height: 45px;
+}
+
+/* 4. POPRAWKA DLA SIATKI ZE SNAMI */
+/* Ponieważ sny są dłuższe niż litery, nie mogą mieć 15 kolumn, bo się nie zmieszczą */
+.sennik-toc .toc-buttons:has(.toc-dreams) {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
 }
 
 /* Poprawka dla list wypunktowanych */
