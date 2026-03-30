@@ -281,17 +281,22 @@ header .container {
     display: flex;
     align-items: center;
     justify-content: center;
-    aspect-ratio: 1 / 1; /* ROBI Z PRZYCISKU IDEALNY KWADRAT */
-    padding: 0; /* Przy aspect-ratio padding nie jest już potrzebny do wysokości */
+    aspect-ratio: 1 / 1;    /* Wymusza kształt kwadratu */
+    padding: 0;             /* Reset paddingu, wysokość ustala proporcja 1/1 */
     background: var(--brand-blue);
     color: #fff;
+    text-decoration: none;
     border-radius: 6px;
-    font-size: 1.2rem;
+    text-align: center;
     font-weight: 700;
+    font-size: 1.2rem;      /* Większa czcionka, bo przy literach mamy miejsce */
     transition: transform 0.2s, background 0.2s;
 }
 
-
+.toc-btn:hover {
+    background: var(--accent-red); /* Opcjonalnie: zmiana koloru na Twój akcent */
+    transform: scale(1.05);        /* Delikatne powiększenie po najechaniu */
+}
 
 /* Poprawka dla list wypunktowanych */
 .content ul {
