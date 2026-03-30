@@ -269,7 +269,7 @@ header .container {
     background-size: 100% 2px;         
 }
 
-.toc-buttons {
+.toc-buttons { /* literki TOC */
     display: grid;
     /* 10 kolumn przy 30 elementach da nam idealne 3 rzędy */
     grid-template-columns: repeat(15, 1fr); 
@@ -278,6 +278,13 @@ header .container {
     /* To jest klucz: ograniczamy szerokość, żeby przyciski nie puchły */
     max-width: 100%; 
     margin: 20px auto; /* Centrowanie na stronie */
+}
+
+/* 3. KLASA DLA NAZW SNÓW (Prostokąty) */
+.toc-dream {
+    padding: 12px 15px; /* Swobodny padding dla tekstu */
+    font-size: 0.95rem;
+    min-height: 45px; /* Żeby wszystkie sny miały równą wysokość */
 }
 
 .toc-btn {
