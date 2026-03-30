@@ -310,29 +310,29 @@ header .container {
     aspect-ratio: auto !important;
     padding: 10px 15px !important;
     min-height: 45px;
+    width: 100%; /* Żeby przycisk wypełniał całą dostępną kolumnę w gridzie */
 }
 
 /* 4. FIX DLA MOBILE I RÓWNYCH PRZYCISKÓW */
-/* Ta sekcja pilnuje, żeby sny miały miejsce i były tej samej wielkości */
 .sennik-toc .toc-buttons:has(.toc-dreams) {
     /* Na komputerze: sny mają min. 140px i układają się obok siebie */
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 10px;
+    display: grid;
 }
 
-/* Naprawa Twoich 2 problemów na telefonie */
+/* Naprawa problemów na telefonie - Sztywne 2 kolumny */
 @media (max-width: 600px) {
     .sennik-toc .toc-buttons:has(.toc-dreams) {
-        /* PROBLEM 1: Równa wielkość - wymuszamy 2 równe kolumny */
-        /* PROBLEM 2: Mieszczenie się - grid sam przerzuci resztę do nowych rzędów */
-        grid-template-columns: repeat(2, 1fr); 
+        /* Wymuszamy 2 równe kolumny - sny będą identycznej szerokości */
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 }
 
+/* Opcjonalnie: na bardzo małych ekranach jeden pod drugim */
 @media (max-width: 380px) {
     .sennik-toc .toc-buttons:has(.toc-dreams) {
-        /* Na bardzo małych ekranach: jeden pod drugim dla czytelności */
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
     }
 }
 
