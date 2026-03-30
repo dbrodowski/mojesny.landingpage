@@ -272,7 +272,7 @@ header .container {
 .toc-buttons {
     display: grid;
     /* 10 kolumn przy 30 elementach da nam idealne 3 rzędy */
-    grid-template-columns: repeat(10, 1fr); 
+    grid-template-columns: repeat(15, 1fr); 
     gap: 8px;
     width: 100%;
     /* To jest klucz: ograniczamy szerokość, żeby przyciski nie puchły */
