@@ -276,7 +276,7 @@ header .container {
     gap: 8px;
     width: 100%;
     /* To jest klucz: ograniczamy szerokość, żeby przyciski nie puchły */
-    max-width: 500px; 
+    max-width: 100%; 
     margin: 20px auto; /* Centrowanie na stronie */
 }
 
