@@ -271,25 +271,24 @@ header .container {
 
 .toc-buttons {
     display: grid;
-    grid-template-columns: repeat(15, 1fr); /* 15 kolumn */
-    gap: 8px;
-    max-width: 1000px;
-    margin: 20px auto;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
 }
 
 .toc-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    aspect-ratio: 1 / 1;    /* Wymusza kwadratowy kształt */
-    padding: 0;             /* Reset paddingu, wysokość wyrównuje aspect-ratio */
+    padding: 10px 2px;
     background: var(--brand-blue);
     color: #fff;
     text-decoration: none;
-    border-radius: 6px;     /* Twój promień zaokrąglenia */
+    border-radius: 8px;
     text-align: center;
-    font-weight: 700;
-    font-size: 0.9rem;      /* Twoja wielkość litery */
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 
