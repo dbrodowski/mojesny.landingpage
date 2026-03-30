@@ -295,6 +295,14 @@ header .container {
     font-size: 0.9rem;
 }
 
+/* --- NAZWY SNÓW (MODYFIKACJA ISTNIEJĄCEJ NAZWY) --- */
+/* Ta klasa nadpisuje tylko to, co musi być inne dla długiego tekstu */
+.toc-btn-dream {
+    aspect-ratio: auto; /* Wyłącza kwadrat, żeby tekst się zmieścił */
+    padding: 10px 15px; /* Daje miejsce na nazwę snu */
+    min-height: 45px;    /* Pilnuje równej wysokości w rzędzie */
+}
+
 /* Poprawka dla list wypunktowanych */
 .content ul {
     margin-left: 25px;      /* Wcięcie całej listy */
