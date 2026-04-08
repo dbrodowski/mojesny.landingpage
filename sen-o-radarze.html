@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+
+        // Consent default (MUSI być pierwsze)
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
+        });
+
+        (function () {
+            var trackingId = 'G-XSSD2BM25E';
+            var scriptLoaded = false;
+
+            function loadGAScript() {
+                if (scriptLoaded) return;
+
+                var consent = localStorage.getItem('cookie-consent');
+                if (consent !== 'accepted') return;
+
+                scriptLoaded = true;
+
+                var script = document.createElement('script');
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
+                script.async = true;
+                document.head.appendChild(script);
+
+                gtag('js', new Date());
+                gtag('config', trackingId, { anonymize_ip: true });
+
+                console.log('GA4 Loaded');
+            }
+
+            var consent = localStorage.getItem('cookie-consent');
+
+            if (consent === 'accepted') {
+
+                // Najpierw update consent
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                // Ładujemy OD RAZU po załadowaniu okna (brak przekłamań w statystykach i brak lagów na scrollu)
+                if (document.readyState === 'complete') {
+                    loadGAScript();
+                } else {
+                    window.addEventListener('load', loadGAScript);
+                }
+
+                // Rezerwowe upewnienie się w wolnym czasie (Idle)
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(loadGAScript, { timeout: 2000 });
+                }
+            }
+
+            // API dla bannera
+            window.acceptAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'accepted');
+
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                loadGAScript(); // natychmiast po kliknięciu "Akceptuję"
+            };
+
+            window.rejectAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'rejected');
+            };
+
+        })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Najlepszy polski sennik AI. Znaczenie snu o radarze. Dowiedz się, co oznacza sen o radarze według psychologii i symboliki.">
+    <title>Sen o radarze – co oznacza? Znaczenie snu | MojeSny</title>
+    <link rel="canonical" href="https://mojesny.app/sen-o-radarze.html">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css?v=1.1">
+
+    <style>
+        @media (min-width: 769px) {
+            .cta-bottom .cta-btn {
+                display: none;
+            }
+
+            .cta-bottom::before {
+                content: '';
+                display: block;
+                width: 100px;
+                height: 100px;
+                background: url('qr-code.svg') no-repeat center / contain;
+                margin: 0 auto;
+            }
+
+            .download {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cta-bottom {
+                display: none;
+            }
+        }
+    </style>
+
+    <script type="application/ld+json">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Sen o radarze – co oznacza? Znaczenie snu",
+  "description": "Najlepszy polski sennik AI. Znaczenie snu o radarze. Dowiedz się, co oznacza sen o radarze według psychologii i symboliki.",
+  "url": "https://mojesny.app/sen-o-radarze.html",
+  "image": "https://mojesny.app/icon.svg", 
+  "author": {
+    "@type": "Organization",
+    "name": "MojeSny",
+    "url": "https://mojesny.app"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MojeSny",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mojesny.app/icon.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mojesny.app/sen-o-radarze.html"
+  }
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="icon.svg" alt="MojeSny Logo" class="site-logo" width="100" height="100">
+                </a>
+            </div>
+            <button class="hamburger" aria-label="Otwórz menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Strona Główna</a></li>
+                    <li><a href="ksiega-snow.html" class="active">Księga Snów</a></li>
+                    <li><a href="prywatnosc.html">Polityka Prywatności</a></li>
+                    <li><a href="regulamin.html">Regulamin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="content">
+                <h1>Sennik alfabetyczny – lista snów na literę R</h1>
+                <h2>Sprawdź, co oznacza Twój sen.</h2>
+
+                <!-- SPIS TREŚCI -->
+                <nav class="sennik-toc">
+                    <p class="toc-intro">
+                        Wybierz interesujący Cię sen z listy poniżej i sprawdź jego interpretację.
+                    </p>
+                    <div class="toc-buttons">
+                        <a href="/sen-o-rybie.html#ryba" class="toc-dreams">Ryba</a>
+                        <a href="/sen-o-rowerze.html#rower" class="toc-dreams">Rower</a>
+                        <a href="/sen-o-rzece.html#rzeka" class="toc-dreams">Rzeka</a>
+                        <a href="/sen-o-rozy.html#roza" class="toc-dreams">Róża</a>
+                        <a href="/sen-o-rakiecie.html#rakieta" class="toc-dreams">Rakieta</a>
+                        <a href="/sen-o-robocie.html#robot" class="toc-dreams">Robot</a>
+                        <a href="/sen-o-rekach.html#rece" class="toc-dreams">Ręce</a>
+                        <a href="/sen-o-radosci.html#radosc" class="toc-dreams">Radość</a>
+                        <a href="/sen-o-rodzinie.html#rodzina" class="toc-dreams">Rodzina</a>
+                        <a href="/sen-o-radarze.html#radar" class="toc-dreams">Radar</a>
+                    </div>
+                </nav>
+
+                <!-- SEN O RADARZE-->
+                <article id="radar">
+                    <h2>Sen o radarze – znaczenie snu</h2>
+
+                    <p>
+                        Sen o radarze to nowoczesny i precyzyjny symbol oniryczny, podobnie jak
+                        <a href="/sen-o-intuicji.html#intuicja">sen o intuicji</a> czy
+                        <a href="/sen-o-ostrzezeniu.html#ostrzezenie">sen o ostrzeżeniu</a>. Symbolizuje Twoją uważność,
+                        zdolność do przewidywania i wykrywania ukrytych zagrożeń lub szans. Radar w snach pyta: czy
+                        słuchasz swojego wewnętrznego głosu, czy ignorujesz sygnały, ryzykując zderzenie z
+                        rzeczywistością? To lustro Twojej percepcji i czujności.
+                    </p>
+
+                    <h3>Radar jako symbol intuicji i przewidywania</h3>
+                    <p>
+                        Z perspektywy psychologii humanistycznej radar odzwierciedla Twoją percepcję pozazmysłową i
+                        społeczną inteligencję.<br>
+                        Obserwowanie ekranu radaru: Jeśli we śnie koncentrujesz się na migającym punkcie, oznacza to, że
+                        podświadomie wyczuwasz nadchodzącą zmianę – nową okazję lub intencje innych osób. Twoja
+                        podświadomość mówi: „Twoje zmysły są wyostrzone. Nie potrzebujesz dowodów, by wiedzieć, że coś
+                        się zbliża”.<br>
+                        Czysty ekran radaru: Symbol bezpieczeństwa i spokoju. Czujesz kontrolę nad otoczeniem, co daje
+                        przestrzeń do regeneracji i przygotowania się na przyszłe wyzwania.
+                    </p>
+
+                    <h3>Symbolika kontroli i granic</h3>
+                    <p>
+                        W psychologii analitycznej Junga radar może symbolizować potrzebę ochrony własnego terytorium
+                        psychicznego.<br>
+                        Radar wykrywający intruza: Alarm oznacza naruszanie Twoich granic. Może ktoś w Twoim otoczeniu
+                        ingeruje zbyt mocno w Twoje życie? Sen przypomina o asertywności i ochronie siebie.<br>
+                        Zepsuty lub zakłócony radar: To znak dezorientacji. Twoje emocje (stres, gniew) mogą „szumić”,
+                        uniemożliwiając trafną ocenę sytuacji. To wezwanie do zatrzymania się i ponownej kalibracji
+                        wewnętrznego kompasu.
+                    </p>
+
+                    <h3>Kontekst psychologiczny: bycie „na radarze”</h3>
+                    <p>
+                        Często śnimy o radarach, gdy czujemy się obserwowani lub oceniani. Bycie „namierzonym”
+                        odzwierciedla lęk przed ekspozycją lub poczucie winy. Sen uczy bezwzględnej autentyczności –
+                        jeśli żyjesz w zgodzie ze sobą, żaden „radar” nie będzie groźny, bo nie masz nic do ukrycia.<br>
+                        Operator radaru w wieży kontrolnej: Symbol odpowiedzialności i troski o innych. Twoja rola w
+                        życiu to prowadzenie ludzi i zapewnianie bezpieczeństwa – mądrość i strategiczne myślenie
+                        pozwalają unikać katastrof, zanim się wydarzą.
+                    </p>
+
+                    <h3>Podsumowanie</h3>
+                    <p>
+                        Sen o radarze przypomina, że życie to nie tylko to, co widać na pierwszy rzut oka, ale przede
+                        wszystkim to, co dzieje się „pomiędzy wierszami”. Zobacz też:
+                        <a href="/sen-o-intuicji.html#intuicja">sen o intuicji</a>,
+                        <a href="/sen-o-ostrzezeniu.html#ostrzezenie">sen o ostrzeżeniu</a>,
+                        <a href="/sen-o-uwadze.html#uwaga">sen o uwadze</a>.
+                        To zaproszenie do zaufania swoim przeczuciom. Niezależnie od tego, czy sen był chłodną analizą
+                        danych, czy lękiem przed niewidzialnym wrogiem, podświadomość mówi: „Twoja uważność jest
+                        najpotężniejszą tarczą; patrz głębiej i widź więcej”. Zastanów się, czy nie ignorujesz sygnałów
+                        intuicji w ważnych sprawach i czy nie nadszedł czas, by zacząć wierzyć temu, co czujesz,
+                        bardziej niż temu, co mówią inni. Radar nie kłamie – pokazuje to, co rzeczywiście jest w Twoim
+                        polu energii.
+                    </p>
+
+                    <p class="qr-note">
+                        Śniło Ci się coś podobnego? Sprawdź, co oznacza Twój sen!
+                        <span class="qr-desktop-only"><br>Zeskanuj kod
+                            QR.</span><span class="qr-mobile-only"><br>Pobierz aplikację</span>
+                    </p>
+
+                    <!-- przycisk na końcu artykułu -->
+                    <div class="cta-bottom">
+                        <a href="#download" class="cta-btn">Pobierz aplikację</a>
+                    </div>
+                </article>
+
+                <section class="download" id="download">
+                    <a href="https://apps.apple.com/app/mojesny/id6755436556" class="app-store-button" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
+                        </svg>
+                        <div class="button-text">
+                            <span class="small">Pobierz z</span>
+                            <span class="large">App Store</span>
+                        </div>
+                    </a>
+                    <a href="https://app.mojesny.app/" class="app-store-button web-button" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 19.93C7.05 19.44 4 16.08 4 12C4 11.38 4.08 10.79 4.21 10.21L9 15V16C9 17.1 9.9 18 11 18V19.93ZM17.9 17.39C17.64 16.58 16.9 16 16 16H15V13C15 12.45 14.55 12 14 12H8V10H10C10.55 10 11 9.55 11 9V7H13C14.1 7 15 6.1 15 5V4.59C17.93 5.78 20 8.65 20 12C20 14.08 19.2 15.97 17.9 17.39Z" />
+                        </svg>
+                        <div class="button-text">
+                            <span class="small">Wypróbuj</span>
+                            <span class="large">MojeSny</span>
+                        </div>
+                    </a>
+                </section>
+
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Strona Główna</a></li>
+                    <li><a href="ksiega-snow.html" class="active">Księga Snów</a></li>
+                    <li><a href="prywatnosc.html">Polityka Prywatności</a></li>
+                    <li><a href="regulamin.html">Regulamin</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">© 2025 - 2026 MojeSny</div>
+        </div>
+    </footer>
+
+    <button id="backToTop" title="Wróć na górę">↑</button>
+
+    <script>
+        const backToTopBtn = document.getElementById("backToTop");
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+
+        backToTopBtn.onclick = function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        };
+    </script>
+
+    <script src="cookie-consent.js" defer></script>
+    <script>
+        (function () {
+            var btn = document.querySelector('.hamburger');
+            var nav = document.querySelector('.main-nav');
+
+            if (!btn || !nav) return;
+
+            btn.addEventListener('click', function () {
+                var isOpen = nav.classList.toggle('is-open');
+                btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            nav.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!nav.contains(e.target) && !btn.contains(e.target)) {
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
+
+</body>
+
+</html>
