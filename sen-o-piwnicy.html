@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+
+        // Consent default (MUSI być pierwsze)
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
+        });
+
+        (function () {
+            var trackingId = 'G-XSSD2BM25E';
+            var scriptLoaded = false;
+
+            function loadGAScript() {
+                if (scriptLoaded) return;
+
+                var consent = localStorage.getItem('cookie-consent');
+                if (consent !== 'accepted') return;
+
+                scriptLoaded = true;
+
+                var script = document.createElement('script');
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
+                script.async = true;
+                document.head.appendChild(script);
+
+                gtag('js', new Date());
+                gtag('config', trackingId, { anonymize_ip: true });
+
+                console.log('GA4 Loaded');
+            }
+
+            var consent = localStorage.getItem('cookie-consent');
+
+            if (consent === 'accepted') {
+
+                // Najpierw update consent
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                // Ładujemy OD RAZU po załadowaniu okna (brak przekłamań w statystykach i brak lagów na scrollu)
+                if (document.readyState === 'complete') {
+                    loadGAScript();
+                } else {
+                    window.addEventListener('load', loadGAScript);
+                }
+
+                // Rezerwowe upewnienie się w wolnym czasie (Idle)
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(loadGAScript, { timeout: 2000 });
+                }
+            }
+
+            // API dla bannera
+            window.acceptAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'accepted');
+
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                loadGAScript(); // natychmiast po kliknięciu "Akceptuję"
+            };
+
+            window.rejectAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'rejected');
+            };
+
+        })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Najlepszy polski sennik AI. Znaczenie snu o piwnicy. Dowiedz się, co oznacza sen o piwnicy według psychologii i symboliki.">
+    <title>Sen o piwnicy – co oznacza? Znaczenie snu | MojeSny</title>
+    <link rel="canonical" href="https://mojesny.app/sen-o-piwnicy.html">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css?v=1.1">
+
+    <style>
+        @media (min-width: 769px) {
+            .cta-bottom .cta-btn {
+                display: none;
+            }
+
+            .cta-bottom::before {
+                content: '';
+                display: block;
+                width: 100px;
+                height: 100px;
+                background: url('qr-code.svg') no-repeat center / contain;
+                margin: 0 auto;
+            }
+
+            .download {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cta-bottom {
+                display: none;
+            }
+        }
+    </style>
+
+    <script type="application/ld+json">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Sen o piwnicy – co oznacza? Znaczenie snu",
+  "description": "Najlepszy polski sennik AI. Znaczenie snu o piwnicy. Dowiedz się, co oznacza sen o piwnicy według psychologii i symboliki.",
+  "url": "https://mojesny.app/sen-o-piwnicy.html",
+  "image": "https://mojesny.app/icon.svg", 
+  "author": {
+    "@type": "Organization",
+    "name": "MojeSny",
+    "url": "https://mojesny.app"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MojeSny",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mojesny.app/icon.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mojesny.app/sen-o-piwnicy.html"
+  }
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="icon.svg" alt="MojeSny Logo" class="site-logo" width="100" height="100">
+                </a>
+            </div>
+            <button class="hamburger" aria-label="Otwórz menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Strona Główna</a></li>
+                    <li><a href="ksiega-snow.html" class="active">Księga Snów</a></li>
+                    <li><a href="prywatnosc.html">Polityka Prywatności</a></li>
+                    <li><a href="regulamin.html">Regulamin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="content">
+                <h1>Sennik alfabetyczny – lista snów na literę P</h1>
+                <h2>Sprawdź, co oznacza Twój sen.</h2>
+
+                <!-- SPIS TREŚCI -->
+                <nav class="sennik-toc">
+                    <p class="toc-intro">
+                        Wybierz interesujący Cię sen z listy poniżej i sprawdź jego interpretację.
+                    </p>
+                    <div class="toc-buttons">
+                        <a href="/sen-o-pajaku.html#pajak" class="toc-dreams">Pająk</a>
+                        <a href="/sen-o-pieniadzach.html#pieniadze" class="toc-dreams">Pieniądze</a>
+                        <a href="/sen-o-pogrzebie.html#pogrzeb" class="toc-dreams">Pogrzeb</a>
+                        <a href="/sen-o-pozarze.html#pozar" class="toc-dreams">Pożar</a>
+                        <a href="/sen-o-psie.html#pies" class="toc-dreams">Pies</a>
+                        <a href="/sen-o-placzu.html#placz" class="toc-dreams">Płacz</a>
+                        <a href="/sen-o-podrozy.html#podroz" class="toc-dreams">Podróż</a>
+                        <a href="/sen-o-parasolce.html#parasolka" class="toc-dreams">Parasolka</a>
+                        <a href="/sen-o-piwnicy.html#piwnica" class="toc-dreams">Piwnica</a>
+                        <a href="/sen-o-owocu.html#owoc" class="toc-dreams">Owoc</a>
+                    </div>
+                </nav>
+
+                <!-- SEN O PIWNICY-->
+                <article id="piwnica">
+                    <h2>Sen o piwnicy – znaczenie snu</h2>
+
+                    <p>
+                        Sen o piwnicy to jeden z najgłębszych symboli w świecie snów, podobnie jak
+                        <a href="/sen-o-nieświadomosci.html#nieświadomosc">sen o nieświadomości</a> czy
+                        <a href="/sen-o-przeszlosci.html#przeszlosc">sen o przeszłości</a>. Reprezentuje zejście do
+                        fundamentów Twojej psychiki, ukrytych wspomnień i instynktów. Piwnica jest „pod powierzchnią”
+                        Twojego Ja – miejscem, gdzie trzymasz wszystko, co wypartę lub zaniedbałeś. Sen o piwnicy pyta:
+                        czy masz odwagę zejść na dół i skonfrontować się z tym, co tam „mieszka”, czy boisz się, że może
+                        Cię to przytłoczyć? To lustro Twojej psychicznej głębi i fundamentów.
+                    </p>
+
+                    <h3>Piwnica jako symbol nieświadomości i przeszłości</h3>
+                    <p>
+                        Z perspektywy psychologii analitycznej Junga, piwnica jest miejscem przechowywania Cienia – tych
+                        części siebie, których nie chcesz dostrzegać.<br>
+                        Zchodzenie do ciemnej piwnicy: Jeśli schodzisz po schodach z obawą, oznacza to konfrontację z
+                        dawnymi urazami, nieprzepracowaną żałobą lub cechami, których się wstydzisz. Podświadomość mówi:
+                        „Nie zbudujesz stabilnej przyszłości na zaniedbanych fundamentach. Czas zapalić światło i
+                        uporządkować to, co ukryte”.<br>
+                        Znalezienie skarbów w piwnicy: To znak, że w Twojej podświadomości kryją się zasoby energii i
+                        kreatywności, które możesz odzyskać. To odkrycie części siebie, które wzmacnia i czyni
+                        pełniejszym człowiekiem.
+                    </p>
+
+                    <h3>Symbolika fundamentów i bezpieczeństwa</h3>
+                    <p>
+                        Zalana lub zniszczona piwnica: Woda lub śmieci w piwnicy oznaczają emocjonalne przeciążenie.
+                        Twoje poczucie bezpieczeństwa jest zagrożone przez stłumione emocje, które „przeciekają” do
+                        codziennego życia. To wezwanie do natychmiastowej higieny psychicznej – oczyszczenia
+                        fundamentów, zanim ucierpi cały „dom” (zdrowie, praca, relacje).<br>
+                        Ukrywanie się w piwnicy: Może oznaczać chęć ucieczki od problemów świata zewnętrznego,
+                        poszukiwanie schronienia w tym, co znane i „podziemne”.
+                    </p>
+
+                    <h3>Kontekst psychologiczny: Instynkty i biologia</h3>
+                    <p>
+                        Piwnica, jako najniższa część domu, kojarzy się z pierwotną naturą i instynktami. Często śnimy o
+                        niej w kryzysie tożsamości lub gdy nasze ciało domaga się uwagi. Pusta piwnica może wskazywać na
+                        poczucie wypalenia, a pełna jedzenia i zapasów – na siłę przetrwania i wewnętrzną energię, na
+                        której można polegać. Ukryte drzwi do głębszych korytarzy symbolizują inicjację w nieznane
+                        obszary duszy – gotowość do głębokiej terapii lub duchowej podróży.
+                    </p>
+
+                    <h3>Podsumowanie</h3>
+                    <p>
+                        Sen o piwnicy przypomina, że dom jest tak silny, jak jego fundamenty. Zobacz też:
+                        <a href="/sen-o-nieświadomosci.html#nieświadomosc">sen o nieświadomości</a>,
+                        <a href="/sen-o-przeszlosci.html#przeszlosc">sen o przeszłości</a>,
+                        <a href="/sen-o-samoświadomości.html#samowiedza">sen o samoświadomości</a>.
+                        To zaproszenie do bezwzględnej eksploracji wnętrza. Niezależnie, czy sen budził lęk przed tym,
+                        co w kącie, czy radość z odkrywania pamiątek, podświadomość mówi: „Zajrzyj pod powierzchnię –
+                        tam leży klucz do autentyczności”. Czas odkurzyć swoje wnętrze i przestać bać się własnych
+                        sekretów. W piwnicy psychiki nie ma potworów – są tylko części Ciebie, które potrzebują światła,
+                        aby wreszcie mogły rozkwitnąć.
+                    </p>
+
+                    <p class="qr-note">
+                        Śniło Ci się coś podobnego? Sprawdź, co oznacza Twój sen!
+                        <span class="qr-desktop-only"><br>Zeskanuj kod
+                            QR.</span><span class="qr-mobile-only"><br>Pobierz aplikację</span>
+                    </p>
+
+                    <!-- przycisk na końcu artykułu -->
+                    <div class="cta-bottom">
+                        <a href="#download" class="cta-btn">Pobierz aplikację</a>
+                    </div>
+                </article>
+
+                <section class="download" id="download">
+                    <a href="https://apps.apple.com/app/mojesny/id6755436556" class="app-store-button" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
+                        </svg>
+                        <div class="button-text">
+                            <span class="small">Pobierz z</span>
+                            <span class="large">App Store</span>
+                        </div>
+                    </a>
+                    <a href="https://app.mojesny.app/" class="app-store-button web-button" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 19.93C7.05 19.44 4 16.08 4 12C4 11.38 4.08 10.79 4.21 10.21L9 15V16C9 17.1 9.9 18 11 18V19.93ZM17.9 17.39C17.64 16.58 16.9 16 16 16H15V13C15 12.45 14.55 12 14 12H8V10H10C10.55 10 11 9.55 11 9V7H13C14.1 7 15 6.1 15 5V4.59C17.93 5.78 20 8.65 20 12C20 14.08 19.2 15.97 17.9 17.39Z" />
+                        </svg>
+                        <div class="button-text">
+                            <span class="small">Wypróbuj</span>
+                            <span class="large">MojeSny</span>
+                        </div>
+                    </a>
+                </section>
+
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Strona Główna</a></li>
+                    <li><a href="ksiega-snow.html" class="active">Księga Snów</a></li>
+                    <li><a href="prywatnosc.html">Polityka Prywatności</a></li>
+                    <li><a href="regulamin.html">Regulamin</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">© 2025 - 2026 MojeSny</div>
+        </div>
+    </footer>
+
+    <button id="backToTop" title="Wróć na górę">↑</button>
+
+    <script>
+        const backToTopBtn = document.getElementById("backToTop");
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+
+        backToTopBtn.onclick = function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        };
+    </script>
+
+    <script src="cookie-consent.js" defer></script>
+    <script>
+        (function () {
+            var btn = document.querySelector('.hamburger');
+            var nav = document.querySelector('.main-nav');
+
+            if (!btn || !nav) return;
+
+            btn.addEventListener('click', function () {
+                var isOpen = nav.classList.toggle('is-open');
+                btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            nav.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!nav.contains(e.target) && !btn.contains(e.target)) {
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
+
+</body>
+
+</html>
