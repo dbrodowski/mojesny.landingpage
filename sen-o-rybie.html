@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+
+        // Consent default (MUSI być pierwsze)
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
+        });
+
+        (function () {
+            var trackingId = 'G-XSSD2BM25E';
+            var scriptLoaded = false;
+
+            function loadGAScript() {
+                if (scriptLoaded) return;
+
+                var consent = localStorage.getItem('cookie-consent');
+                if (consent !== 'accepted') return;
+
+                scriptLoaded = true;
+
+                var script = document.createElement('script');
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
+                script.async = true;
+                document.head.appendChild(script);
+
+                gtag('js', new Date());
+                gtag('config', trackingId, { anonymize_ip: true });
+
+                console.log('GA4 Loaded');
+            }
+
+            var consent = localStorage.getItem('cookie-consent');
+
+            if (consent === 'accepted') {
+
+                // Najpierw update consent
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                // Ładujemy OD RAZU po załadowaniu okna (brak przekłamań w statystykach i brak lagów na scrollu)
+                if (document.readyState === 'complete') {
+                    loadGAScript();
+                } else {
+                    window.addEventListener('load', loadGAScript);
+                }
+
+                // Rezerwowe upewnienie się w wolnym czasie (Idle)
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(loadGAScript, { timeout: 2000 });
+                }
+            }
+
+            // API dla bannera
+            window.acceptAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'accepted');
+
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                loadGAScript(); // natychmiast po kliknięciu "Akceptuję"
+            };
+
+            window.rejectAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'rejected');
+            };
+
+        })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Najlepszy polski sennik AI. Znaczenie snu o rybie. Dowiedz się, co oznacza sen o rybie według psychologii i symboliki.">
+    <title>Sen o rybie – co oznacza? Znaczenie snu | MojeSny</title>
+    <link rel="canonical" href="https://mojesny.app/sen-o-rybie.html">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css?v=1.1">
+
+    <style>
+        @media (min-width: 769px) {
+            .cta-bottom .cta-btn {
+                display: none;
+            }
+
+            .cta-bottom::before {
+                content: '';
+                display: block;
+                width: 100px;
+                height: 100px;
+                background: url('qr-code.svg') no-repeat center / contain;
+                margin: 0 auto;
+            }
+
+            .download {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cta-bottom {
+                display: none;
+            }
+        }
+    </style>
+
+    <script type="application/ld+json">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Sen o rybie – co oznacza? Znaczenie snu",
+  "description": "Najlepszy polski sennik AI. Znaczenie snu o rybie. Dowiedz się, co oznacza sen o rybie według psychologii i symboliki.",
+  "url": "https://mojesny.app/sen-o-rybie.html",
+  "image": "https://mojesny.app/icon.svg", 
+  "author": {
+    "@type": "Organization",
+    "name": "MojeSny",
+    "url": "https://mojesny.app"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MojeSny",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mojesny.app/icon.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mojesny.app/sen-o-rybie.html"
+  }
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="icon.svg" alt="MojeSny Logo" class="site-logo" width="100" height="100">
+                </a>
+            </div>
+            <button class="hamburger" aria-label="Otwórz menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Strona Główna</a></li>
+                    <li><a href="ksiega-snow.html" class="active">Księga Snów</a></li>
+                    <li><a href="prywatnosc.html">Polityka Prywatności</a></li>
+                    <li><a href="regulamin.html">Regulamin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="content">
+                <h1>Sennik alfabetyczny – lista snów na literę R</h1>
+                <h2>Sprawdź, co oznacza Twój sen.</h2>
+
+                <!-- SPIS TREŚCI -->
+                <nav class="sennik-toc">
+                    <p class="toc-intro">
+                        Wybierz interesujący Cię sen z listy poniżej i sprawdź jego interpretację.
+                    </p>
+                    <div class="toc-buttons">
+                        <a href="/sen-o-rybie.html#ryba" class="toc-dreams">Ryba</a>
+                        <a href="/sen-o-parasolce.html#parasolka" class="toc-dreams">Parasolka</a>
+                        <a href="/sen-o-pieczywie.html#pieczywo" class="toc-dreams">Pieczywo</a>
+                        <a href="/sen-o-pieniadzach.html#pieniadze" class="toc-dreams">Pieniądze</a>
+                        <a href="/sen-o-psie.html#pies" class="toc-dreams">Pies</a>
+                        <a href="/sen-o-piwnicy.html#piwnica" class="toc-dreams">Piwnica</a>
+                        <a href="/sen-o-placzu.html#placz" class="toc-dreams">Płacz</a>
+                        <a href="/sen-o-podrozy.html#podroz" class="toc-dreams">Podróż</a>
+                        <a href="/sen-o-pogrzebie.html#pogrzeb" class="toc-dreams">Pogrzeb</a>
+                        <a href="/sen-o-pozarze.html#pozar" class="toc-dreams">Pożar</a>
+                    </div>
+                </nav>
+
+                <!-- SEN O RYBIE-->
+                <article id="ryba">
+                    <h2>Sen o rybie – znaczenie snu</h2>
+
+                    <p>
+                        Sen o rybie to jedna z najbardziej pierwotnych i wieloznacznych metafor w świecie snów, podobnie
+                        jak
+                        <a href="/sen-o-nieświadomosci.html#nieświadomosc">sen o nieświadomości</a> czy
+                        <a href="/sen-o-intuicji.html#intuicja">sen o intuicji</a>. Reprezentuje głębokie emocje,
+                        duchowe odrodzenie i ukryte treści, które wypływają na powierzchnię świadomości. Ryba, żyjąc w
+                        wodzie – symbolu uczuć – pokazuje, co „pływa” pod powierzchnią Twoich codziennych myśli. Sen o
+                        rybie pyta: czy potrafisz wyłowić cenne spostrzeżenia ze swojej duszy, czy boisz się tego, co
+                        czai się w mętnych wodach Twoich emocji? To lustro Twojej intuicji i zdolności odczytywania
+                        sygnałów płynących z wnętrza.
+                    </p>
+
+                    <h3>Ryba jako symbol nieświadomości i intuicji</h3>
+                    <p>
+                        Z perspektywy psychologii analitycznej Junga, ryba jest posłańcem z głębin Twojej psychiki.<br>
+                        Pływająca ryba w czystej wodzie: Jeśli widzisz rybę swobodnie poruszającą się w klarownej toni,
+                        oznacza to harmonię emocjonalną i duchową. Twoja intuicja działa prawidłowo, a podświadomość
+                        mówi: „Ufaj temu, co podpowiada Ci serce – płyniesz w dobrym kierunku”.<br>
+                        Ryba w mętnej wodzie: Symbolizuje dezorientację i lęk przed nieznanym. Może czujesz chaos
+                        emocjonalny lub niepewność w życiu? To wezwanie do „oczyszczenia wody” – do uporządkowania
+                        emocji i skonfrontowania się z tym, co niejasne lub trudne.
+                    </p>
+
+                    <h3>Symbolika zdobyczy i potencjału</h3>
+                    <p>
+                        Łowienie ryb: To metafora aktywnego poszukiwania sukcesu, sensu lub nagrody. Złowienie dużej
+                        ryby zwiastuje nadchodzące osiągnięcie lub „olśnienie” – pomysł, który zmieni Twoje życie. Ryba
+                        wyślizgująca się z rąk sygnalizuje lęk przed utratą szansy lub poczucie, że sukces jest
+                        nieuchwytny.<br>
+                        Jedzenie ryby: Symbolizuje przyswajanie wiedzy i energii. Przyjmujesz nowe wartości, które Cię
+                        wzmacniają, a także znak „pokarmu dla duszy” i gotowości do wyższej świadomości.
+                    </p>
+
+                    <h3>Kontekst psychologiczny: Płodność i nowe życie</h3>
+                    <p>
+                        Ryba, składając wiele jaj, jest symbolem kreatywnej płodności i nowych początków. Sen o rybach
+                        często pojawia się, gdy rodzi się nowy projekt, nowa relacja lub wizja siebie. Złota ryba może
+                        oznaczać odkrycie wewnętrznego „skarbu” – talentu lub potencjału, który jest kluczem do
+                        szczęścia.<br>
+                        Ważne: Jeśli ryba umiera lub leży martwa na brzegu, to sygnał utraconych nadziei lub
+                        emocjonalnego chłodu. Może zaniedbałeś duchowe lub kreatywne aspekty życia? To wezwanie do
+                        odświeżenia swojej „wody życia” i zadbania o marzenia.
+                    </p>
+
+                    <h3>Podsumowanie</h3>
+                    <p>
+                        Sen o rybie przypomina, że życie jest oceanem możliwości, a to, co z niego wyłowisz, zależy od
+                        odwagi, by zajrzeć pod powierzchnię. Zobacz też:
+                        <a href="/sen-o-nieświadomosci.html#nieświadomosc">sen o nieświadomości</a>,
+                        <a href="/sen-o-intuicji.html#intuicja">sen o intuicji</a>,
+                        <a href="/sen-o-poddaniu-sie.html#poddanie">sen o poddaniu się nurtowi życia</a>.
+                        To zaproszenie do zaufania własnej naturze i własnym odczuciom. Niezależnie, czy sen pokazywał
+                        spokojną ławicę, czy zmaganie się z ogromnym stworzeniem morskim, podświadomość mówi: „Zejdź
+                        głębiej; tam, gdzie inni widzą tylko mrok, Ty znajdziesz życie i mądrość”. Czas wsłuchać się w
+                        sygnały intuicji i „zarzucić sieci” w nieodkrytym dotąd obszarze swojej aktywności. Ryba zawsze
+                        płynie z prądem życia – czas, byś i Ty przestał walczyć z własną naturą.
+                    </p>
+
+                    <p class="qr-note">
+                        Miałeś podobny sen? Odkryj jego znaczenie w naszej aplikacji.
+                        <span class="qr-desktop-only"><br>Zeskanuj kod
+                            QR.</span><span class="qr-mobile-only"><br>Pobierz aplikację</span>
+                    </p>
+
+                    <!-- przycisk na końcu artykułu -->
+                    <div class="cta-bottom">
+                        <a href="#download" class="cta-btn">Pobierz aplikację</a>
+                    </div>
+                </article>
+
+                <section class="download" id="download">
+                    <a href="https://apps.apple.com/app/mojesny/id6755436556" class="app-store-button" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
+                        </svg>
+                        <div class="button-text">
+                            <span class="small">Pobierz z</span>
+                            <span class="large">App Store</span>
+                        </div>
+                    </a>
+                    <a href="https://app.mojesny.app/" class="app-store-button web-button" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 19.93C7.05 19.44 4 16.08 4 12C4 11.38 4.08 10.79 4.21 10.21L9 15V16C9 17.1 9.9 18 11 18V19.93ZM17.9 17.39C17.64 16.58 16.9 16 16 16H15V13C15 12.45 14.55 12 14 12H8V10H10C10.55 10 11 9.55 11 9V7H13C14.1 7 15 6.1 15 5V4.59C17.93 5.78 20 8.65 20 12C20 14.08 19.2 15.97 17.9 17.39Z" />
+                        </svg>
+                        <div class="button-text">
+                            <span class="small">Wypróbuj</span>
+                            <span class="large">MojeSny</span>
+                        </div>
+                    </a>
+                </section>
+
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Strona Główna</a></li>
+                    <li><a href="ksiega-snow.html" class="active">Księga Snów</a></li>
+                    <li><a href="prywatnosc.html">Polityka Prywatności</a></li>
+                    <li><a href="regulamin.html">Regulamin</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">© 2025 - 2026 MojeSny</div>
+        </div>
+    </footer>
+
+    <button id="backToTop" title="Wróć na górę">↑</button>
+
+    <script>
+        const backToTopBtn = document.getElementById("backToTop");
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+
+        backToTopBtn.onclick = function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        };
+    </script>
+
+    <script src="cookie-consent.js" defer></script>
+    <script>
+        (function () {
+            var btn = document.querySelector('.hamburger');
+            var nav = document.querySelector('.main-nav');
+
+            if (!btn || !nav) return;
+
+            btn.addEventListener('click', function () {
+                var isOpen = nav.classList.toggle('is-open');
+                btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            nav.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!nav.contains(e.target) && !btn.contains(e.target)) {
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
+
+</body>
+
+</html>
