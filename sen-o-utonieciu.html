@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+
+        // Consent default (MUSI być pierwsze)
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
+        });
+
+        (function () {
+            var trackingId = 'G-XSSD2BM25E';
+            var scriptLoaded = false;
+
+            function loadGAScript() {
+                if (scriptLoaded) return;
+
+                var consent = localStorage.getItem('cookie-consent');
+                if (consent !== 'accepted') return;
+
+                scriptLoaded = true;
+
+                var script = document.createElement('script');
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
+                script.async = true;
+                document.head.appendChild(script);
+
+                gtag('js', new Date());
+                gtag('config', trackingId, { anonymize_ip: true });
+
+                console.log('GA4 Loaded');
+            }
+
+            var consent = localStorage.getItem('cookie-consent');
+
+            if (consent === 'accepted') {
+
+                // Najpierw update consent
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                // Ładujemy OD RAZU po załadowaniu okna (brak przekłamań w statystykach i brak lagów na scrollu)
+                if (document.readyState === 'complete') {
+                    loadGAScript();
+                } else {
+                    window.addEventListener('load', loadGAScript);
+                }
+
+                // Rezerwowe upewnienie się w wolnym czasie (Idle)
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(loadGAScript, { timeout: 2000 });
+                }
+            }
+
+            // API dla bannera
+            window.acceptAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'accepted');
+
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                loadGAScript(); // natychmiast po kliknięciu "Akceptuję"
+            };
+
+            window.rejectAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'rejected');
+            };
+
+        })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Najlepszy polski sennik AI. Znaczenie snu o utonięciu. Dowiedz się, co oznacza sen o utonięciu według psychologii i symboliki.">
+    <title>Sen o utonięciu – co oznacza? Znaczenie snu | MojeSny</title>
+    <link rel="canonical" href="https://mojesny.app/sen-o-utonieniu.html">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css?v=1.1">
+
+    <style>
+        @media (min-width: 769px) {
+            .cta-bottom .cta-btn {
+                display: none;
+            }
+
+            .cta-bottom::before {
+                content: '';
+                display: block;
+                width: 100px;
+                height: 100px;
+                background: url('qr-code.svg') no-repeat center / contain;
+                margin: 0 auto;
+            }
+
+            .download {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cta-bottom {
+                display: none;
+            }
+        }
+    </style>
+
+    <script type="application/ld+json">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Sen o utonięciu – co oznacza? Znaczenie snu",
+  "description": "Najlepszy polski sennik AI. Znaczenie snu o utonięciu. Dowiedz się, co oznacza sen o utonięciu według psychologii i symboliki.",
+  "url": "https://mojesny.app/sen-o-utonieniu.html",
+  "image": "https://mojesny.app/icon.svg", 
+  "author": {
+    "@type": "Organization",
+    "name": "MojeSny",
+    "url": "https://mojesny.app"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MojeSny",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mojesny.app/icon.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mojesny.app/sen-o-utonieniu.html"
+  }
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="icon.svg" alt="MojeSny Logo" class="site-logo" width="100" height="100">
+                </a>
+            </div>
+            <button class="hamburger" aria-label="Otwórz menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Strona Główna</a></li>
+                    <li><a href="ksiega-snow.html" class="active">Księga Snów</a></li>
+                    <li><a href="prywatnosc.html">Polityka Prywatności</a></li>
+                    <li><a href="regulamin.html">Regulamin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="content">
+                <h1>Sennik alfabetyczny – lista snów na literę U</h1>
+                <h2>Sprawdź, co oznacza Twój sen.</h2>
+
+                <!-- SPIS TREŚCI -->
+                <nav class="sennik-toc">
+                    <p class="toc-intro">
+                        Wybierz interesujący Cię sen z listy poniżej i sprawdź jego interpretację.
+                    </p>
+                    <div class="toc-buttons">
+                        <a href="/sen-o-ucieczce.html#ucieczka" class="toc-dreams">Ucieczka</a>
+                        <a href="/sen-o-utonieciu.html#utoniecie" class="toc-dreams">Utonięcie</a>
+                        <a href="/sen-o-teczy.html#tecza" class="toc-dreams">Tęcza</a>
+                        <a href="/sen-o-telefonie.html#telefon" class="toc-dreams">Telefon</a>
+                        <a href="/sen-o-torcie.html#tort" class="toc-dreams">Tort</a>
+                        <a href="/sen-o-trawie.html#trawa" class="toc-dreams">Trawa</a>
+                        <a href="/sen-o-trumnie.html#trumna" class="toc-dreams">Trumna</a>
+                        <a href="/sen-o-tunelu.html#tunel" class="toc-dreams">Tunel</a>
+                        <a href="/sen-o-twarzy.html#twarz" class="toc-dreams">Twarz</a>
+                        <a href="/sen-o-tygrysie.html#tygrys" class="toc-dreams">Tygrys</a>
+                    </div>
+                </nav>
+
+                <!-- SEN O UTONIĘCIU-->
+                <article id="utoniecie">
+                    <h2>Sen o utonięciu – znaczenie snu</h2>
+
+                    <p>
+                        Sen o utonięciu to jeden z najsilniejszych i najbardziej alarmujących symboli onirycznych,
+                        podobnie jak
+                        <a href="/sen-o-wodzie.html#woda">sen o wodzie</a> czy
+                        <a href="/sen-o-zagubieniu.html#zagubienie">sen o zagubieniu</a>. W psychologii głębi odnosi się
+                        do poczucia przytłoczenia przez emocje, utraty kontroli oraz lęku przed „wchłonięciem” przez
+                        nieświadomość. Woda symbolizuje świat uczuć, a utonięcie pokazuje moment, w którym emocje stają
+                        się zbyt głębokie lub gwałtowne, by móc w nich swobodnie pływać. Sen o utonięciu to lustro
+                        Twojego przeciążenia – pyta, czy potrafisz poprosić o pomoc, zanim całkowicie stracisz grunt pod
+                        nogami.
+                    </p>
+
+                    <h3>Utonięcie jako symbol „Przeładowania Emocjonalnego”</h3>
+                    <p>
+                        Poczucie tonięcia w mętnej wodzie: To znak zagubienia i przytłoczenia. Problemy nie są jasno
+                        określone – to ogólne poczucie ciężaru uniemożliwiające działanie. Podświadomość mówi: „Jesteś
+                        przeciążony. Nie próbuj walczyć z każdą falą z osobna. Znajdź sposób, by wypłynąć na
+                        powierzchnię i złapać oddech, zanim psychika wejdzie w stan całkowitego wyczerpania”.<br>
+                        Walka o oddech pod wodą: Symbolizuje desperacką próbę zachowania tożsamości w sytuacji
+                        przerastającej Twoje możliwości. Może w pracy lub w domu ktoś narzuca tempo, któremu nie jesteś
+                        w stanie sprostać. To wezwanie do ochrony własnych granic emocjonalnych.
+                    </p>
+
+                    <h3>Symbolika „Śmierci Ego i Odrodzenia”</h3>
+                    <p>
+                        Poddanie się wodzie (przestanie walczyć): Oznacza kapitulację wobec tego, co nieuniknione.
+                        Czasem musimy „utonąć” w starych schematach, by narodzić się na nowo. To bolesny proces
+                        odpuszczania kontroli, pozwalający nieświadomości oczyścić nas z fałszywych przekonań.<br>
+                        Uratowanie kogoś przed utonięciem: Odnosi się do potrzeby ratowania własnego potencjału lub
+                        talentu. To symbol odzyskania witalności i wewnętrznego spokoju.<br>
+                        Bycie uratowanym przez kogoś: Sygnał, że potrzebujesz wsparcia zewnętrznego. Podświadomość mówi:
+                        „Sama wola walki nie wystarczy. Pozwól innym podać Ci rękę”.
+                    </p>
+
+                    <h3>Kontekst psychologiczny: Woda jako otoczenie</h3>
+                    <p>
+                        Utonięcie w morzu lub oceanie: Odnosi się do problemów egzystencjalnych lub wielkich zmian,
+                        wobec których czujesz się bezsilny.<br>
+                        Utonięcie w basenie: Sugeruje, że źródło stresu jest sztuczne lub narzucone przez normy
+                        społeczne – martwisz się o sprawy płytkie, a mimo to tracisz oddech.<br>
+                        Utonięcie we własnym domu (powódź): Oznacza, że życie prywatne i emocje rodzinne stały się
+                        toksyczne i zagrażają Twojemu bezpieczeństwu psychicznemu.
+                    </p>
+
+                    <h3>Ważne</h3>
+                    <p>
+                        Jeśli budzisz się gwałtownie w momencie utonięcia, jest to sygnał od Twojego układu nerwowego o
+                        skrajnym poziomie kortyzolu. Sen działa jak czerwona lampka ostrzegawcza – to wezwanie do
+                        zwolnienia tempa i przyjrzenia się własnym ograniczeniom. Nie ignoruj go, bo jest
+                        przypomnieniem, że Twoje ciało i umysł potrzebują wsparcia.
+                    </p>
+
+                    <h3>Podsumowanie</h3>
+                    <p>
+                        Sen o utonięciu przypomina, że nikt nie jest wyspą i każdy ma prawo poczuć się przytłoczony. To
+                        zaproszenie do szczerości wobec własnych sił i potrzeb. Zobacz też:
+                        <a href="/sen-o-wodzie.html#woda">sen o wodzie</a>,
+                        <a href="/sen-o-zagubieniu.html#zagubienie">sen o zagubieniu</a>,
+                        <a href="/sen-o-fali.html#fala">sen o fali</a>.
+                        Niezależnie od tego, czy Twój sen był przerażającą walką z prądem, czy cichym opadaniem w
+                        błękit, podświadomość przesyła komunikat: „Zacznij oddychać świadomie na jawie, zanim woda
+                        Twoich lęków zaleje codzienność; nie musisz dźwigać całego świata na barkach”. Zastanów się, co
+                        jest Twoim „kołem ratunkowym” i dlaczego boisz się go użyć. Nawet po najgłębszym zanurzeniu,
+                        kierunkiem jest zawsze droga w górę.
+                    </p>
+
+                    <p class="qr-note">
+                        Śniło Ci się coś podobnego? Sprawdź, co oznacza Twój sen!
+                        <span class="qr-desktop-only"><br>Zeskanuj kod
+                            QR.</span><span class="qr-mobile-only"><br>Pobierz aplikację</span>
+                    </p>
+
+                    <!-- przycisk na końcu artykułu -->
+                    <div class="cta-bottom">
+                        <a href="#download" class="cta-btn">Pobierz aplikację</a>
+                    </div>
+                </article>
+
+                <section class="download" id="download">
+                    <a href="https://apps.apple.com/app/mojesny/id6755436556" class="app-store-button" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
+                        </svg>
+                        <div class="button-text">
+                            <span class="small">Pobierz z</span>
+                            <span class="large">App Store</span>
+                        </div>
+                    </a>
+                    <a href="https://app.mojesny.app/" class="app-store-button web-button" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 19.93C7.05 19.44 4 16.08 4 12C4 11.38 4.08 10.79 4.21 10.21L9 15V16C9 17.1 9.9 18 11 18V19.93ZM17.9 17.39C17.64 16.58 16.9 16 16 16H15V13C15 12.45 14.55 12 14 12H8V10H10C10.55 10 11 9.55 11 9V7H13C14.1 7 15 6.1 15 5V4.59C17.93 5.78 20 8.65 20 12C20 14.08 19.2 15.97 17.9 17.39Z" />
+                        </svg>
+                        <div class="button-text">
+                            <span class="small">Wypróbuj</span>
+                            <span class="large">MojeSny</span>
+                        </div>
+                    </a>
+                </section>
+
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Strona Główna</a></li>
+                    <li><a href="ksiega-snow.html" class="active">Księga Snów</a></li>
+                    <li><a href="prywatnosc.html">Polityka Prywatności</a></li>
+                    <li><a href="regulamin.html">Regulamin</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">© 2025 - 2026 MojeSny</div>
+        </div>
+    </footer>
+
+    <button id="backToTop" title="Wróć na górę">↑</button>
+
+    <script>
+        const backToTopBtn = document.getElementById("backToTop");
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+
+        backToTopBtn.onclick = function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        };
+    </script>
+
+    <script src="cookie-consent.js" defer></script>
+    <script>
+        (function () {
+            var btn = document.querySelector('.hamburger');
+            var nav = document.querySelector('.main-nav');
+
+            if (!btn || !nav) return;
+
+            btn.addEventListener('click', function () {
+                var isOpen = nav.classList.toggle('is-open');
+                btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            nav.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!nav.contains(e.target) && !btn.contains(e.target)) {
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
+
+</body>
+
+</html>
