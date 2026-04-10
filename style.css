@@ -269,7 +269,7 @@ header .container {
     background-size: 100% 2px;         
 }
 
-/* 1. ALFABET (15 KOLUMN) - Twoje nienaruszone ustawienie */
+/* 1. ALFABET (13 KOLUMN) - Twoje nienaruszone ustawienie */
 .toc-buttons {
     display: grid;
     grid-template-columns: repeat(13, 1fr); 
@@ -291,7 +291,7 @@ header .container {
     border-radius: 6px;
     text-align: center;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 /* 3. STYL DLA SNÓW (Prostokąty z tekstem) */
