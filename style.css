@@ -564,9 +564,23 @@ footer .container {
     }
 
     /* Litery w 6 kolumnach na mobile (5 rzędów po 6 liter) */
-.toc-buttons {
-    grid-template-columns: repeat(6, 1fr) !important;
-    gap: 8px !important; /* Mniejszy odstęp, żeby zmieścić więcej w rzędzie */
+/* Litery na mobile - inteligentne centrowanie "sierot" */
+@media (max-width: 768px) {
+    /* Używamy :not(:has(...)), żeby nie zepsuć Twojego układu 2x3 dla snów */
+    .toc-buttons:not(:has(.toc-dreams)) {
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content: center; /* To wyśrodkuje ostatni rząd */
+        gap: 8px !important;
+    }
+
+    .toc-buttons:not(:has(.toc-dreams)) .toc-btn {
+        /* Obliczamy szerokość tak, aby w rzędzie było 6 przycisków */
+        /* 100% / 6 = 16.66%. Odejmujemy trochę na przerwy (gap) */
+        flex: 0 0 calc(16.66% - 7px); 
+        aspect-ratio: 1 / 1;
+        font-size: 1.1rem !important;
+    }
 }
 
 .toc-btn {
