@@ -128,6 +128,33 @@
 </script>
 </head>
 
+    <style>
+        @media (min-width: 769px) {
+            .cta-bottom .cta-btn {
+                display: none;
+            }
+
+            .cta-bottom::before {
+                content: '';
+                display: block;
+                width: 100px;
+                height: 100px;
+                background: url('qr-code.svg') no-repeat center / contain;
+                margin: 0 auto;
+            }
+
+            .download {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cta-bottom {
+                display: none;
+            }
+        }
+    </style>
+
 <body>
     <header>
         <div class="container">
