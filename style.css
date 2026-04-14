@@ -254,6 +254,14 @@ header .container {
     display: none;
 }
 
+.cta-app .cta-desktop-only {
+    display: inline;
+}
+
+.cta-app .cta-mobile-only {
+    display: none;
+}
+
 .content p a, .content li a {
     color: var(--brand-blue);            
     text-decoration: none;            
@@ -517,6 +525,14 @@ footer .container {
     }
 
     .qr-mobile-only {
+        display: inline;
+    }
+
+    .cta-app .cta-desktop-only {
+        display: none;
+    }
+
+    .cta-app .cta-mobile-only {
         display: inline;
     }
 
