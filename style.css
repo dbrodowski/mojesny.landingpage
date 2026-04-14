@@ -175,7 +175,11 @@ header .container {
 }
 
 .content + .download {
-    margin-top: 10px;
+    margin-top: 0;
+}
+
+.content:has(+ .download) {
+    margin-bottom: 0;
 }
 
 .app-store-button {
