@@ -36,6 +36,10 @@ body {
     line-height: 1.4;
 }
 
+.breadcrumbs .container {
+    max-width: 800px;
+}
+
 .breadcrumbs a {
     color: rgb(38, 48, 92);
     text-decoration: none;
