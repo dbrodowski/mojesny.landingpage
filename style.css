@@ -29,6 +29,32 @@ body {
     padding: 0 20px;
 }
 
+/* ================= BREADCRUMBS ================= */
+.breadcrumbs {
+    padding: 12px 0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.breadcrumbs a {
+    color: rgb(38, 48, 92);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumbs span {
+    color: #000000;
+}
+
+.breadcrumbs .breadcrumb-sep {
+    margin: 0 6px;
+    color: #000000;
+}
+
 /* ================= HEADER ================= */
 header {
     position: fixed;
