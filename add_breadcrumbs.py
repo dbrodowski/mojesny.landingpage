@@ -13,15 +13,16 @@ BASE_URL = "https://mojesny.app/"
 
 # Mapowanie polskich liter na nazwy plików sny-litera-*
 POLISH_LETTER_MAP = {
-    'ą': 'a', 'ć': 'c-pl', 'ę': 'e', 'ł': 'l-pl', 'ń': 'n',
-    'ó': 'o', 'ś': 's-pl', 'ź': 'z-kreska-pl', 'ż': 'z-pl',
+    'ć': 'c-pl', 'ł': 'l-pl',
+    'ś': 's-pl', 'ź': 'z-kreska-pl', 'ż': 'z-pl',
 }
 
-# Mapowanie polskich liter na wyświetlaną literę (uppercase)
-POLISH_DISPLAY = {
-    'ą': 'Ą', 'ć': 'Ć', 'ę': 'Ę', 'ł': 'Ł', 'ń': 'Ń',
-    'ó': 'Ó', 'ś': 'Ś', 'ź': 'Ź', 'ż': 'Ż',
+# Litery polskie bez własnej strony — mapuj na zwykłą literę
+POLISH_FALLBACK = {
+    'ą': 'a', 'ę': 'e', 'ń': 'n', 'ó': 'o',
 }
+
+
 
 
 def extract_title(content):
@@ -44,7 +45,10 @@ def get_letter_info(title):
         return None, None
     char = m.group(1).lower()
     if char in POLISH_LETTER_MAP:
-        return POLISH_LETTER_MAP[char], POLISH_DISPLAY[char]
+        return POLISH_LETTER_MAP[char], char.upper()
+    elif char in POLISH_FALLBACK:
+        slug = POLISH_FALLBACK[char]
+        return slug, slug.upper()
     else:
         return char, char.upper()
 
@@ -55,10 +59,13 @@ def get_letter_info_from_filename(filename):
     Z 'sny-litera-a.html' zwraca ('a', 'A')
     """
     slug = filename.replace('sny-litera-', '').replace('.html', '')
-    # Reverse lookup
-    reverse_map = {v: k.upper() for k, v in POLISH_LETTER_MAP.items()}
-    if slug in reverse_map:
-        return slug, reverse_map[slug]
+    # Only the letters that have their own -pl page get Polish display
+    slug_to_display = {
+        'c-pl': 'Ć', 'l-pl': 'Ł', 's-pl': 'Ś',
+        'z-pl': 'Ż', 'z-kreska-pl': 'Ź',
+    }
+    if slug in slug_to_display:
+        return slug, slug_to_display[slug]
     else:
         return slug, slug.upper()
 
@@ -90,7 +97,7 @@ def build_visual_nav(items):
             parts.append(f'<a href="{url}">{name}</a>')
         else:
             parts.append(f'<span>{name}</span>')
-    sep = ' <span class="breadcrumb-sep">›</span> '
+    sep = ' <span class="breadcrumb-sep">&gt;</span> '
     inner = sep.join(parts)
     return (
         '    <nav class="breadcrumbs" aria-label="Breadcrumb">\n'
@@ -170,8 +177,8 @@ def process_file(filepath):
     else:
         insert_block = f'\n{jsonld_block}\n'
 
-    # Wstaw zaraz po <body>
-    content = content.replace('<body>', f'<body>{insert_block}', 1)
+    # Wstaw zaraz po </header>
+    content = content.replace('</header>', f'</header>{insert_block}', 1)
 
     with open(filepath, 'w', encoding='utf-8') as f:
         f.write(content)
