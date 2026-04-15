@@ -31,7 +31,9 @@ body {
 
 /* ================= BREADCRUMBS ================= */
 .breadcrumbs {
-    padding: 12px 0;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 12px 20px;
     font-size: 0.85rem;
     line-height: 1.4;
 }
