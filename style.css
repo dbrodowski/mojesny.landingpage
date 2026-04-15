@@ -38,6 +38,7 @@ body {
 
 .breadcrumbs .container {
     max-width: 800px;
+    padding: 0;
 }
 
 .breadcrumbs a {
