@@ -31,8 +31,14 @@ def extract_title(content):
 
 
 def get_display_title(title):
-    """'Sen o aborcji – co oznacza? Znaczenie snu | MojeSny' → 'Sen o aborcji – co oznacza? Znaczenie snu'"""
-    return title.split('|')[0].strip()
+    """'Sen o aborcji – co oznacza? Znaczenie snu | MojeSny' → 'Sen o aborcji'"""
+    # Remove everything after | first
+    t = title.split('|')[0].strip()
+    # Then remove everything after – (em dash)
+    t = t.split('–')[0].strip()
+    # Also try regular dash
+    t = t.split(' - ')[0].strip()
+    return t
 
 
 def get_letter_info(title):
