@@ -166,7 +166,7 @@ header .container {
 /* ================= DOWNLOAD BUTTONS (CZARNE) ================= */
 .download {
     text-align: center;
-    margin: 60px 0;
+    margin: 30px 0;
     display: flex;
     justify-content: center;
     align-items: center;
