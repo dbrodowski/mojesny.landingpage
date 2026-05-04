@@ -74,41 +74,267 @@
         content="dream dictionary, dream interpretation, meaning of dream, dream about teeth falling out, pregnancy dreams, nightmare meanings, ai dream journal, dream analysis">
     <title>AI Dream Interpretation & Meaning Dictionary | MyDreams</title>
     <link rel="canonical" href="https://mojesny.app/en/">
+    <link rel="alternate" hreflang="pl" href="https://mojesny.app/" />
+    <link rel="alternate" hreflang="en" href="https://mojesny.app/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://mojesny.app/en/" />
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
 
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        :root{--brand-blue:rgb(34,48,91);--brand-orange:#f05a28}
-        html{background-color:var(--brand-blue)}
-        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;background-color:#fff;color:#000;line-height:1.6;padding-top:150px}
-        .container{max-width:1200px;margin:0 auto;padding:0 20px}
-        header{position:fixed;top:0;left:0;right:0;padding:10px 0;background-color:var(--brand-blue);color:#fff;z-index:1000}
-        header .container{display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:10px}
-        .logo a{display:flex;align-items:center;text-decoration:none;color:#fff}
-        .site-logo{display:block;width:100px;height:auto;aspect-ratio:1/1;transition:width .3s ease}
-        .main-nav ul{list-style:none;display:flex;gap:30px;flex-wrap:wrap}
-        .main-nav a{text-decoration:none;color:#fff;font-weight:500;transition:opacity .3s ease}
-        .main-nav a:hover,.main-nav a.active{opacity:.7}
-        .hamburger{display:none;flex-direction:column;justify-content:space-between;width:38px;height:28px;background:rgb(38,48,91);border:none;cursor:pointer;padding:4px 3px;border-radius:4px;flex-shrink:0}
-        .hamburger span{display:block;width:100%;height:3px;background:#fff;border-radius:2px;transition:transform .25s ease,opacity .2s ease}
-        .hero{text-align:center;padding:0 20px;margin-bottom:clamp(25px,5vh,45px)}
-        .hero h1{font-size:clamp(2rem,6.7vw,2.8rem);font-weight:700;margin-bottom:10px;line-height:1.1}
-        .hero h2,.hero .hero-subtitle{font-size:clamp(1.4rem,4.5vw,2.2rem);font-weight:700;margin-bottom:15px;line-height:1.2;display:block}
-        .hero h3,.hero .hero-tagline{font-size:clamp(1.1rem,4vw,1.8rem);font-weight:800;margin-bottom:clamp(25px,6vw,40px);line-height:1.4;display:block}
-        .cta-center,.cta-bottom{display:flex;justify-content:center;margin:10px 0 24px}
-        .app-store-button.cta-button,.cta-bottom .cta-btn{background-color:#c43e16;color:#fff;text-decoration:none;border-radius:8px;font-weight:700;text-transform:uppercase;letter-spacing:1px;text-align:center;display:inline-block;font-size:1.1rem;padding:12px 24px}
-        .content{max-width:800px;margin:0 auto 60px}
-        .content p{margin-bottom:18px;font-size:clamp(1.25rem,4vw,1.35rem);line-height:1.5}
-        .content h2,.content h3,.content h4{font-size:1.5rem;font-weight:700;line-height:1.2;margin:26px 0 12px}
-        .content h1+h2{margin-top:12px}
-        .content ul{margin-left:25px;margin-bottom:20px}
-        .content li{margin-bottom:8px;font-size:clamp(1.25rem,4vw,1.35rem);line-height:1.4}
-        .content p a,.content li a{font-weight:bold}
-        @media(max-width:768px){body{padding-top:90px}.site-logo{width:60px}.hamburger{display:flex;margin-left:auto}.main-nav{display:none;position:absolute;top:100%;left:0;right:0;background-color:rgb(38,48,91);padding:8px 0 16px;box-shadow:0 8px 20px rgba(0,0,0,.2)}.main-nav.is-open{display:block}.main-nav ul{flex-direction:column;align-items:flex-start;gap:0;padding:0 20px}.main-nav li{width:100%}.main-nav a{display:block;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.15);font-size:1.1rem}.main-nav li:last-child a{border-bottom:none}}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        :root {
+            --brand-blue: rgb(34, 48, 91);
+            --brand-orange: #f05a28
+        }
+
+        html {
+            background-color: var(--brand-blue)
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #fff;
+            color: #000;
+            line-height: 1.6;
+            padding-top: 150px
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 10px 0;
+            background-color: var(--brand-blue);
+            color: #fff;
+            z-index: 1000
+        }
+
+        header .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #fff
+        }
+
+        .site-logo {
+            display: block;
+            width: 100px;
+            height: auto;
+            aspect-ratio: 1/1;
+            transition: width .3s ease
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: opacity .3s ease
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            opacity: .7
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 38px;
+            height: 28px;
+            background: rgb(38, 48, 91);
+            border: none;
+            cursor: pointer;
+            padding: 4px 3px;
+            border-radius: 4px;
+            flex-shrink: 0
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: #fff;
+            border-radius: 2px;
+            transition: transform .25s ease, opacity .2s ease
+        }
+
+        .hero {
+            text-align: center;
+            padding: 0 20px;
+            margin-bottom: clamp(25px, 5vh, 45px)
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 6.7vw, 2.8rem);
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.1
+        }
+
+        .hero h2,
+        .hero .hero-subtitle {
+            font-size: clamp(1.4rem, 4.5vw, 2.2rem);
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            display: block
+        }
+
+        .hero h3,
+        .hero .hero-tagline {
+            font-size: clamp(1.1rem, 4vw, 1.8rem);
+            font-weight: 800;
+            margin-bottom: clamp(25px, 6vw, 40px);
+            line-height: 1.4;
+            display: block
+        }
+
+        .cta-center,
+        .cta-bottom {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0 24px
+        }
+
+        .app-store-button.cta-button,
+        .cta-bottom .cta-btn {
+            background-color: #c43e16;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            display: inline-block;
+            font-size: 1.1rem;
+            padding: 12px 24px
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto 60px
+        }
+
+        .content p {
+            margin-bottom: 18px;
+            font-size: clamp(1.25rem, 4vw, 1.35rem);
+            line-height: 1.5
+        }
+
+        .content h2,
+        .content h3,
+        .content h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 26px 0 12px
+        }
+
+        .content h1+h2 {
+            margin-top: 12px
+        }
+
+        .content ul {
+            margin-left: 25px;
+            margin-bottom: 20px
+        }
+
+        .content li {
+            margin-bottom: 8px;
+            font-size: clamp(1.25rem, 4vw, 1.35rem);
+            line-height: 1.4
+        }
+
+        .content p a,
+        .content li a {
+            font-weight: bold
+        }
+
+        @media(max-width:768px) {
+            body {
+                padding-top: 90px
+            }
+
+            .site-logo {
+                width: 60px
+            }
+
+            .hamburger {
+                display: flex;
+                margin-left: auto
+            }
+
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: rgb(38, 48, 91);
+                padding: 8px 0 16px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, .2)
+            }
+
+            .main-nav.is-open {
+                display: block
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                padding: 0 20px
+            }
+
+            .main-nav li {
+                width: 100%
+            }
+
+            .main-nav a {
+                display: block;
+                padding: 12px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, .15);
+                font-size: 1.1rem
+            }
+
+            .main-nav li:last-child a {
+                border-bottom: none
+            }
+        }
     </style>
 
     <link rel="preload" href="../style.css?v=1.2" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="../style.css?v=1.2"></noscript>
+    <noscript>
+        <link rel="stylesheet" href="../style.css?v=1.2">
+    </noscript>
 
     <script type="application/ld+json">
 {
@@ -176,7 +402,12 @@
 
             <section class="content">
                 <p>
-                    For centuries, humans have sought to understand the hidden messages in their dreams. Dreams fascinate, inspire, and often leave us with deep questions. Have you ever woken up wondering about the <a href="/dream-about-flying.html">meaning of a flying dream</a>? Why do we see <a href="/dream-about-teeth-falling-out.html">teeth falling out in dreams</a>? Whether it's a recurring <a href="/dream-of-falling.html">dream of falling</a> or a sudden <a href="/pregnancy-dreams.html">pregnancy dream</a>, MyDreams is here to provide the answers.
+                    For centuries, humans have sought to understand the hidden messages in their dreams. Dreams
+                    fascinate, inspire, and often leave us with deep questions. Have you ever woken up wondering about
+                    the <a href="/dream-about-flying.html">meaning of a flying dream</a>? Why do we see <a
+                        href="/dream-about-teeth-falling-out.html">teeth falling out in dreams</a>? Whether it's a
+                    recurring <a href="/dream-of-falling.html">dream of falling</a> or a sudden <a
+                        href="/pregnancy-dreams.html">pregnancy dream</a>, MyDreams is here to provide the answers.
                 </p>
 
                 <h2>Check Your Dream. Discover Its Meaning. Know Yourself.</h2>
@@ -194,7 +425,8 @@
 
                 <h2>What is MyDreams?</h2>
 
-                <p>MyDreams is more than just an app; it's an intelligent platform that serves as your personal <strong>dream journal</strong> and deep subconscious analysis tool. We combine:</p>
+                <p>MyDreams is more than just an app; it's an intelligent platform that serves as your personal
+                    <strong>dream journal</strong> and deep subconscious analysis tool. We combine:</p>
                 <ul>
                     <li>Classical knowledge of dream symbolism</li>
                     <li>Psychological insights and subconscious work</li>
@@ -213,7 +445,8 @@
 
                 <h2>Why is Dream Interpretation Important?</h2>
 
-                <p>From ancient civilizations to modern psychology, dreams have been studied as the "royal road" to the subconscious. Pioneers like Freud and Jung viewed them as a language of our inner selves.</p>
+                <p>From ancient civilizations to modern psychology, dreams have been studied as the "royal road" to the
+                    subconscious. Pioneers like Freud and Jung viewed them as a language of our inner selves.</p>
 
                 <p>Your dreams may reflect:</p>
                 <ul>
@@ -223,18 +456,21 @@
                     <li>Healing and traumatic experiences</li>
                 </ul>
 
-                <p>Checking your dream's meaning isn't just curiosity—it's a key to deeper self-awareness and mental well-being.</p>
+                <p>Checking your dream's meaning isn't just curiosity—it's a key to deeper self-awareness and mental
+                    well-being.</p>
 
                 <h2>AI-Powered Dream Analysis</h2>
 
-                <p>The core of MyDreams is our advanced <strong>AI Dream Interpretation</strong> engine. Instead of reading generic definitions, you can provide context:</p>
+                <p>The core of MyDreams is our advanced <strong>AI Dream Interpretation</strong> engine. Instead of
+                    reading generic definitions, you can provide context:</p>
                 <ul>
                     <li>Describe the exact events of the dream</li>
                     <li>Add the emotions you felt (fear, joy, confusion)</li>
                     <li>Specify if it's a recurring dream</li>
                 </ul>
 
-                <p>Our AI analyzes these factors to create a unique, personalized interpretation. It's like having a conversation with your own subconscious mind, translated into clear and actionable insights.</p>
+                <p>Our AI analyzes these factors to create a unique, personalized interpretation. It's like having a
+                    conversation with your own subconscious mind, translated into clear and actionable insights.</p>
 
                 <h2>Trusted & Private Dream Journal</h2>
 
@@ -258,17 +494,22 @@
 
                 <h2>Start Interpreting Your Dreams Today</h2>
 
-                <p>Don't ignore the signals from your mind. Every dream is a message waiting to be unlocked. Whether it's a <strong>dream about teeth falling out</strong> or <strong>pregnancy dreams</strong>, MyDreams is your personal guide to the world of sleep. Discover the truth behind your subconscious today.</p>
+                <p>Don't ignore the signals from your mind. Every dream is a message waiting to be unlocked. Whether
+                    it's a <strong>dream about teeth falling out</strong> or <strong>pregnancy dreams</strong>, MyDreams
+                    is your personal guide to the world of sleep. Discover the truth behind your subconscious today.</p>
 
-                <p class="qr-note">Had an interesting dream? Don't miss its meaning! Download the app or log in to discover more.</p>
+                <p class="qr-note">Had an interesting dream? Don't miss its meaning! Download the app or log in to
+                    discover more.</p>
             </section>
 
             <section class="download" id="download">
                 <!-- Mobile: App Store button -->
                 <a href="https://apps.apple.com/app/mydreams/id6755436556" class="app-store-button download-mobile-only"
                     target="_blank" rel="noopener noreferrer">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
                     </svg>
                     <div class="button-text">
                         <span class="small">Download on the</span>
@@ -279,9 +520,12 @@
                 <div class="download-qr download-desktop-only">
                     <img src="../qr-code.svg" alt="Scan QR code to download MyDreams" width="70" height="70">
                 </div>
-                <a href="https://app.mojesny.app/" class="app-store-button web-button" target="_blank" rel="noopener noreferrer">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 19.93C7.05 19.44 4 16.08 4 12C4 11.38 4.08 10.79 4.21 10.21L9 15V16C9 17.1 9.9 18 11 18V19.93ZM17.9 17.39C17.64 16.58 16.9 16 16 16H15V13C15 12.45 14.55 12 14 12H8V10H10C10.55 10 11 9.55 11 9V7H13C14.1 7 15 6.1 15 5V4.59C17.93 5.78 20 8.65 20 12C20 14.08 19.2 15.97 17.9 17.39Z" />
+                <a href="https://app.mojesny.app/" class="app-store-button web-button" target="_blank"
+                    rel="noopener noreferrer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 19.93C7.05 19.44 4 16.08 4 12C4 11.38 4.08 10.79 4.21 10.21L9 15V16C9 17.1 9.9 18 11 18V19.93ZM17.9 17.39C17.64 16.58 16.9 16 16 16H15V13C15 12.45 14.55 12 14 12H8V10H10C10.55 10 11 9.55 11 9V7H13C14.1 7 15 6.1 15 5V4.59C17.93 5.78 20 8.65 20 12C20 14.08 19.2 15.97 17.9 17.39Z" />
                     </svg>
                     <div class="button-text">
                         <span class="small">Try Web Version</span>
@@ -318,7 +562,7 @@
             }
         };
         backToTopBtn.onclick = function () {
-            window.scrollTo({top: 0, behavior: 'smooth'});
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         };
     </script>
 
@@ -341,4 +585,5 @@
         })();
     </script>
 </body>
+
 </html>
