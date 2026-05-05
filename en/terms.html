@@ -8,7 +8,7 @@
         function gtag() { dataLayer.push(arguments); }
         window.gtag = gtag;
 
-        // Consent default (MUSI być pierwsze)
+        // Consent default (MUST be first)
         gtag('consent', 'default', {
             ad_storage: 'denied',
             ad_user_data: 'denied',
@@ -44,7 +44,7 @@
 
             if (consent === 'accepted') {
 
-                // Najpierw update consent
+                // First, update consent
                 gtag('consent', 'update', {
                     ad_storage: 'granted',
                     ad_user_data: 'granted',
@@ -52,20 +52,20 @@
                     analytics_storage: 'granted'
                 });
 
-                // Ładujemy OD RAZU po załadowaniu okna (brak przekłamań w statystykach i brak lagów na scrollu)
+                // Load IMMEDIATELY after window load
                 if (document.readyState === 'complete') {
                     loadGAScript();
                 } else {
                     window.addEventListener('load', loadGAScript);
                 }
 
-                // Rezerwowe upewnienie się w wolnym czasie (Idle)
+                // Reserve check during idle time
                 if ('requestIdleCallback' in window) {
                     requestIdleCallback(loadGAScript, { timeout: 2000 });
                 }
             }
 
-            // API dla bannera
+            // Banner API
             window.acceptAllCookies = function () {
                 localStorage.setItem('cookie-consent', 'accepted');
 
@@ -76,7 +76,7 @@
                     analytics_storage: 'granted'
                 });
 
-                loadGAScript(); // natychmiast po kliknięciu "Akceptuję"
+                loadGAScript(); // Immediately after clicking "Accept"
             };
 
             window.rejectAllCookies = function () {
@@ -112,9 +112,9 @@
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="dream-book.html" class="active">Dream Book</a></li>
+                    <li><a href="dream-book.html">Dream Book</a></li>
                     <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="terms.html" class="active">Terms of Service</a></li>
                 </ul>
             </nav>
         </div>
@@ -146,87 +146,84 @@
         </div>
     </nav>
 
-
-
-
     <main>
         <div class="container">
             <section class="content">
-                <h1>Regulamin Aplikacji MojeSny</h1>
+                <h1>MyDreams Application Terms of Service</h1>
 
-                <p><strong>Ostatnia aktualizacja: 17 kwietnia 2026 r.</strong></p>
+                <p><strong>Last updated: April 17, 2026</strong></p>
 
-                <p>Niniejszy Regulamin określa zasady korzystania z aplikacji mobilnej MojeSny (dalej: „Aplikacja").
-                    Instalacja i korzystanie z Aplikacji oznacza pełną akceptację poniższych warunków.</p>
+                <p>These Terms of Service define the rules for using the MyDreams mobile application (hereinafter: "Application"). 
+                    Installation and use of the Application constitute full acceptance of the following terms.</p>
 
-                <h2>1. Definicje</h2>
+                <h2>1. Definitions</h2>
                 <ul>
-                    <li><strong>Administrator</strong> – twórca i właściciel aplikacji MojeSny, kontakt:
+                    <li><strong>Administrator</strong> – the creator and owner of the MyDreams application, contact:
                         contact@mojesny.app.</li>
-                    <li><strong>Użytkownik</strong> – każda osoba fizyczna korzystająca z Aplikacji.</li>
-                    <li><strong>AI (Sztuczna Inteligencja)</strong> – algorytmy zewnętrznych dostawców wykorzystywane do
-                        generowania interpretacji snów.</li>
-                    <li><strong>Konto</strong> – zbiór zasobów i uprawnień przypisanych do Użytkownika w systemie
-                        Aplikacji.</li>
+                    <li><strong>User</strong> – any natural person using the Application.</li>
+                    <li><strong>AI (Artificial Intelligence)</strong> – algorithms from third-party providers used to
+                        generate dream interpretations.</li>
+                    <li><strong>Account</strong> – a collection of resources and permissions assigned to the User within the 
+                        Application system.</li>
                 </ul>
 
-                <h2>2. Charakter Usługi i Wyłączenie Odpowiedzialności</h2>
+                <h2>2. Nature of Service and Disclaimer</h2>
                 <ul>
-                    <li>Aplikacja służy do prowadzenia dziennika snów oraz generowania ich interpretacji przy pomocy AI.
+                    <li>The Application is used for keeping a dream journal and generating interpretations using AI.
                     </li>
-                    <li><strong>Ważne:</strong> Interpretacje snów generowane przez AI mają charakter wyłącznie
-                        <strong>rozrywkowy i informacyjny</strong>. Nie stanowią one porady medycznej, psychologicznej,
-                        terapeutycznej ani profesjonalnej diagnozy.
+                    <li><strong>Important:</strong> Dream interpretations generated by AI are for 
+                        <strong>entertainment and informational purposes only</strong>. They do not constitute medical, psychological, 
+                        therapeutic advice, or professional diagnosis.
                     </li>
-                    <li>Administrator nie ponosi odpowiedzialności za treść generowaną przez AI, w tym za interpretacje,
-                        które Użytkownik może uznać za subiektywnie niepokojące lub niewłaściwe.</li>
-                    <li>Decyzje podejmowane przez Użytkownika na podstawie analiz dostępnych w Aplikacji są podejmowane
-                        wyłącznie na jego własną odpowiedzialność.</li>
+                    <li>The Administrator is not responsible for the content generated by AI, including interpretations 
+                        that the User may find subjectively disturbing or inappropriate.</li>
+                    <li>Decisions made by the User based on the analyses available in the Application are made 
+                        solely at their own risk.</li>
                 </ul>
 
-                <h2>3. Model Korzystania (Freemium) i Płatności</h2>
+                <h2>3. Usage Model (Freemium) and Payments</h2>
                 <ul>
-                    <li>Aplikacja działa w modelu freemium. Użytkownik ma dostęp do jednej bezpłatnej sesji analizy snu
-                        dziennie. Limit ten jest przypisany do Konta Użytkownika i weryfikowany po stronie serwera.</li>
-                    <li>Pełny dostęp do funkcjonalności Aplikacji wymaga wykupienia subskrypcji lub pakietu sesji.</li>
-                    <li>Płatności obsługiwane są przez zewnętrznych operatorów: <strong>Apple App Store</strong>,
-                        <strong>Google Play Store</strong> lub system <strong>Stripe</strong> (w przypadku wersji
-                        webowej/PWA).
+                    <li>The Application operates on a freemium model. The User has access to one free dream analysis session 
+                        per day. This limit is assigned to the User Account and verified on the server side.</li>
+                    <li>Full access to Application functionalities requires purchasing a subscription or a session package.</li>
+                    <li>Payments are processed by external operators: <strong>Apple App Store</strong>, 
+                        <strong>Google Play Store</strong>, or the <strong>Stripe</strong> system (for the 
+                        web/PWA version).
                     </li>
-                    <li>W przypadku subskrypcji, odnowienie następuje automatycznie, chyba że Użytkownik zrezygnuje z
-                        niej przed końcem bieżącego okresu rozliczeniowego w ustawieniach swojego profilu lub u
-                        operatora płatności.</li>
-                    <li>Ceny prezentowane w Aplikacji są cenami brutto.</li>
+                    <li>In the case of subscriptions, renewal occurs automatically unless the User cancels it 
+                        before the end of the current billing period in their profile settings or with the 
+                        payment operator.</li>
+                    <li>Prices displayed in the Application are gross prices (including applicable taxes).</li>
                 </ul>
 
-                <h2>4. Warunki Techniczne i Konto</h2>
+                <h2>4. Technical Requirements and Account</h2>
                 <ul>
-                    <li>Do pełnego działania Aplikacji niezbędne jest urządzenie z systemem iOS lub Android oraz aktywne
-                        połączenie z Internetem.</li>
-                    <li>Rejestracja Konta odbywa się za pośrednictwem dostawców zewnętrznych (Google/Apple).</li>
-                    <li>Użytkownik zobowiązuje się do korzystania z Aplikacji w sposób zgodny z prawem.</li>
-                    <li>Administrator zastrzega sobie prawo do czasowego zawieszenia działania Aplikacji ze względów
-                        technicznych.</li>
+                    <li>A device with iOS or Android and an active 
+                        Internet connection is required for the full operation of the Application.</li>
+                    <li>Account registration takes place through third-party providers (Google/Apple).</li>
+                    <li>The User agrees to use the Application in a lawful manner.</li>
+                    <li>The Administrator reserves the right to temporarily suspend the Application's operation for 
+                        technical reasons.</li>
                 </ul>
 
-                <h2>5. Własność Intelektualna</h2>
-                <p>Wszelkie prawa do nazwy Aplikacji, logo, interfejsu oraz kodu źródłowego należą do Administratora.
-                    Kopiowanie lub modyfikowanie elementów Aplikacji bez zgody Administratora jest zabronione.</p>
+                <h2>5. Intellectual Property</h2>
+                <p>All rights to the Application name, logo, interface, and source code belong to the Administrator. 
+                    Copying or modifying elements of the Application without the Administrator's consent is prohibited.</p>
 
-                <h2>6. Usunięcie Konta</h2>
+                <h2>6. Account Deletion</h2>
                 <ul>
-                    <li>Użytkownik może w każdej chwili usunąć Konto w ustawieniach profilu.</li>
-                    <li>Usunięcie Konta skutkuje nieodwracalnym skasowaniem Archiwum snów i wszystkich powiązanych
-                        danych z bazy Administratora.</li>
+                    <li>The User can delete their Account at any time in the profile settings.</li>
+                    <li>Account deletion results in the irreversible removal of the Dream Archive and all associated 
+                        data from the Administrator's database.</li>
                 </ul>
 
-                <h2>7. Postanowienia Końcowe</h2>
+                <h2>7. Final Provisions</h2>
                 <ul>
-                    <li>W sprawach nieuregulowanych mają zastosowanie przepisy RODO oraz prawa właściwego dla siedziby
-                        Administratora.</li>
-                    <li>Administrator zastrzega sobie prawo do zmian w Regulaminie. Dalsze korzystanie z usługi po
-                        zmianach oznacza ich akceptację.</li>
-                    <li>Kontakt: <strong>contact@mojesny.app</strong>.</li>
+                    <li>For matters not regulated herein, the provisions of GDPR and the law applicable to the 
+                        Administrator's seat shall apply.</li>
+                    <li>The Administrator reserves the right to make changes to the Terms of Service. Continued use of the service after 
+                        changes constitute their acceptance.</li>
+                    <li>Contact: <strong>contact@mojesny.app</strong>.</li>
                 </ul>
             </section>
         </div>
@@ -237,9 +234,10 @@
             <nav class="footer-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="dream-book.html" class="active">Dream Book</a></li>
+                    <li><a href="dream-book.html">Dream Book</a></li>
                     <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="terms.html" class="active">Terms of Service</a></li>
+                </ul>
             </nav>
             <div class="copyright">© 2025 - 2026 MyDreams</div>
         </div>
