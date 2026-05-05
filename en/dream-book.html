@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+
+        // Consent default (MUSI być pierwsze)
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
+        });
+
+        (function () {
+            var trackingId = 'G-X44XRVZRDG'; // Twój GA4 Measurement ID
+            var scriptLoaded = false;
+
+            function loadGAScript() {
+                if (scriptLoaded) return;
+
+                var consent = localStorage.getItem('cookie-consent');
+                if (consent !== 'accepted') return;
+
+                scriptLoaded = true;
+
+                var script = document.createElement('script');
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
+                script.async = true;
+                document.head.appendChild(script);
+
+                gtag('js', new Date());
+                gtag('config', trackingId, { anonymize_ip: true });
+
+                console.log('GA4 Loaded');
+            }
+
+            var consent = localStorage.getItem('cookie-consent');
+
+            if (consent === 'accepted') {
+
+                // Najpierw update consent
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                // Ładujemy OD RAZU po załadowaniu okna (brak przekłamań w statystykach i brak lagów na scrollu)
+                if (document.readyState === 'complete') {
+                    loadGAScript();
+                } else {
+                    window.addEventListener('load', loadGAScript);
+                }
+
+                // Rezerwowe upewnienie się w wolnym czasie (Idle)
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(loadGAScript, { timeout: 2000 });
+                }
+            }
+
+            // API dla bannera
+            window.acceptAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'accepted');
+
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                loadGAScript(); // natychmiast po kliknięciu "Akceptuję"
+            };
+
+            window.rejectAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'rejected');
+            };
+
+        })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The best AI dream dictionary in English. Check your dreams with MyDreams.">
+    <title>Dream Book – Alphabetical Dream Dictionary | MyDreams</title>
+    <link rel="canonical" href="https://mojesny.app/en/dream-book.html">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css?v=1.2">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Dream Book – Alphabetical Dream Dictionary",
+  "description": "A list of the most popular dreams and their meanings in the MyDreams dream dictionary. Choose a dream from the list and check its interpretation.",
+  "url": "https://mojesny.app/en/dream-book.html",
+  "about": {
+    "@type": "Thing",
+    "name": "Dream Dictionary"
+  }
+}
+</script>
+
+    <style>
+        @media (min-width: 769px) {
+            .cta-bottom .cta-btn {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cta-bottom {
+                display: none;
+            }
+
+            .download {
+            margin-top: 0 !important;
+        }
+        }
+
+        
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="icon.svg" alt="MojeSny Logo" class="site-logo" width="100" height="100">
+                </a>
+            </div>
+            <button class="hamburger" aria-label="Otwórz menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dream-book.html" class="active">Dream Book</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mojesny.app/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Dream Book"
+        }
+      ]
+    }
+    </script>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <div class="container">
+            <a href="https://mojesny.app/en/">Home</a> <span class="breadcrumb-sep">&gt;</span> <span>Dream Book</span>
+        </div>
+    </nav>
+
+
+
+
+    <main>
+        <div class="container">
+            <section class="content">
+
+                <h1>Sennik alfabetyczny – znaczenie snów od A do Z</h1>
+
+                <h2>Księga snów: sprawdź, co oznacza Twój sen</h2>
+
+                <!-- SPIS TREŚCI -->
+                <nav class="sennik-toc">
+                    <div class="toc-buttons">
+                        <a href="/sny-litera-a.html" class="toc-btn">A</a>
+                        <a href="/sny-litera-b.html" class="toc-btn">B</a>
+                        <a href="/sny-litera-c.html" class="toc-btn">C</a>
+                        <a href="/sny-litera-c-pl.html" class="toc-btn">Ć</a>
+                        <a href="/sny-litera-d.html" class="toc-btn">D</a>
+                        <a href="/sny-litera-e.html" class="toc-btn">E</a>
+                        <a href="/sny-litera-f.html" class="toc-btn">F</a>
+                        <a href="/sny-litera-g.html" class="toc-btn">G</a>
+                        <a href="/sny-litera-h.html" class="toc-btn">H</a>
+                        <a href="/sny-litera-i.html" class="toc-btn">I</a>
+                        <a href="/sny-litera-j.html" class="toc-btn">J</a>
+                        <a href="/sny-litera-k.html" class="toc-btn">K</a>
+                        <a href="/sny-litera-l.html" class="toc-btn">L</a>
+                        <a href="/sny-litera-l-pl.html" class="toc-btn">Ł</a>
+                        <a href="/sny-litera-m.html" class="toc-btn">M</a>
+                        <a href="/sny-litera-n.html" class="toc-btn">N</a>
+                        <a href="/sny-litera-o.html" class="toc-btn">O</a>
+                        <a href="/sny-litera-p.html" class="toc-btn">P</a>
+                        <a href="/sny-litera-r.html" class="toc-btn">R</a>
+                        <a href="/sny-litera-s.html" class="toc-btn">S</a>
+                        <a href="/sny-litera-s-pl.html" class="toc-btn">Ś</a>
+                        <a href="/sny-litera-t.html" class="toc-btn">T</a>
+                        <a href="/sny-litera-u.html" class="toc-btn">U</a>
+                        <a href="/sny-litera-w.html" class="toc-btn">W</a>
+                        <a href="/sny-litera-z.html" class="toc-btn">Z</a>
+                        <a href="/sny-litera-z-pl.html" class="toc-btn">Ż</a>
+                    </div>
+                </nav>
+
+                <p>
+                    Szukasz znaczenia swojego snu? Dobrze trafiłeś. Nasza Księga Snów to nowoczesny, uporządkowany zbiór
+                    symboli sennych, który łączy klasyczną wiedzę o symbolice z nowoczesnym podejściem psychologicznym i
+                    analizą sztucznej inteligencji.
+
+                    Nasz sennik alfabetyczny został zaprojektowany tak, abyś w kilka sekund mógł odnaleźć kluczowe
+                    motywy, które pojawiły się w Twojej podświadomości podczas nocnego odpoczynku.
+                </p>
+
+                <h2>Jak korzystać z sennika alfabetycznego?</h2>
+                <p>
+                    Wybierz pierwszą literę symbolu, który zapamiętałeś ze swojego snu (np. „P” jak <a href="/sen-o-psie.html#pies">pies</a>, „L” jak
+                    <a href="/sen-o-lataniu.html#latanie">latanie</a>). Pamiętaj, że sny rzadko należy brać dosłownie. Często najważniejszy nie jest sam obiekt,
+                    ale emocje, jakie mu towarzyszyły. Jeśli śniłeś o <a href="/sen-o-ucieczce.html#ucieczka">ucieczce</a>, sprawdź nie tylko hasło „ucieczka”, ale
+                    również symbole korytarza, goniącej Cię osoby czy <a href="/sen-o-lapaniu.html#lapanie">łapaniu</a>.
+                </p>
+
+                <h2>Dlaczego warto sprawdzać znaczenie snów według alfabetu?</h2>
+
+                <p>
+                    Porządek alfabetyczny to najprostsza i najszybsza droga do poznania odpowiedzi. Każda litera w
+                    naszej Księdze Snów kryje w sobie starannie opracowane interpretacje. Nie ograniczamy się do
+                    jednozdaniowych definicji z dawnych lat. Każde hasło to głęboka analiza:
+                </p>
+
+                <ul>
+                    <li><strong>Ogólnego znaczenia symbolu</strong> w kulturze i psychologii (np. według Carla Junga czy
+                        Zygmunta Freuda).</li>
+                    <li><strong>Wpływu emocji na interpretację</strong> (ten sam symbol widziany w radości i w strachu
+                        oznacza zupełnie co innego).</li>
+                    <li><strong>Wskazówek życiowych</strong>, które Twoja podświadomość próbuje Ci przekazać na jawie.
+                    </li>
+                </ul>
+
+                <!-- SPIS TREŚCI -->
+                <nav class="sennik-toc">
+                    <div class="toc-buttons">
+                        <a href="/sny-litera-a.html" class="toc-btn">A</a>
+                        <a href="/sny-litera-b.html" class="toc-btn">B</a>
+                        <a href="/sny-litera-c.html" class="toc-btn">C</a>
+                        <a href="/sny-litera-c-pl.html" class="toc-btn">Ć</a>
+                        <a href="/sny-litera-d.html" class="toc-btn">D</a>
+                        <a href="/sny-litera-e.html" class="toc-btn">E</a>
+                        <a href="/sny-litera-f.html" class="toc-btn">F</a>
+                        <a href="/sny-litera-g.html" class="toc-btn">G</a>
+                        <a href="/sny-litera-h.html" class="toc-btn">H</a>
+                        <a href="/sny-litera-i.html" class="toc-btn">I</a>
+                        <a href="/sny-litera-j.html" class="toc-btn">J</a>
+                        <a href="/sny-litera-k.html" class="toc-btn">K</a>
+                        <a href="/sny-litera-l.html" class="toc-btn">L</a>
+                        <a href="/sny-litera-l-pl.html" class="toc-btn">Ł</a>
+                        <a href="/sny-litera-m.html" class="toc-btn">M</a>
+                        <a href="/sny-litera-n.html" class="toc-btn">N</a>
+                        <a href="/sny-litera-o.html" class="toc-btn">O</a>
+                        <a href="/sny-litera-p.html" class="toc-btn">P</a>
+                        <a href="/sny-litera-r.html" class="toc-btn">R</a>
+                        <a href="/sny-litera-s.html" class="toc-btn">S</a>
+                        <a href="/sny-litera-s-pl.html" class="toc-btn">Ś</a>
+                        <a href="/sny-litera-t.html" class="toc-btn">T</a>
+                        <a href="/sny-litera-u.html" class="toc-btn">U</a>
+                        <a href="/sny-litera-w.html" class="toc-btn">W</a>
+                        <a href="/sny-litera-z.html" class="toc-btn">Z</a>
+                        <a href="/sny-litera-z-pl.html" class="toc-btn">Ż</a>
+                    </div>
+                </nav>
+
+                <p>
+                    Sny to prywatny list od Twojej podświadomości. Przeglądaj naszą bazę wiedzy, odkrywaj
+                    powtarzające się motywy i buduj lepsze zrozumienie samego siebie każdego dnia. Jeśli nie
+                    znalazłeś swojego snu na liście, pamiętaj, że nasza aplikacja MojeSny pozwala na
+                    spersonalizowaną analizę całych opisów za pomocą AI.
+                </p>
+
+               <p class="qr-note">
+                        Masz podobny sen i zastanawiasz się, co naprawdę oznacza? Sprawdź jego dokładne znaczenie w
+                        aplikacji – AI analizuje szczegóły Twojego
+                        snu i dopasowuje interpretację do Twojej sytuacji.
+                        <span class="qr-desktop-only"><br>Pobierz aplikację lub zaloguj się aby odkryć więcej</span><span
+                            class="qr-mobile-only"><br>Pobierz aplikację lub zaloguj się aby odkryć więcej</span>
+                    </p>
+
+                <div class="cta-bottom">
+                    <a href="#download" class="cta-btn">Pobierz aplikację</a>
+                </div>
+
+            </section>
+
+            <section class="download" id="download">
+                <!-- Mobile: App Store button -->
+                <a href="https://apps.apple.com/app/mojesny/id6755436556" class="app-store-button download-mobile-only"
+                    target="_blank" rel="noopener noreferrer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
+                    </svg>
+                    <div class="button-text">
+                        <span class="small">Download on the</span>
+                        <span class="large">App Store</span>
+                    </div>
+                </a>
+                <!-- Desktop: QR code -->
+                <div class="download-qr download-desktop-only">
+                    <img src="qr-code.svg" alt="Scan the QR code to download MyDreams" width="70" height="70">
+                </div>
+                <a href="https://app.mojesny.app/" class="app-store-button web-button" target="_blank"
+                    rel="noopener noreferrer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 19.93C7.05 19.44 4 16.08 4 12C4 11.38 4.08 10.79 4.21 10.21L9 15V16C9 17.1 9.9 18 11 18V19.93ZM17.9 17.39C17.64 16.58 16.9 16 16 16H15V13C15 12.45 14.55 12 14 12H8V10H10C10.55 10 11 9.55 11 9V7H13C14.1 7 15 6.1 15 5V4.59C17.93 5.78 20 8.65 20 12C20 14.08 19.2 15.97 17.9 17.39Z" />
+                    </svg>
+                    <div class="button-text">
+                        <span class="small">Try</span>
+                        <span class="large">MyDreams</span>
+                    </div>
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dream-book.html" class="active">Dream Book</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">© 2025 - 2026 MyDreams</div>
+        </div>
+    </footer>
+
+    <button id="backToTop" title="Back to Top">↑</button>
+
+    <script>
+        const backToTopBtn = document.getElementById("backToTop");
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+
+        backToTopBtn.onclick = function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        };
+    </script>
+
+    <script src="cookie-consent.js" defer></script>
+    <script>
+        (function () {
+            var btn = document.querySelector('.hamburger');
+            var nav = document.querySelector('.main-nav');
+
+            if (!btn || !nav) return;
+
+            btn.addEventListener('click', function () {
+                var isOpen = nav.classList.toggle('is-open');
+                btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            nav.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!nav.contains(e.target) && !btn.contains(e.target)) {
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
+
+</body>
+
+</html>
