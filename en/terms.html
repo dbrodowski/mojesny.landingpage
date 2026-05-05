@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+
+        // Consent default (MUSI być pierwsze)
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
+        });
+
+        (function () {
+            var trackingId = 'G-X44XRVZRDG';
+            var scriptLoaded = false;
+
+            function loadGAScript() {
+                if (scriptLoaded) return;
+
+                var consent = localStorage.getItem('cookie-consent');
+                if (consent !== 'accepted') return;
+
+                scriptLoaded = true;
+
+                var script = document.createElement('script');
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
+                script.async = true;
+                document.head.appendChild(script);
+
+                gtag('js', new Date());
+                gtag('config', trackingId, { anonymize_ip: true });
+
+                console.log('GA4 Loaded');
+            }
+
+            var consent = localStorage.getItem('cookie-consent');
+
+            if (consent === 'accepted') {
+
+                // Najpierw update consent
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                // Ładujemy OD RAZU po załadowaniu okna (brak przekłamań w statystykach i brak lagów na scrollu)
+                if (document.readyState === 'complete') {
+                    loadGAScript();
+                } else {
+                    window.addEventListener('load', loadGAScript);
+                }
+
+                // Rezerwowe upewnienie się w wolnym czasie (Idle)
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(loadGAScript, { timeout: 2000 });
+                }
+            }
+
+            // API dla bannera
+            window.acceptAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'accepted');
+
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                loadGAScript(); // natychmiast po kliknięciu "Akceptuję"
+            };
+
+            window.rejectAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'rejected');
+            };
+
+        })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Terms of Service for the MyDreams platform and application.">
+    <title>Terms of Service | MyDreams</title>
+    <link rel="canonical" href="https://mojesny.app/en/terms.html">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css?v=1.2">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="icon.svg" alt="MyDreams Logo" class="site-logo" width="100" height="100">
+                </a>
+            </div>
+            <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dream-book.html" class="active">Dream Book</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mojesny.app/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Terms of Service"
+        }
+      ]
+    }
+    </script>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <div class="container">
+            <a href="https://mojesny.app/en/">Home</a> <span class="breadcrumb-sep">&gt;</span>
+            <span>Terms of Service</span>
+        </div>
+    </nav>
+
+
+
+
+    <main>
+        <div class="container">
+            <section class="content">
+                <h1>Regulamin Aplikacji MojeSny</h1>
+
+                <p><strong>Ostatnia aktualizacja: 17 kwietnia 2026 r.</strong></p>
+
+                <p>Niniejszy Regulamin określa zasady korzystania z aplikacji mobilnej MojeSny (dalej: „Aplikacja").
+                    Instalacja i korzystanie z Aplikacji oznacza pełną akceptację poniższych warunków.</p>
+
+                <h2>1. Definicje</h2>
+                <ul>
+                    <li><strong>Administrator</strong> – twórca i właściciel aplikacji MojeSny, kontakt:
+                        contact@mojesny.app.</li>
+                    <li><strong>Użytkownik</strong> – każda osoba fizyczna korzystająca z Aplikacji.</li>
+                    <li><strong>AI (Sztuczna Inteligencja)</strong> – algorytmy zewnętrznych dostawców wykorzystywane do
+                        generowania interpretacji snów.</li>
+                    <li><strong>Konto</strong> – zbiór zasobów i uprawnień przypisanych do Użytkownika w systemie
+                        Aplikacji.</li>
+                </ul>
+
+                <h2>2. Charakter Usługi i Wyłączenie Odpowiedzialności</h2>
+                <ul>
+                    <li>Aplikacja służy do prowadzenia dziennika snów oraz generowania ich interpretacji przy pomocy AI.
+                    </li>
+                    <li><strong>Ważne:</strong> Interpretacje snów generowane przez AI mają charakter wyłącznie
+                        <strong>rozrywkowy i informacyjny</strong>. Nie stanowią one porady medycznej, psychologicznej,
+                        terapeutycznej ani profesjonalnej diagnozy.
+                    </li>
+                    <li>Administrator nie ponosi odpowiedzialności za treść generowaną przez AI, w tym za interpretacje,
+                        które Użytkownik może uznać za subiektywnie niepokojące lub niewłaściwe.</li>
+                    <li>Decyzje podejmowane przez Użytkownika na podstawie analiz dostępnych w Aplikacji są podejmowane
+                        wyłącznie na jego własną odpowiedzialność.</li>
+                </ul>
+
+                <h2>3. Model Korzystania (Freemium) i Płatności</h2>
+                <ul>
+                    <li>Aplikacja działa w modelu freemium. Użytkownik ma dostęp do jednej bezpłatnej sesji analizy snu
+                        dziennie. Limit ten jest przypisany do Konta Użytkownika i weryfikowany po stronie serwera.</li>
+                    <li>Pełny dostęp do funkcjonalności Aplikacji wymaga wykupienia subskrypcji lub pakietu sesji.</li>
+                    <li>Płatności obsługiwane są przez zewnętrznych operatorów: <strong>Apple App Store</strong>,
+                        <strong>Google Play Store</strong> lub system <strong>Stripe</strong> (w przypadku wersji
+                        webowej/PWA).
+                    </li>
+                    <li>W przypadku subskrypcji, odnowienie następuje automatycznie, chyba że Użytkownik zrezygnuje z
+                        niej przed końcem bieżącego okresu rozliczeniowego w ustawieniach swojego profilu lub u
+                        operatora płatności.</li>
+                    <li>Ceny prezentowane w Aplikacji są cenami brutto.</li>
+                </ul>
+
+                <h2>4. Warunki Techniczne i Konto</h2>
+                <ul>
+                    <li>Do pełnego działania Aplikacji niezbędne jest urządzenie z systemem iOS lub Android oraz aktywne
+                        połączenie z Internetem.</li>
+                    <li>Rejestracja Konta odbywa się za pośrednictwem dostawców zewnętrznych (Google/Apple).</li>
+                    <li>Użytkownik zobowiązuje się do korzystania z Aplikacji w sposób zgodny z prawem.</li>
+                    <li>Administrator zastrzega sobie prawo do czasowego zawieszenia działania Aplikacji ze względów
+                        technicznych.</li>
+                </ul>
+
+                <h2>5. Własność Intelektualna</h2>
+                <p>Wszelkie prawa do nazwy Aplikacji, logo, interfejsu oraz kodu źródłowego należą do Administratora.
+                    Kopiowanie lub modyfikowanie elementów Aplikacji bez zgody Administratora jest zabronione.</p>
+
+                <h2>6. Usunięcie Konta</h2>
+                <ul>
+                    <li>Użytkownik może w każdej chwili usunąć Konto w ustawieniach profilu.</li>
+                    <li>Usunięcie Konta skutkuje nieodwracalnym skasowaniem Archiwum snów i wszystkich powiązanych
+                        danych z bazy Administratora.</li>
+                </ul>
+
+                <h2>7. Postanowienia Końcowe</h2>
+                <ul>
+                    <li>W sprawach nieuregulowanych mają zastosowanie przepisy RODO oraz prawa właściwego dla siedziby
+                        Administratora.</li>
+                    <li>Administrator zastrzega sobie prawo do zmian w Regulaminie. Dalsze korzystanie z usługi po
+                        zmianach oznacza ich akceptację.</li>
+                    <li>Kontakt: <strong>contact@mojesny.app</strong>.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dream-book.html" class="active">Dream Book</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+            </nav>
+            <div class="copyright">© 2025 - 2026 MyDreams</div>
+        </div>
+    </footer>
+
+    <button id="backToTop" title="Back to top">↑</button>
+
+    <script>
+        const backToTopBtn = document.getElementById("backToTop");
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+
+        backToTopBtn.onclick = function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        };
+    </script>
+
+    <script src="cookie-consent.js" defer></script>
+    <script>
+        (function () {
+            var btn = document.querySelector('.hamburger');
+            var nav = document.querySelector('.main-nav');
+
+            if (!btn || !nav) return;
+
+            btn.addEventListener('click', function () {
+                var isOpen = nav.classList.toggle('is-open');
+                btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            nav.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!nav.contains(e.target) && !btn.contains(e.target)) {
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
+
+</body>
+
+</html>
