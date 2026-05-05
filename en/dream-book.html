@@ -8,7 +8,7 @@
         function gtag() { dataLayer.push(arguments); }
         window.gtag = gtag;
 
-        // Consent default (MUSI być pierwsze)
+        // Consent default (MUST be first)
         gtag('consent', 'default', {
             ad_storage: 'denied',
             ad_user_data: 'denied',
@@ -18,7 +18,7 @@
         });
 
         (function () {
-            var trackingId = 'G-X44XRVZRDG'; // Twój GA4 Measurement ID
+            var trackingId = 'G-X44XRVZRDG'; // Your GA4 Measurement ID
             var scriptLoaded = false;
 
             function loadGAScript() {
@@ -44,7 +44,7 @@
 
             if (consent === 'accepted') {
 
-                // Najpierw update consent
+                // Update consent first
                 gtag('consent', 'update', {
                     ad_storage: 'granted',
                     ad_user_data: 'granted',
@@ -52,20 +52,20 @@
                     analytics_storage: 'granted'
                 });
 
-                // Ładujemy OD RAZU po załadowaniu okna (brak przekłamań w statystykach i brak lagów na scrollu)
+                // Load immediately (prevents stats gaps and scroll lag)
                 if (document.readyState === 'complete') {
                     loadGAScript();
                 } else {
                     window.addEventListener('load', loadGAScript);
                 }
 
-                // Rezerwowe upewnienie się w wolnym czasie (Idle)
+                // Backup idle load
                 if ('requestIdleCallback' in window) {
                     requestIdleCallback(loadGAScript, { timeout: 2000 });
                 }
             }
 
-            // API dla bannera
+            // Banner API
             window.acceptAllCookies = function () {
                 localStorage.setItem('cookie-consent', 'accepted');
 
@@ -76,7 +76,7 @@
                     analytics_storage: 'granted'
                 });
 
-                loadGAScript(); // natychmiast po kliknięciu "Akceptuję"
+                loadGAScript(); 
             };
 
             window.rejectAllCookies = function () {
@@ -121,11 +121,9 @@
             }
 
             .download {
-            margin-top: 0 !important;
+                margin-top: 0 !important;
+            }
         }
-        }
-
-        
     </style>
 
 </head>
@@ -154,6 +152,7 @@
             </nav>
         </div>
     </header>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -180,132 +179,132 @@
         </div>
     </nav>
 
-
-
-
     <main>
         <div class="container">
             <section class="content">
 
-                <h1>Sennik alfabetyczny – znaczenie snów od A do Z</h1>
+                <h1>Alphabetical Dream Dictionary – Dream Meanings from A to Z</h1>
 
-                <h2>Księga snów: sprawdź, co oznacza Twój sen</h2>
+                <h2>Dream Book: Check what your dream means</h2>
 
-                <!-- SPIS TREŚCI -->
+                <!-- TABLE OF CONTENTS (Full Alphabet) -->
                 <nav class="sennik-toc">
                     <div class="toc-buttons">
-                        <a href="/sny-litera-a.html" class="toc-btn">A</a>
-                        <a href="/sny-litera-b.html" class="toc-btn">B</a>
-                        <a href="/sny-litera-c.html" class="toc-btn">C</a>
-                        <a href="/sny-litera-c-pl.html" class="toc-btn">Ć</a>
-                        <a href="/sny-litera-d.html" class="toc-btn">D</a>
-                        <a href="/sny-litera-e.html" class="toc-btn">E</a>
-                        <a href="/sny-litera-f.html" class="toc-btn">F</a>
-                        <a href="/sny-litera-g.html" class="toc-btn">G</a>
-                        <a href="/sny-litera-h.html" class="toc-btn">H</a>
-                        <a href="/sny-litera-i.html" class="toc-btn">I</a>
-                        <a href="/sny-litera-j.html" class="toc-btn">J</a>
-                        <a href="/sny-litera-k.html" class="toc-btn">K</a>
-                        <a href="/sny-litera-l.html" class="toc-btn">L</a>
-                        <a href="/sny-litera-l-pl.html" class="toc-btn">Ł</a>
-                        <a href="/sny-litera-m.html" class="toc-btn">M</a>
-                        <a href="/sny-litera-n.html" class="toc-btn">N</a>
-                        <a href="/sny-litera-o.html" class="toc-btn">O</a>
-                        <a href="/sny-litera-p.html" class="toc-btn">P</a>
-                        <a href="/sny-litera-r.html" class="toc-btn">R</a>
-                        <a href="/sny-litera-s.html" class="toc-btn">S</a>
-                        <a href="/sny-litera-s-pl.html" class="toc-btn">Ś</a>
-                        <a href="/sny-litera-t.html" class="toc-btn">T</a>
-                        <a href="/sny-litera-u.html" class="toc-btn">U</a>
-                        <a href="/sny-litera-w.html" class="toc-btn">W</a>
-                        <a href="/sny-litera-z.html" class="toc-btn">Z</a>
-                        <a href="/sny-litera-z-pl.html" class="toc-btn">Ż</a>
+                        <a href="/dreams-letter-a.html" class="toc-btn">A</a>
+                        <a href="/dreams-letter-b.html" class="toc-btn">B</a>
+                        <a href="/dreams-letter-c.html" class="toc-btn">C</a>
+                        <a href="/dreams-letter-d.html" class="toc-btn">D</a>
+                        <a href="/dreams-letter-e.html" class="toc-btn">E</a>
+                        <a href="/dreams-letter-f.html" class="toc-btn">F</a>
+                        <a href="/dreams-letter-g.html" class="toc-btn">G</a>
+                        <a href="/dreams-letter-h.html" class="toc-btn">H</a>
+                        <a href="/dreams-letter-i.html" class="toc-btn">I</a>
+                        <a href="/dreams-letter-j.html" class="toc-btn">J</a>
+                        <a href="/dreams-letter-k.html" class="toc-btn">K</a>
+                        <a href="/dreams-letter-l.html" class="toc-btn">L</a>
+                        <a href="/dreams-letter-m.html" class="toc-btn">M</a>
+                        <a href="/dreams-letter-n.html" class="toc-btn">N</a>
+                        <a href="/dreams-letter-o.html" class="toc-btn">O</a>
+                        <a href="/dreams-letter-p.html" class="toc-btn">P</a>
+                        <a href="/dreams-letter-q.html" class="toc-btn">Q</a>
+                        <a href="/dreams-letter-r.html" class="toc-btn">R</a>
+                        <a href="/dreams-letter-s.html" class="toc-btn">S</a>
+                        <a href="/dreams-letter-t.html" class="toc-btn">T</a>
+                        <a href="/dreams-letter-u.html" class="toc-btn">U</a>
+                        <a href="/dreams-letter-v.html" class="toc-btn">V</a>
+                        <a href="/dreams-letter-w.html" class="toc-btn">W</a>
+                        <a href="/dreams-letter-x.html" class="toc-btn">X</a>
+                        <a href="/dreams-letter-y.html" class="toc-btn">Y</a>
+                        <a href="/dreams-letter-z.html" class="toc-btn">Z</a>
                     </div>
                 </nav>
 
                 <p>
-                    Szukasz znaczenia swojego snu? Dobrze trafiłeś. Nasza Księga Snów to nowoczesny, uporządkowany zbiór
-                    symboli sennych, który łączy klasyczną wiedzę o symbolice z nowoczesnym podejściem psychologicznym i
-                    analizą sztucznej inteligencji.
+                    Are you looking for the meaning of your dream? You've come to the right place. Our Dream Book is a modern, organized collection 
+                    of dream symbols that combines classic symbolic knowledge with a modern psychological approach and 
+                    Artificial Intelligence analysis.
 
-                    Nasz sennik alfabetyczny został zaprojektowany tak, abyś w kilka sekund mógł odnaleźć kluczowe
-                    motywy, które pojawiły się w Twojej podświadomości podczas nocnego odpoczynku.
+                    Our alphabetical dream dictionary is designed so that you can find the key 
+                    motifs that appeared in your subconscious during your night's rest in just a few seconds.
                 </p>
 
-                <h2>Jak korzystać z sennika alfabetycznego?</h2>
+                <h2>How to use the alphabetical dream dictionary?</h2>
                 <p>
-                    Wybierz pierwszą literę symbolu, który zapamiętałeś ze swojego snu (np. „P” jak <a href="/sen-o-psie.html#pies">pies</a>, „L” jak
-                    <a href="/sen-o-lataniu.html#latanie">latanie</a>). Pamiętaj, że sny rzadko należy brać dosłownie. Często najważniejszy nie jest sam obiekt,
-                    ale emocje, jakie mu towarzyszyły. Jeśli śniłeś o <a href="/sen-o-ucieczce.html#ucieczka">ucieczce</a>, sprawdź nie tylko hasło „ucieczka”, ale
-                    również symbole korytarza, goniącej Cię osoby czy <a href="/sen-o-lapaniu.html#lapanie">łapaniu</a>.
+                    Choose the first letter of the symbol you remember from your dream (e.g., "D" for <a
+                        href="/dream-about-dog.html#dog">dog</a>, "F" for
+                    <a href="/dream-about-flying.html#flying">flying</a>). Remember that dreams should rarely be taken literally. 
+                    Often, the most important thing is not the object itself, 
+                    but the emotions that accompanied it. If you dreamed of <a
+                        href="/dream-about-escape.html#escape">escaping</a>, check not only the entry for "escape," but 
+                    also symbols like a corridor, a person chasing you, or <a href="/dream-about-catching.html#catching">catching</a>.
                 </p>
 
-                <h2>Dlaczego warto sprawdzać znaczenie snów według alfabetu?</h2>
+                <h2>Why is it worth checking dream meanings alphabetically?</h2>
 
                 <p>
-                    Porządek alfabetyczny to najprostsza i najszybsza droga do poznania odpowiedzi. Każda litera w
-                    naszej Księdze Snów kryje w sobie starannie opracowane interpretacje. Nie ograniczamy się do
-                    jednozdaniowych definicji z dawnych lat. Każde hasło to głęboka analiza:
+                    Alphabetical order is the simplest and fastest way to find answers. Every letter in 
+                    our Dream Book contains carefully crafted interpretations. We don't limit ourselves to 
+                    one-sentence definitions from years ago. Each entry is a deep analysis of:
                 </p>
 
                 <ul>
-                    <li><strong>Ogólnego znaczenia symbolu</strong> w kulturze i psychologii (np. według Carla Junga czy
-                        Zygmunta Freuda).</li>
-                    <li><strong>Wpływu emocji na interpretację</strong> (ten sam symbol widziany w radości i w strachu
-                        oznacza zupełnie co innego).</li>
-                    <li><strong>Wskazówek życiowych</strong>, które Twoja podświadomość próbuje Ci przekazać na jawie.
+                    <li><strong>The general meaning of the symbol</strong> in culture and psychology (e.g., according to Carl Jung or 
+                        Sigmund Freud).</li>
+                    <li><strong>The impact of emotions on interpretation</strong> (the same symbol seen in joy versus in fear 
+                        means something completely different).</li>
+                    <li><strong>Life guidance</strong> that your subconscious is trying to convey to you in your waking life.
                     </li>
                 </ul>
 
-                <!-- SPIS TREŚCI -->
+                <!-- SECOND TOC (Full Alphabet) -->
                 <nav class="sennik-toc">
                     <div class="toc-buttons">
-                        <a href="/sny-litera-a.html" class="toc-btn">A</a>
-                        <a href="/sny-litera-b.html" class="toc-btn">B</a>
-                        <a href="/sny-litera-c.html" class="toc-btn">C</a>
-                        <a href="/sny-litera-c-pl.html" class="toc-btn">Ć</a>
-                        <a href="/sny-litera-d.html" class="toc-btn">D</a>
-                        <a href="/sny-litera-e.html" class="toc-btn">E</a>
-                        <a href="/sny-litera-f.html" class="toc-btn">F</a>
-                        <a href="/sny-litera-g.html" class="toc-btn">G</a>
-                        <a href="/sny-litera-h.html" class="toc-btn">H</a>
-                        <a href="/sny-litera-i.html" class="toc-btn">I</a>
-                        <a href="/sny-litera-j.html" class="toc-btn">J</a>
-                        <a href="/sny-litera-k.html" class="toc-btn">K</a>
-                        <a href="/sny-litera-l.html" class="toc-btn">L</a>
-                        <a href="/sny-litera-l-pl.html" class="toc-btn">Ł</a>
-                        <a href="/sny-litera-m.html" class="toc-btn">M</a>
-                        <a href="/sny-litera-n.html" class="toc-btn">N</a>
-                        <a href="/sny-litera-o.html" class="toc-btn">O</a>
-                        <a href="/sny-litera-p.html" class="toc-btn">P</a>
-                        <a href="/sny-litera-r.html" class="toc-btn">R</a>
-                        <a href="/sny-litera-s.html" class="toc-btn">S</a>
-                        <a href="/sny-litera-s-pl.html" class="toc-btn">Ś</a>
-                        <a href="/sny-litera-t.html" class="toc-btn">T</a>
-                        <a href="/sny-litera-u.html" class="toc-btn">U</a>
-                        <a href="/sny-litera-w.html" class="toc-btn">W</a>
-                        <a href="/sny-litera-z.html" class="toc-btn">Z</a>
-                        <a href="/sny-litera-z-pl.html" class="toc-btn">Ż</a>
+                        <a href="/dreams-letter-a.html" class="toc-btn">A</a>
+                        <a href="/dreams-letter-b.html" class="toc-btn">B</a>
+                        <a href="/dreams-letter-c.html" class="toc-btn">C</a>
+                        <a href="/dreams-letter-d.html" class="toc-btn">D</a>
+                        <a href="/dreams-letter-e.html" class="toc-btn">E</a>
+                        <a href="/dreams-letter-f.html" class="toc-btn">F</a>
+                        <a href="/dreams-letter-g.html" class="toc-btn">G</a>
+                        <a href="/dreams-letter-h.html" class="toc-btn">H</a>
+                        <a href="/dreams-letter-i.html" class="toc-btn">I</a>
+                        <a href="/dreams-letter-j.html" class="toc-btn">J</a>
+                        <a href="/dreams-letter-k.html" class="toc-btn">K</a>
+                        <a href="/dreams-letter-l.html" class="toc-btn">L</a>
+                        <a href="/dreams-letter-m.html" class="toc-btn">M</a>
+                        <a href="/dreams-letter-n.html" class="toc-btn">N</a>
+                        <a href="/dreams-letter-o.html" class="toc-btn">O</a>
+                        <a href="/dreams-letter-p.html" class="toc-btn">P</a>
+                        <a href="/dreams-letter-q.html" class="toc-btn">Q</a>
+                        <a href="/dreams-letter-r.html" class="toc-btn">R</a>
+                        <a href="/dreams-letter-s.html" class="toc-btn">S</a>
+                        <a href="/dreams-letter-t.html" class="toc-btn">T</a>
+                        <a href="/dreams-letter-u.html" class="toc-btn">U</a>
+                        <a href="/dreams-letter-v.html" class="toc-btn">V</a>
+                        <a href="/dreams-letter-w.html" class="toc-btn">W</a>
+                        <a href="/dreams-letter-x.html" class="toc-btn">X</a>
+                        <a href="/dreams-letter-y.html" class="toc-btn">Y</a>
+                        <a href="/dreams-letter-z.html" class="toc-btn">Z</a>
                     </div>
                 </nav>
 
                 <p>
-                    Sny to prywatny list od Twojej podświadomości. Przeglądaj naszą bazę wiedzy, odkrywaj
-                    powtarzające się motywy i buduj lepsze zrozumienie samego siebie każdego dnia. Jeśli nie
-                    znalazłeś swojego snu na liście, pamiętaj, że nasza aplikacja MojeSny pozwala na
-                    spersonalizowaną analizę całych opisów za pomocą AI.
+                    Dreams are a private letter from your subconscious. Browse our knowledge base, discover 
+                    recurring themes, and build a better understanding of yourself every day. If you 
+                    didn't find your dream on the list, remember that our MyDreams app allows for 
+                    personalized analysis of entire descriptions using AI.
                 </p>
 
-               <p class="qr-note">
-                        Masz podobny sen i zastanawiasz się, co naprawdę oznacza? Sprawdź jego dokładne znaczenie w
-                        aplikacji – AI analizuje szczegóły Twojego
-                        snu i dopasowuje interpretację do Twojej sytuacji.
-                        <span class="qr-desktop-only"><br>Pobierz aplikację lub zaloguj się aby odkryć więcej</span><span
-                            class="qr-mobile-only"><br>Pobierz aplikację lub zaloguj się aby odkryć więcej</span>
-                    </p>
+                <p class="qr-note">
+                    Do you have a similar dream and wonder what it really means? Check its exact meaning in 
+                    the app – AI analyzes the details of your 
+                    dream and matches the interpretation to your situation.
+                    <span class="qr-desktop-only"><br>Download the app or log in to discover more</span><span
+                        class="qr-mobile-only"><br>Download the app or log in to discover more</span>
+                </p>
 
                 <div class="cta-bottom">
-                    <a href="#download" class="cta-btn">Pobierz aplikację</a>
+                    <a href="#download" class="cta-btn">Download the App</a>
                 </div>
 
             </section>
