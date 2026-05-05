@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+
+        // Consent default (MUST be first)
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
+        });
+
+        (function () {
+            var trackingId = 'G-XSSD2BM25E';
+            var scriptLoaded = false;
+
+            function loadGAScript() {
+                if (scriptLoaded) return;
+
+                var consent = localStorage.getItem('cookie-consent');
+                if (consent !== 'accepted') return;
+
+                scriptLoaded = true;
+
+                var script = document.createElement('script');
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
+                script.async = true;
+                document.head.appendChild(script);
+
+                gtag('js', new Date());
+                gtag('config', trackingId, { anonymize_ip: true });
+
+                console.log('GA4 Loaded');
+            }
+
+            var consent = localStorage.getItem('cookie-consent');
+
+            if (consent === 'accepted') {
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                if (document.readyState === 'complete') {
+                    loadGAScript();
+                } else {
+                    window.addEventListener('load', loadGAScript);
+                }
+
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(loadGAScript, { timeout: 2000 });
+                }
+            }
+
+            window.acceptAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'accepted');
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+                loadGAScript();
+            };
+
+            window.rejectAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'rejected');
+            };
+
+        })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy policy of the MyDreams platform and application.">
+    <title>Privacy Policy | MyDreams</title>
+    <link rel="canonical" href="https://mojesny.app/en/privacy.html">
+    <link rel="alternate" hreflang="pl" href="https://mojesny.app/prywatnosc.html" />
+    <link rel="alternate" hreflang="en" href="https://mojesny.app/en/privacy.html" />
+    <link rel="alternate" hreflang="x-default" href="https://mojesny.app/en/privacy.html" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="../icon.svg" alt="MyDreams Logo" class="site-logo" width="100" height="100">
+                </a>
+            </div>
+            <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dream-book.html">Dream Book</a></li>
+                    <li><a href="privacy.html" class="active">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mojesny.app/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Privacy Policy"
+        }
+      ]
+    }
+    </script>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <div class="container">
+            <a href="https://mojesny.app/en/">Home</a> <span class="breadcrumb-sep">&gt;</span> <span>Privacy Policy</span>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="content">
+                <h1>Privacy Policy of the MyDreams App</h1>
+
+                <p><strong>Last updated: May 5, 2026</strong></p>
+
+                <h2>1. Data Controller</h2>
+                <p>The controller of personal data is the creator of the MyDreams application (hereinafter: "Controller"). For matters related to the protection of personal data and the exercise of your rights, you can contact us at: <strong>contact@mojesny.app</strong></p>
+
+                <h2>2. Legal Basis and Scope of Collected Data</h2>
+                <p>We process your data in accordance with the GDPR. The basis for processing is the necessity of the data to provide the service (performance of a contract – Art. 6(1)(b) GDPR). The app collects:</p>
+                <ul>
+                    <li><strong>Login Data:</strong> email address and basic profile data (e.g., name, photo) provided by external identity providers (Google LLC or Apple Inc.) during the registration process.</li>
+                    <li><strong>User Content:</strong> dream descriptions, notes, and query content submitted as part of interactions with AI.</li>
+                    <li><strong>Technical Data:</strong> anonymous statistical data on how the app is used and device information used to improve service stability.</li>
+                </ul>
+
+                <h2>3. Purpose of Data Use</h2>
+                <p>Collected data is used exclusively to:</p>
+                <ul>
+                    <li>enable identification and secure login to the application,</li>
+                    <li>provide Archive functionality (synchronization of dreams between devices),</li>
+                    <li>provide dream analysis services using artificial intelligence algorithms,</li>
+                    <li>technical communication and user support.</li>
+                </ul>
+                <p>User data is not sold or shared with third parties for marketing purposes.</p>
+
+                <h2>4. Artificial Intelligence and Third-Party Providers</h2>
+                <p>To provide dream interpretations, MyDreams shares specific user data with third-party AI service providers. <strong>By submitting a dream for analysis, you provide explicit permission for this transmission.</strong></p>
+                <ul>
+                    <li><strong>Data Shared:</strong> We only transmit the text of your dream description and relevant query context. We do <strong>not</strong> share your name, email, or profile information with AI providers.</li>
+                    <li><strong>Service Providers:</strong> Data is sent to <strong>OpenAI Ireland corp</strong> and <strong>Google Cloud (Vertex AI)</strong>.</li>
+                    <li><strong>Data Protection:</strong> We use professional API interfaces which guarantee that the transmitted data is <strong>not</strong> used to train public AI models. These providers maintain high security standards (SOC 2 or equivalent) to ensure your data receives equal protection as within our app.</li>
+                    <li><strong>Duration:</strong> Data is processed by the AI provider only for the duration of generating the response.</li>
+                </ul>
+
+                <h2>5. Data Management and Archive</h2>
+                <p>Your dreams are stored in a secure database to allow you access to your history (Archive). As a User, you have full control over this data:</p>
+                <ul>
+                    <li>You can edit or delete individual entries at any time.</li>
+                    <li>You can permanently delete your entire account along with all assigned data directly from the application settings.</li>
+                </ul>
+
+                <h2>6. Security</h2>
+                <p>We use technical security measures, such as connection encryption (SSL/TLS), to protect your data. However, remember that security also depends on protecting your Google/Apple account – do not share your login details with anyone.</p>
+
+                <h2>7. User Rights</h2>
+                <p>Under the GDPR, you have the right to:</p>
+                <ul>
+                    <li>access your data and receive a copy of it,</li>
+                    <li>rectify (correct) your data,</li>
+                    <li>delete data ("the right to be forgotten"),</li>
+                    <li>lodge a complaint with a supervisory authority.</li>
+                </ul>
+
+                <h2>8. Minors</h2>
+                <p>The MyDreams application is not intended for individuals under the age of 13. The Controller does not knowingly collect data from minors. If such data is discovered, it will be deleted immediately.</p>
+
+                <h2>9. Changes to the Policy</h2>
+                <p>The Controller reserves the right to update this Policy. Users will be informed of significant changes via a message within the application.</p>
+
+                <h2>10. Contact</h2>
+                <p>Please direct any privacy questions to: <strong>contact@mojesny.app</strong></p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dream-book.html">Dream Book</a></li>
+                    <li><a href="privacy.html" class="active">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">© 2025 - 2026 MyDreams</div>
+        </div>
+    </footer>
+
+    <button id="backToTop" title="Back to top">↑</button>
+
+    <script>
+        const backToTopBtn = document.getElementById("backToTop");
+        window.onscroll = function () {
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+        backToTopBtn.onclick = function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
+    <script src="cookie-consent.js" defer></script>
+</body>
+</html>
