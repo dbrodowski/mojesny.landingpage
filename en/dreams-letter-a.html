@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 
 <head>
 
@@ -8,7 +8,7 @@
         function gtag() { dataLayer.push(arguments); }
         window.gtag = gtag;
 
-        // Consent default (MUSI być pierwsze)
+        // Consent default
         gtag('consent', 'default', {
             ad_storage: 'denied',
             ad_user_data: 'denied',
@@ -18,7 +18,7 @@
         });
 
         (function () {
-            var trackingId = 'G-XSSD2BM25E';
+            var trackingId = 'G-X44XRVZRDG';
             var scriptLoaded = false;
 
             function loadGAScript() {
@@ -43,8 +43,6 @@
             var consent = localStorage.getItem('cookie-consent');
 
             if (consent === 'accepted') {
-
-                // Najpierw update consent
                 gtag('consent', 'update', {
                     ad_storage: 'granted',
                     ad_user_data: 'granted',
@@ -52,50 +50,44 @@
                     analytics_storage: 'granted'
                 });
 
-                // Ładujemy OD RAZU po załadowaniu okna (brak przekłamań w statystykach i brak lagów na scrollu)
                 if (document.readyState === 'complete') {
                     loadGAScript();
                 } else {
                     window.addEventListener('load', loadGAScript);
                 }
 
-                // Rezerwowe upewnienie się w wolnym czasie (Idle)
                 if ('requestIdleCallback' in window) {
                     requestIdleCallback(loadGAScript, { timeout: 2000 });
                 }
             }
 
-            // API dla bannera
             window.acceptAllCookies = function () {
                 localStorage.setItem('cookie-consent', 'accepted');
-
                 gtag('consent', 'update', {
                     ad_storage: 'granted',
                     ad_user_data: 'granted',
                     ad_personalization: 'granted',
                     analytics_storage: 'granted'
                 });
-
-                loadGAScript(); // natychmiast po kliknięciu "Akceptuję"
+                loadGAScript();
             };
 
             window.rejectAllCookies = function () {
                 localStorage.setItem('cookie-consent', 'rejected');
             };
-
         })();
     </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Najlepszy polski sennik AI. Sennik alfabetyczny – lista snów na literę A">
-    <title>Sennik alfabetyczny – lista snów na literę A | MojeSny</title>
-    <link rel="canonical" href="https://mojesny.app/sny-litera-a.html">
+    <meta name="description" content="The best AI-powered dream dictionary. Alphabetical dream book – list of dreams starting with the letter A.">
+    <title>Alphabetical Dream Book – Dreams Starting with A | MyDreams</title>
+    <link rel="canonical" href="https://mojesny.app/en/dreams-letter-a.html">
     <link rel="alternate" hreflang="pl" href="https://mojesny.app/sny-litera-a.html"/>
     <link rel="alternate" hreflang="en" href="https://mojesny.app/en/dreams-letter-a.html"/>
     <link rel="alternate" hreflang="x-default" href="https://mojesny.app/en/dreams-letter-a.html"/>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="style.css?v=1.1">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../style.css?v=1.1">
 
     <style>
         @media (min-width: 769px) {
@@ -108,7 +100,7 @@
                 display: block;
                 width: 100px;
                 height: 100px;
-                background: url('qr-code.svg') no-repeat center / contain;
+                background: url('../qr-code.svg') no-repeat center / contain;
                 margin: 0 auto;
             }
 
@@ -128,18 +120,18 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Sennik alfabetyczny – lista snów na literę A",
-  "description": "Najlepszy polski sennik AI. Sennik alfabetyczny – lista snów na literę A",
-  "url": "https://mojesny.app/sny-litera-a.html",
+  "headline": "Alphabetical Dream Book – List of Dreams Starting with Letter A",
+  "description": "The best AI-powered dream dictionary. Alphabetical dream book – list of dreams starting with the letter A.",
+  "url": "https://mojesny.app/en/dreams-letter-a.html",
   "image": "https://mojesny.app/icon.svg", 
   "author": {
     "@type": "Organization",
-    "name": "MojeSny",
+    "name": "MyDreams",
     "url": "https://mojesny.app"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "MojeSny",
+    "name": "MyDreams",
     "logo": {
       "@type": "ImageObject",
       "url": "https://mojesny.app/icon.svg"
@@ -147,7 +139,7 @@
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://mojesny.app/sny-litera-a.html"
+    "@id": "https://mojesny.app/en/dreams-letter-a.html"
   }
 }
 </script>
@@ -160,24 +152,25 @@
         <div class="container">
             <div class="logo">
                 <a href="index.html">
-                    <img src="icon.svg" alt="MojeSny Logo" class="site-logo" width="100" height="100">
+                    <img src="../icon.svg" alt="MyDreams Logo" class="site-logo" width="100" height="100">
                 </a>
             </div>
-            <button class="hamburger" aria-label="Otwórz menu" aria-expanded="false">
+            <button class="hamburger" aria-label="Open menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html">Strona Główna</a></li>
-                    <li><a href="ksiega-snow.html" class="active">Księga Snów</a></li>
-                    <li><a href="prywatnosc.html">Polityka Prywatności</a></li>
-                    <li><a href="regulamin.html">Regulamin</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dream-book.html" class="active">Dream Book</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -186,19 +179,19 @@
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "Strona Główna",
-          "item": "https://mojesny.app/"
+          "name": "Home",
+          "item": "https://mojesny.app/en"
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Księga Snów",
-          "item": "https://mojesny.app/ksiega-snow.html"
+          "name": "Dream Book",
+          "item": "https://mojesny.app/en/dream-book.html"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Litera A"
+          "name": "Letter A"
         }
       ]
     }
@@ -206,91 +199,74 @@
 
     <nav class="breadcrumbs" aria-label="Breadcrumb">
         <div class="container">
-            <a href="https://mojesny.app/">Strona Główna</a> <span class="breadcrumb-sep">&gt;</span> <a
-                href="https://mojesny.app/ksiega-snow.html">Księga Snów</a> <span class="breadcrumb-sep">&gt;</span>
-            <span>Litera A</span>
+            <a href="https://mojesny.app/en">Home</a> <span class="breadcrumb-sep">&gt;</span> 
+            <a href="https://mojesny.app/en/dream-book.html">Dream Book</a> <span class="breadcrumb-sep">&gt;</span>
+            <span>Letter A</span>
         </div>
     </nav>
-
-
-
 
     <main>
         <div class="container">
             <section class="content">
-                <h1>Sennik alfabetyczny – lista snów na literę A</h1>
-                <h2>Sprawdź, co oznacza Twój sen.</h2>
+                <h1>Dream Book – List of Dreams Starting with Letter A</h1>
+                <h2>Discover what your dreams mean.</h2>
 
-                <!-- SPIS TREŚCI -->
+                <!-- TABLE OF CONTENTS -->
                 <nav class="sennik-toc">
                     <p class="toc-intro">
-                        Wybierz interesujący Cię sen z listy poniżej i sprawdź jego interpretację.
+                        Select a dream from the list below to explore its detailed interpretation.
                     </p>
                     <div class="toc-buttons">
-                        <a href="/sen-o-aborcji.html#aborcja" class="toc-dreams">Aborcja</a>
-                        <a href="/sen-o-aktorze.html#aktor" class="toc-dreams">Aktor</a>
-                        <a href="/sen-o-alkoholu.html#alkohol" class="toc-dreams">Alkohol</a>
-                        <a href="/sen-o-aniele.html#anioł" class="toc-dreams">Anioł</a>
-                        <a href="/sen-o-aptece.html#apteka" class="toc-dreams">Apteka</a>
-                        <a href="/sen-o-akwarium.html#akwarium" class="toc-dreams">Akwarium</a>
-                        <a href="/sen-o-ataku.html#atak" class="toc-dreams">Atak</a>
-                        <a href="/sen-o-aucie.html#auto" class="toc-dreams">Auto</a>
-                        <a href="/sen-o-autobusie.html#autobus" class="toc-dreams">Autobus</a>
-                        <a href="/sen-o-awanturze.html#awantura" class="toc-dreams">Awantura</a>
+                        <a href="/dream-of-abortion.html#abortion" class="toc-dreams">Abortion</a>
+                        <a href="/dream-of-actor.html#actor" class="toc-dreams">Actor</a>
+                        <a href="/dream-of-alcohol.html#alcohol" class="toc-dreams">Alcohol</a>
+                        <a href="/dream-of-angel.html#angel" class="toc-dreams">Angel</a>
+                        <a href="/dream-of-pharmacy.html#pharmacy" class="toc-dreams">Pharmacy</a>
+                        <a href="/dream-of-aquarium.html#aquarium" class="toc-dreams">Aquarium</a>
+                        <a href="/dream-of-attack.html#attack" class="toc-dreams">Attack</a>
+                        <a href="/dream-of-car.html#car" class="toc-dreams">Car</a>
+                        <a href="/dream-of-bus.html#bus" class="toc-dreams">Bus</a>
+                        <a href="/dream-of-argument.html#argument" class="toc-dreams">Argument</a>
                     </div>
                 </nav>
 
                 <section class="sennik-description">
                     <div class="description-intro">
-                        <h2>Znaczenie i symbolika snów na literę A</h2>
+                        <h2>Meaning and Symbolism of Dreams Starting with A</h2>
                         <p>
-                            Wkraczasz w obszar symboli zaczynających się od pierwszej litery alfabetu. W świecie
-                            profesjonalnej analizy
-                            snów, litera <strong>A</strong> ma szczególne, niemal magiczne znaczenie – symbolizuje
-                            absolutny początek,
-                            ponierskie działania oraz czystą energię życiową, która napędza nas do codziennego
-                            działania. To właśnie tutaj
-                            najczęściej odnajdujemy motywy bezpośrednio związane z naszą wewnętrzną ambicją,
-                            determinacją oraz fundamentami
-                            naszego "ja". Litera ta otwiera bramę do zrozumienia pierwotnych instynktów.
+                            You are entering the realm of symbols starting with the first letter of the alphabet. In the world 
+                            of professional dream analysis, the letter <strong>A</strong> carries a special, almost magical significance—it 
+                            symbolizes an absolute beginning, pioneering actions, and the pure life energy that drives our 
+                            daily pursuits. This is where we most often find motifs directly related to our inner ambition, 
+                            determination, and the core foundations of our "self." This letter opens the gateway to 
+                            understanding primal instincts.
                         </p>
                     </div>
 
                     <div class="description-details">
                         <p>
-                            Znajdujące się powyżej hasła, takie jak <em><a
-                                    href="/sen-o-autobusie.html#autobus">Autobus</a>,
-                                <a href="/sen-o-aniele.html#anioł">Anioł</a> czy <a
-                                    href="/sen-o-aucie.html#auto">Auto</a></em>, to tylko
-                            niewielki wierzchołek góry lodowej bogatego świata podświadomości. Interpretując sny z tej
-                            szerokiej kategorii,
-                            warto zwrócić szczególną uwagę na fakt, że litera A w psychologii głębi często odnosi się do
-                            <strong>asertywności</strong>, poczucia sprawstwa oraz skomplikowanych relacji z
-                            autorytetami, które kształtują
-                            nasz światopogląd od najmłodszych lat.
+                            The keywords above, such as <em><a href="/dream-of-bus.html#bus">Bus</a>, 
+                            <a href="/dream-of-angel.html#angel">Angel</a>, or <a href="/dream-of-car.html#car">Car</a></em>, 
+                            are just the tip of the iceberg in the vast world of the subconscious. When interpreting dreams from 
+                            this broad category, it is worth noting that in depth psychology, the letter A often refers to 
+                            <strong>assertiveness</strong>, a sense of agency, and complex relationships with authority 
+                            figures that have shaped our worldview since childhood.
                         </p>
 
-                        <h2>Jak skutecznie interpretować motywy z tej kategorii?</h2>
+                        <h2>How to effectively interpret motifs from this category?</h2>
                         <p>
-                            Jeśli Twój sen koncentruje się wokół symbolu na tę literę, zadaj sobie kluczowe pytanie: co
-                            w moim życiu
-                            właśnie teraz wymaga nowego otwarcia? Poniższe zestawienie i szczegółowe opisy haseł pomogą
-                            Ci zrozumieć,
-                            czy Twój umysł podpowiada Ci gotowość do odważnych zmian, czy może wysyła sygnał
-                            ostrzegawczy przed zbyt
-                            gwałtownym i nieprzemyślanym działaniem w sferze zawodowej lub uczuciowej.
+                            If your dream focuses on a symbol starting with this letter, ask yourself a key question: what 
+                            part of my life requires a new beginning right now? The following compilation and detailed 
+                            descriptions will help you understand whether your mind is suggesting a readiness for bold changes 
+                            or perhaps sending a warning signal against impulsive and ill-considered actions in your 
+                            professional or emotional life.
                         </p>
 
                         <ul class="benefit-list">
-                            <li><strong>Kontekst osobisty:</strong> Zastanów się głęboko, czy konkretny symbol na literę
-                                A pojawia się regularnie w Twoim życiu codziennym lub planach na przyszłość.</li>
-                            <li><strong>Dynamika i intensywność snu:</strong> Czy kluczowy motyw był statycznym obrazem,
-                                czy może dynamicznym, pełnym ruchu i zwrotów akcji wydarzeniem?</li>
-                            <li><strong>Twoje odczucia towarzyszące:</strong> Skup się na emocjach – czy litera A
-                                przyniosła Ci we śnie upragniony spokój, czy może wywołała niewytłumaczalny niepokój?
-                            </li>
-                            <li><strong>Otoczenie symbolu:</strong> Zwróć uwagę na kolory i inne osoby, które
-                                towarzyszyły głównemu motywowi, gdyż one modyfikują ostateczne znaczenie snu.</li>
+                            <li><strong>Personal context:</strong> Consider deeply whether a specific symbol starting with A appears regularly in your daily life or future plans.</li>
+                            <li><strong>Dream dynamics and intensity:</strong> Was the key motif a static image or a dynamic event full of movement and plot twists?</li>
+                            <li><strong>Accompanying feelings:</strong> Focus on emotions—did the symbol bring you a sense of peace in the dream, or did it cause inexplicable anxiety?</li>
+                            <li><strong>Surroundings of the symbol:</strong> Pay attention to colors and other people present, as they modify the ultimate meaning of the dream.</li>
                         </ul>
                     </div>
                 </section>
@@ -304,7 +280,7 @@
                                 d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
                         </svg>
                         <div class="button-text">
-                            <span class="small">Pobierz z</span>
+                            <span class="small">Download on</span>
                             <span class="large">App Store</span>
                         </div>
                     </a>
@@ -316,8 +292,8 @@
                                 d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 19.93C7.05 19.44 4 16.08 4 12C4 11.38 4.08 10.79 4.21 10.21L9 15V16C9 17.1 9.9 18 11 18V19.93ZM17.9 17.39C17.64 16.58 16.9 16 16 16H15V13C15 12.45 14.55 12 14 12H8V10H10C10.55 10 11 9.55 11 9V7H13C14.1 7 15 6.1 15 5V4.59C17.93 5.78 20 8.65 20 12C20 14.08 19.2 15.97 17.9 17.39Z" />
                         </svg>
                         <div class="button-text">
-                            <span class="small">Wypróbuj</span>
-                            <span class="large">MojeSny</span>
+                            <span class="small">Log in to</span>
+                            <span class="large">MyDreams</span>
                         </div>
                     </a>
                 </section>
@@ -330,17 +306,17 @@
         <div class="container">
             <nav class="footer-nav">
                 <ul>
-                    <li><a href="index.html">Strona Główna</a></li>
-                    <li><a href="ksiega-snow.html" class="active">Księga Snów</a></li>
-                    <li><a href="prywatnosc.html">Polityka Prywatności</a></li>
-                    <li><a href="regulamin.html">Regulamin</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dream-book.html" class="active">Dream Book</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
                 </ul>
             </nav>
-            <div class="copyright">© 2025 - 2026 MojeSny</div>
+            <div class="copyright">© 2025 - 2026 MyDreams</div>
         </div>
     </footer>
 
-    <button id="backToTop" title="Wróć na górę">↑</button>
+    <button id="backToTop" title="Back to Top">↑</button>
 
     <script>
         const backToTopBtn = document.getElementById("backToTop");
