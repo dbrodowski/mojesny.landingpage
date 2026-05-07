@@ -35,10 +35,10 @@
 
         banner.innerHTML = [
             '<div class="cookie-banner__inner">',
-            '  <p id="cookie-banner-title" class="cookie-banner__text">We use cookies to improve the performance of this site. You can accept or reject cookies.</p>',
+            '  <p id="cookie-banner-title" class="cookie-banner__text">Wir verwenden Cookies, um die Leistung dieser Website zu verbessern. Sie können Cookies akzeptieren oder ablehnen.</p>',
             '  <div class="cookie-banner__actions">',
-            '    <button type="button" class="cookie-banner__btn" data-consent="accepted">Accept</button>',
-            '    <button type="button" class="cookie-banner__btn" data-consent="rejected">Reject</button>',
+            '    <button type="button" class="cookie-banner__btn" data-consent="accepted">Akzeptieren</button>',
+            '    <button type="button" class="cookie-banner__btn" data-consent="rejected">Ablehnen</button>',
             '  </div>',
             '</div>'
         ].join('');
