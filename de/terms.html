@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+
+        // Consent default (MUST be first)
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
+        });
+
+        (function () {
+            var trackingId = 'G-X44XRVZRDG';
+            var scriptLoaded = false;
+
+            function loadGAScript() {
+                if (scriptLoaded) return;
+
+                var consent = localStorage.getItem('cookie-consent');
+                if (consent !== 'accepted') return;
+
+                scriptLoaded = true;
+
+                var script = document.createElement('script');
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
+                script.async = true;
+                document.head.appendChild(script);
+
+                gtag('js', new Date());
+                gtag('config', trackingId, { anonymize_ip: true });
+
+                console.log('GA4 Loaded (German Version)');
+            }
+
+            var consent = localStorage.getItem('cookie-consent');
+
+            if (consent === 'accepted') {
+
+                // First, update consent
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                // Load IMMEDIATELY after window load
+                if (document.readyState === 'complete') {
+                    loadGAScript();
+                } else {
+                    window.addEventListener('load', loadGAScript);
+                }
+
+                // Reserve check during idle time
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(loadGAScript, { timeout: 2000 });
+                }
+            }
+
+            // Banner API
+            window.acceptAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'accepted');
+
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                loadGAScript(); // Immediately after clicking "Accept"
+            };
+
+            window.rejectAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'rejected');
+            };
+
+        })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Allgemeine Geschäftsbedingungen der MeineTräume-Plattform und Anwendung.">
+    <title>Allgemeine Geschäftsbedingungen | MeineTräume</title>
+    <link rel="canonical" href="https://mojesny.app/de/terms.html">
+    <link rel="alternate" hreflang="pl" href="https://mojesny.app/regulamin.html" />
+    <link rel="alternate" hreflang="en" href="https://mojesny.app/en/terms.html" />
+    <link rel="alternate" hreflang="de" href="https://mojesny.app/de/terms.html" />
+    <link rel="alternate" hreflang="x-default" href="https://mojesny.app/en/terms.html" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../style.css?v=1.2">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="../icon.svg" alt="MeineTräume Logo" class="site-logo" width="100" height="100">
+                </a>
+            </div>
+            <button class="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="privacy.html">Datenschutz</a></li>
+                    <li><a href="terms.html" class="active">AGB</a></li>
+                    <li class="lang-switch">
+                        <a href="https://mojesny.app/regulamin.html">PL</a>
+                        <a href="https://mojesny.app/en/terms.html">EN</a>
+                        <a href="terms.html" class="lang-active">DE</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mojesny.app/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AGB"
+        }
+      ]
+    }
+    </script>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <div class="container">
+            <a href="https://mojesny.app/de/">Home</a> <span class="breadcrumb-sep">&gt;</span>
+            <span>Allgemeine Geschäftsbedingungen</span>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="content">
+                <h1>Nutzungsbedingungen der MeineTräume-Anwendung</h1>
+
+                <p><strong>Zuletzt aktualisiert am: 17. April 2026</strong></p>
+
+                <p>Diese Nutzungsbedingungen legen die Regeln für die Verwendung der mobilen Anwendung MeineTräume (im Folgenden: „Anwendung“) fest. 
+                    Die Installation und Nutzung der Anwendung stellen eine vollständige Annahme der folgenden Bedingungen dar.</p>
+
+                <h2>1. Definitionen</h2>
+                <ul>
+                    <li><strong>Administrator</strong> – der Ersteller und Eigentümer der MeineTräume-Anwendung, Kontakt: 
+                        contact@mojesny.app.</li>
+                    <li><strong>Nutzer</strong> – jede natürliche Person, die die Anwendung nutzt.</li>
+                    <li><strong>KI (Künstliche Intelligenz)</strong> – Algorithmen von Drittanbietern, die zur 
+                        Erstellung von Traumdeutungen verwendet werden.</li>
+                    <li><strong>Konto</strong> – eine Sammlung von Ressourcen und Berechtigungen, die dem Nutzer innerhalb des 
+                        Anwendungssystems zugewiesen sind.</li>
+                </ul>
+
+                <h2>2. Art der Dienstleistung und Haftungsausschluss</h2>
+                <ul>
+                    <li>Die Anwendung dient zum Führen eines Traumtagebuchs und zur Erstellung von Deutungen mittels KI.
+                    </li>
+                    <li><strong>Wichtig:</strong> Die von der KI generierten Traumdeutungen dienen ausschließlich 
+                        <strong>Unterhaltungs- und Informationszwecken</strong>. Sie stellen keine medizinische, psychologische, 
+                        therapeutische Beratung oder professionelle Diagnose dar.
+                    </li>
+                    <li>Der Administrator ist nicht verantwortlich für die von der KI generierten Inhalte, einschließlich Deutungen, 
+                        die der Nutzer subjektiv als störend oder unangemessen empfinden könnte.</li>
+                    <li>Entscheidungen, die der Nutzer auf Grundlage der in der Anwendung verfügbaren Analysen trifft, erfolgen 
+                        ausschließlich auf eigenes Risiko.</li>
+                </ul>
+
+                <h2>3. Nutzungsmodell (Freemium) und Zahlungen</h2>
+                <ul>
+                    <li>Die Anwendung arbeitet nach einem Freemium-Modell. Der Nutzer hat Zugriff auf eine kostenlose Traumanalyse-Sitzung 
+                        pro Tag. Dieses Limit ist dem Nutzerkonto zugewiesen und wird serverseitig überprüft.</li>
+                    <li>Der volle Zugriff auf die Funktionen der Anwendung erfordert den Kauf eines Abonnements oder eines Sitzungspakets.</li>
+                    <li>Zahlungen werden von externen Betreibern abgewickelt: <strong>Apple App Store</strong>, 
+                        <strong>Google Play Store</strong> oder das <strong>Stripe-System</strong> (für die 
+                        Web-/PWA-Version).
+                    </li>
+                    <li>Bei Abonnements erfolgt die Verlängerung automatisch, sofern der Nutzer diese nicht 
+                        vor Ablauf des aktuellen Abrechnungszeitraums in seinen Profileinstellungen oder beim 
+                        Zahlungsbetreiber kündigt.</li>
+                    <li>Die in der Anwendung angezeigten Preise sind Bruttopreise (einschließlich anfallender Steuern).</li>
+                </ul>
+
+                <h2>4. Technische Anforderungen und Konto</h2>
+                <ul>
+                    <li>Für den vollen Betrieb der Anwendung ist ein Gerät mit iOS oder Android und eine aktive 
+                        Internetverbindung erforderlich.</li>
+                    <li>Die Kontoregistrierung erfolgt über Drittanbieter (Google/Apple).</li>
+                    <li>Der Nutzer verpflichtet sich, die Anwendung auf rechtmäßige Weise zu nutzen.</li>
+                    <li>Der Administrator behält sich das Recht vor, den Betrieb der Anwendung aus technischen Gründen 
+                        vorübergehend einzustellen.</li>
+                </ul>
+
+                <h2>5. Geistiges Eigentum</h2>
+                <p>Alle Rechte am Namen der Anwendung, dem Logo, der Benutzeroberfläche und dem Quellcode liegen beim Administrator. 
+                    Das Kopieren oder Ändern von Elementen der Anwendung ohne Zustimmung des Administrators ist untersagt.</p>
+
+                <h2>6. Kontolöschung</h2>
+                <ul>
+                    <li>Der Nutzer kann sein Konto jederzeit in den Profileinstellungen löschen.</li>
+                    <li>Die Löschung des Kontos führt zur unwiderruflichen Entfernung des Traumarchivs und aller damit 
+                        verbundenen Daten aus der Datenbank des Administrators.</li>
+                </ul>
+
+                <h2>7. Schlussbestimmungen</h2>
+                <ul>
+                    <li>Für Angelegenheiten, die hier nicht geregelt sind, gelten die Bestimmungen der DSGVO und das am Sitz des 
+                        Administrators geltende Recht.</li>
+                    <li>Der Administrator behält sich das Recht vor, Änderungen an den Nutzungsbedingungen vorzunehmen. Die fortgesetzte Nutzung des Dienstes nach 
+                        Änderungen gilt als deren Annahme.</li>
+                    <li>Kontakt: <strong>contact@mojesny.app</strong>.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="privacy.html">Datenschutz</a></li>
+                    <li><a href="terms.html" class="active">AGB</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">© 2025 - 2026 MeineTräume</div>
+        </div>
+    </footer>
+
+    <button id="backToTop" title="Nach oben">↑</button>
+
+    <script>
+        const backToTopBtn = document.getElementById("backToTop");
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+
+        backToTopBtn.onclick = function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        };
+    </script>
+
+    <script src="cookie-consent.js" defer></script>
+    <script>
+        (function () {
+            var btn = document.querySelector('.hamburger');
+            var nav = document.querySelector('.main-nav');
+
+            if (!btn || !nav) return;
+
+            btn.addEventListener('click', function () {
+                var isOpen = nav.classList.toggle('is-open');
+                btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            nav.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!nav.contains(e.target) && !btn.contains(e.target)) {
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
+
+</body>
+
+</html>
