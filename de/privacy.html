@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+
+        // Consent default (MUST be first)
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
+        });
+
+        (function () {
+            var trackingId = 'G-X44XRVZRDG'; 
+            var scriptLoaded = false;
+
+            function loadGAScript() {
+                if (scriptLoaded) return;
+
+                var consent = localStorage.getItem('cookie-consent');
+                if (consent !== 'accepted') return;
+
+                scriptLoaded = true;
+
+                var script = document.createElement('script');
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
+                script.async = true;
+                document.head.appendChild(script);
+
+                gtag('js', new Date());
+                gtag('config', trackingId, { anonymize_ip: true });
+
+                console.log('GA4 Loaded (German Version)');
+            }
+
+            var consent = localStorage.getItem('cookie-consent');
+
+            if (consent === 'accepted') {
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+
+                if (document.readyState === 'complete') {
+                    loadGAScript();
+                } else {
+                    window.addEventListener('load', loadGAScript);
+                }
+
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(loadGAScript, { timeout: 2000 });
+                }
+            }
+
+            window.acceptAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'accepted');
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+                loadGAScript();
+            };
+
+            window.rejectAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'rejected');
+            };
+
+        })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Datenschutzbestimmungen der MeineTräume-Plattform und Anwendung.">
+    <title>Datenschutzbestimmungen | MeineTräume</title>
+    <link rel="canonical" href="https://mojesny.app/de/privacy.html">
+    <link rel="alternate" hreflang="pl" href="https://mojesny.app/prywatnosc.html" />
+    <link rel="alternate" hreflang="en" href="https://mojesny.app/en/privacy.html" />
+    <link rel="alternate" hreflang="de" href="https://mojesny.app/de/privacy.html" />
+    <link rel="alternate" hreflang="x-default" href="https://mojesny.app/en/privacy.html" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="../icon.svg" alt="MeineTräume Logo" class="site-logo" width="100" height="100">
+                </a>
+            </div>
+            <button class="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="privacy.html" class="active">Datenschutz</a></li>
+                    <li><a href="terms.html">AGB</a></li>
+                    <li class="lang-switch">
+                        <a href="https://mojesny.app/prywatnosc.html">PL</a>
+                        <a href="https://mojesny.app/en/privacy.html">EN</a>
+                        <a href="privacy.html" class="lang-active">DE</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mojesny.app/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Datenschutzbestimmungen"
+        }
+      ]
+    }
+    </script>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <div class="container">
+            <a href="https://mojesny.app/de/">Home</a> <span class="breadcrumb-sep">&gt;</span> <span>Datenschutzbestimmungen</span>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="content">
+                <h1>Datenschutzbestimmungen der MeineTräume App</h1>
+
+                <p><strong>Zuletzt aktualisiert am: 5. Mai 2026</strong></p>
+
+                <h2>1. Verantwortlicher für die Datenverarbeitung</h2>
+                <p>Verantwortlicher für die Verarbeitung personenbezogener Daten ist der Ersteller der MeineTräume-Anwendung (im Folgenden: „Verantwortlicher“). Bei Fragen zum Schutz personenbezogener Daten und zur Ausübung Ihrer Rechte können Sie uns unter folgender Adresse kontaktieren: <strong>contact@mojesny.app</strong></p>
+
+                <h2>2. Rechtsgrundlage und Umfang der erhobenen Daten</h2>
+                <p>Wir verarbeiten Ihre Daten gemäß der DSGVO. Die Grundlage für die Verarbeitung ist die Notwendigkeit der Daten zur Erbringung der Dienstleistung (Vertragserfüllung – Art. 6 Abs. 1 lit. b DSGVO). Die App erhebt:</p>
+                <ul>
+                    <li><strong>Anmeldedaten:</strong> E-Mail-Adresse und Basis-Profildaten (z. B. Name, Foto), die von externen Identitätsanbietern (Google LLC oder Apple Inc.) während des Registrierungsprozesses bereitgestellt werden.</li>
+                    <li><strong>Nutzerinhalte:</strong> Traumbeschreibungen, Notizen und Abfrageinhalte, die im Rahmen von Interaktionen mit der KI übermittelt werden.</li>
+                    <li><strong>Technische Daten:</strong> Anonyme statistische Daten über die Nutzung der App sowie Geräteinformationen, die zur Verbesserung der Dienstleistungsstabilität verwendet werden.</li>
+                </ul>
+
+                <h2>3. Zweck der Datennutzung</h2>
+                <p>Die erhobenen Daten werden ausschließlich verwendet, um:</p>
+                <ul>
+                    <li>die Identifizierung und sichere Anmeldung bei der Anwendung zu ermöglichen,</li>
+                    <li>die Archiv-Funktionalität bereitzustellen (Synchronisierung der Träume zwischen Geräten),</li>
+                    <li>Traumanalysedienste unter Verwendung von Algorithmen der künstlichen Intelligenz bereitzustellen,</li>
+                    <li>technische Kommunikation und Nutzerunterstützung zu gewährleisten.</li>
+                </ul>
+                <p>Nutzerdaten werden nicht zu Marketingzwecken an Dritte verkauft oder weitergegeben.</p>
+
+                <h2>4. Künstliche Intelligenz und Drittanbieter</h2>
+                <p>Um Traumdeutungen bereitzustellen, gibt MeineTräume bestimmte Nutzerdaten an Drittanbieter von KI-Diensten weiter. <strong>Durch das Absenden eines Traums zur Analyse erteilen Sie die ausdrückliche Erlaubnis für diese Übermittlung.</strong></p>
+                <ul>
+                    <li><strong>Gefreigebene Daten:</strong> Wir übermitteln nur den Text Ihrer Traumbeschreibung und den relevanten Abfragekontext. Wir geben <strong>keinen</strong> Namen, keine E-Mail-Adresse und keine Profilinformationen an KI-Anbieter weiter.</li>
+                    <li><strong>Dienstanbieter:</strong> Die Daten werden an <strong>OpenAI Ireland Corp.</strong> und <strong>Google Cloud (Vertex AI)</strong> gesendet.</li>
+                    <li><strong>Datenschutz:</strong> Wir nutzen professionelle API-Schnittstellen, die garantieren, dass die übermittelten Daten <strong>nicht</strong> zum Trainieren öffentlicher KI-Modelle verwendet werden. Diese Anbieter halten hohe Sicherheitsstandards ein (SOC 2 oder gleichwertig), um sicherzustellen, dass Ihre Daten den gleichen Schutz erhalten wie innerhalb unserer App.</li>
+                    <li><strong>Dauer:</strong> Die Daten werden vom KI-Anbieter nur für die Dauer der Antwortgenerierung verarbeitet.</li>
+                </ul>
+
+                <h2>5. Datenmanagement und Archiv</h2>
+                <p>Ihre Träume werden in einer sicheren Datenbank gespeichert, um Ihnen den Zugriff auf Ihren Verlauf (Archiv) zu ermöglichen. Als Nutzer haben Sie die volle Kontrolle über diese Daten:</p>
+                <ul>
+                    <li>Sie können einzelne Einträge jederzeit bearbeiten oder löschen.</li>
+                    <li>Sie können Ihr gesamtes Konto mitsamt allen zugewiesenen Daten dauerhaft direkt in den App-Einstellungen löschen.</li>
+                </ul>
+
+                <h2>6. Sicherheit</h2>
+                <p>Wir verwenden technische Sicherheitsmaßnahmen wie Verbindungsverschlüsselung (SSL/TLS), um Ihre Daten zu schützen. Denken Sie jedoch daran, dass die Sicherheit auch vom Schutz Ihres Google-/Apple-Kontos abhängt – geben Sie Ihre Zugangsdaten an niemanden weiter.</p>
+
+                <h2>7. Rechte der Nutzer</h2>
+                <p>Gemäß der DSGVO haben Sie das Recht auf:</p>
+                <ul>
+                    <li>Auskunft über Ihre Daten und Erhalt einer Kopie davon,</li>
+                    <li>Berichtigung (Korrektur) Ihrer Daten,</li>
+                    <li>Löschung der Daten („Recht auf Vergessenwerden“),</li>
+                    <li>Einreichung einer Beschwerde bei einer Aufsichtsbehörde.</li>
+                </ul>
+
+                <h2>8. Minderjährige</h2>
+                <p>Die MeineTräume-Anwendung ist nicht für Personen unter 13 Jahren bestimmt. Der Verantwortliche erhebt wissentlich keine Daten von Minderjährigen. Sollten solche Daten entdeckt werden, werden sie unverzüglich gelöscht.</p>
+
+                <h2>9. Änderungen der Richtlinie</h2>
+                <p>Der Verantwortliche behält sich das Recht vor, diese Richtlinie zu aktualisieren. Nutzer werden über wesentliche Änderungen durch eine Nachricht innerhalb der Anwendung informiert.</p>
+
+                <h2>10. Kontakt</h2>
+                <p>Bitte richten Sie alle Datenschutzfragen an: <strong>contact@mojesny.app</strong></p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="privacy.html" class="active">Datenschutz</a></li>
+                    <li><a href="terms.html">AGB</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">© 2025 - 2026 MeineTräume</div>
+        </div>
+    </footer>
+
+    <button id="backToTop" title="Nach oben">↑</button>
+
+    <script>
+        const backToTopBtn = document.getElementById("backToTop");
+        window.onscroll = function () {
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+        backToTopBtn.onclick = function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
+    <script src="cookie-consent.js" defer></script>
+    <script>
+        (function () {
+            var btn = document.querySelector('.hamburger');
+            var nav = document.querySelector('.main-nav');
+            if (!btn || !nav) return;
+            btn.addEventListener('click', function () {
+                var isOpen = nav.classList.toggle('is-open');
+                btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+            nav.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
