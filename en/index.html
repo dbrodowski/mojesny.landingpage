@@ -162,6 +162,29 @@
             opacity: .7
         }
 
+        .lang-switch {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-left: 10px
+        }
+
+        .lang-switch a {
+            border: 1px solid rgba(255,255,255,0.45);
+            border-radius: 4px;
+            padding: 3px 7px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            opacity: 1 !important
+        }
+
+        .lang-switch a.lang-active {
+            background: rgba(255,255,255,0.2);
+            cursor: default;
+            pointer-events: none
+        }
+
         .hamburger {
             display: none;
             flex-direction: column;
@@ -388,6 +411,7 @@
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="privacy.html">Privacy Policy</a></li>
                     <li><a href="terms.html">Terms of Service</a></li>
+                    <li class="lang-switch"><a href="https://mojesny.app/">PL</a><a href="https://mojesny.app/en/" class="lang-active">EN</a></li>
                 </ul>
             </nav>
         </div>
