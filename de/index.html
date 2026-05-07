@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+
+        // Consent default
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
+        });
+
+        (function () {
+            var trackingId = 'G-X44XRVZRDG'; // Twój GA4 Measurement ID
+            var scriptLoaded = false;
+
+            function loadGAScript() {
+                if (scriptLoaded) return;
+                var consent = localStorage.getItem('cookie-consent');
+                if (consent !== 'accepted') return;
+                scriptLoaded = true;
+                var script = document.createElement('script');
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
+                script.async = true;
+                document.head.appendChild(script);
+                gtag('js', new Date());
+                gtag('config', trackingId, { anonymize_ip: true });
+                console.log('GA4 Loaded (English Version)');
+            }
+
+            var consent = localStorage.getItem('cookie-consent');
+            if (consent === 'accepted') {
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+                if (document.readyState === 'complete') {
+                    loadGAScript();
+                } else {
+                    window.addEventListener('load', loadGAScript);
+                }
+            }
+
+            window.acceptAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'accepted');
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+                loadGAScript();
+            };
+
+            window.rejectAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'rejected');
+            };
+        })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Understand the meaning of your dreams with MyDreams. Advanced AI dream interpretation for pregnancy dreams, teeth falling out, and more. Start your digital dream journal today!">
+    <meta name="keywords"
+        content="dream dictionary, dream interpretation, meaning of dream, dream about teeth falling out, pregnancy dreams, nightmare meanings, ai dream journal, dream analysis, vivid dreams meaning">
+    <title>AI Dream Interpretation & Meaning Dictionary | MyDreams</title>
+    <link rel="canonical" href="https://mojesny.app/en/">
+    <link rel="alternate" hreflang="pl" href="https://mojesny.app/" />
+    <link rel="alternate" hreflang="en" href="https://mojesny.app/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://mojesny.app/en/" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        :root {
+            --brand-blue: rgb(34, 48, 91);
+            --brand-orange: #f05a28
+        }
+
+        html {
+            background-color: var(--brand-blue)
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #fff;
+            color: #000;
+            line-height: 1.6;
+            padding-top: 150px
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 10px 0;
+            background-color: var(--brand-blue);
+            color: #fff;
+            z-index: 1000
+        }
+
+        header .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #fff
+        }
+
+        .site-logo {
+            display: block;
+            width: 100px;
+            height: auto;
+            aspect-ratio: 1/1;
+            transition: width .3s ease
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: opacity .3s ease
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            opacity: .7
+        }
+
+        .lang-switch {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-left: 10px
+        }
+
+        .lang-switch a {
+            border: 1px solid rgba(255,255,255,0.45);
+            border-radius: 4px;
+            padding: 3px 7px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            opacity: 1 !important
+        }
+
+        .lang-switch a.lang-active {
+            background: rgba(255,255,255,0.2);
+            cursor: default;
+            pointer-events: none
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 38px;
+            height: 28px;
+            background: rgb(38, 48, 91);
+            border: none;
+            cursor: pointer;
+            padding: 4px 3px;
+            border-radius: 4px;
+            flex-shrink: 0
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: #fff;
+            border-radius: 2px;
+            transition: transform .25s ease, opacity .2s ease
+        }
+
+        .hero {
+            text-align: center;
+            padding: 0 20px;
+            margin-bottom: clamp(25px, 5vh, 45px)
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 6.7vw, 2.8rem);
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.1
+        }
+
+        .hero h2,
+        .hero .hero-subtitle {
+            font-size: clamp(1.4rem, 4.5vw, 2.2rem);
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            display: block
+        }
+
+        .hero h3,
+        .hero .hero-tagline {
+            font-size: clamp(1.1rem, 4vw, 1.8rem);
+            font-weight: 800;
+            margin-bottom: clamp(25px, 6vw, 40px);
+            line-height: 1.4;
+            display: block
+        }
+
+        .cta-center,
+        .cta-bottom {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0 24px
+        }
+
+        .app-store-button.cta-button,
+        .cta-bottom .cta-btn {
+            background-color: #c43e16;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            display: inline-block;
+            font-size: 1.1rem;
+            padding: 12px 24px
+        }
+
+        .content {
+            max-width: 850px;
+            margin: 0 auto 60px
+        }
+
+        .content p {
+            margin-bottom: 18px;
+            font-size: clamp(1.15rem, 3.5vw, 1.25rem);
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .content h2,
+        .content h3,
+        .content h4 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin: 40px 0 15px;
+            color: #000
+        }
+
+        .content h1+h2 {
+            margin-top: 12px
+        }
+
+        .content ul {
+            margin-left: 25px;
+            margin-bottom: 25px
+        }
+
+        .content li {
+            margin-bottom: 12px;
+            font-size: clamp(1.15rem, 3.5vw, 1.25rem);
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .content p a,
+        .content li a {
+            font-weight: bold;
+            color: #c43e16;
+            text-decoration: none;
+        }
+
+        @media(max-width:768px) {
+            body {
+                padding-top: 90px
+            }
+
+            .site-logo {
+                width: 60px
+            }
+
+            .hamburger {
+                display: flex;
+                margin-left: auto
+            }
+
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: rgb(38, 48, 91);
+                padding: 8px 0 20px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, .2)
+            }
+
+            .main-nav.is-open {
+                display: block
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                padding: 0 20px
+            }
+
+            .main-nav li {
+                width: 100%;
+                overflow: visible
+            }
+
+            .main-nav a {
+                display: block;
+                padding: 12px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, .15);
+                font-size: 1.1rem
+            }
+
+            .main-nav li:last-child a {
+                border-bottom: none
+            }
+
+            .lang-switch {
+                display: flex !important;
+                align-items: center;
+                margin-left: 0;
+                margin-bottom: 10px;
+                padding: 5px 0;
+                width: auto !important;
+                overflow: visible
+            }
+
+            .lang-switch a {
+                display: inline-block !important;
+                padding: 8px 10px 10px;
+                font-size: .9rem;
+                line-height: 1.4;
+                border-bottom: 1px solid rgba(255,255,255,0.45) !important
+            }
+        }
+    </style>
+
+    <link rel="preload" href="../style.css?v=1.2" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="../style.css?v=1.2">
+    </noscript>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "MyDreams",
+  "operatingSystem": "iOS, Web",
+  "applicationCategory": "LifestyleApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "description": "Free download. Full AI dream analysis available."
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MyDreams",
+    "url": "https://mojesny.app/en/",
+    "logo": "https://mojesny.app/icon.svg"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "12"
+  },
+  "description": "Innovative AI dream interpretation app. Discover the meaning of your dreams with advanced analysis and a private journal."
+}
+</script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="../icon.svg" alt="MyDreams Logo" class="site-logo" width="100" height="100">
+                </a>
+            </div>
+            <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li class="lang-switch"><a href="https://mojesny.app/">PL</a><a href="https://mojesny.app/en/" class="lang-active">EN</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h1>MyDreams – A New Dimension of Dream Interpretation</h1>
+                <p class="hero-subtitle">Explore the Hidden Realms of Your Mind.</p>
+                <p class="hero-tagline">The World's Most Advanced AI-Powered Dream Dictionary</p>
+                <div class="cta-center">
+                    <a href="#download" class="app-store-button cta-button">Try for Free</a>
+                </div>
+            </section>
+
+            <section class="content">
+                <p>
+                    For centuries, humans have sought to understand the hidden messages in their dreams. Dreams
+                    fascinate, inspire, and often leave us with deep questions about our inner state. Have you ever woken up wondering about
+                    the <strong>meaning of dream</strong> symbols that appeared while you slept? Why do we see teeth falling out in dreams? Whether it's a
+                    recurring dream of falling or a sudden, emotionally charged dreaming of being pregnant, MyDreams is here to provide the sophisticated answers you deserve.
+                </p>
+
+                <h2>Check Your Dream. Discover Its Meaning. Know Yourself.</h2>
+
+                <p>Decoding your subconscious is a journey into the self. If you've ever searched for professional <a href="#download">dream interpretation</a>, you know that generic dictionaries often fall short. They provide a "one size fits all" definition that ignores your personal life context. At MyDreams, we believe that every <strong>vivid dreams meaning</strong> is unique to the dreamer. If you are looking for:</p>
+                <ul>
+                    <li>trusted <strong>dream dictionary</strong> meanings</li>
+                    <li>comprehensive alphabetical dream book</li>
+                    <li>answers to "what does my dream mean"</li>
+                    <li>understanding the <strong>vivid dreams meaning</strong> behind nightmares</li>
+                    <li>scientific and psychological <a href="#download">dream analysis</a></li>
+                    <li>an online dream interpreter powered by GPT-4 and Vertex AI</li>
+                </ul>
+                <p>then you have found the ultimate destination for your nocturnal explorations.</p>
+
+                <h2>What is MyDreams and the AI Dream Journal?</h2>
+
+                <p>MyDreams is more than just a reference app; it's a revolutionary, intelligent platform that serves as your personal
+                    <strong>ai dream journal</strong>. We have moved beyond the static pages of traditional books to create a living dream journal that grows with you. By combining the wisdom of the ages with cutting-edge technology, we offer a service that includes:</p>
+                <ul>
+                    <li>Classical knowledge of universal dream symbolism (Jungian and Freudian archetypes)</li>
+                    <li>Psychological insights into the emotional processing of daily life</li>
+                    <li>Modern AI technology that understands nuances, tone, and metaphors</li>
+                    <li>Personalized interpretations that consider your specific feelings and life situation</li>
+                </ul>
+
+                <p>By using our <a href="#download">MyDreams app</a>, you can store your experiences securely and watch as the technology identifies patterns you might have missed. Our users report that keeping a dream journal helps them reduce anxiety, boost creativity, and solve problems that seemed insurmountable during their waking hours.</p>
+
+                <h2>The Meaning of Common Dreams: From Teeth to Pregnancy</h2>
+                
+                <p>While every dream is personal, certain motifs appear across cultures. One of the most searched queries is the <strong>dream about teeth falling out</strong>. In traditional dictionaries, this might simply mean "fear of loss." However, through advanced <strong>dream interpretation</strong>, our AI might reveal that it relates to a loss of control in a professional setting or concerns about how you are communicating with loved ones. </p>
+
+                <div class="cta-center">
+                    <a href="#download" class="app-store-button cta-button">Try for Free</a>
+                </div>
+                
+                <p>Similarly, <strong>dreaming of being pregnant</strong> is rarely about physical childbirth. It often symbolizes the birth of a new idea, a creative project, or a significant personal transformation. When you record these events in your <strong>ai dream journal</strong>, MyDreams looks at the surrounding details—who was with you? What was the atmosphere?—to give you a precise <strong>meaning of dream</strong> symbols tailored to you.</p>
+
+                <h2>Why is Dream Interpretation Important for Your Health?</h2>
+
+                <p>From ancient civilizations like Egypt and Greece to modern clinical psychology, dreams have been studied as the "royal road" to the subconscious. Great thinkers viewed them as a language our brain uses to communicate when the conscious ego is asleep. <strong>Dream analysis</strong> is not just a mystical hobby; it is a tool for mental clarity.</p>
+
+                <p>Your <strong>vivid dreams meaning</strong> may reflect:</p>
+                <ul>
+                    <li>Hidden fears that you are not ready to face while awake</li>
+                    <li>Internal conflicts between your desires and your social obligations</li>
+                    <li>Unmet needs that are seeking expression through symbols</li>
+                    <li>Healing processes after a traumatic or stressful experience</li>
+                </ul>
+
+                <p>By regularly engaging with MyDreams, you create a bridge between your conscious and unconscious mind. This leads to improved emotional intelligence and a more grounded sense of well-being.</p>
+
+                <h2>Advanced AI-Powered Dream Analysis vs. Old Dictionaries</h2>
+
+                <p>The core of MyDreams is our advanced <strong>AI Dream Interpretation</strong> engine. Traditional dream books were written decades ago and cannot adapt to modern life. They don't know what a smartphone or a modern corporate office represents in a dream. Our app understands the 21st-century context. Instead of reading generic definitions, you can provide rich detail:</p>
+                <ul>
+                    <li>Describe the exact sequence of events without limitations</li>
+                    <li>Add the specific emotions you felt—was it "existential dread" or "peaceful curiosity"?</li>
+                    <li>Specify if this is a recurring motif that has haunted you for years</li>
+                </ul>
+
+                <p>Our AI processes these inputs to create a narrative <strong>dream interpretation</strong>. It's like having a world-class psychologist available 24/7, ready to translate the metaphors of your mind into clear, actionable advice.</p>
+
+                <h2>Why Keeping an AI Dream Journal Changes Everything</h2>
+                <p>Most people forget 90% of their dreams within ten minutes of waking up. This is why a digital dream journal is essential. By typing or dictating your dream into MyDreams immediately upon waking, you capture the raw, unedited data of your subconscious. Over time, the app acts as a mirror, showing you the evolution of your thoughts. Whether you are curious about a <strong>dream about teeth falling out</strong> today or a <strong>dreaming of being pregnant</strong> six months from now, you will have a chronological record of your inner journey.</p>
+
+                <h2>Security and Privacy in Your Dream AI Journal</h2>
+
+                <p>Your dreams are perhaps your most private and vulnerable thoughts. We treat them with the utmost respect. Unlike other platforms, MyDreams ensures:</p>
+                <ul>
+                    <li>End-to-end data privacy and military-grade encryption</li>
+                    <li>Your journal entries are private and never shared</li>
+                    <li>We do not sell your personal data to third-party advertisers</li>
+                </ul>
+
+                <h2>Who Should Use MyDreams for Dream Analysis?</h2>
+
+                <p>Our community is diverse, ranging from artists seeking inspiration to professionals looking to manage stress. MyDreams is designed for anyone who:</p>
+                <ul>
+                    <li>Is deeply curious about the <strong>meaning of dream</strong> patterns</li>
+                    <li>Wants to maintain a consistent, organized dream journal</li>
+                    <li>Experiences intense <strong>vivid dreams meaning</strong> they want to decode</li>
+                    <li>Is on a path of spirituality, psychology, or self-actualization</li>
+                    <li>Wants to harness the power of their subconscious to improve their waking life</li>
+                </ul>
+
+                <h2>Unlock Your Subconscious: Start Your Journey Today</h2>
+
+                <p>Every night, your mind produces a masterpiece of symbolism. Don't let those messages vanish into the morning light. Every <strong>meaning of dream</strong> analysis you perform is a step toward a more conscious life. Whether you are struggling with a frightening <strong>dream about teeth falling out</strong> or feeling empowered by <strong>dreaming of being pregnant</strong>, MyDreams provides the clarity you need. Explore the depths of your <strong>vivid dreams meaning</strong> and transform your relationship with yourself. The world of interpretation is just a tap away.</p>
+
+                <p class="qr-note">Had an intense dream last night? Don't let the message fade away. Download the MyDreams app now or log in to start your <strong>ai dream journal</strong> today. Discover the hidden truth behind your sleep.</p>
+            </section>
+
+            <section class="download" id="download">
+                <!-- Mobile: App Store button -->
+                <a href="https://apps.apple.com/app/mydreams/id6755436556" class="app-store-button download-mobile-only"
+                    target="_blank" rel="noopener noreferrer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
+                    </svg>
+                    <div class="button-text">
+                        <span class="small">Download on</span>
+                        <span class="large">App Store</span>
+                    </div>
+                </a>
+                <!-- Desktop: QR code -->
+                <div class="download-qr download-desktop-only">
+                    <img src="../qr-code.svg" alt="Scan QR code to download MyDreams" width="70" height="70">
+                </div>
+                <a href="https://app.mojesny.app/" class="app-store-button web-button" target="_blank"
+                    rel="noopener noreferrer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 19.93C7.05 19.44 4 16.08 4 12C4 11.38 4.08 10.79 4.21 10.21L9 15V16C9 17.1 9.9 18 11 18V19.93ZM17.9 17.39C17.64 16.58 16.9 16 16 16H15V13C15 12.45 14.55 12 14 12H8V10H10C10.55 10 11 9.55 11 9V7H13C14.1 7 15 6.1 15 5V4.59C17.93 5.78 20 8.65 20 12C20 14.08 19.2 15.97 17.9 17.39Z" />
+                    </svg>
+                    <div class="button-text">
+                        <span class="small">Log in to</span>
+                        <span class="large">MyDreams</span>
+                    </div>
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">© 2025 - 2026 MyDreams</div>
+        </div>
+    </footer>
+
+    <button id="backToTop" title="Back to Top">↑</button>
+
+    <script>
+        const backToTopBtn = document.getElementById("backToTop");
+        window.onscroll = function () {
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+        backToTopBtn.onclick = function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
+
+    <script src="cookie-consent.js" defer></script>
+    <script>
+        (function () {
+            var btn = document.querySelector('.hamburger');
+            var nav = document.querySelector('.main-nav');
+            if (!btn || !nav) return;
+            btn.addEventListener('click', function () {
+                var isOpen = nav.classList.toggle('is-open');
+                btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+            nav.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        })();
+    </script>
+</body>
+
+</html>
