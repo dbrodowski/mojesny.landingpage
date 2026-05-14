@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XNLHHB3FRB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XNLHHB3FRB');
+</script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+
+        // Consent default
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
+        });
+
+        (function () {
+            var trackingId = 'G-XNLHHB3FRB'; // Tu GA4 Measurement ID
+            var scriptLoaded = false;
+
+            function loadGAScript() {
+                if (scriptLoaded) return;
+                var consent = localStorage.getItem('cookie-consent');
+                if (consent !== 'accepted') return;
+                scriptLoaded = true;
+                var script = document.createElement('script');
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
+                script.async = true;
+                document.head.appendChild(script);
+                gtag('js', new Date());
+                gtag('config', trackingId, { anonymize_ip: true });
+                console.log('GA4 Loaded (Spanish Version)');
+            }
+
+            var consent = localStorage.getItem('cookie-consent');
+            if (consent === 'accepted') {
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+                if (document.readyState === 'complete') {
+                    loadGAScript();
+                } else {
+                    window.addEventListener('load', loadGAScript);
+                }
+            }
+
+            window.acceptAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'accepted');
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+                loadGAScript();
+            };
+
+            window.rejectAllCookies = function () {
+                localStorage.setItem('cookie-consent', 'rejected');
+            };
+        })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Comprende el significado de tus sueños con MisSueños. Interpretación avanzada con IA para sueños sobre embarazo, pérdida de dientes y más. ¡Empieza tu diario de sueños digital hoy mismo!">
+    <meta name="keywords"
+        content="diccionario de sueños, interpretación de sueños, significado de los sueños, soñar con caerse los dientes, soñar con embarazo, significado de las pesadillas, diario de sueños con IA, análisis de sueños, significado de sueños vívidos, descifrar sueños">
+    <title>Interpretación de Sueños con IA y Diccionario de Significados | MisSueños</title>
+    <link rel="canonical" href="https://mojesny.app/es/">
+    <link rel="alternate" hreflang="pl" href="https://mojesny.app/" />
+    <link rel="alternate" hreflang="en" href="https://mojesny.app/en/" />
+    <link rel="alternate" hreflang="de" href="https://mojesny.app/de/" />
+    <link rel="alternate" hreflang="es" href="https://mojesny.app/es/" />
+    <link rel="alternate" hreflang="x-default" href="https://mojesny.app/" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        :root {
+            --brand-blue: rgb(34, 48, 91);
+            --brand-orange: #f05a28
+        }
+
+        html {
+            background-color: var(--brand-blue)
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #fff;
+            color: #000;
+            line-height: 1.6;
+            padding-top: 150px
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 10px 0;
+            background-color: var(--brand-blue);
+            color: #fff;
+            z-index: 1000
+        }
+
+        header .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #fff
+        }
+
+        .site-logo {
+            display: block;
+            width: 100px;
+            height: auto;
+            aspect-ratio: 1/1;
+            transition: width .3s ease
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: opacity .3s ease
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            opacity: .7
+        }
+
+        .lang-switch {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-left: 10px
+        }
+
+        .lang-switch a {
+            border: 1px solid rgba(255,255,255,0.45);
+            border-radius: 4px;
+            padding: 3px 7px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            opacity: 1 !important
+        }
+
+        .lang-switch a.lang-active {
+            background: rgba(255,255,255,0.2);
+            cursor: default;
+            pointer-events: none
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 38px;
+            height: 28px;
+            background: rgb(38, 48, 91);
+            border: none;
+            cursor: pointer;
+            padding: 4px 3px;
+            border-radius: 4px;
+            flex-shrink: 0
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: #fff;
+            border-radius: 2px;
+            transition: transform .25s ease, opacity .2s ease
+        }
+
+        .hero {
+            text-align: center;
+            padding: 0 20px;
+            margin-bottom: clamp(25px, 5vh, 45px)
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 6.7vw, 2.8rem);
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.1
+        }
+
+        .hero h2,
+        .hero .hero-subtitle {
+            font-size: clamp(1.4rem, 4.5vw, 2.2rem);
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            display: block
+        }
+
+        .hero h3,
+        .hero .hero-tagline {
+            font-size: clamp(1.1rem, 4vw, 1.8rem);
+            font-weight: 800;
+            margin-bottom: clamp(25px, 6vw, 40px);
+            line-height: 1.4;
+            display: block
+        }
+
+        .cta-center,
+        .cta-bottom {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0 24px
+        }
+
+        .app-store-button.cta-button,
+        .cta-bottom .cta-btn {
+            background-color: #c43e16;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            display: inline-block;
+            font-size: 1.1rem;
+            padding: 12px 24px
+        }
+
+        .content {
+            max-width: 850px;
+            margin: 0 auto 60px
+        }
+
+        .content p {
+            margin-bottom: 18px;
+            font-size: clamp(1.15rem, 3.5vw, 1.25rem);
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .content h2,
+        .content h3,
+        .content h4 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin: 40px 0 15px;
+            color: #000
+        }
+
+        .content h1+h2 {
+            margin-top: 12px
+        }
+
+        .content ul {
+            margin-left: 25px;
+            margin-bottom: 25px
+        }
+
+        .content li {
+            margin-bottom: 12px;
+            font-size: clamp(1.15rem, 3.5vw, 1.25rem);
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .content p a,
+        .content li a {
+            font-weight: bold;
+            color: #c43e16;
+            text-decoration: none;
+        }
+
+        @media(max-width:768px) {
+            body {
+                padding-top: 90px
+            }
+
+            .site-logo {
+                width: 60px
+            }
+
+            .hamburger {
+                display: flex;
+                margin-left: auto
+            }
+
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: rgb(38, 48, 91);
+                padding: 8px 0 20px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, .2)
+            }
+
+            .main-nav.is-open {
+                display: block
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                padding: 0 20px
+            }
+
+            .main-nav li {
+                width: 100%;
+                overflow: visible
+            }
+
+            .main-nav a {
+                display: block;
+                padding: 12px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, .15);
+                font-size: 1.1rem
+            }
+
+            .main-nav li:last-child a {
+                border-bottom: none
+            }
+
+            .lang-switch {
+                display: flex !important;
+                align-items: center;
+                margin-left: 0;
+                margin-bottom: 10px;
+                padding: 5px 0;
+                width: auto !important;
+                overflow: visible
+            }
+
+            .lang-switch a {
+                display: inline-block !important;
+                padding: 8px 10px 10px;
+                font-size: .9rem;
+                line-height: 1.4;
+                border-bottom: 1px solid rgba(255,255,255,0.45) !important
+            }
+        }
+    </style>
+
+    <link rel="preload" href="../style.css?v=1.2" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="../style.css?v=1.2">
+    </noscript>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "MisSueños",
+  "operatingSystem": "iOS, Web",
+  "applicationCategory": "LifestyleApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "description": "Descarga gratuita. Análisis completo de sueños con IA disponible."
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MisSueños",
+    "url": "https://mojesny.app/es/",
+    "logo": "https://mojesny.app/icon.svg"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "12"
+  },
+  "description": "Aplicación innovadora de interpretación de sueños con IA. Descubre el significado de tus sueños con análisis avanzado y un diario privado."
+}
+</script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="../icon.svg" alt="MisSueños Logo" class="site-logo" width="100" height="100">
+                </a>
+            </div>
+            <button class="hamburger" aria-label="Abrir menú" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="privacy.html">Privacidad</a></li>
+                    <li><a href="terms.html">Términos</a></li>
+                    <li class="lang-switch">
+                        <a href="https://mojesny.app/de/">DE</a>
+                        <a href="https://mojesny.app/en/">EN</a>
+                        <a href="https://mojesny.app/es/" class="lang-active">ES</a>
+                        <a href="https://mojesny.app/">PL</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h1>MisSueños – Una nueva dimensión en la interpretación de los sueños</h1>
+                <p class="hero-subtitle">Explora los rincones ocultos de tu mente y subconsciente.</p>
+                <p class="hero-tagline">El diccionario de sueños impulsado por Inteligencia Artificial más avanzado del mundo</p>
+                <div class="cta-center">
+                    <a href="#download" class="app-store-button cta-button">Pruébalo gratis</a>
+                </div>
+            </section>
+
+            <section class="content">
+                <p>
+                    Durante siglos, la humanidad ha intentado descifrar los mensajes ocultos en sus sueños. Los sueños nos fascinan, nos inspiran y, a menudo, nos dejan con preguntas profundas sobre nuestro estado interno y emocional. ¿Alguna vez te has despertado preguntándote por el <strong>significado de los sueños</strong> y los símbolos que aparecieron mientras dormías? ¿Por qué vemos que se nos caen los dientes o que volamos sin rumbo? Ya sea un sueño recurrente de una caída al vacío o un sueño repentino y emocionalmente intenso sobre estar embarazada, MisSueños está aquí para ofrecerte las respuestas sofisticadas y precisas que te mereces.
+                </p>
+
+                <h2>Analiza tu sueño. Descubre su significado. Conócete a ti mismo.</h2>
+
+                <p>Decodificar tu subconsciente es, en esencia, un viaje hacia el interior de uno mismo. Si alguna vez has buscado una <a href="#download">interpretación de sueños</a> profesional, sabrás que los diccionarios genéricos suelen quedarse cortos. Ofrecen definiciones estándar que ignoran por completo tu contexto de vida personal. En MisSueños, creemos que el <strong>significado de sueños vívidos</strong> es único para cada persona. Si estás buscando:</p>
+                <ul>
+                    <li>Significados confiables en un <strong>diccionario de sueños</strong> de última generación.</li>
+                    <li>Un libro de sueños alfabético y exhaustivo que abarca desde lo clásico a lo moderno.</li>
+                    <li>Respuestas claras a la pregunta: "¿qué significa mi sueño?".</li>
+                    <li>Comprender el <strong>significado de sueños vívidos</strong> detrás de las pesadillas recurrentes.</li>
+                    <li>Un <a href="#download">análisis de sueños</a> basado en principios científicos i psicológicos.</li>
+                    <li>Un intérprete de sueños en línea potenciado por GPT-4 y Vertex AI.</li>
+                </ul>
+                <p>Entonces has llegado al destino definitivo para tus exploraciones nocturnas y el crecimiento personal.</p>
+
+                <h2>¿Qué es MisSueños y el Diario de Sueños con IA?</h2>
+
+                <p>MisSueños es mucho más que una simple aplicación de consulta; es una plataforma inteligente y revolucionaria que funciona como tu <strong>diario de sueños con IA</strong> personal. Hemos ido más allá de las páginas estáticas de los libros tradicionales para crear un diario vivo que evoluciona contigo. Al combinar la sabiduría ancestral de la onirología con la tecnología más avanzada, ofrecemos un servicio integral que incluye:</p>
+                <ul>
+                    <li>Conocimiento clásico sobre el simbolismo universal (arquetipos de Jung y Freud).</li>
+                    <li>Perspectivas psicológicas sobre el procesamiento emocional de tu vida diaria.</li>
+                    <li>Tecnología de IA moderna que comprende matices, tonos, emociones y metáforas complejas.</li>
+                    <li>Interpretaciones personalizadas que consideran tus sentimientos específicos y tu situación actual.</li>
+                </ul>
+
+                <p>Al utilizar nuestra <a href="#download">aplicación MisSueños</a>, puedes almacenar tus experiencias de forma segura y observar cómo la tecnología identifica patrones y conexiones que podrías haber pasado por alto. Nuestros usuarios reportan que mantener un diario de sueños les ayuda a reducir el estrés, potenciar la creatividad y resolver problemas que parecían insuperables durante las horas de vigilia.</p>
+
+                <h2>El significado de los sueños comunes: De los dientes al embarazo</h2>
+                
+                <p>Aunque cada sueño es profundamente personal, ciertos motivos aparecen en todas las culturas. Una de las consultas más frecuentes es <strong>soñar con caerse los dientes</strong>. En los diccionarios tradicionales, esto podría significar simplemente "miedo a la pérdida". Sin embargo, a través de una <strong>interpretación de sueños</strong> avanzada, nuestra IA podría revelar que se relaciona con una pérdida de control en tu entorno profesional o preocupaciones sobre cómo te comunicas con tus seres queridos. </p>
+
+                <div class="cta-center">
+                    <a href="#download" class="app-store-button cta-button">Pruébalo gratis</a>
+                </div>
+                
+                <p>De manera similar, <strong>soñar con estar embarazada</strong> rara vez trata sobre un parto físico. A menudo simboliza el nacimiento de una nueva idea, un proyecto creativo o una transformación personal significativa que se está gestando en tu interior. Cuando registras estos eventos en tu <strong>diario de sueños con IA</strong>, MisSueños analiza los detalles circundantes (¿quién estaba contigo?, ¿cuál era la atmósfera?) para darte un <strong>significado de los sueños</strong> preciso y adaptado a ti.</p>
+
+                <h2>¿Por qué la interpretación de los sueños es importante para tu salud?</h2>
+
+                <p>Desde las antiguas civilizaciones de Egipto y Grecia hasta la psicología clínica moderna, los sueños han sido estudiados como el "camino real" hacia el subconsciente. Los grandes pensadores los consideraban un lenguaje que nuestro cerebro utiliza para comunicarse cuando el ego consciente duerme. El <strong>análisis de sueños</strong> no es solo un pasatiempo místico; es una herramienta fundamental para la claridad mental y el equilibrio emocional.</p>
+
+                <p>El <strong>significado de sueños vívidos</strong> puede reflejar:</p>
+                <ul>
+                    <li>Temores ocultos que no estás listo para enfrentar mientras estás despierto.</li>
+                    <li>Conflictos internos entre tus deseos personales y tus obligaciones sociales.</li>
+                    <li>Necesidades no satisfechas que buscan expresarse a través de símbolos oníricos.</li>
+                    <li>Procesos de curación y resiliencia tras una experiencia traumática o estresante.</li>
+                </ul>
+
+                <p>Al interactuar regularmente con MisSueños, creas un puente sólido entre tu mente consciente e inconsciente. Esto conduce a una mejora en la inteligencia emocional y a una sensación de bienestar mucho más profunda.</p>
+
+                <h2>Análisis de sueños con IA avanzada frente a los diccionarios antiguos</h2>
+
+                <p>El núcleo de MisSueños es nuestro motor de <strong>Interpretación de Sueños con IA</strong>. Los libros de sueños tradicionales fueron escritos hace décadas y no pueden adaptarse a la vida moderna; no entienden qué representa un smartphone o una oficina corporativa en un sueño. Nuestra app comprende el contexto del siglo XXI. En lugar de definiciones genéricas, puedes proporcionar detalles enriquecedores:</p>
+                <ul>
+                    <li>Describe la secuencia exacta de los eventos sin limitaciones de espacio.</li>
+                    <li>Añade las emociones específicas que sentiste: ¿fue "angustia existencial" o "curiosidad pacífica"?</li>
+                    <li>Especifica si es un motivo recurrente que te ha acompañado durante años.</li>
+                </ul>
+
+                <p>Nuestra IA procesa estos datos para crear una <strong>interpretación de sueños</strong> narrativa. Es como tener a un psicólogo de clase mundial disponible las 24 horas, los 7 días de la semana, listo para traducir las metáforas de tu mente en consejos claros y aplicables.</p>
+
+                <h2>Por qué tener un diario de sueños con IA lo cambia todo</h2>
+                <p>La mayoría de las personas olvidan el 90% de sus sueños apenas diez minutos después de despertar. Por eso, un diario digital es esencial. Al escribir o dictar tu sueño en MisSueños inmediatamente al despertar, capturas los datos puros y sin editar de tu subconsciente. Con el tiempo, la aplicación actúa como un espejo, mostrándote la evolución de tus pensamientos y preocupaciones. Ya sea que sientas curiosidad por <strong>soñar con caerse los dientes</strong> hoy o por <strong>soñar con estar embarazada</strong> dentro de seis meses, tendrás un registro cronológico de tu viaje interior.</p>
+
+                <h2>Seguridad y privacidad en tu diario de sueños</h2>
+
+                <p>Tus sueños son, quizás, tus pensamientos más privados y vulnerables. Los tratamos con el máximo respeto. A diferencia de otras plataformas, MisSueños garantiza:</p>
+                <ul>
+                    <li>Privacidad de datos de extremo a extremo y cifrado de nivel militar.</li>
+                    <li>Tus entradas del diario son totalmente privadas y nunca se comparten.</li>
+                    <li>No vendemos tus datos personales a terceros ni a anunciantes.</li>
+                </ul>
+
+                <h2>¿Quién debería usar MisSueños para el análisis de sueños?</h2>
+
+                <p>Nuestra comunidad es diversa, desde artistas que buscan inspiración hasta profesionales que desean gestionar el estrés. MisSueños está diseñado para cualquier persona que:</p>
+                <ul>
+                    <li>Sienta una profunda curiosidad por el <strong>significado de los sueños</strong> y sus patrones.</li>
+                    <li>Desea mantener un diario de sueños constante, organizado y fácil de usar.</li>
+                    <li>Experimente un <strong>significado de sueños vívidos</strong> intenso que quiera decodificar.</li>
+                    <li>Esté en un camino de espiritualidad, psicología o autorrealización.</li>
+                    <li>Quiera aprovechar el poder de su subconsciente para mejorar su vida diaria.</li>
+                </ul>
+
+                <h2>Desbloquea tu subconsciente: Comienza tu viaje hoy mismo</h2>
+
+                <p>Cada noche, tu mente produce una obra maestra de simbolismo. No permitas que esos mensajes se desvanezcan con la luz de la mañana. Cada <strong>análisis del significado de los sueños</strong> que realizas es un paso hacia una vida más consciente. Ya sea que estés lidiando con un sueño inquietante sobre <strong>caerse los dientes</strong> o te sientas inspirado por <strong>soñar con estar embarazada</strong>, MisSueños te brinda la claridad que necesitas. Explora las profundidades de tu mente y transforma la relación contigo mismo. El mundo de la interpretación está a solo un toque de distancia.</p>
+
+                <p class="qr-note">¿Tuviste un sueño intenso anoche? No dejes que el mensaje se pierda. Descarga la aplicación MisSueños ahora o inicia sesión para comenzar tu <strong>diario de sueños con IA</strong> hoy. Descubre la verdad oculta detrás de tu descanso.</p>
+            </section>
+
+            <section class="download" id="download">
+                <!-- Mobile: App Store button -->
+                <a href="https://apps.apple.com/app/mis-suenos/id6755436556" class="app-store-button download-mobile-only"
+                    target="_blank" rel="noopener noreferrer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
+                    </svg>
+                    <div class="button-text">
+                        <span class="small">Disponible en</span>
+                        <span class="large">App Store</span>
+                    </div>
+                </a>
+                <!-- Desktop: QR code -->
+                <div class="download-qr download-desktop-only">
+                    <img src="../qr-code.svg" alt="Scan QR code to download MisSueños" width="70" height="70">
+                </div>
+                <a href="https://app.mojesny.app/" class="app-store-button web-button" target="_blank"
+                    rel="noopener noreferrer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 19.93C7.05 19.44 4 16.08 4 12C4 11.38 4.08 10.79 4.21 10.21L9 15V16C9 17.1 9.9 18 11 18V19.93ZM17.9 17.39C17.64 16.58 16.9 16 16 16H15V13C15 12.45 14.55 12 14 12H8V10H10C10.55 10 11 9.55 11 9V7H13C14.1 7 15 6.1 15 5V4.59C17.93 5.78 20 8.65 20 12C20 14.08 19.2 15.97 17.9 17.39Z" />
+                    </svg>
+                    <div class="button-text">
+                        <span class="small">Inicia sesión en</span>
+                        <span class="large">MisSueños</span>
+                    </div>
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="privacy.html">Privacidad</a></li>
+                    <li><a href="terms.html">Términos</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">© 2025 - 2026 MisSueños</div>
+        </div>
+    </footer>
+
+    <button id="backToTop" title="Volver arriba">↑</button>
+
+    <script>
+        const backToTopBtn = document.getElementById("backToTop");
+        window.onscroll = function () {
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+        backToTopBtn.onclick = function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
+
+    <script src="cookie-consent.js" defer></script>
+    <script>
+        (function () {
+            var btn = document.querySelector('.hamburger');
+            var nav = document.querySelector('.main-nav');
+            if (!btn || !nav) return;
+            btn.addEventListener('click', function () {
+                var isOpen = nav.classList.toggle('is-open');
+                btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+            nav.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        })();
+    </script>
+</body>
+
+</html>
